@@ -1,0 +1,9 @@
+## Interface: 11302
+## Title: Classic Armory
+## Notes: Upload your classic character to an armory page to share.
+## Author: davidmwhynot
+## Version: 0.1
+## X-Website: https://www.davidwhynot.com
+## SavedVariables: spamerinoDB
+
+ClassicArmory.lua

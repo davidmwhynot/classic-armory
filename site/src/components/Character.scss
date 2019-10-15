@@ -1,0 +1,254 @@
+/* XXX variables XXX */
+// rarity colors
+$color-poor: #9d9d9d;
+$color-common: #ffffff;
+$color-uncommon: #1eff00;
+$color-rare: #0070dd;
+$color-epic: #a335ee;
+$color-legendary: #ff8000;
+
+// class colors
+
+/* XXX styles XXX */
+
+.color-rarity {
+	&-poor {
+		color: $color-poor;
+	}
+	&-common {
+		color: $color-common;
+	}
+	&-uncommon {
+		color: $color-uncommon;
+	}
+	&-rare {
+		color: $color-rare;
+	}
+	&-epic {
+		color: $color-epic;
+	}
+	&-legendary {
+		color: $color-legendary;
+	}
+}
+
+.character-header {
+	display: flex;
+
+	justify-content: space-between;
+	.character-names {
+		h1 {
+			font-size: 1.5rem;
+		}
+		h2 {
+			font-size: 1.25rem;
+		}
+	}
+	.character-tagline {
+		// display: flex;
+
+		h4 {
+			font-size: 1rem;
+		}
+	}
+}
+
+.character-doll {
+	display: grid;
+
+	grid-template-areas:
+		'head head hands hands'
+		'neck neck waist waist'
+		'shoulder shoulder legs legs'
+		'back back feet feet'
+		'chest chest finger0 finger0'
+		'shirt shirt finger1 finger1'
+		'tabard tabard trinket0 trinket0'
+		'wrist wrist trinket1 trinket1'
+		'mainhand secondaryhand ranged ammo'
+		'bag0 bag1 bag2 bag3';
+
+	.item {
+		margin-bottom: 0.75rem;
+
+		&:nth-child(n):nth-child(-n + 8) {
+			.item-body {
+				img {
+					margin-right: 20px;
+				}
+			}
+		}
+
+		&:nth-child(n + 9):nth-child(-n + 16) {
+			text-align: right;
+
+			.item-body {
+				justify-content: end;
+
+				img {
+					order: 2;
+					margin-left: 20px;
+				}
+
+				.item-description {
+					.item-stat {
+						margin-left: auto;
+						width: max-content;
+					}
+				}
+			}
+		}
+
+		&:nth-child(n + 17):nth-child(-n + 24) {
+			.item-body {
+				flex-direction: column;
+
+				align-items: stretch;
+				img {
+					margin-top: 5px;
+					margin-bottom: 10px;
+					width: 60px;
+					height: 60px;
+				}
+
+				.item-description {
+					width: 100%;
+				}
+			}
+		}
+
+		.item-header {
+			text-transform: capitalize;
+			font-size: 1rem;
+		}
+
+		.item-body {
+			display: flex;
+
+			align-items: center;
+
+			img {
+				width: 90px;
+				height: 90px;
+				border-radius: 5px;
+			}
+
+			.item-description {
+				// display: grid;
+				width: calc(100% - 110px);
+
+				font-size: 0.65rem;
+
+				line-height: 1.15;
+
+				.item-name {
+					font-size: 0.75rem;
+				}
+
+				.item-stat {
+					display: flex;
+
+					&-label {
+						margin-right: 5px;
+					}
+				}
+			}
+		}
+
+		&-head {
+			grid-area: head;
+		}
+
+		&-hands {
+			grid-area: hands;
+		}
+
+		&-neck {
+			grid-area: neck;
+		}
+
+		&-waist {
+			grid-area: waist;
+		}
+
+		&-shoulder {
+			grid-area: shoulder;
+		}
+
+		&-legs {
+			grid-area: legs;
+		}
+
+		&-back {
+			grid-area: back;
+		}
+
+		&-feet {
+			grid-area: feet;
+		}
+
+		&-chest {
+			grid-area: chest;
+		}
+
+		&-finger0 {
+			grid-area: finger0;
+		}
+
+		&-shirt {
+			grid-area: shirt;
+		}
+
+		&-finger1 {
+			grid-area: finger1;
+		}
+
+		&-tabard {
+			grid-area: tabard;
+		}
+
+		&-trinket0 {
+			grid-area: trinket0;
+		}
+
+		&-wrist {
+			grid-area: wrist;
+		}
+
+		&-trinket1 {
+			grid-area: trinket1;
+		}
+
+		&-mainhand {
+			grid-area: mainhand;
+		}
+
+		&-secondaryhand {
+			grid-area: secondaryhand;
+		}
+
+		&-ranged {
+			grid-area: ranged;
+		}
+
+		&-ammo {
+			grid-area: ammo;
+		}
+
+		&-bag0 {
+			grid-area: bag0;
+		}
+
+		&-bag1 {
+			grid-area: bag1;
+		}
+
+		&-bag2 {
+			grid-area: bag2;
+		}
+
+		&-bag3 {
+			grid-area: bag3;
+		}
+	}
+}
