@@ -5,10 +5,12 @@ import $ from 'jquery';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Character from './components/Character';
+import Error from './components/Error';
 
 class App extends Component {
 	state = {
-		loading: false
+		loading: false,
+		error: null
 	};
 
 	componentDidMount = async () => {
@@ -35,7 +37,7 @@ class App extends Component {
 
 		$('.capture-paste').keyup(async e => {
 			if (ctrlDown && e.keyCode === vKey) {
-				this.setState({ loading: true });
+				this.setState({ loading: true, error: null });
 				const res = await (await fetch('/.netlify/functions/new', {
 					method: 'POST',
 					body: $('#area').val(),
@@ -51,6 +53,11 @@ class App extends Component {
 
 					this.setState({ loading: false });
 					this.props.history.push('/' + res.url);
+				} else {
+					this.setState({
+						loading: false,
+						error: 'Something went wrong. Please try again.'
+					});
 				}
 
 				// if (res.error) {
@@ -100,6 +107,7 @@ class App extends Component {
 		return (
 			<div className="App">
 				<Navbar />
+				{this.state.error !== null ? <Error error={this.state.error} /> : ''}
 				{appBody}
 			</div>
 		);

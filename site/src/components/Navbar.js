@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, NavbarBrand } from 'reactstrap';
+import { Navbar, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 
 export default class Example extends React.Component {
 	constructor(props) {
@@ -26,10 +26,21 @@ export default class Example extends React.Component {
 					expand={true}
 					style={{ maxHeight: 50, padding: 16 }}
 				>
-					<div className="container-fluid">
+					<div className="container">
 						<NavbarBrand href="/" style={{ fontSize: 20, marginRight: 16 }}>
-							WoW Classic Armory
+							WoW Classic Armory{' '}
 						</NavbarBrand>
+						<span className="badge badge-warning mr-auto">BETA</span>
+						<Nav className="ml-auto" navbar>
+							<NavItem>
+								<NavLink
+									href="https://www.curseforge.com/wow/addons/classic-armory"
+									target="_blank"
+								>
+									Download the Addon
+								</NavLink>
+							</NavItem>
+						</Nav>
 					</div>
 				</Navbar>
 			</div>
