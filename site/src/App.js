@@ -7,6 +7,10 @@ import Home from './components/Home';
 import Character from './components/Character';
 
 class App extends Component {
+	state = {
+		loading: false
+	};
+
 	componentDidMount = async () => {
 		const ctrlKey = 17;
 		const vKey = 86;
@@ -24,12 +28,14 @@ class App extends Component {
 		$('.capture-paste').keydown(e => {
 			if (ctrlDown && e.keyCode === vKey) {
 				$('#area').css('display', 'block');
+				$('#area').val('');
 				$('#area').focus();
 			}
 		});
 
 		$('.capture-paste').keyup(async e => {
 			if (ctrlDown && e.keyCode === vKey) {
+				this.setState({ loading: true });
 				const res = await (await fetch('/.netlify/functions/new', {
 					method: 'POST',
 					body: $('#area').val(),
@@ -43,8 +49,8 @@ class App extends Component {
 					// console.log(JSON.parse('{' + res.items.Feet.json + '}'));
 					// console.log(JSON.parse('{' + res.items.Feet.jsonEquip + '}'));
 
-					this.setState({ loading: false, data: res.items });
-					this.props.history.push('/123');
+					this.setState({ loading: false });
+					this.props.history.push('/' + res.url);
 				}
 
 				// if (res.error) {
@@ -63,17 +69,38 @@ class App extends Component {
 	};
 
 	render() {
-		return (
-			<div className="App">
-				<Navbar />
-				<div className="container" style={{ marginTop: 50 }}>
+		let appBody = null;
+
+		if (this.state.loading) {
+			appBody = <h1>Loading</h1>;
+		} else {
+			appBody = (
+				<div className="container-fluid mt-3">
 					<Route exact path="/" component={Home} />
 					{/* <Route path="/:id" component={Character} /> */}
 					<Route
 						path="/:id"
-						render={props => <Character {...props} data={this.state.data} />}
+						render={props => (
+							<Character
+								{...props}
+								data={
+									this.state === null
+										? null
+										: this.state.data
+										? this.state.data
+										: null
+								}
+							/>
+						)}
 					/>
 				</div>
+			);
+		}
+
+		return (
+			<div className="App">
+				<Navbar />
+				{appBody}
 			</div>
 		);
 	}

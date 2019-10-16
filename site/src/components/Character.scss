@@ -8,8 +8,47 @@ $color-epic: #a335ee;
 $color-legendary: #ff8000;
 
 // class colors
+$color-druid: #ff7d0a;
+$color-hunter: #a9d271;
+$color-mage: #40c7eb;
+$color-paladin: #f58cba;
+$color-priest: #ffffff;
+$color-rogue: #fff569;
+$color-shaman: #0070de;
+$color-warlock: #8787ed;
+$color-warrior: #c79c6e;
 
 /* XXX styles XXX */
+
+.class-color {
+	&-druid {
+		color: $color-druid;
+	}
+	&-hunter {
+		color: $color-hunter;
+	}
+	&-mage {
+		color: $color-mage;
+	}
+	&-paladin {
+		color: $color-paladin;
+	}
+	&-priest {
+		color: $color-priest;
+	}
+	&-rogue {
+		color: $color-rogue;
+	}
+	&-shaman {
+		color: $color-shaman;
+	}
+	&-warlock {
+		color: $color-warlock;
+	}
+	&-warrior {
+		color: $color-warrior;
+	}
+}
 
 .color-rarity {
 	&-poor {
@@ -32,48 +71,99 @@ $color-legendary: #ff8000;
 	}
 }
 
+.border-rarity {
+	&-poor {
+		border: 1px solid $color-poor;
+	}
+	&-common {
+		border: 1px solid $color-common;
+	}
+	&-uncommon {
+		border: 1px solid $color-uncommon;
+	}
+	&-rare {
+		border: 1px solid $color-rare;
+	}
+	&-epic {
+		border: 1px solid $color-epic;
+	}
+	&-legendary {
+		border: 1px solid $color-legendary;
+	}
+}
+
+.character {
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
 .character-header {
 	display: flex;
 
 	justify-content: space-between;
+	align-items: start;
+	margin-bottom: 0.3rem;
+
 	.character-names {
 		h1 {
-			font-size: 1.5rem;
+			line-height: 1;
+			margin-bottom: 0;
+			font-size: 1.1rem;
 		}
 		h2 {
-			font-size: 1.25rem;
+			margin-bottom: 0;
+			font-size: 0.95rem;
 		}
 	}
 	.character-tagline {
 		// display: flex;
 
 		h4 {
-			font-size: 1rem;
+			margin-bottom: 0;
+			font-size: 0.65rem;
 		}
 	}
+}
+
+.item-stats {
+	// all: unset;
+	text-align-last: left !important;
+	position: absolute;
+	font-size: 0.5rem;
+	background-color: rgba(0, 0, 0, 0.8);
+	z-index: 1000;
+	padding: 0.2rem;
+	border-radius: 10px;
+	// width: max-content;
 }
 
 .character-doll {
 	display: grid;
 
 	grid-template-areas:
-		'head head hands hands'
-		'neck neck waist waist'
-		'shoulder shoulder legs legs'
-		'back back feet feet'
-		'chest chest finger0 finger0'
-		'shirt shirt finger1 finger1'
-		'tabard tabard trinket0 trinket0'
-		'wrist wrist trinket1 trinket1'
-		'mainhand secondaryhand ranged ammo'
-		'bag0 bag1 bag2 bag3';
+		'head head head . . hands hands hands'
+		'neck neck neck . . waist waist waist'
+		'shoulder shoulder shoulder . . legs legs legs'
+		'back back back . . feet feet feet'
+		'chest chest chest . . finger0 finger0 finger0'
+		'shirt shirt shirt . . finger1 finger1 finger1'
+		'tabard tabard tabard . . trinket0 trinket0 trinket0'
+		'wrist wrist wrist . . trinket1 trinket1 trinket1'
+		'. mainhand mainhand secondaryhand secondaryhand ranged ranged .'
+		'. . . . . ammo ammo .'
+		'bag0 bag0 bag1 bag1 bag2 bag2 bag3 bag3';
+
+	align-items: center;
+
+	margin-bottom: 2rem;
 
 	.item {
-		margin-bottom: 0.75rem;
+		margin-top: 0.075rem;
+		margin-bottom: 0.075rem;
 
 		&:nth-child(n):nth-child(-n + 8) {
 			.item-body {
-				img {
+				.item-img {
 					margin-right: 20px;
 				}
 			}
@@ -84,9 +174,10 @@ $color-legendary: #ff8000;
 
 			.item-body {
 				justify-content: end;
-
-				img {
+				a {
 					order: 2;
+				}
+				.item-img {
 					margin-left: 20px;
 				}
 
@@ -100,26 +191,22 @@ $color-legendary: #ff8000;
 		}
 
 		&:nth-child(n + 17):nth-child(-n + 24) {
+			margin-top: 0.2rem;
+			margin-bottom: 0.2rem;
 			.item-body {
-				flex-direction: column;
+				// flex-direction: column;
 
-				align-items: stretch;
-				img {
-					margin-top: 5px;
-					margin-bottom: 10px;
+				align-items: center;
+				.item-img {
 					width: 60px;
 					height: 60px;
+					margin: 0 10px;
 				}
 
 				.item-description {
-					width: 100%;
+					width: calc(100% - 95px);
 				}
 			}
-		}
-
-		.item-header {
-			text-transform: capitalize;
-			font-size: 1rem;
 		}
 
 		.item-body {
@@ -127,22 +214,23 @@ $color-legendary: #ff8000;
 
 			align-items: center;
 
-			img {
-				width: 90px;
-				height: 90px;
-				border-radius: 5px;
+			.item-img {
+				width: 60px;
+				height: 60px;
+				border-radius: 10px;
 			}
 
 			.item-description {
-				// display: grid;
-				width: calc(100% - 110px);
+				position: relative;
 
-				font-size: 0.65rem;
+				width: calc(100% - 80px);
 
-				line-height: 1.15;
+				font-size: 0.5rem;
+
+				line-height: 1.1;
 
 				.item-name {
-					font-size: 0.75rem;
+					font-size: 0.55rem;
 				}
 
 				.item-stat {
@@ -154,7 +242,11 @@ $color-legendary: #ff8000;
 				}
 			}
 		}
+	}
+}
 
+.character-doll {
+	.item {
 		&-head {
 			grid-area: head;
 		}

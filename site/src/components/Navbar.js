@@ -26,7 +26,7 @@ export default class Example extends React.Component {
 					expand={true}
 					style={{ maxHeight: 50, padding: 16 }}
 				>
-					<div className="container">
+					<div className="container-fluid">
 						<NavbarBrand href="/" style={{ fontSize: 20, marginRight: 16 }}>
 							WoW Classic Armory
 						</NavbarBrand>

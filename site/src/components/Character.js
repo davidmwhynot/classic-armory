@@ -4,81 +4,131 @@ import Item from './Item';
 
 class Character extends Component {
 	state = {
-		loading: false,
-		name: 'Charactername',
-		race: 'Race',
-		class: 'Class',
-		level: 60,
-		guild: 'Guild Name'
+		loading: true
 	};
 
-	componentDidMount = () => {
-		// let parsedData = null;
+	componentDidMount = async () => {
 		try {
+			console.log('this.props.match.params.id');
 			console.log(this.props.match.params.id);
-			// const uri = this.props;
-			// this.setState(parsedData);
+
+			const res = await (await fetch('/.netlify/functions/get', {
+				method: 'POST',
+				body: this.props.match.params.id,
+				headers: { 'Content-Type': 'application/json' }
+			})).json();
+
+			this.setState({ ...res, loading: false });
 		} catch (e) {
 			console.error(e);
 		}
 	};
 
 	render() {
-		const { loading, name, race, level, guild } = this.state;
-		const { data } = this.props;
-		// const { name: feetName, icon } = feet;
-		// const iconUrl =
-		// 	process.env.PUBLIC_URL + '/icons/Armor/' + icon[0]['_'] + '.png';
-
-		// console.log('feet in char', feet);
-		// console.log('icon', icon[0]['$']);
-		// console.log('iconUrl', iconUrl);
-		// console.log('feetName', feetName);
-		return (
-			<div className="character">
-				{loading ? (
+		if (this.state.loading) {
+			return (
+				<div className="character">
 					<div className="character-loading">
 						<h1>Loading...</h1>
 					</div>
-				) : (
+				</div>
+			);
+		} else {
+			const {
+				name,
+				realm,
+				guild,
+				race,
+				class: characterClass,
+				level,
+				items
+			} = this.state;
+			return (
+				<div className="character">
 					<div>
 						<div className="character-header">
 							<div className="character-names">
-								<h1 className="character-name">{name}</h1>
-								<h2 className="character-guild">&lt;{guild}&gt;</h2>
-							</div>
-							<div className="character-tagline">
-								<div className="character-race-class">
-									<h4 className="character-race">{race}</h4>
-									<h4 className="character-class">{this.state.class}</h4>
-								</div>
-								<h4 className="character-level">{level}</h4>
+								<h1 className="character-name">
+									{name} - {realm}
+								</h1>
+								<h2 className="character-guild">
+									Level {level} {race}{' '}
+									<span
+										className={
+											'character-class class-color-' +
+											characterClass.toLowerCase()
+										}
+									>
+										{characterClass}
+									</span>{' '}
+									- &lt;{guild}&gt;
+								</h2>
 							</div>
 						</div>
 						<div className="character-doll">
-							{Object.keys(data).map(key => {
-								if (data[key] === null) {
+							{Object.keys(items).map(key => {
+								if (items[key] === null) {
 									return <Item slot={key} empty={true} key={key} />;
 								} else {
-									console.log('data[key]', key, data[key]);
+									console.log('items[key]', key, items[key]);
 
 									const {
 										icon,
-										jsonEquip,
 										level,
 										link,
 										name: itemName,
+										htmlTooltip,
 										quality
-									} = data[key];
+									} = items[key];
 
 									const rarity = quality[0]['_'].toLowerCase();
 
-									const stats = [
-										{
-											name: 'test',
-											value: 3
-										}
-									];
+									// const parsedJson = JSON.parse('{' + json + '}');
+									// const parsedJsonEquip = JSON.parse('{' + jsonEquip + '}');
+									// console.log('parsedJson', key, parsedJson);
+									// console.log('parsedJsonEquip', key, parsedJsonEquip);
+									// console.log('\n');
+
+									// const statKeys = Object.keys(parsedJsonEquip);
+
+									// const stats = [];
+									// console.log('statKeys', statKeys);
+									// statKeys.forEach(statKey => {
+									// 	switch (statKey) {
+									// 		case 'armor':
+									// 			stats.push({
+									// 				name: 'Armor:',
+									// 				value: parsedJsonEquip[statKey]
+									// 			});
+									// 			break;
+									// 		case 'sta':
+									// 			stats.push({
+									// 				name: 'Stamina:',
+									// 				value: parsedJsonEquip[statKey]
+									// 			});
+									// 			break;
+									// 		case 'str':
+									// 			stats.push({
+									// 				name: 'Strength:',
+									// 				value: parsedJsonEquip[statKey]
+									// 			});
+									// 			break;
+									// 		case 'int':
+									// 			stats.push({
+									// 				name: 'Intellect:',
+									// 				value: parsedJsonEquip[statKey]
+									// 			});
+									// 			break;
+									// 		case 'agi':
+									// 			stats.push({
+									// 				name: 'Agility:',
+									// 				value: parsedJsonEquip[statKey]
+									// 			});
+									// 			break;
+									// 	}
+									// });
+
+									// console.log('stats', stats);
 
 									const iconUrl =
 										process.env.PUBLIC_URL + '/icons/' + icon[0]['_'] + '.png';
@@ -90,7 +140,7 @@ class Character extends Component {
 											iconUrl={iconUrl}
 											itemName={itemName[0]}
 											rarity={rarity}
-											stats={stats}
+											stats={htmlTooltip}
 											link={link[0]}
 											level={level[0]}
 											key={key}
@@ -100,9 +150,9 @@ class Character extends Component {
 							})}
 						</div>
 					</div>
-				)}
-			</div>
-		);
+				</div>
+			);
+		}
 	}
 }
 
