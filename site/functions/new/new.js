@@ -20,7 +20,7 @@ mongoose.connect(uri, { useNewUrlParser: true });
 // request handler
 exports.handler = async function(event, context) {
 	try {
-		console.log('proces.env', process.env);
+		console.log('proces.env.NODE_ENV', process.env.NODE_ENV);
 
 		// const req = event.body;
 		const req = JSON.parse(event.body);
