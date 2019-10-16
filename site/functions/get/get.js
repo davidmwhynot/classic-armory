@@ -1,6 +1,16 @@
 // import
 const mongoose = require('mongoose');
-const Character = require('../new/CharacterModel');
+console.log('proces.env', process.env);
+for (const envVar of process.env) {
+	console.log(envVar);
+}
+
+let Character = null;
+if (NODE_ENV !== 'production') {
+	Character = require('../new/CharacterModel');
+} else {
+	Character = require('./Character');
+}
 
 // config
 const uri = `mongodb+srv://${process.env.CLASSICARMORY_DB_LOGIN}.mongodb.net/test?retryWrites=true&w=majority`;
