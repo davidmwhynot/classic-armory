@@ -1,3 +1,7 @@
+console.log('proces.env', process.env);
+for (const envVar of process.env) {
+	console.log(envVar);
+}
 // import
 const mongoose = require('mongoose');
 
