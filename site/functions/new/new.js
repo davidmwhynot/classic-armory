@@ -1,7 +1,6 @@
-console.log('proces.env', process.env);
-for (const envVar of process.env) {
-	console.log(envVar);
-}
+// for (const envVar of process.env) {
+// 	console.log(envVar);
+// }
 // import
 const mongoose = require('mongoose');
 
@@ -21,6 +20,8 @@ mongoose.connect(uri, { useNewUrlParser: true });
 // request handler
 exports.handler = async function(event, context) {
 	try {
+		console.log('proces.env', process.env);
+
 		// const req = event.body;
 		const req = JSON.parse(event.body);
 		console.log('req');
