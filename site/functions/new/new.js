@@ -24,8 +24,8 @@ exports.handler = async function(event, context) {
 
 		// const req = event.body;
 		const req = JSON.parse(event.body);
-		console.log('req');
-		console.log(req);
+		// console.log('req');
+		// console.log(req);
 
 		const parser = new Parser();
 
@@ -45,7 +45,7 @@ exports.handler = async function(event, context) {
 			const key = Object.keys(item)[0];
 			const val = item[key];
 
-			console.log(key, val);
+			// console.log(key, val);
 
 			if (val !== null && val !== 0) {
 				const wowheadRes = await get(
@@ -65,7 +65,7 @@ exports.handler = async function(event, context) {
 			}
 		}
 
-		console.log('charData', charData);
+		// console.log('charData', charData);
 
 		const newCharacter = new Character({
 			name: charData.name,
@@ -75,7 +75,7 @@ exports.handler = async function(event, context) {
 
 		const savedCharacter = await newCharacter.save();
 
-		console.log('savedCharacter', savedCharacter);
+		// console.log('savedCharacter', savedCharacter);
 
 		return {
 			statusCode: 200,
