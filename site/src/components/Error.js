@@ -4,7 +4,7 @@ const Home = props => {
 	const { error } = props;
 	return (
 		<div className="container">
-			<div class="alert alert-danger my-3 mx-auto" role="alert">
+			<div className="alert alert-danger my-3 mx-auto" role="alert">
 				{error}
 			</div>
 		</div>

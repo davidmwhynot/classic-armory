@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Wowhead.scss';
 
 class Item extends Component {
 	state = {
@@ -30,28 +31,37 @@ class Item extends Component {
 		} else {
 			const { iconUrl, itemName, rarity, stats, link } = this.props;
 
+			let style = this.state.isStatsVisible
+				? { display: 'block' }
+				: { display: 'none' };
+
 			itemBody = (
 				<div className="item-body">
-					<a href={link}>
-						<img
-							src={iconUrl}
-							className={'item-img border-rarity-' + rarity}
-							onMouseEnter={() => {
-								this.setState({ isStatsVisible: true });
-							}}
-							onMouseLeave={() => {
-								this.setState({ isStatsVisible: false });
-							}}
-						/>
+					<a
+						href={link}
+						target="_blank"
+						className="shader"
+						onMouseEnter={() => {
+							this.setState({ isStatsVisible: true });
+						}}
+						onMouseLeave={() => {
+							this.setState({ isStatsVisible: false });
+						}}
+					>
+						<img src={iconUrl} className={'item-img border-rarity-' + rarity} />
 					</a>
 					<div className="item-description">
 						<div
 							className={'item-stats border-rarity-' + rarity}
 							dangerouslySetInnerHTML={{ __html: stats }}
-							style={{ display: this.state.isStatsVisible ? 'block' : 'none' }}
+							style={style}
 						/>
 						<div className="item-name">
-							<a href={link} className={'color-rarity-' + rarity}>
+							<a
+								href={link}
+								target="_blank"
+								className={'color-rarity-' + rarity}
+							>
 								{itemName}
 							</a>
 						</div>

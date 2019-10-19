@@ -20,12 +20,20 @@ class Character extends Component {
 				headers: { 'Content-Type': 'application/json' }
 			})).json();
 
-			this.setState({ ...res, loading: false });
+			if (res.error) {
+				this.setState({
+					loading: false,
+					error: 'Something went wrong. Please try again.'
+				});
+			} else {
+				this.setState({ ...res, loading: false });
+			}
 		} catch (e) {
 			this.setState({
 				loading: false,
 				error: 'Something went wrong. Please try again.'
 			});
+
 			console.error(e);
 		}
 	};
@@ -39,6 +47,12 @@ class Character extends Component {
 					</div>
 				</div>
 			);
+		} else if (this.state.error !== null) {
+			return (
+				<div className="container">
+					<Error error={this.state.error} />
+				</div>
+			);
 		} else {
 			const {
 				name,
@@ -49,16 +63,19 @@ class Character extends Component {
 				level,
 				items
 			} = this.state;
+
 			return (
 				<div>
 					{this.state.error !== null ? <Error error={this.state.error} /> : ''}
+
 					<div className="character">
 						<div>
-							<div className="character-header">
+							<div className="character-header mb-2">
 								<div className="character-names">
 									<h1 className="character-name">
 										{name} - {realm}
 									</h1>
+
 									<h2 className="character-guild">
 										Level {level} {race}{' '}
 										<span
@@ -73,6 +90,7 @@ class Character extends Component {
 									</h2>
 								</div>
 							</div>
+
 							<div className="character-doll">
 								{Object.keys(items).map(key => {
 									if (items[key] === null) {
@@ -90,53 +108,6 @@ class Character extends Component {
 										} = items[key];
 
 										const rarity = quality[0]['_'].toLowerCase();
-
-										// const parsedJson = JSON.parse('{' + json + '}');
-										// const parsedJsonEquip = JSON.parse('{' + jsonEquip + '}');
-										// console.log('parsedJson', key, parsedJson);
-										// console.log('parsedJsonEquip', key, parsedJsonEquip);
-										// console.log('\n');
-
-										// const statKeys = Object.keys(parsedJsonEquip);
-
-										// const stats = [];
-										// console.log('statKeys', statKeys);
-										// statKeys.forEach(statKey => {
-										// 	switch (statKey) {
-										// 		case 'armor':
-										// 			stats.push({
-										// 				name: 'Armor:',
-										// 				value: parsedJsonEquip[statKey]
-										// 			});
-										// 			break;
-										// 		case 'sta':
-										// 			stats.push({
-										// 				name: 'Stamina:',
-										// 				value: parsedJsonEquip[statKey]
-										// 			});
-										// 			break;
-										// 		case 'str':
-										// 			stats.push({
-										// 				name: 'Strength:',
-										// 				value: parsedJsonEquip[statKey]
-										// 			});
-										// 			break;
-										// 		case 'int':
-										// 			stats.push({
-										// 				name: 'Intellect:',
-										// 				value: parsedJsonEquip[statKey]
-										// 			});
-										// 			break;
-										// 		case 'agi':
-										// 			stats.push({
-										// 				name: 'Agility:',
-										// 				value: parsedJsonEquip[statKey]
-										// 			});
-										// 			break;
-										// 	}
-										// });
-
-										// console.log('stats', stats);
 
 										const iconUrl =
 											process.env.PUBLIC_URL +

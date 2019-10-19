@@ -21,16 +21,26 @@ export default class Example extends React.Component {
 		return (
 			<div>
 				<Navbar
-					color="primary"
+					color="dark"
 					dark
 					expand={true}
-					style={{ maxHeight: 50, padding: 16 }}
+					style={{ maxHeight: 50, padding: 16, fontSize: '0.5rem' }}
 				>
 					<div className="container">
 						<NavbarBrand href="/" style={{ fontSize: 20, marginRight: 16 }}>
 							WoW Classic Armory{' '}
 						</NavbarBrand>
-						<span className="badge badge-warning mr-auto">BETA</span>
+						<span className="badge badge-warning">BETA</span>
+						<Nav className="mr-auto" navbar>
+							<NavItem>
+								<NavLink
+									href="https://github.com/davidmwhynot/classic-armory/issues/new?assignees=davidmwhynot&labels=feedback&template=feedback.md&title=Feedback+-+"
+									target="_blank"
+								>
+									Feedback
+								</NavLink>
+							</NavItem>
+						</Nav>
 						<Nav className="ml-auto" navbar>
 							<NavItem>
 								<NavLink

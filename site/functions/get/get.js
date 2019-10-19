@@ -27,6 +27,7 @@ exports.handler = async function(event, context) {
 		console.log(character._id);
 
 		return {
+			// headers: { 'Set-Cookie': 'abc=123' },
 			statusCode: 200,
 			body: character.data
 		};

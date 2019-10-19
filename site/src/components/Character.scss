@@ -18,6 +18,8 @@ $color-shaman: #0070de;
 $color-warlock: #8787ed;
 $color-warrior: #c79c6e;
 
+$color-q: #ffd100;
+
 /* XXX styles XXX */
 
 .class-color {
@@ -50,6 +52,10 @@ $color-warrior: #c79c6e;
 	}
 }
 
+.c4 {
+	color: $color-rogue;
+}
+
 .color-rarity {
 	&-poor {
 		color: $color-poor;
@@ -69,6 +75,57 @@ $color-warrior: #c79c6e;
 	&-legendary {
 		color: $color-legendary;
 	}
+}
+
+.q0 {
+	color: $color-poor;
+}
+
+.q1 {
+	color: $color-common;
+}
+
+.q2 {
+	color: $color-uncommon;
+}
+
+.q3 {
+	color: $color-rare;
+}
+
+.q4 {
+	color: $color-epic;
+}
+
+.q5 {
+	color: $color-legendary;
+}
+
+.q {
+	color: $color-q;
+}
+
+.moneygold {
+	display: inline-block;
+	background: no-repeat right center;
+	padding-right: 15px;
+	background-image: url(/media/money-gold.gif);
+}
+.moneysilver {
+	display: inline-block;
+	background: no-repeat right center;
+	padding-right: 15px;
+	background-image: url(/media/money-silver.gif);
+}
+.moneycopper {
+	display: inline-block;
+	background: no-repeat right center;
+	padding-right: 15px;
+	background-image: url(/media/money-copper.gif);
+}
+
+.badge {
+	padding-bottom: 0.3em !important;
 }
 
 .border-rarity {
@@ -94,6 +151,7 @@ $color-warrior: #c79c6e;
 
 .character {
 	max-width: 1000px;
+	width: max-content;
 	margin: 0 auto;
 }
 
@@ -102,7 +160,6 @@ $color-warrior: #c79c6e;
 
 	justify-content: space-between;
 	align-items: start;
-	margin-bottom: 0.3rem;
 
 	.character-names {
 		h1 {
@@ -116,8 +173,6 @@ $color-warrior: #c79c6e;
 		}
 	}
 	.character-tagline {
-		// display: flex;
-
 		h4 {
 			margin-bottom: 0;
 			font-size: 0.65rem;
@@ -126,19 +181,50 @@ $color-warrior: #c79c6e;
 }
 
 .item-stats {
-	// all: unset;
-	text-align-last: left !important;
 	position: absolute;
-	font-size: 0.5rem;
-	background-color: rgba(0, 0, 0, 0.8);
 	z-index: 1000;
+
+	width: max-content;
+
 	padding: 0.2rem;
-	border-radius: 10px;
-	// width: max-content;
+
+	text-align: left !important;
+	font-size: 0.4rem;
+
+	background-color: rgba(0, 0, 0, 0.8);
+	// border-radius: 5px;
+
+	transition: opacity 100ms linear;
+
+	a {
+		color: inherit;
+	}
 }
 
+.shader {
+	display: block;
+	position: relative;
+	margin-left: auto;
+	&:hover::before {
+		box-shadow: inset 0 0 25px rgba(0, 0, 0, 1);
+	}
+}
+.shader:before {
+	box-shadow: inset 0 0 25px rgba(0, 0, 0, 0);
+
+	transition: box-shadow 100ms linear;
+	content: '';
+	height: 100%;
+	position: absolute;
+	width: 60px;
+}
 .character-doll {
 	display: grid;
+
+	grid-template-rows: repeat(8, 3fr) 5fr 6fr 3fr;
+	// grid-template-columns: 10fr repeat(6, 7fr) 10fr;
+	grid-template-columns: repeat(8, 1fr);
+	grid-gap: 0.3rem;
 
 	grid-template-areas:
 		'head head head . . hands hands hands'
@@ -149,23 +235,54 @@ $color-warrior: #c79c6e;
 		'shirt shirt shirt . . finger1 finger1 finger1'
 		'tabard tabard tabard . . trinket0 trinket0 trinket0'
 		'wrist wrist wrist . . trinket1 trinket1 trinket1'
-		'. mainhand mainhand secondaryhand secondaryhand ranged ranged .'
-		'. . . . . ammo ammo .'
+		'. . mainhand mainhand secondaryhand secondaryhand ranged ranged'
+		'. . . . . . ammo ammo'
 		'bag0 bag0 bag1 bag1 bag2 bag2 bag3 bag3';
 
 	align-items: center;
 
 	margin-bottom: 2rem;
 
-	.item {
-		margin-top: 0.075rem;
-		margin-bottom: 0.075rem;
+	position: relative;
 
+	.item {
 		&:nth-child(n):nth-child(-n + 8) {
 			.item-body {
-				.item-img {
+				.shader {
 					margin-right: 20px;
 				}
+			}
+		}
+
+		&:nth-child(1),
+		&:nth-child(2),
+		&:nth-child(3),
+		&:nth-child(9),
+		&:nth-child(10),
+		&:nth-child(11) {
+			.item-stats {
+				transform: translateY(-10%);
+			}
+		}
+
+		&:nth-child(4),
+		&:nth-child(5),
+		&:nth-child(6),
+		&:nth-child(12),
+		&:nth-child(13),
+		&:nth-child(14) {
+			.item-stats {
+				transform: translateY(-30%);
+			}
+		}
+
+		&:nth-child(7),
+		&:nth-child(8),
+		&:nth-child(14),
+		&:nth-child(15),
+		&:nth-child(16) {
+			.item-stats {
+				transform: translateY(-50%);
 			}
 		}
 
@@ -177,34 +294,41 @@ $color-warrior: #c79c6e;
 				a {
 					order: 2;
 				}
-				.item-img {
+				.shader {
 					margin-left: 20px;
 				}
 
 				.item-description {
-					.item-stat {
-						margin-left: auto;
-						width: max-content;
+					.item-stats {
+						right: 0;
 					}
 				}
 			}
 		}
 
-		&:nth-child(n + 17):nth-child(-n + 24) {
-			margin-top: 0.2rem;
-			margin-bottom: 0.2rem;
-			.item-body {
-				// flex-direction: column;
+		&:nth-child(n + 17):nth-child(-n + 19) {
+			align-self: end;
+		}
 
+		&:nth-child(20) {
+			align-self: start;
+		}
+
+		&:nth-child(n + 17):nth-child(-n + 24) {
+			.item-body {
 				align-items: center;
-				.item-img {
-					width: 60px;
-					height: 60px;
+
+				.shader {
 					margin: 0 10px;
 				}
 
 				.item-description {
 					width: calc(100% - 95px);
+
+					.item-stats {
+						left: 0;
+						bottom: 0;
+					}
 				}
 			}
 		}
@@ -217,7 +341,7 @@ $color-warrior: #c79c6e;
 			.item-img {
 				width: 60px;
 				height: 60px;
-				border-radius: 10px;
+				// border-radius: 5px;
 			}
 
 			.item-description {
