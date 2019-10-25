@@ -2,8 +2,8 @@
 ## Title: Classic Armory
 ## Notes: Upload your classic character to an armory page to share.
 ## Author: davidmwhynot
-## Version: 0.1
-## X-Website: https://www.davidwhynot.com
+## Version: 0.2
+## X-Website: https://wowclassicarmory.com
 ## SavedVariables: spamerinoDB
 
 ClassicArmory.lua
