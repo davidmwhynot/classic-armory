@@ -5,7 +5,10 @@
 
 -- GLOBALS
 
-local count = 0;
+local CAITEM_SLOT_FRAMES = {
+	CharacterRangedSlot
+}
+
 local debug = false;
 local slotNames = {
 	"HeadSlot",
@@ -28,7 +31,6 @@ local slotNames = {
 	"SecondaryHandSlot",
 	"RangedSlot",
 	"AmmoSlot",
-	-- "RelicSlot",
 	"Bag0Slot",
 	"Bag1Slot",
 	"Bag2Slot",
@@ -138,101 +140,119 @@ function classicArmoryInit()
 end
 
 function getJSON()
-	local output = '{"v": "1.0.0",';
 
-	-- add meta json
-	local playerName = UnitName("player");
-	output = output .. '"name":"' .. playerName .. '",';
+	data = {
+		v = "1.0.0",
+		type = "player", -- this would be "target" for other players
+		name = UnitName("player"),
+		realm = GetRealmName(),
+		race = UnitRace("player"),
+		level = UnitLevel("player"),
+		xp = {
+			current = UnitXP('player'),
+			max = UnitXPMax('player')
+		},
+		sex = UnitSex('player'),
+		class = UnitClass("player"),
+		guild = GetGuildInfo("player"),
+		items = getItems(),
+		money = GetMoney(),
+		stats = getStats(),
+		skills = getSkills(),
+		reputation = getRep(),
+		buffs = getBuffs(),
+		debuffs = getDebuffs(),
+	};
+	
+	return ttjson(data, false);
+end
 
-	local playerRealm = GetRealmName();
-	output = output .. '"realm":"' .. playerRealm .. '",';
-	
-	local playerRace = UnitRace("player");
-	output = output .. '"race":"' .. playerRace .. '",';
-	
-	local playerLevel = UnitLevel("player");
-	output = output .. '"level":' .. playerLevel .. ',';
-	
-	local playerClass = UnitClass("player");
-	output = output .. '"class":"' .. playerClass .. '",';
-	
-	local playerGuild = GetGuildInfo("player");
-	if playerGuild ~= nil then
-		output = output .. '"guild":"' .. playerGuild .. '",';
+function getItems()
+	local items = {};
+
+	for i = 1, table.getn(slotNames) do
+		local slotId = GetInventorySlotInfo(slotNames[i])
+		local itemId = GetInventoryItemID("player", slotId)
+
+		items[i] = {
+			slot = slotNames[i],
+			item = itemId
+		};
 	end
 
-	-- add armor json
-	-- local baseArmor, effectiveArmor, armor, posBuff, negBuff = UnitArmor("player");
-	local playerBaseArmor = UnitArmor("player");
-	output = output .. '"armor":"' .. playerBaseArmor .. '",'
+	return items;
+end
 
-	-- add stats json
-	local totalAgility, _, posCountAgility, negCountAgility = UnitStat("player", 2);
-	local totalIntellect, _, posCountIntellect, negCountIntellect = UnitStat("player", 4);
-	local totalSpirit, _, posCountSpirit, negCountSpirit = UnitStat("player", 5);
-	local totalStamina, _, posCountStamina, negCountStamina = UnitStat("player", 3);
-	local totalStrength, _, posCountStrength, negCountStrength = UnitStat("player", 1);
+function getRep()
+	local numReps = GetNumFactions();
 
-	local armorAgility, armorIntellect, armorSpirit, armorStamina, armorStrength, equipBonuses = getCharStats();
-
-	local equippedAgility = totalAgility - (posCountAgility + negCountAgility) + armorAgility;
-	output = output .. '"agility":' .. equippedAgility .. ',';
-
-	local equippedIntellect = totalIntellect - (posCountIntellect + negCountIntellect) + armorIntellect;
-	output = output .. '"intellect":' .. equippedIntellect .. ',';
-
-	local equippedSpirit = totalSpirit - (posCountSpirit + negCountSpirit) + armorSpirit;
-	output = output .. '"spirit":' .. equippedSpirit .. ',';
-
-	local equippedStamina = totalStamina - (posCountStamina + negCountStamina) + armorStamina;
-	output = output .. '"stamina":' .. equippedStamina .. ',';
-
-	local equippedStrength = totalStrength - (posCountStrength + negCountStrength) + armorStrength;
-	output = output .. '"strength":' .. equippedStrength .. ',';
-
-	-- add skills json
-	output = output .. '"skills":'.. getSkillsJSON() .. ',';
-
-	-- add equip json
-	if table.getn(equipBonuses) > 0 then
-		local playerEquipBonuses = '"equip":[';
-
-		equipBonusesLengthMinusOne = table.getn(equipBonuses) - 1;
-		for i = 1, equipBonusesLengthMinusOne do
-			playerEquipBonuses = playerEquipBonuses .. equipBonuses[i] .. ',';
+	-- expand all rep headers
+	for i = 1, numReps do
+		local _, _, _, _, _, _, _, _, _, isCollapsed = GetFactionInfo(i);
+		if isExpanded then
+			ExpandFactionHeader(i);
 		end
-
-		playerEquipBonuses = playerEquipBonuses .. equipBonuses[table.getn(equipBonuses)] .. '],';
-
-		output = output .. playerEquipBonuses;
 	end
 
-	-- add item json
-	output =  output .. '"items":[';
-
-	for i = 1, slotNamesLengthMinusOne do
-		output = output .. '{' .. getSlotJSON(slotNames[i]) .. '},';
-	end
-
-	output = output .. '{' .. getSlotJSON(slotNames[table.getn(slotNames)]);
+	numReps = GetNumFactions();
 	
-	return output .. '}]}';
+	local reps = {};
+
+	local repHeadersIndex = 0;
+	local repsIndex = 0;
+
+	-- generate reference table
+	for i = 1, numReps do
+		local repName, _, _, _, _, repValue, _, _, isHeader = GetFactionInfo(i);
+
+		if isHeader then
+			-- update indexes
+			repsIndex = 0;
+			repHeadersIndex = repHeadersIndex + 1;
+			
+			-- add rep header to reps
+			reps[repHeadersIndex] = {
+				name = repName,
+				reps = {}
+			};
+		else
+			-- add rep to the appropriate header
+			repsIndex = repsIndex + 1;
+			reps[repHeadersIndex]['reps'][repsIndex] = {
+				name = repName,
+				value = repValue
+			};
+		end
+	end
+	
+	return reps;
 end
 
-function getSlotJSON(slotName)
-	local output = "\"" .. slotName .. "\":";
-
-	local slotId = GetInventorySlotInfo(slotName)
-	local itemId = GetInventoryItemID("player", slotId)
-	
-	if itemId == nil then
-		return output .. 'null';
-	else
-		return output .. itemId;
+function getBuffs()
+	local buffs, i = { }, 1;
+	local _, _, _, _, _, _, _, _, _, buff = UnitBuff("player", i);
+	while buff do
+		buffs[#buffs + 1] = buff;
+		i = i + 1;
+		_, _, _, _, _, _, _, _, _, buff = UnitBuff("player", i);
 	end
+
+	return buffs;
 end
 
-function getSkillsJSON()
+function getDebuffs()
+	local debuffs, i = { }, 1;
+	local _, _, _, _, _, _, _, _, _, debuff = UnitDebuff("player", i);
+	while debuff do
+		debuffs[#debuffs + 1] = debuff;
+		i = i + 1;
+		_, _, _, _, _, _, _, _, _, debuff = UnitDebuff("player", i);
+	end
+
+	return debuffs;
+end
+
+function getSkills()
 	local numSkills = GetNumSkillLines();
 
 	-- expand all skill headers
@@ -245,7 +265,6 @@ function getSkillsJSON()
 
 	numSkills = GetNumSkillLines();
 	
-	local skillHeaders = {};
 	local skills = {};
 
 	local skillHeadersIndex = 0;
@@ -260,53 +279,134 @@ function getSkillsJSON()
 			skillsIndex = 0;
 			skillHeadersIndex = skillHeadersIndex + 1;
 			
-			-- map header name to index in skills table
-			skillHeaders[skillHeadersIndex] = skillName;
-			skills[skillHeadersIndex] = {};
+			-- add skill header to skills
+			skills[skillHeadersIndex] = {
+				name = skillName,
+				skills = {}
+			};
 		else
 			-- add skill to the appropriate header
 			skillsIndex = skillsIndex + 1;
-			skills[skillHeadersIndex][skillsIndex] = '{"name":"' .. skillName .. '","rank":' .. skillRank .. '}';
+			skills[skillHeadersIndex]['skills'][skillsIndex] = {
+				name = skillName,
+				rank = skillRank
+			};
 		end
 	end
-
-	-- build json from reference table
-	local output = '[';
-
-	local skillsLengthMinusOne = table.getn(skills) - 1;
-	for i = 1, skillsLengthMinusOne do
-		local skillHeaderJSON = '{"name":"' .. skillHeaders[i] .. '","skills":[';
-		
-		local skillsHeaderLengthMinusOne = table.getn(skills[i]) - 1;
-		for j = 1, skillsHeaderLengthMinusOne do
-			skillHeaderJSON = skillHeaderJSON .. skills[i][j] .. ',';
-		end
-
-		output = output .. skillHeaderJSON .. skills[i][table.getn(skills[i])] .. "]},";
-	end
-
-	-- add the final skill header's skills to the output JSON
-	local skillHeaderJSON = '{"name":"' .. skillHeaders[table.getn(skills)] .. '","skills":[';
-		
-	local skillsHeaderLengthMinusOne = table.getn(skills[table.getn(skills)]) - 1;
-	for j = 1, skillsHeaderLengthMinusOne do
-		skillHeaderJSON = skillHeaderJSON .. skills[table.getn(skills)][j] .. ',';
-	end
-
-	output = output .. skillHeaderJSON .. skills[table.getn(skills)][table.getn(skills[table.getn(skills)])] .. "]}]";
-
-	-- output = '"skillHeaders: ' .. dumpvar(skillHeaders) .. '\nskills:' .. dumpvar(skills) ..'"';
-	
-	return output;
+	return skills;
 end
 
-function getCharStats()
-	local stamina = 0;
-	local strength = 0;
-	local agility = 0;
-	local intellect = 0;
-	local spirit = 0;
-	local equip = {};
+function getStats()
+	local hasBiznicks = CA_Item_Enchant_GetText();
+	local hit = GetHitModifier();
+	local rangedHit = GetHitModifier();
+
+	if hit == nil then hit = 0 end
+
+	if hasBiznicks then 
+		rangedHit = rangedHit + 3
+	end
+
+	local stats = {
+		health = UnitHealthMax('player'),
+		mana = {
+			type = { UnitPowerType('player') },
+			value = UnitPowerMax('player')
+		},
+		armor = {
+			equipped = 0,
+			unit = { UnitArmor('player') }
+		},
+		agility = {
+			equipped = 0,
+			unit = { UnitStat('player', 2) }
+		},
+		intellect = {
+			equipped = 0,
+			unit =  {UnitStat('player', 4) }
+		},
+		spirit = {
+			equipped = 0,
+			unit = { UnitStat('player', 5) }
+		},
+		stamina = {
+			equipped = 0,
+			unit = { UnitStat('player', 3) }
+		},
+		strength = {
+			equipped = 0,
+			unit = { UnitStat('player', 1) }
+		},
+		crit = {
+			spell = GetSpellCritChance(),
+			melee = GetCritChance(),
+			ranged = GetRangedCritChance()
+		},
+		mp5 = {
+			equipped = 0,
+			casting = 0,
+			notCasting = 0,
+			unit = { GetManaRegen() }
+		},
+		mpTick = {
+			notCasting = 0
+		},
+		dodge = GetDodgeChance(),
+		parry = GetParryChance(),
+		block = {
+			chance = GetBlockChance(),
+			value = GetShieldBlock()
+		},
+		spellDamage = {
+			physical = GetSpellBonusDamage(1),
+			holy = GetSpellBonusDamage(2),
+			fire = GetSpellBonusDamage(3),
+			nature = GetSpellBonusDamage(4),
+			frost = GetSpellBonusDamage(5),
+			shadow = GetSpellBonusDamage(6),
+			arcane = GetSpellBonusDamage(7)
+		},
+		defense = {
+			base = 0,
+			bonus = 0,
+			total = 0,
+			unit = { UnitDefense("player") }
+		},
+		healing = GetSpellBonusHealing(),
+		hit = {
+			melee = {
+				chance = hit,
+				skill = { UnitAttackBothHands('player') }
+			},
+			ranged = {
+				chance = rangedHit,
+				skill = { UnitRangedAttack('player') }
+			},
+			spell = GetSpellHitModifier()
+		},
+		attackPower = {
+			melee = { UnitAttackPower('player') },
+			ranged = { UnitRangedAttackPower('player') }
+		},
+		damage = {
+			melee = { UnitDamage('player') },
+			ranged = { UnitRangedDamage('player') }
+		},
+		speed = {
+			melee = { UnitAttackSpeed('player') },
+			ranged = UnitRangedDamage('player')
+		},
+		resist = {
+			armor = { UnitResistance('player', 0) },
+			holy = { UnitResistance('player', 1) },
+			fire = { UnitResistance('player', 2) },
+			nature = { UnitResistance('player', 3) },
+			frost = { UnitResistance('player', 4) },
+			shadow = { UnitResistance('player', 5) },
+			arcane = { UnitResistance('player', 6) }
+		},
+		equip = {}
+	};
 
 	for i = 1, table.getn(slotNames) do
 		local slotId = GetInventorySlotInfo(slotNames[i]);
@@ -320,40 +420,169 @@ function getCharStats()
 			GameTooltip:SetOwner(UIParent, "ANCHOR_NONE");
 			GameTooltip:SetHyperlink(itemLink);
 			
-			local itemEquip = '';
-			for k=GameTooltip:NumLines(),2,-1 do
+			local itemEquip = {};
+			for k = GameTooltip:NumLines(), 2, -1 do
 				local toolTipLine = _G["GameTooltipTextLeft" .. k]:GetText() or "";
 
 				if toolTipLine:match('Equip:') ~= nil then
-					if itemEquip == '' then
-						itemEquip = '"' .. toolTipLine .. '"';
-					else
-						itemEquip = itemEquip .. ',"' .. toolTipLine .. '"';
-					end
+					itemEquip[table.getn(itemEquip) + 1] = toolTipLine;
+				end
+
+				local itemArmor = toolTipLine:match('^(%d+) Armor$');
+				if itemArmor ~= nil then
+					stats.armor.equipped = stats.armor.equipped + itemArmor;
 				end
 			end
 
-			if itemEquip ~= '' then
-				equip[table.getn(equip) + 1] = '{"' .. itemId .. '":[' .. itemEquip .. ']}';
+			if table.getn(itemEquip) > 0 then
+				stats.equip[table.getn(stats.equip) + 1] = {
+					id = itemId,
+					bonuses = itemEquip
+				};
 			end
 
 			-- compute stats
 			itemStats = GetItemStats(itemLink);
 
-			agility = agility + (itemStats["ITEM_MOD_AGILITY_SHORT"] or 0);
-			intellect = intellect + (itemStats["ITEM_MOD_INTELLECT_SHORT"] or 0);
-			spirit = spirit + (itemStats["ITEM_MOD_SPIRIT_SHORT"] or 0);
-			stamina = stamina + (itemStats["ITEM_MOD_STAMINA_SHORT"] or 0);
-			strength = strength + (itemStats["ITEM_MOD_STRENGTH_SHORT"] or 0);
+			stats.agility.equipped = stats.agility.equipped + (itemStats["ITEM_MOD_AGILITY_SHORT"] or 0);
+			stats.intellect.equipped = stats.intellect.equipped + (itemStats["ITEM_MOD_INTELLECT_SHORT"] or 0);
+			stats.spirit.equipped = stats.spirit.equipped + (itemStats["ITEM_MOD_SPIRIT_SHORT"] or 0);
+			stats.stamina.equipped = stats.stamina.equipped + (itemStats["ITEM_MOD_STAMINA_SHORT"] or 0);
+			stats.strength.equipped = stats.strength.equipped + (itemStats["ITEM_MOD_STRENGTH_SHORT"] or 0);
+
+			if itemStats["ITEM_MOD_POWER_REGEN0_SHORT"] then
+				stats.mp5.equipped = stats.mp5.equipped + itemStats["ITEM_MOD_POWER_REGEN0_SHORT"] + 1;
+			end
 
 		end
 	end
 
 	GameTooltip:Hide();
 
-	return agility, intellect, spirit, stamina, strength, equip;
+
+	-- compute mana regen values
+	local mp5Base, mp5Casting = GetManaRegen();
+	-- local mp5Base, mp5Casting = 
+	
+	stats.mp5.casting = stats.mp5.equipped; -- Mana points regenerated every five seconds while casting and inside the five second rule
+	stats.mpTick.casting = stats.mp5.equipped * 0.4; -- Mana points regenerated every tick while casting and inside the five second rule -- Ticks are every 2 seconds, or 2/5 of MP5 stat per tick.
+	stats.mp5.notCasting = (mp5Base * 2) + stats.mpTick.casting; -- Total Mana points regenerated per tick while not casting and outside the five second rule
+
+	-- compute defense values
+	local baseDefense, bonusDefense = 0,0;
+	local skillIndex = 0;
+	
+	local numSkills = GetNumSkillLines();
+	
+	for i = 1, numSkills do
+		local skillName = select(1, GetSkillLineInfo(i));
+	
+		if (skillName == DEFENSE) then
+			skillIndex = i;
+	
+			break;
+		end
+	end
+	
+	if (skillIndex > 0) then
+		baseDefense = select(4, GetSkillLineInfo(skillIndex));
+		bonusDefense = select(6, GetSkillLineInfo(skillIndex));
+	else
+		baseDefense, bonusDefense = UnitDefense("player");
+	end
+
+	stats.defense.base = baseDefense;
+	stats.defense.bonus = bonusDefense;
+	stats.defense.total = baseDefense + bonusDefense;
+
+	return stats;
 end
 
+function ttjson(x, isInputTableArray)
+	local buffer = '';
+
+	if isInputTableArray then
+		buffer = '[';
+	else
+		buffer = '{';
+	end
+
+	local xType = type(x)
+	
+	if (xType == 'table') then
+		local index = 0;
+		local xLen = 0;
+
+		for _ in pairs(x) do
+			xLen = xLen + 1;
+		end
+
+		for k, v in pairs(x) do
+			local vType = type(v);
+			index = index + 1;
+
+			if (vType == 'table') then
+				local isArr = true;
+
+				for vKey, _ in pairs(v) do
+					if (type(vKey) ~= 'number') then
+						isArr = false;
+					end
+				end
+
+				if isInputTableArray then
+					buffer = buffer .. ttjson(v, isArr);
+				else
+					buffer = buffer .. jsonkv(k, ttjson(v, isArr));
+				end
+			elseif (vType == 'number') then
+				if isInputTableArray then
+					buffer = buffer .. v;
+				else
+					buffer = buffer .. jsonkv(k, v);
+				end
+			else
+				if isInputTableArray then
+					buffer = buffer .. '"' .. v .. '"';
+				else
+					buffer = buffer .. jsonkvq(k, v);
+				end
+			end
+
+			if index < xLen then
+				buffer = buffer .. ',';
+			end
+		end
+	elseif (xType == 'number') then
+		buffer = buffer .. x;
+	else
+		if (x == nil) then
+			buffer = buffer .. 'null';
+		else
+			buffer = buffer .. '"' .. x .. '"';
+		end
+	end
+
+	if isInputTableArray then
+		buffer = buffer .. ']';
+	else
+		buffer = buffer .. '}';
+	end
+
+	return buffer;
+end
+
+function jsonkv(key, value)
+	if (value == nil) then
+		return string.format('"%s":null', key);
+	else
+		return string.format('"%s":%s', key, value);
+	end
+end
+
+function jsonkvq(key, value)
+	return string.format('"%s":"%s"', key, value);
+end
 
 -- create hook
 local classicArmory = CreateFrame("FRAME", "classicArmoryFrame");
@@ -363,7 +592,7 @@ classicArmory:RegisterEvent("PLAYER_ENTERING_WORLD");
 -- classicArmory:RegisterEvent("CHAT_MSG_CHANNEL");
 
 -- EVENT HANDLER
-local function classicArmoryEventHandler(self, event, ...)
+function classicArmoryEventHandler(self, event, ...)
 	if ( event == "PLAYER_ENTERING_WORLD" ) then
 		classicArmoryInit();
 	end
@@ -413,4 +642,36 @@ function dumpvar(data)
     end
     _dumpvar(data, 0)
     return buffer
+end
+
+
+function CA_Item_Enchant_GetText()
+	local hasBiznicks = false;
+	local MATCH_ENCHANT = ENCHANTED_TOOLTIP_LINE:gsub('%%s', '(.+)')
+	local ENCHANT_PATTERN = ENCHANTED_TOOLTIP_LINE:gsub('%%s', '(.+)') --moving outside of the function might not be warranted but moving outside of for loop is
+	local tooltip = CreateFrame("GameTooltip", "CAScanTooltip", nil, "GameTooltipTemplate") --TODO: use the same frame for both repairs and itemlevel
+	tooltip:SetOwner(UIParent, "ANCHOR_NONE")
+	for _, v in ipairs(CAITEM_SLOT_FRAMES) do
+		v.enchant:SetText("")
+		-- local slotId, textureName = GetInventorySlotInfo(v) --Call for string parsing instead of table lookup, bleh.
+		local item = Item:CreateFromEquipmentSlot(v:GetID())
+		local itemLink = GetInventoryItemLink("player", v:GetID())
+		if itemLink then
+			local itemName, itemStringLink = GetItemInfo(itemLink)
+			if itemStringLink then
+				local _, _, Color, Ltype, Id, Enchant, Gem1, Gem2, Gem3, Gem4, Suffix, Unique, LinkLvl, Name = string.find(itemStringLink,
+				"|?c?f?f?(%x*)|?H?([^:]*):?(%d+):?(%d*):?(%d*):?(%d*):?(%d*):?(%d*):?(%-?%d*):?(%-?%d*):?(%d*):?(%d*):?(%-?%d*)|?h?%[?([^%[%]]*)%]?|?h?|?r?")
+				
+				if (slot == CharacterRangedSlot) then
+					if (Enchant == 2523) then
+						hasBiznicks = true
+					end
+				end
+			end
+			tooltip:ClearLines()
+			tooltip:SetHyperlink(itemLink)
+		end
+	end
+
+	return hasBiznicks;
 end
