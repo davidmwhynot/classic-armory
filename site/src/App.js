@@ -1,18 +1,27 @@
 import React, { Component } from 'react';
 import { withRouter, Route } from 'react-router-dom';
+
+import { connect } from 'react-redux';
+
 import $ from 'jquery';
+
+import { pageLoaded } from './actions/pageActions';
 
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Character from './components/Character';
 import Error from './components/Error';
-// import Admin from './components/Admin';
+import Admin from './components/Admin';
 import BugLink from './components/BugLink';
 
 class App extends Component {
 	state = {
 		loading: false,
 		error: null
+	};
+
+	componentWillMount = () => {
+		this.props.pageLoaded(this.props.location.pathname);
 	};
 
 	componentDidMount = async () => {
@@ -81,12 +90,16 @@ class App extends Component {
 		let appBody = null;
 
 		if (this.state.loading) {
-			appBody = <h1>Loading</h1>;
+			appBody = (
+				<div className="container">
+					<h1>Loading</h1>
+				</div>
+			);
 		} else {
 			appBody = (
 				<div className="container-fluid mt-3">
 					<Route exact path="/" component={Home} />
-					{/* <Route exact path="/admin/get" component={Admin} /> */}
+					<Route exact path="/admin/get" component={Admin} />
 					{/* <Route path="/:id" component={Character} /> */}
 					<Route
 						exact
@@ -112,11 +125,24 @@ class App extends Component {
 		return (
 			<div className="App">
 				<Navbar />
-				{this.state.error !== null ? <Error error={this.state.error} /> : ''}
+				{this.state.error !== null ? (
+					<Error error={this.state.error} />
+				) : (
+					''
+				)}
 				{appBody}
 			</div>
 		);
 	}
 }
 
-export default withRouter(App);
+const mapStateToProps = state => {
+	return {
+		...state
+	};
+};
+
+export default connect(
+	mapStateToProps,
+	{ pageLoaded }
+)(withRouter(App));
