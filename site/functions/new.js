@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 const { get } = require('axios');
 const { Parser } = require('xml2js');
 
-const Character = require('./CharacterModel');
+const Character = require('./models/CharacterModel');
 
 // config
 const Schema = mongoose.Schema;

@@ -1,12 +1,13 @@
 // import
 const mongoose = require('mongoose');
 
-let Character = null;
-if (process.env.NODE_ENV !== 'production') {
-	Character = require('../new/CharacterModel');
-} else {
-	Character = require('./Character');
-}
+// let Character = null;
+// if (process.env.NODE_ENV !== 'production') {
+// 	Character = require('../new/CharacterModel');
+// } else {
+// 	Character = require('./Character');
+// }
+const Character = require('./models/CharacterModel');
 
 // config
 const uri = `mongodb+srv://${process.env.CLASSICARMORY_DB_LOGIN}.mongodb.net/test?retryWrites=true&w=majority`;

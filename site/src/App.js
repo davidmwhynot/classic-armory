@@ -11,7 +11,7 @@ import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Character from './components/Character';
 import Error from './components/Error';
-import Admin from './components/Admin';
+// import Admin from './components/Admin';
 import BugLink from './components/BugLink';
 
 class App extends Component {
@@ -99,7 +99,7 @@ class App extends Component {
 			appBody = (
 				<div className="container-fluid mt-3">
 					<Route exact path="/" component={Home} />
-					<Route exact path="/admin/get" component={Admin} />
+					{/* <Route exact path="/admin/get" component={Admin} /> */}
 					{/* <Route path="/:id" component={Character} /> */}
 					<Route
 						exact

@@ -3,21 +3,28 @@ const mongoose = require('mongoose');
 const jsonColorizer = require('json-colorizer');
 const Cryptr = require('cryptr');
 
-const Session = require('./SessionModel');
+const Session = require('./models/SessionModel');
 
-let Character = null;
-if (process.env.NODE_ENV !== 'production') {
-	Character = require('../new/CharacterModel');
-} else {
-	Character = require('./Character');
-}
+// env vars
+const {
+	NODE_ENV,
+	CLASSICARMORY_DB_LOGIN,
+	CLASSICARMORY_SESSION_SECRET
+} = process.env;
+
+// let Character = null;
+// if (NODE_ENV !== 'production') {
+// 	Character = require('../new/CharacterModel');
+// } else {
+// 	Character = require('./Character');
+// }
+const Character = require('./models/CharacterModel');
 
 // config
 // const Schema = mongoose.Schema;
-const uri = `mongodb+srv://${process.env.CLASSICARMORY_DB_LOGIN}.mongodb.net/test?retryWrites=true&w=majority`;
-const { encrypt, decrypt } = new Cryptr(
-	process.env.CLASSICARMORY_SESSION_SECRET
-);
+const uri = `mongodb+srv://${CLASSICARMORY_DB_LOGIN}.mongodb.net/test?retryWrites=true&w=majority`;
+const { encrypt, decrypt } = new Cryptr(CLASSICARMORY_SESSION_SECRET);
+const isProduction = NODE_ENV === 'production';
 
 // connect
 mongoose.connect(uri, { useNewUrlParser: true });
@@ -77,10 +84,18 @@ exports.handler = async function(event, context) {
 		logo(session, 'session');
 
 		// const ran = Math.floor(Math.random() * 10);
+		const expiresDate = new Date(
+			Date.now() + 10 * 365 * 24 * 60 * 60 * 1000
+		);
+		console.log(expiresDate.toUTCString());
 
 		return {
 			headers: {
-				'Set-Cookie': `_sess=${encrypt(session._id)}`
+				'Set-Cookie': `_sess=${encrypt(
+					session._id
+				)}; Expires=${expiresDate.toUTCString()}; SameSite=strict;${
+					isProduction ? ' Secure;' : ''
+				} HttpOnly`
 				// 'Set-Cookie': `_sess${ran}=${encrypt(savedSession._id)}`
 			},
 			statusCode: 200,
