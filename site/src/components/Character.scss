@@ -57,22 +57,22 @@ $color-q: #ffd100;
 }
 
 .color-rarity {
-	&-poor {
+	&-0 {
 		color: $color-poor;
 	}
-	&-common {
+	&-1 {
 		color: $color-common;
 	}
-	&-uncommon {
+	&-2 {
 		color: $color-uncommon;
 	}
-	&-rare {
+	&-3 {
 		color: $color-rare;
 	}
-	&-epic {
+	&-4 {
 		color: $color-epic;
 	}
-	&-legendary {
+	&-5 {
 		color: $color-legendary;
 	}
 }
@@ -129,22 +129,22 @@ $color-q: #ffd100;
 }
 
 .border-rarity {
-	&-poor {
+	&-0 {
 		border: 1px solid $color-poor;
 	}
-	&-common {
+	&-1 {
 		border: 1px solid $color-common;
 	}
-	&-uncommon {
+	&-2 {
 		border: 1px solid $color-uncommon;
 	}
-	&-rare {
+	&-3 {
 		border: 1px solid $color-rare;
 	}
-	&-epic {
+	&-4 {
 		border: 1px solid $color-epic;
 	}
-	&-legendary {
+	&-5 {
 		border: 1px solid $color-legendary;
 	}
 }

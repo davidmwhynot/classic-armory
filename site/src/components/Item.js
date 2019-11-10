@@ -29,7 +29,7 @@ class Item extends Component {
 				</div>
 			);
 		} else {
-			const { iconUrl, itemName, rarity, stats, link } = this.props;
+			const { iconUrl, itemName, quality, stats, link } = this.props;
 
 			let style = this.state.isStatsVisible
 				? { display: 'block' }
@@ -48,11 +48,14 @@ class Item extends Component {
 							this.setState({ isStatsVisible: false });
 						}}
 					>
-						<img src={iconUrl} className={'item-img border-rarity-' + rarity} />
+						<img
+							src={iconUrl}
+							className={'item-img border-rarity-' + quality}
+						/>
 					</a>
 					<div className="item-description">
 						<div
-							className={'item-stats border-rarity-' + rarity}
+							className={'item-stats border-rarity-' + quality}
 							dangerouslySetInnerHTML={{ __html: stats }}
 							style={style}
 						/>
@@ -60,7 +63,7 @@ class Item extends Component {
 							<a
 								href={link}
 								target="_blank"
-								className={'color-rarity-' + rarity}
+								className={'color-rarity-' + quality}
 							>
 								{itemName}
 							</a>

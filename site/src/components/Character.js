@@ -66,7 +66,11 @@ class Character extends Component {
 
 			return (
 				<div>
-					{this.state.error !== null ? <Error error={this.state.error} /> : ''}
+					{this.state.error !== null ? (
+						<Error error={this.state.error} />
+					) : (
+						''
+					)}
 
 					<div className="character">
 						<div>
@@ -94,25 +98,32 @@ class Character extends Component {
 							<div className="character-doll">
 								{Object.keys(items).map(key => {
 									if (items[key] === null) {
-										return <Item slot={key} empty={true} key={key} />;
+										return (
+											<Item
+												slot={key}
+												empty={true}
+												key={key}
+											/>
+										);
 									} else {
-										console.log('items[key]', key, items[key]);
+										console.log(
+											'items[key]',
+											key,
+											items[key]
+										);
 
 										const {
+											id,
 											icon,
-											level,
-											link,
 											name: itemName,
-											htmlTooltip,
+											tooltip,
 											quality
 										} = items[key];
-
-										const rarity = quality[0]['_'].toLowerCase();
 
 										const iconUrl =
 											process.env.PUBLIC_URL +
 											'/icons/' +
-											icon[0]['_'] +
+											icon +
 											'.png';
 
 										return (
@@ -120,11 +131,13 @@ class Character extends Component {
 												slot={key}
 												empty={false}
 												iconUrl={iconUrl}
-												itemName={itemName[0]}
-												rarity={rarity}
-												stats={htmlTooltip}
-												link={link[0]}
-												level={level[0]}
+												itemName={itemName}
+												quality={quality}
+												stats={tooltip}
+												link={
+													'https://classic.wowhead.com/?item=' +
+													id
+												}
 												key={key}
 											/>
 										);

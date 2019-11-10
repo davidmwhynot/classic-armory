@@ -2,9 +2,8 @@
 const mongoose = require('mongoose');
 
 const { get } = require('axios');
-const { Parser } = require('xml2js');
 
-const { getSession } = require('./utils');
+const { getSession, logo } = require('./utils');
 
 const Character = require('./models/CharacterModel');
 
@@ -18,8 +17,6 @@ mongoose.connect(uri, { useNewUrlParser: true });
 exports.handler = async function(event, context) {
 	try {
 		const req = JSON.parse(event.body);
-
-		const parser = new Parser();
 
 		const charData = {
 			name: req.name,
@@ -36,20 +33,26 @@ exports.handler = async function(event, context) {
 			const val = item[key];
 
 			if (val !== null && val !== 0) {
-				const wowheadRes = await get(
-					'https://classic.wowhead.com/?item=' + val + '&xml'
+				const res = await get(
+					'https://classic.wowhead.com/tooltip/item/' + val
 				);
 
-				const data = await parser.parseStringPromise(wowheadRes.data);
+				// const data = await parser.parseStringPromise(wowheadRes.data);
 
-				charData.items[key.replace(/Slot/, '').toLowerCase()] =
-					data.wowhead.item[0];
+				charData.items[key.replace(/Slot/, '').toLowerCase()] = {
+					id: val,
+					...res.data
+				};
 			} else {
 				charData.items[key.replace(/Slot/, '').toLowerCase()] = null;
 			}
 		}
 
+		const session = await getSession(event.headers);
+
 		const newCharacter = new Character({
+			session: session._id,
+			version: 'v0.0.1',
 			name: charData.name,
 			realm: charData.realm,
 			data: JSON.stringify(charData)
@@ -57,22 +60,25 @@ exports.handler = async function(event, context) {
 
 		const savedCharacter = await newCharacter.save();
 
-		const session = getSession(event.headers);
+		let uploads = session.data.uploads || [];
+		if (uploads.length > 4) {
+			uploads.shift();
+		}
 
-		// update session
-		getSession(event.headers, {
-			uploads: [
-				...session.data.uploads,
-				{
-					_id: savedCharacter._id,
-					name: savedCharacter.name,
-					realm: savedCharacter.realm,
-					time: savedCharacter.time
-				}
-			]
+		uploads.push({
+			_id: savedCharacter._id,
+			name: savedCharacter.name,
+			realm: savedCharacter.realm,
+			time: savedCharacter.time
 		});
 
+		// update session
+		const newSession = await getSession(event.headers, { uploads });
+
+		logo(newSession);
+
 		return {
+			// TODO: set session cookie
 			statusCode: 200,
 			body: JSON.stringify({ success: true, url: savedCharacter._id })
 		};

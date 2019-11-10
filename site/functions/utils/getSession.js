@@ -24,7 +24,7 @@ module.exports = (headers, data = {}) => {
 				_id: decrypt(cookie)
 			});
 
-			logo(oldSession, 'oldSession');
+			// logo(oldSession, 'oldSession');
 
 			oldSession.updated = Date.now();
 			oldSession.data = {
