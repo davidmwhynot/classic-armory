@@ -112,7 +112,58 @@ class App extends Component {
 		return (
 			<div className="App">
 				<Navbar />
-				{this.state.error !== null ? <Error error={this.state.error} /> : ''}
+				{this.state.error !== null ? (
+					<Error error={this.state.error} />
+				) : (
+					''
+				)}
+				<div className="container">
+					<div
+						className="alert alert-warning my-3 mx-auto"
+						role="alert"
+					>
+						<h3>Urgent News</h3>
+						<h6 className="my-1">
+							At this time, uploading new characters will not
+							work.
+						</h6>
+						<p className="my-1">
+							Once of the key pieces that allows Classic Armory to
+							work was powered by a WoW Head item API that was
+							deprecated on November 8th.
+						</p>
+						<p className="my-1">
+							Unfortunately, the decision to deprecate this API
+							was beyond our control. It happened suddenly and
+							without any warning.
+						</p>
+						<p className="my-1">
+							We would greatly appreciate if you added your voice
+							to{' '}
+							<a
+								href="https://www.wowhead.com/forums&topic=296141"
+								target="_blank"
+							>
+								this forum thread on WoW Head
+							</a>
+							. Let them know that you use Classic Armory and are
+							disappointed that this feature was removed.
+						</p>
+						<p className="my-1">
+							We are currently working on a replacement for this
+							functionality and will have an updated version of
+							the site up as soon as possible. In the meantime,
+							check for updates to the Addon via the curse client
+							regularly as the fix may require an updated addon
+							version.
+						</p>
+						<p className="mb-0">
+							We will post updates to the situation right here as
+							they become available. Stay tuned, and thank you for
+							using Classic Armory.
+						</p>
+					</div>
+				</div>
 				{appBody}
 			</div>
 		);
