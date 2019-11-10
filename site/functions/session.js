@@ -12,6 +12,8 @@ const {
 	CLASSICARMORY_SESSION_SECRET
 } = process.env;
 
+// trigger deploy
+
 // let Character = null;
 // if (NODE_ENV !== 'production') {
 // 	Character = require('../new/CharacterModel');
