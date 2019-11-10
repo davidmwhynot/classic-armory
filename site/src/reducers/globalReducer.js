@@ -1,4 +1,4 @@
-import { SESSION_LOADED } from '../actions/types';
+import { GLOBAL_LOADED } from '../actions/types';
 
 const initialState = {
 	loaded: false
@@ -6,10 +6,10 @@ const initialState = {
 
 export default function(state = initialState, action) {
 	switch (action.type) {
-		case SESSION_LOADED:
+		case GLOBAL_LOADED:
 			return {
 				...state,
-				...action.payload.session,
+				...action.payload.global,
 				loaded: true
 			};
 		default:

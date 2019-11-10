@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import './Wowhead.scss';
+
+import '../sass/Wowhead.scss';
 
 class Item extends Component {
 	state = {

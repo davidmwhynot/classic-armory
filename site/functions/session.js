@@ -48,7 +48,7 @@ exports.handler = async function(event, context) {
 			session = await getSession(req.event.headers);
 		}
 
-		logo(session, 'session');
+		// logo(session, 'session');
 
 		const expiresDate = new Date(
 			Date.now() + 10 * 365 * 24 * 60 * 60 * 1000

@@ -7,6 +7,14 @@ const characterSchema = mongoose.Schema({
 		type: String,
 		default: shortid.generate
 	},
+	session: {
+		type: String,
+		required: true
+	},
+	version: {
+		type: String,
+		required: true
+	},
 	name: {
 		type: String,
 		required: true,

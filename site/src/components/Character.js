@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import './Character.scss';
+
 import Item from './Item';
 import Error from './Error';
+
+import '../sass/Character.scss';
 
 class Character extends Component {
 	state = {

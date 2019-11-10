@@ -1,5 +1,6 @@
 import React from 'react';
-import './BugLink.scss';
+
+import '../sass/BugLink.scss';
 
 const BugLink = () => {
 	return (

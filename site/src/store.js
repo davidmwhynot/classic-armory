@@ -8,12 +8,15 @@ import rootReducer from './reducers';
 const initialState = {
 	session: {
 		loaded: false
+	},
+	global: {
+		loaded: false
 	}
 };
 
 let store;
 
-if (process.env.NODE_ENV == 'production') {
+if (process.env.NODE_ENV === 'production') {
 	store = createStore(rootReducer, initialState, applyMiddleware(thunk));
 } else {
 	const middleware = [thunk, logger];

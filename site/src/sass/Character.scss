@@ -107,25 +107,21 @@ $color-q: #ffd100;
 
 .moneygold {
 	display: inline-block;
-	background: no-repeat right center;
+	background: no-repeat right bottom;
 	padding-right: 15px;
-	background-image: url(/media/money-gold.gif);
+	background-image: url('/media/money-gold.gif');
 }
 .moneysilver {
 	display: inline-block;
-	background: no-repeat right center;
+	background: no-repeat right bottom;
 	padding-right: 15px;
-	background-image: url(/media/money-silver.gif);
+	background-image: url('/media/money-silver.gif');
 }
 .moneycopper {
 	display: inline-block;
-	background: no-repeat right center;
+	background: no-repeat right bottom;
 	padding-right: 15px;
-	background-image: url(/media/money-copper.gif);
-}
-
-.badge {
-	padding-bottom: 0.3em !important;
+	background-image: url('/media/money-copper.gif');
 }
 
 .border-rarity {
@@ -153,6 +149,10 @@ $color-q: #ffd100;
 	max-width: 1000px;
 	width: max-content;
 	margin: 0 auto;
+
+	// @media (max-width: 970px) {
+	// TODO
+	// }
 }
 
 .character-header {
@@ -165,17 +165,14 @@ $color-q: #ffd100;
 		h1 {
 			line-height: 1;
 			margin-bottom: 0;
-			font-size: 1.1rem;
 		}
 		h2 {
 			margin-bottom: 0;
-			font-size: 0.95rem;
 		}
 	}
 	.character-tagline {
 		h4 {
 			margin-bottom: 0;
-			font-size: 0.65rem;
 		}
 	}
 }
@@ -186,18 +183,19 @@ $color-q: #ffd100;
 
 	width: max-content;
 
-	padding: 0.2rem;
+	padding: 0.4em;
 
 	text-align: left !important;
-	font-size: 0.4rem;
 
 	background-color: rgba(0, 0, 0, 0.8);
-	// border-radius: 5px;
 
 	transition: opacity 100ms linear;
 
 	a {
 		color: inherit;
+	}
+	table {
+		max-width: 300px;
 	}
 }
 
@@ -222,9 +220,8 @@ $color-q: #ffd100;
 	display: grid;
 
 	grid-template-rows: repeat(8, 3fr) 5fr 6fr 3fr;
-	// grid-template-columns: 10fr repeat(6, 7fr) 10fr;
 	grid-template-columns: repeat(8, 1fr);
-	grid-gap: 0.3rem;
+	grid-gap: 0.5em;
 
 	grid-template-areas:
 		'head head head . . hands hands hands'
@@ -239,9 +236,14 @@ $color-q: #ffd100;
 		'. . . . . . ammo ammo'
 		'bag0 bag0 bag1 bag1 bag2 bag2 bag3 bag3';
 
+	// @media (max-width: 970px) {
+	// TODO
+	// 	grid-template-areas: ;
+	// }
+
 	align-items: center;
 
-	margin-bottom: 2rem;
+	margin-bottom: 3em;
 
 	position: relative;
 
@@ -349,13 +351,7 @@ $color-q: #ffd100;
 
 				width: calc(100% - 80px);
 
-				font-size: 0.5rem;
-
 				line-height: 1.1;
-
-				.item-name {
-					font-size: 0.55rem;
-				}
 
 				.item-stat {
 					display: flex;

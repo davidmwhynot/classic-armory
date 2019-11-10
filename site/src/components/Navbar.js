@@ -1,6 +1,8 @@
 import React from 'react';
 import { Navbar, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 
+import '../sass/Navbar.scss';
+
 export default class Example extends React.Component {
 	constructor(props) {
 		super(props);
@@ -24,13 +26,13 @@ export default class Example extends React.Component {
 					color="dark"
 					dark
 					expand={true}
-					style={{ maxHeight: 50, padding: 16, fontSize: '0.5rem' }}
+					style={{ maxHeight: 50, padding: 16 }}
 				>
 					<div className="container">
-						<NavbarBrand href="/" style={{ fontSize: 20, marginRight: 16 }}>
+						<NavbarBrand href="/" style={{}}>
 							WoW Classic Armory{' '}
+							<span className="badge badge-warning">BETA</span>
 						</NavbarBrand>
-						<span className="badge badge-warning">BETA</span>
 						<Nav className="mr-auto" navbar>
 							<NavItem>
 								<NavLink

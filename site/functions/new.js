@@ -6,6 +6,7 @@ const { get } = require('axios');
 const { getSession, logo } = require('./utils');
 
 const Character = require('./models/CharacterModel');
+const AppState = require('./models/AppStateModel');
 
 // config
 const uri = `mongodb+srv://${process.env.CLASSICARMORY_DB_LOGIN}.mongodb.net/test?retryWrites=true&w=majority`;
@@ -75,7 +76,33 @@ exports.handler = async function(event, context) {
 		// update session
 		const newSession = await getSession(event.headers, { uploads });
 
-		logo(newSession);
+		// update AppState
+		const appState =
+			(await AppState.find())[0] ||
+			new AppState({
+				uploads: [],
+				updated: Date.now()
+			});
+
+		logo(appState);
+
+		let globalUploads = appState.uploads || [];
+		if (globalUploads.length > 4) {
+			globalUploads.shift();
+		}
+
+		globalUploads.push({
+			_id: savedCharacter._id,
+			name: savedCharacter.name,
+			realm: savedCharacter.realm,
+			time: savedCharacter.time
+		});
+
+		appState.uploads = globalUploads;
+		appState.updated = Date.now();
+		const newAppState = await appState.save();
+
+		logo(newAppState);
 
 		return {
 			// TODO: set session cookie
