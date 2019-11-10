@@ -2,7 +2,7 @@ const shortid = require('shortid');
 const mongoose = require('mongoose');
 
 // Character model
-const characterSchema = mongoose.Schema({
+const schema = mongoose.Schema({
 	_id: {
 		type: String,
 		default: shortid.generate
@@ -32,4 +32,23 @@ const characterSchema = mongoose.Schema({
 	time: { type: Date, default: Date.now }
 });
 
-module.exports = mongoose.model('Character', characterSchema);
+let schemaName = 'Character';
+
+if (process.env.NODE_ENV !== 'production') {
+	schemaName = 'Test' + schemaName;
+}
+
+if (!modelAreadyDeclared(schemaName)) {
+	module.exports = mongoose.model(schemaName, schema);
+} else {
+	module.exports = mongoose.model(schemaName);
+}
+
+function modelAreadyDeclared(schemaName) {
+	try {
+		mongoose.model(schemaName);
+		return true;
+	} catch (e) {
+		return false;
+	}
+}

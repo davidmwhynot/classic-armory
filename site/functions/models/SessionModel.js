@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
-// Character model
-const sessionSchema = mongoose.Schema({
+// Session model
+const schema = mongoose.Schema({
 	data: {
 		type: Object,
 		required: true
@@ -10,10 +10,23 @@ const sessionSchema = mongoose.Schema({
 	updated: { type: Date, default: Date.now }
 });
 
-let schemaName = '';
-if (process.env.NODE_ENV === 'production') {
-	shcemaName = 'Session';
-} else {
-	schemaName = 'TestSession';
+let schemaName = 'Session';
+
+if (process.env.NODE_ENV !== 'production') {
+	schemaName = 'Test' + schemaName;
 }
-module.exports = mongoose.model(schemaName, sessionSchema);
+
+if (!modelAreadyDeclared(schemaName)) {
+	module.exports = mongoose.model(schemaName, schema);
+} else {
+	module.exports = mongoose.model(schemaName);
+}
+
+function modelAreadyDeclared(schemaName) {
+	try {
+		mongoose.model(schemaName);
+		return true;
+	} catch (e) {
+		return false;
+	}
+}
