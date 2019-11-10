@@ -25,23 +25,27 @@ class RecentUploads extends Component {
 				</div>
 			);
 
-			if (this.props.session.uploads.length > 0) {
-				sessionUploads = (
-					<div className="my-uploads col-md-6 col-lg-5">
-						<h4>My Uploads</h4>
-						{this.props.session.uploads.map(
-							({ _id, name, realm, time }) => (
-								<CharacterUpload
-									_id={_id}
-									name={name}
-									realm={realm}
-									time={time}
-									key={_id}
-								/>
-							)
-						)}
-					</div>
-				);
+			if (this.props.session.uploads) {
+				if (this.props.session.uploads.length > 0) {
+					sessionUploads = (
+						<div className="my-uploads col-md-6 col-lg-5">
+							<h4>My Uploads</h4>
+							{this.props.session.uploads.map(
+								({ _id, name, realm, time }) => (
+									<CharacterUpload
+										_id={_id}
+										name={name}
+										realm={realm}
+										time={time}
+										key={_id}
+									/>
+								)
+							)}
+						</div>
+					);
+				} else {
+					sessionUploads = null;
+				}
 			} else {
 				sessionUploads = null;
 			}
