@@ -84,6 +84,7 @@ exports.handler = async function(event, context) {
 		logo(session, 'session');
 
 		// const ran = Math.floor(Math.random() * 10);
+		// console.log(notDefined);
 		const expiresDate = new Date(
 			Date.now() + 10 * 365 * 24 * 60 * 60 * 1000
 		);
@@ -106,7 +107,11 @@ exports.handler = async function(event, context) {
 
 		return {
 			statusCode: 200,
-			body: JSON.stringify({ error: err.message })
+			body: JSON.stringify({
+				success: false,
+				error: err.message,
+				stack: err.stack
+			})
 		};
 	}
 };

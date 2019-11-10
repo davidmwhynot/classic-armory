@@ -7,6 +7,8 @@ export const pageLoaded = loc => async dispatch => {
 		headers: { 'Content-Type': 'application/json' }
 	})).json();
 
+	console.log(payload);
+
 	payload.loading = false;
 
 	dispatch({ type: PAGE_LOADED, payload });
