@@ -1,12 +1,6 @@
 // import
 const mongoose = require('mongoose');
 
-// let Character = null;
-// if (process.env.NODE_ENV !== 'production') {
-// 	Character = require('../new/CharacterModel');
-// } else {
-// 	Character = require('./Character');
-// }
 const Character = require('./models/CharacterModel');
 
 // config
@@ -19,13 +13,7 @@ mongoose.connect(uri, { useNewUrlParser: true });
 exports.handler = async function(event, context) {
 	try {
 		const req = event.body;
-		console.log('req');
-		console.log(req);
-
-		// console.log('Character', Character);
 		const character = await Character.findOne({ _id: req });
-		console.log('character._id');
-		console.log(character._id);
 
 		return {
 			statusCode: 200,

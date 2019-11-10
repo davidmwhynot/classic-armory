@@ -1,18 +1,15 @@
-// for (const envVar of process.env) {
-// 	console.log(envVar);
-// }
 // import
 const mongoose = require('mongoose');
 
 const { get } = require('axios');
 const { Parser } = require('xml2js');
 
+const { getSession } = require('./utils');
+
 const Character = require('./models/CharacterModel');
 
 // config
-const Schema = mongoose.Schema;
 const uri = `mongodb+srv://${process.env.CLASSICARMORY_DB_LOGIN}.mongodb.net/test?retryWrites=true&w=majority`;
-console.log('uri', uri);
 
 // connect
 mongoose.connect(uri, { useNewUrlParser: true });
@@ -20,12 +17,7 @@ mongoose.connect(uri, { useNewUrlParser: true });
 // request handler
 exports.handler = async function(event, context) {
 	try {
-		// console.log('proces.env.NODE_ENV', process.env.NODE_ENV);
-
-		// const req = event.body;
 		const req = JSON.parse(event.body);
-		// console.log('req');
-		// console.log(req);
 
 		const parser = new Parser();
 
@@ -40,23 +32,15 @@ exports.handler = async function(event, context) {
 		};
 
 		for (const item of req.items) {
-			// console.log('item', item);
-
 			const key = Object.keys(item)[0];
 			const val = item[key];
 
-			// console.log(key, val);
-
 			if (val !== null && val !== 0) {
 				const wowheadRes = await get(
-					'https://classic.wowhead.com/item=' + val + '&xml'
+					'https://classic.wowhead.com/?item=' + val + '&xml'
 				);
 
-				// console.log(wowheadRes.data);
-
 				const data = await parser.parseStringPromise(wowheadRes.data);
-
-				// console.log(data.wowhead.item);
 
 				charData.items[key.replace(/Slot/, '').toLowerCase()] =
 					data.wowhead.item[0];
@@ -64,8 +48,6 @@ exports.handler = async function(event, context) {
 				charData.items[key.replace(/Slot/, '').toLowerCase()] = null;
 			}
 		}
-
-		// console.log('charData', charData);
 
 		const newCharacter = new Character({
 			name: charData.name,
@@ -75,7 +57,20 @@ exports.handler = async function(event, context) {
 
 		const savedCharacter = await newCharacter.save();
 
-		// console.log('savedCharacter', savedCharacter);
+		const session = getSession(event.headers);
+
+		// update session
+		getSession(event.headers, {
+			uploads: [
+				...session.data.uploads,
+				{
+					_id: savedCharacter._id,
+					name: savedCharacter.name,
+					realm: savedCharacter.realm,
+					time: savedCharacter.time
+				}
+			]
+		});
 
 		return {
 			statusCode: 200,
