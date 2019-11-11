@@ -11,8 +11,9 @@ class RecentUploads extends Component {
 			globalUploads = (
 				<div className="global-uploads col-md-6 col-lg-5">
 					<h4>Recent Uploads</h4>
-					{this.props.global.uploads.map(
-						({ _id, name, realm, time }) => (
+					{this.props.global.uploads
+						.reverse()
+						.map(({ _id, name, realm, time }) => (
 							<CharacterUpload
 								_id={_id}
 								name={name}
@@ -20,8 +21,7 @@ class RecentUploads extends Component {
 								time={time}
 								key={_id}
 							/>
-						)
-					)}
+						))}
 				</div>
 			);
 
@@ -30,8 +30,9 @@ class RecentUploads extends Component {
 					sessionUploads = (
 						<div className="my-uploads col-md-6 col-lg-5">
 							<h4>My Uploads</h4>
-							{this.props.session.uploads.map(
-								({ _id, name, realm, time }) => (
+							{this.props.session.uploads
+								.reverse()
+								.map(({ _id, name, realm, time }) => (
 									<CharacterUpload
 										_id={_id}
 										name={name}
@@ -39,8 +40,7 @@ class RecentUploads extends Component {
 										time={time}
 										key={_id}
 									/>
-								)
-							)}
+								))}
 						</div>
 					);
 				} else {
