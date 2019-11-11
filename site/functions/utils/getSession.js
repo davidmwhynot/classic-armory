@@ -12,7 +12,7 @@ const { decrypt } = new Cryptr(CLASSICARMORY_SESSION_SECRET);
 module.exports = (headers, data = {}) => {
 	return new Promise(async resolve => {
 		const parsedCookie = headers.cookie
-			? headers.cookie.match(/_sess=([a-z0-9]+);?/)
+			? headers.cookie.match(/_sess_v1=([a-z0-9]+);?/)
 			: false;
 
 		const cookie = parsedCookie ? parsedCookie[1] : false;

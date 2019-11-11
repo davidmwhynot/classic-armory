@@ -1,8 +1,5 @@
-// import
-const mongoose = require('mongoose');
-const Cryptr = require('cryptr');
-
-const { getSession, logo } = require('./utils');
+let encrypt;
+let logo, getSession;
 
 // env vars
 const {
@@ -11,16 +8,46 @@ const {
 	CLASSICARMORY_SESSION_SECRET
 } = process.env;
 
-// config
-const uri = `mongodb+srv://${CLASSICARMORY_DB_LOGIN}.mongodb.net/test?retryWrites=true&w=majority`;
-const { encrypt } = new Cryptr(CLASSICARMORY_SESSION_SECRET);
 const isProduction = NODE_ENV === 'production';
 
-// connect
-mongoose.connect(uri, { useNewUrlParser: true });
+let setupError = false;
+
+try {
+	// import
+	const mongoose = require('mongoose');
+	const Cryptr = require('cryptr');
+
+	// console.log(undef);
+
+	const utils = require('./utils');
+	logo = utils.logo;
+	getSession = utils.getSession;
+
+	// cryptr
+	let cryptr = new Cryptr(CLASSICARMORY_SESSION_SECRET);
+	encrypt = cryptr.encrypt;
+
+	// connect
+	const uri = `mongodb+srv://${CLASSICARMORY_DB_LOGIN}.mongodb.net/test?retryWrites=true&w=majority`;
+	mongoose.connect(uri, { useNewUrlParser: true });
+} catch (err) {
+	setupError = err;
+	console.error(err);
+}
 
 // request handler
 exports.handler = async function(event, context) {
+	if (setupError) {
+		return {
+			statusCode: 200,
+			body: JSON.stringify({
+				success: false,
+				error: setupError.message,
+				stack: setupError.stack
+			})
+		};
+	}
+
 	try {
 		let req;
 
@@ -48,15 +75,13 @@ exports.handler = async function(event, context) {
 			session = await getSession(req.event.headers);
 		}
 
-		// logo(session, 'session');
-
 		const expiresDate = new Date(
 			Date.now() + 10 * 365 * 24 * 60 * 60 * 1000
 		);
 
 		return {
 			headers: {
-				'Set-Cookie': `_sess=${encrypt(
+				'Set-Cookie': `_sess_v1=${encrypt(
 					session._id
 				)}; Expires=${expiresDate.toUTCString()}; SameSite=strict;${
 					isProduction ? ' Secure;' : ''

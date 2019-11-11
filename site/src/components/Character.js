@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import * as Sentry from '@sentry/browser';
+
 import Item from './Item';
 import Error from './Error';
 
@@ -16,19 +18,38 @@ class Character extends Component {
 			console.log('this.props.match.params.id');
 			console.log(this.props.match.params.id);
 
-			const res = await (await fetch('/.netlify/functions/get', {
-				method: 'POST',
-				body: this.props.match.params.id,
-				headers: { 'Content-Type': 'application/json' }
-			})).json();
+			try {
+				const resRaw = await fetch('/.netlify/functions/get', {
+					method: 'POST',
+					body: this.props.match.params.id,
+					headers: { 'Content-Type': 'application/json' }
+				});
 
-			if (res.error) {
+				if (!resRaw.ok) {
+					throw Error(resRaw.statusText);
+				}
+
+				const res = await resRaw.json();
+
+				if (res.error) {
+					console.log(res);
+
+					Sentry.captureMessage(res.stack);
+
+					this.setState({
+						loading: false,
+						error: 'Something went wrong. Please try again.'
+					});
+				} else {
+					this.setState({ ...res, loading: false });
+				}
+			} catch (err) {
+				Sentry.captureException(err);
+
 				this.setState({
 					loading: false,
 					error: 'Something went wrong. Please try again.'
 				});
-			} else {
-				this.setState({ ...res, loading: false });
 			}
 		} catch (e) {
 			this.setState({

@@ -1,21 +1,46 @@
-// import
+// initial import
+const { get } = require('axios');
 const mongoose = require('mongoose');
 
-const { get } = require('axios');
+let getSession,
+	logo,
+	Character,
+	AppState,
+	setupError = false;
+try {
+	// local import
+	const utils = require('./utils');
 
-const { getSession, logo } = require('./utils');
+	getSession = utils.getSession;
+	logo = utils.logo;
 
-const Character = require('./models/CharacterModel');
-const AppState = require('./models/AppStateModel');
+	Character = require('./models/CharacterModel');
+	AppState = require('./models/AppStateModel');
 
-// config
-const uri = `mongodb+srv://${process.env.CLASSICARMORY_DB_LOGIN}.mongodb.net/test?retryWrites=true&w=majority`;
+	// config
+	const uri = `mongodb+srv://${process.env.CLASSICARMORY_DB_LOGIN}.mongodb.net/test?retryWrites=true&w=majority`;
 
-// connect
-mongoose.connect(uri, { useNewUrlParser: true });
+	// connect
+	mongoose.connect(uri, { useNewUrlParser: true });
+} catch (err) {
+	console.error(err);
+
+	setupError = err;
+}
 
 // request handler
 exports.handler = async function(event, context) {
+	if (setupError) {
+		return {
+			statusCode: 200,
+			body: JSON.stringify({
+				success: false,
+				error: setupError.message,
+				stack: setupError.stack
+			})
+		};
+	}
+
 	try {
 		const req = JSON.parse(event.body);
 
@@ -113,7 +138,11 @@ exports.handler = async function(event, context) {
 		console.error(err);
 		return {
 			statusCode: 200,
-			body: JSON.stringify({ error: err.message })
+			body: JSON.stringify({
+				success: false,
+				error: err.message,
+				stack: err.stack
+			})
 		};
 	}
 };

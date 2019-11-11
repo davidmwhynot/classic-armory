@@ -13,6 +13,7 @@ import Character from './components/Character';
 import Error from './components/Error';
 // import Admin from './components/Admin';
 import BugLink from './components/BugLink';
+import * as Sentry from '@sentry/browser';
 
 class App extends Component {
 	state = {
@@ -49,36 +50,40 @@ class App extends Component {
 		$('.capture-paste').keyup(async e => {
 			if (ctrlDown && e.keyCode === vKey) {
 				this.setState({ loading: true, error: null });
-				const res = await (await fetch('/.netlify/functions/new', {
-					method: 'POST',
-					body: $('#area').val(),
-					headers: { 'Content-Type': 'application/json' }
-				})).json();
+				try {
+					const rawRes = await fetch('/.netlify/functions/new', {
+						method: 'POST',
+						body: $('#area').val(),
+						headers: { 'Content-Type': 'application/json' }
+					});
 
-				console.log('res', res);
+					if (rawRes.ok) {
+						const res = await rawRes.json();
 
-				if (!res.error) {
-					// console.log(res.items.Feet);
-					// console.log(JSON.parse('{' + res.items.Feet.json + '}'));
-					// console.log(JSON.parse('{' + res.items.Feet.jsonEquip + '}'));
+						if (!res.error) {
+							this.setState({ loading: false });
+							this.props.history.push('/' + res.url);
+						} else {
+							Sentry.captureMessage(res.stack);
 
-					this.setState({ loading: false });
-					this.props.history.push('/' + res.url);
-				} else {
+							console.log(res);
+
+							this.setState({
+								loading: false,
+								error: 'Something went wrong. Please try again.'
+							});
+						}
+					} else {
+						throw Error(rawRes.statusText);
+					}
+				} catch (err) {
+					Sentry.captureException(err);
+
 					this.setState({
 						loading: false,
 						error: 'Something went wrong. Please try again.'
 					});
 				}
-
-				// if (res.error) {
-				// 	this.setState({ error: res.error, loading: false });
-				// } else {
-				// 	this.setState({
-				// 		success: 'Your submission has been recorded. Thanks for voting!',
-				// 		loading: false
-				// 	});
-				// }
 
 				$('#area').val('');
 				$('#area').css('display', 'none');
