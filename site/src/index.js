@@ -10,8 +10,6 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import store from './store';
 import App from './App';
 
-import './index.css';
-
 // config
 Sentry.init({
 	dsn: 'https://a26dd2b53458430f834e3244fc77dffe@sentry.io/1784460'

@@ -146,9 +146,9 @@ $color-q: #ffd100;
 }
 
 .character {
-	max-width: 1000px;
-	width: max-content;
-	margin: 0 auto;
+	// max-width: 1000px;
+	// width: max-content;
+	// margin: 0 auto;
 
 	// @media (max-width: 970px) {
 	// TODO
@@ -159,7 +159,7 @@ $color-q: #ffd100;
 	display: flex;
 
 	justify-content: space-between;
-	align-items: start;
+	align-items: flex-start;
 
 	.character-names {
 		h1 {
@@ -189,7 +189,7 @@ $color-q: #ffd100;
 
 	background-color: rgba(0, 0, 0, 0.8);
 
-	transition: opacity 100ms linear;
+	// transition: opacity 100ms linear;
 
 	a {
 		color: inherit;
@@ -219,31 +219,9 @@ $color-q: #ffd100;
 .character-doll {
 	display: grid;
 
-	grid-template-rows: repeat(8, 3fr) 5fr 6fr 3fr;
-	grid-template-columns: repeat(8, 1fr);
-	grid-gap: 0.5em;
-
-	grid-template-areas:
-		'head head head . . hands hands hands'
-		'neck neck neck . . waist waist waist'
-		'shoulder shoulder shoulder . . legs legs legs'
-		'back back back . . feet feet feet'
-		'chest chest chest . . finger0 finger0 finger0'
-		'shirt shirt shirt . . finger1 finger1 finger1'
-		'tabard tabard tabard . . trinket0 trinket0 trinket0'
-		'wrist wrist wrist . . trinket1 trinket1 trinket1'
-		'. . mainhand mainhand secondaryhand secondaryhand ranged ranged'
-		'. . . . . . ammo ammo'
-		'bag0 bag0 bag1 bag1 bag2 bag2 bag3 bag3';
-
-	// @media (max-width: 970px) {
-	// TODO
-	// 	grid-template-areas: ;
-	// }
-
 	align-items: center;
 
-	margin-bottom: 3em;
+	margin-bottom: 5em;
 
 	position: relative;
 
@@ -280,9 +258,7 @@ $color-q: #ffd100;
 
 		&:nth-child(7),
 		&:nth-child(8),
-		&:nth-child(14),
-		&:nth-child(15),
-		&:nth-child(16) {
+		&:nth-child(n + 14):nth-child(-n + 20) {
 			.item-stats {
 				transform: translateY(-50%);
 			}
@@ -312,8 +288,17 @@ $color-q: #ffd100;
 			align-self: end;
 		}
 
+		&:nth-child(n + 21):nth-child(-n + 24) {
+			.item-description {
+				.item-stats {
+					left: 0;
+					bottom: 0;
+				}
+			}
+		}
+
 		&:nth-child(20) {
-			align-self: start;
+			align-self: flex-start;
 		}
 
 		&:nth-child(n + 17):nth-child(-n + 24) {
@@ -322,15 +307,11 @@ $color-q: #ffd100;
 
 				.shader {
 					margin: 0 10px;
+					// margin: 0;
 				}
 
 				.item-description {
 					width: calc(100% - 95px);
-
-					.item-stats {
-						left: 0;
-						bottom: 0;
-					}
 				}
 			}
 		}
@@ -461,6 +442,325 @@ $color-q: #ffd100;
 
 		&-bag3 {
 			grid-area: bag3;
+		}
+	}
+}
+
+.stats-enter {
+	opacity: 0.01;
+}
+
+.stats-enter.stats-enter-active {
+	opacity: 1;
+	transition: opacity 100ms linear;
+}
+
+.stats-leave {
+	opacity: 1;
+}
+
+.stats-leave.stats-leave-active {
+	opacity: 0.01;
+	transition: opacity 100ms linear;
+}
+
+.character-container {
+	display: grid;
+
+	.character-copy-url {
+		grid-area: url;
+
+		align-self: end;
+	}
+
+	.character-uploads {
+		grid-area: uploads;
+
+		margin-bottom: 5em;
+	}
+
+	.character {
+		grid-area: character;
+	}
+
+	// Extra small devices (portrait phones, less than 576px)
+	@media (max-width: 575.98px) {
+		grid-gap: 2em;
+		grid-template-areas:
+			'url'
+			'character'
+			'uploads';
+
+		.item-stats {
+			table {
+				max-width: 150px;
+			}
+		}
+
+		.character {
+			.character-doll {
+				margin-bottom: 0;
+				// grid-template-rows: repeat(8, 3fr) 5fr 6fr 3fr 1fr;
+				grid-template-columns: repeat(4, 1fr);
+				grid-gap: 0.5em;
+
+				grid-template-areas:
+					'head head hands hands'
+					'neck neck waist waist'
+					'shoulder shoulder legs legs'
+					'back back feet feet'
+					'chest chest finger0 finger0'
+					'shirt shirt finger1 finger1'
+					'tabard tabard trinket0 trinket0'
+					'wrist wrist trinket1 trinket1'
+					'. . . .'
+					'. . . .'
+					'. . . .'
+					'. . . .'
+					'mainhand mainhand secondaryhand secondaryhand'
+					'ranged ranged ammo ammo'
+					'. . . .'
+					'. . . .'
+					'. . . .'
+					'. . . .'
+					'bag0 bag0 bag1 bag1'
+					'bag2 bag2 bag3 bag3';
+			}
+
+			.item-ranged {
+				align-self: flex-start !important;
+			}
+
+			.item {
+				&:nth-child(n + 17):nth-child(-n + 24) {
+					.shader {
+						margin: 0;
+						margin-right: 20px;
+					}
+				}
+			}
+		}
+	}
+
+	// Small devices (landscape phones, 576px and up)
+	@media (min-width: 576px) and (max-width: 767.98px) {
+		grid-gap: 2em;
+		grid-template-columns: 1fr;
+		grid-template-rows: auto auto 1fr;
+		grid-template-areas:
+			'url'
+			'character'
+			'uploads';
+
+		.item-stats {
+			table {
+				max-width: 150px;
+			}
+		}
+
+		.character {
+			.character-doll {
+				margin-bottom: 0;
+				// grid-template-rows: repeat(8, 3fr) 5fr 6fr 3fr 1fr;
+				grid-template-columns: repeat(4, 1fr);
+				grid-gap: 0.5em;
+
+				grid-template-areas:
+					'head head hands hands'
+					'neck neck waist waist'
+					'shoulder shoulder legs legs'
+					'back back feet feet'
+					'chest chest finger0 finger0'
+					'shirt shirt finger1 finger1'
+					'tabard tabard trinket0 trinket0'
+					'wrist wrist trinket1 trinket1'
+					'. . . .'
+					'. . . .'
+					'. . . .'
+					'. . . .'
+					'mainhand mainhand secondaryhand secondaryhand'
+					'ranged ranged ammo ammo'
+					'. . . .'
+					'. . . .'
+					'. . . .'
+					'. . . .'
+					'bag0 bag0 bag1 bag1'
+					'bag2 bag2 bag3 bag3';
+			}
+
+			.item-ranged {
+				align-self: flex-start !important;
+			}
+
+			.item {
+				&:nth-child(n + 17):nth-child(-n + 24) {
+					.shader {
+						margin: 0;
+						margin-right: 20px;
+					}
+				}
+			}
+		}
+	}
+
+	// Medium devices (tablets, 768px and up)
+	@media (min-width: 768px) and (max-width: 991.98px) {
+		grid-template-columns: 1fr;
+		grid-template-rows: auto auto 1fr;
+		grid-gap: 2em;
+		grid-template-areas:
+			'url'
+			'character'
+			'uploads';
+
+		.character {
+			.character-doll {
+				margin-bottom: 0;
+
+				grid-template-columns: repeat(9, 1fr);
+				grid-gap: 0.5em;
+
+				grid-template-areas:
+					'head head head head . hands hands hands hands'
+					'neck neck neck neck . waist waist waist waist'
+					'shoulder shoulder shoulder shoulder . legs legs legs legs'
+					'back back back back . feet feet feet feet'
+					'chest chest chest chest . finger0 finger0 finger0 finger0'
+					'shirt shirt shirt shirt . finger1 finger1 finger1 finger1'
+					'tabard tabard tabard tabard . trinket0 trinket0 trinket0 trinket0'
+					'wrist wrist wrist wrist . trinket1 trinket1 trinket1 trinket1'
+					'. . . . . . . . .'
+					'. . . . . . . . .'
+					'. . . . . . . . .'
+					'mainhand mainhand mainhand secondaryhand secondaryhand secondaryhand ranged ranged ranged'
+					'. . . . . . ammo ammo ammo'
+					'. . . . . . . . .'
+					'. . . . . . . . .'
+					'. . . . . . . . .'
+					'bag0 bag0 bag0 bag0 . bag1 bag1 bag1 bag1'
+					'bag2 bag2 bag2 bag2 . bag3 bag3 bag3 bag3';
+
+				.item {
+					&:nth-child(n + 17):nth-child(-n + 24) {
+						.shader {
+							margin: 0;
+							margin-right: 20px;
+						}
+					}
+
+					&:nth-child(n + 19):nth-child(-n + 20) {
+						.item-body {
+							position: relative;
+							.item-description {
+								position: unset;
+								.item-stats {
+									right: calc(100% + 20px);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	// Large devices (desktops, 992px and up)
+	@media (min-width: 992px) and (max-width: 1199.98px) {
+		grid-gap: 2rem;
+		grid-template-columns: 3fr 1fr;
+		grid-template-rows: auto 1fr;
+		grid-template-areas:
+			'character url'
+			'character uploads';
+
+		.character {
+			.character-doll {
+				// grid-template-rows: repeat(8, 3fr) 5fr 6fr 3fr 1fr;
+				grid-template-columns: repeat(4, 1fr);
+				grid-gap: 0.5em;
+
+				grid-template-areas:
+					'head head hands hands'
+					'neck neck waist waist'
+					'shoulder shoulder legs legs'
+					'back back feet feet'
+					'chest chest finger0 finger0'
+					'shirt shirt finger1 finger1'
+					'tabard tabard trinket0 trinket0'
+					'wrist wrist trinket1 trinket1'
+					'. . . .'
+					'. . . .'
+					'. . . .'
+					'. . . .'
+					'mainhand mainhand secondaryhand secondaryhand'
+					'ranged ranged ammo ammo'
+					'. . . .'
+					'. . . .'
+					'. . . .'
+					'. . . .'
+					'bag0 bag0 bag1 bag1'
+					'bag2 bag2 bag3 bag3';
+			}
+
+			.item-ranged {
+				align-self: flex-start !important;
+			}
+
+			.item {
+				&:nth-child(n + 17):nth-child(-n + 24) {
+					.shader {
+						margin: 0;
+						margin-right: 20px;
+					}
+				}
+			}
+		}
+	}
+
+	// Extra large devices (large desktops, 1200px and up)
+	@media (min-width: 1200px) {
+		margin: 0 auto;
+		max-width: 1400px;
+
+		grid-gap: 2rem;
+		grid-template-columns: 3fr 1fr;
+		grid-template-rows: auto 1fr;
+		grid-template-areas:
+			'character url'
+			'character uploads';
+
+		.character {
+			.character-doll {
+				grid-template-rows: repeat(8, 3fr) 5fr 6fr 3fr;
+				grid-template-columns: repeat(8, 1fr);
+				grid-gap: 0.5em;
+
+				grid-template-areas:
+					'head head head . . hands hands hands'
+					'neck neck neck . . waist waist waist'
+					'shoulder shoulder shoulder . . legs legs legs'
+					'back back back . . feet feet feet'
+					'chest chest chest . . finger0 finger0 finger0'
+					'shirt shirt shirt . . finger1 finger1 finger1'
+					'tabard tabard tabard . . trinket0 trinket0 trinket0'
+					'wrist wrist wrist . . trinket1 trinket1 trinket1'
+					'. . mainhand mainhand secondaryhand secondaryhand ranged ranged'
+					'. . . . . . ammo ammo'
+					'bag0 bag0 bag1 bag1 bag2 bag2 bag3 bag3';
+			}
+			.item {
+				&:nth-child(n + 19):nth-child(-n + 20) {
+					.item-body {
+						position: relative;
+						.item-description {
+							position: unset;
+							.item-stats {
+								right: calc(100% + 20px);
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 }

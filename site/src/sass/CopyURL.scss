@@ -1,0 +1,57 @@
+.input-group-url-copy {
+	width: max-content;
+	&:hover {
+		cursor: pointer;
+	}
+
+	input {
+		border: 1px;
+		border-right: 0;
+		&:hover {
+			cursor: pointer;
+		}
+	}
+	button {
+		border: none !important;
+	}
+
+	.input-group-append {
+		position: relative;
+	}
+}
+
+.alert-copied {
+	display: flex;
+	align-items: center;
+
+	position: absolute;
+
+	height: calc(100% - 10px);
+	width: max-content;
+
+	right: calc(100% + 5px);
+	top: 5px;
+	bottom: 5px;
+	z-index: 100;
+
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.copied-enter {
+	opacity: 0.01;
+}
+
+.copied-enter.copied-enter-active {
+	opacity: 1;
+	transition: opacity 300ms linear;
+}
+
+.copied-leave {
+	opacity: 1;
+}
+
+.copied-leave.copied-leave-active {
+	opacity: 0.01;
+	transition: opacity 1000ms linear;
+}

@@ -1,5 +1,7 @@
-import { pageLoaded } from './pageActions';
+import { loadPage } from './pageActions';
+import { loadCharacter } from './characterActions';
 
 export default {
-	pageLoaded
+    loadPage: loadPage,
+    loadCharacter: loadCharacter
 };
