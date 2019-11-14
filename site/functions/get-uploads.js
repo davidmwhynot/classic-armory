@@ -18,21 +18,32 @@ exports.handler = async function(event, context) {
 			name: req.name,
 			realm: req.realm
 		});
+		
+		if (characters.length > 0) {
 
-		const uploads = characters.map(character => ({
-			_id: character._id,
-			name: character.name,
-			realm: character.realm,
-			time: character.time
-		}));
+			const uploads = characters.map(character => ({
+				_id: character._id,
+				name: character.name,
+				realm: character.realm,
+				time: character.time
+			}));
 
-		return {
-			statusCode: 200,
-			body: JSON.stringify({
-				success: true,
-				uploads: uploads.reverse()
-			})
-		};
+			return {
+				statusCode: 200,
+				body: JSON.stringify({
+					success: true,
+					uploads: uploads.reverse()
+				})
+			};
+		} else {
+			return {
+				statusCode: 200,
+				body: JSON.stringify({
+					success: true,
+					uploads: []
+				})
+			};
+		}
 	} catch (err) {
 		console.error(err);
 
@@ -42,7 +53,8 @@ exports.handler = async function(event, context) {
 			statusCode: 200,
 			body: JSON.stringify({
 				success: false,
-				error: err.stack
+				error: err.message,
+				stack: err.stack
 			})
 		};
 	}
