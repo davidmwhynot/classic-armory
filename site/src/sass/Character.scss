@@ -145,16 +145,6 @@ $color-q: #ffd100;
 	}
 }
 
-.character {
-	// max-width: 1000px;
-	// width: max-content;
-	// margin: 0 auto;
-
-	// @media (max-width: 970px) {
-	// TODO
-	// }
-}
-
 .character-header {
 	display: flex;
 
@@ -272,6 +262,11 @@ $color-q: #ffd100;
 				a {
 					order: 2;
 				}
+
+				.item-no-item {
+					margin-left: auto;
+				}
+
 				.shader {
 					margin-left: 20px;
 				}
@@ -304,6 +299,10 @@ $color-q: #ffd100;
 		&:nth-child(n + 17):nth-child(-n + 24) {
 			.item-body {
 				align-items: center;
+
+				// .item-no-item {
+				// 	margin-left: auto;
+				// }
 
 				.shader {
 					margin: 0 10px;

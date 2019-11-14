@@ -5,4 +5,12 @@
 .navbar {
 	// background-color: var(--dark) !important;
 	border-bottom: 1px solid var(--info);
+	.container-fluid {
+		max-width: 1400px;
+		flex-wrap: wrap;
+	}
+}
+
+.logo {
+	margin-right: 0.5rem;
 }

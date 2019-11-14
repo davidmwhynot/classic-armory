@@ -84,6 +84,10 @@ exports.handler = async function(event, context) {
 			Date.now() + 10 * 365 * 24 * 60 * 60 * 1000
 		);
 
+		if (session.data.uploads) {
+			session.data.uploads = session.data.uploads.reverse();
+		}
+
 		return {
 			headers: {
 				'Set-Cookie': `_sess_v1=${encrypt(

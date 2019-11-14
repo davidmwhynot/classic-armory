@@ -18,12 +18,11 @@ class Character extends Component {
 		error: null
 	};
 
+	componentWillMount = async => {
+		this.props.loadCharacter(this.props.match.params.id);
+	};
+
 	componentWillReceiveProps = async newProps => {
-		// try {
-
-		console.log('this.props.match.params.id');
-		console.log(this.props.match.params.id);
-
 		if (this.props.match.params.id) {
 			if (!newProps.match.params.id.match(this.props.match.params.id)) {
 				this.props.loadCharacter(newProps.match.params.id);
@@ -33,51 +32,6 @@ class Character extends Component {
 		} else {
 			this.props.loadCharacter(newProps.match.params.id);
 		}
-
-		// 	try {
-
-		//         const resRaw = await fetch('/.netlify/functions/get', {
-		//             method: 'POST',
-		//             body: this.props.match.params.id,
-		//             headers: { 'Content-Type': 'application/json' }
-		//         });
-
-		//         if (!resRaw.ok) {
-		//             throw Error(resRaw.statusText);
-		//         }
-
-		//         const res = await resRaw.json();
-
-		//         if (res.error) {
-		//             console.log(res);
-
-		//             Sentry.captureMessage(res.stack);
-
-		//             this.setState({
-		//                 loading: false,
-		//                 error: 'Something went wrong. Please try again.'
-		//             });
-		//         } else {
-		//             this.setState({ ...res, loading: false });
-
-		//             this.props.loadCharacter(res.name, res.realm);
-		//         }
-		//     } catch (err) {
-		//         Sentry.captureException(err);
-
-		//         this.setState({
-		//             loading: false,
-		//             error: 'Something went wrong. Please try again.'
-		//         });
-		//     }
-		// } catch (e) {
-		//     this.setState({
-		//         loading: false,
-		//         error: 'Something went wrong. Please try again.'
-		//     });
-
-		//     console.error(e);
-		// }
 	};
 
 	render() {
@@ -109,15 +63,6 @@ class Character extends Component {
 									uploads={this.props.uploads}
 									border="light"
 								/>
-
-								{/* {this.props.character.loaded ? (
-									<RecentUploads
-										uploads={uploads}
-										border="light"
-									/>
-								) : (
-									<Loading />
-								)} */}
 							</div>
 							<div className="character">
 								<div className="character-header mb-2">
@@ -214,7 +159,4 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = { loadCharacter };
 
-export default connect(
-	mapStateToProps,
-	mapDispatchToProps
-)(Character);
+export default connect(mapStateToProps, mapDispatchToProps)(Character);

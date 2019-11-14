@@ -21,7 +21,7 @@ exports.handler = async function(event, context) {
 			statusCode: 200,
 			body: JSON.stringify({
 				success: true,
-				global: { uploads: appState.uploads }
+				global: { uploads: appState.uploads.reverse() }
 			})
 		};
 	} catch (err) {

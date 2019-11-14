@@ -5,10 +5,19 @@ import { Link } from 'react-router-dom';
 import '../sass/CharacterUpload.scss';
 
 export default ({ _id, name, realm, time, border }) => {
+	console.log(window.location);
+	console.log(window.location === _id ? 'success' : border);
 	return (
 		<div className="character-upload" key={_id}>
 			<Link className="link-card" to={'/' + _id}>
-				<div className={'card mb-3 border-' + border}>
+				<div
+					className={
+						'card mb-3 border-' +
+						(window.location.pathname === '/' + _id
+							? 'success'
+							: border)
+					}
+				>
 					<div className="card-body d-flex align-items-center p-2">
 						<h6 className="mb-0 mr-3">
 							{name} - {realm}
