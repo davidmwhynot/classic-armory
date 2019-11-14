@@ -1,4 +1,6 @@
 // initial import
+const sentry = require('./utils/sentry');
+
 const { get } = require('axios');
 const mongoose = require('mongoose');
 
@@ -24,6 +26,8 @@ try {
 	mongoose.connect(uri, { useNewUrlParser: true });
 } catch (err) {
 	console.error(err);
+
+	sentry(err);
 
 	setupError = err;
 }
@@ -136,6 +140,9 @@ exports.handler = async function(event, context) {
 		};
 	} catch (err) {
 		console.error(err);
+
+		sentry(err);
+
 		return {
 			statusCode: 200,
 			body: JSON.stringify({

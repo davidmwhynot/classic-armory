@@ -34,8 +34,15 @@ const schema = mongoose.Schema({
 
 let schemaName = 'Character';
 
-if (process.env.NODE_ENV !== 'production') {
-	schemaName = 'Test' + schemaName;
+switch (process.env.NODE_ENV) {
+	case 'test':
+		schemaName = 'Test' + schemaName;
+		break;
+	case 'production':
+		break;
+	default:
+		schemaName = 'Dev' + schemaName;
+		break;
 }
 
 if (!modelAreadyDeclared(schemaName)) {

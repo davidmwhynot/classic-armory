@@ -1,4 +1,5 @@
 // import
+const sentry = require('./utils/sentry');
 const mongoose = require('mongoose');
 
 const Character = require('./models/CharacterModel');
@@ -21,6 +22,9 @@ exports.handler = async function(event, context) {
 		};
 	} catch (err) {
 		console.error(err);
+
+		sentry({ error: err });
+
 		return {
 			statusCode: 200,
 			body: JSON.stringify({ error: err.message })

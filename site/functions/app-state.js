@@ -1,9 +1,10 @@
 // import
+const sentry = require('./utils/sentry');
 const mongoose = require('mongoose');
 
 const AppState = require('./models/AppStateModel');
 
-// config
+// confi g
 const uri = `mongodb+srv://${process.env.CLASSICARMORY_DB_LOGIN}.mongodb.net/test?retryWrites=true&w=majority`;
 
 // connect
@@ -25,6 +26,8 @@ exports.handler = async function(event, context) {
 		};
 	} catch (err) {
 		console.error(err);
+
+		sentry({ error: err });
 
 		return {
 			statusCode: 200,

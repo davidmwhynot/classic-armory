@@ -1,3 +1,5 @@
+const sentry = require('./utils/sentry');
+
 let encrypt;
 let logo, getSession;
 
@@ -32,6 +34,9 @@ try {
 	mongoose.connect(uri, { useNewUrlParser: true });
 } catch (err) {
 	setupError = err;
+
+	sentry({ error: err });
+
 	console.error(err);
 }
 
@@ -92,6 +97,8 @@ exports.handler = async function(event, context) {
 		};
 	} catch (err) {
 		console.error(err);
+
+		sentry({ error: err });
 
 		return {
 			statusCode: 200,
