@@ -1,0 +1,52 @@
+{
+	"characters": [
+		{
+			"raw": {
+				"name": "Davesbank",
+				"realm": "Herod",
+				"guild": "Emphasis",
+				"race": "Human",
+				"level": 1,
+				"class": "Warrior",
+				"items": [
+					{ "HeadSlot": null },
+					{ "NeckSlot": null },
+					{ "ShoulderSlot": null },
+					{ "BackSlot": null },
+					{ "ChestSlot": null },
+					{ "ShirtSlot": 38 },
+					{ "TabardSlot": null },
+					{ "WristSlot": null },
+					{ "HandsSlot": null },
+					{ "WaistSlot": null },
+					{ "LegsSlot": 39 },
+					{ "FeetSlot": 40 },
+					{ "Finger0Slot": null },
+					{ "Finger1Slot": null },
+					{ "Trinket0Slot": null },
+					{ "Trinket1Slot": null },
+					{ "MainHandSlot": 25 },
+					{ "SecondaryHandSlot": 2362 },
+					{ "RangedSlot": null },
+					{ "AmmoSlot": 0 },
+					{ "Bag0Slot": 3914 },
+					{ "Bag1Slot": 14046 },
+					{ "Bag2Slot": 14046 },
+					{ "Bag3Slot": 14046 }
+				]
+			},
+			"stored": {
+				"_id": "_EzVSkou",
+				"session": "5dc7aae3b716cd44b8be5b2c",
+				"version": "v0.0.1",
+				"name": "Davesbank",
+				"realm": "Herod",
+				"data": "{\"name\":\"Davesbank\",\"realm\":\"Herod\",\"guild\":\"Emphasis\",\"race\":\"Human\",\"level\":1,\"class\":\"Warrior\",\"items\":{\"head\":null,\"neck\":null,\"shoulder\":null,\"back\":null,\"chest\":null,\"shirt\":{\"id\":38,\"name\":\"Recruit's Shirt\",\"quality\":1,\"icon\":\"inv_shirt_05\",\"tooltip\":\"<table><tr><td><!--nstart--><b class=\\\"q1\\\">Recruit's Shirt</b><!--nend--><!--ndstart--><!--ndend--><span class=\\\"q\\\"><br>Item Level <!--ilvl-->1</span><table width=\\\"100%\\\"><tr><td>Shirt</td><th><!--scstart4:-8--><span class=\\\"q1\\\"></span><!--scend--></th></tr></table><!--ebstats--><!--egstats--><!--eistats--><!--e--><!--ps--></td></tr></table><table><tr><td><div class=\\\"whtt-sellprice\\\">Sell Price: <span class=\\\"moneycopper\\\">1</span></div></td></tr></table>\"},\"tabard\":null,\"wrist\":null,\"hands\":null,\"waist\":null,\"legs\":{\"id\":39,\"name\":\"Recruit's Pants\",\"quality\":0,\"icon\":\"inv_pants_02\",\"tooltip\":\"<table><tr><td><!--nstart--><b class=\\\"q0\\\">Recruit's Pants</b><!--nend--><!--ndstart--><!--ndend--><span class=\\\"q\\\"><br>Item Level <!--ilvl-->1</span><table width=\\\"100%\\\"><tr><td>Legs</td><th><!--scstart4:1--><span class=\\\"q1\\\">Cloth</span><!--scend--></th></tr></table><span><!--amr-->2 Armor</span><!--ebstats--><!--egstats--><!--eistats--><!--e--><!--ps--><br>Durability 25 / 25</td></tr></table><table><tr><td><div class=\\\"whtt-sellprice\\\">Sell Price: <span class=\\\"moneycopper\\\">1</span></div></td></tr></table>\"},\"feet\":{\"id\":40,\"name\":\"Recruit's Boots\",\"quality\":1,\"icon\":\"inv_boots_06\",\"tooltip\":\"<table><tr><td><!--nstart--><b class=\\\"q1\\\">Recruit's Boots</b><!--nend--><!--ndstart--><!--ndend--><span class=\\\"q\\\"><br>Item Level <!--ilvl-->1</span><table width=\\\"100%\\\"><tr><td>Feet</td></table><!--ebstats--><!--egstats--><!--eistats--><!--e--><!--ps--></td></tr></table><table><tr><td><div class=\\\"whtt-sellprice\\\">Sell Price: <span class=\\\"moneycopper\\\">1</span></div></td></tr></table>\"},\"finger0\":null,\"finger1\":null,\"trinket0\":null,\"trinket1\":null,\"mainhand\":{\"id\":25,\"name\":\"Worn Shortsword\",\"quality\":1,\"icon\":\"inv_sword_04\",\"tooltip\":\"<table><tr><td><!--nstart--><b class=\\\"q1\\\">Worn Shortsword</b><!--nend--><!--ndstart--><!--ndend--><span class=\\\"q\\\"><br>Item Level <!--ilvl-->2</span><table width=\\\"100%\\\"><tr><td>Main Hand</td><th><!--scstart2:7--><span class=\\\"q1\\\">Sword</span><!--scend--></th></tr></table><table width=\\\"100%\\\"><tr>\\n    <td><span><!--dmg-->1 - 3 Damage</span></td>\\n    <th>Speed <!--spd-->1.90</th>\\n</tr></table><!--dps-->(1.05 damage per second)<!--ebstats--><!--egstats--><!--eistats--><!--e--><!--ps--><br>Durability 20 / 20</td></tr></table><table><tr><td><div class=\\\"whtt-sellprice\\\">Sell Price: <span class=\\\"moneycopper\\\">7</span></div></td></tr></table>\"},\"secondaryhand\":{\"id\":2362,\"name\":\"Worn Wooden Shield\",\"quality\":0,\"icon\":\"inv_shield_09\",\"tooltip\":\"<table><tr><td><!--nstart--><b class=\\\"q0\\\">Worn Wooden Shield</b><!--nend--><!--ndstart--><!--ndend--><span class=\\\"q\\\"><br>Item Level <!--ilvl-->1</span><table width=\\\"100%\\\"><tr><td>Off Hand</td><th><!--scstart4:6--><span class=\\\"q1\\\">Shield</span><!--scend--></th></tr></table><span><!--amr-->5 Armor</span><br>1 Block<!--ebstats--><!--egstats--><!--eistats--><!--e--><!--ps--><br>Durability 20 / 20</td></tr></table><table><tr><td><div class=\\\"whtt-sellprice\\\">Sell Price: <span class=\\\"moneycopper\\\">1</span></div></td></tr></table>\"},\"ranged\":null,\"ammo\":null,\"bag0\":{\"id\":3914,\"name\":\"Journeyman's Backpack\",\"quality\":1,\"icon\":\"inv_misc_bag_07_black\",\"tooltip\":\"<table><tr><td><!--nstart--><b class=\\\"q1\\\">Journeyman's Backpack</b><!--nend--><!--ndstart--><!--ndend--><span class=\\\"q\\\"><br>Item Level <!--ilvl-->45</span><br />14 Slot Bag<!--ebstats--><!--egstats--><!--eistats--><!--e--><!--ps--></td></tr></table><table><tr><td><div class=\\\"whtt-sellprice\\\">Sell Price: <span class=\\\"moneysilver\\\">62</span> <span class=\\\"moneycopper\\\">50</span></div></td></tr></table>\"},\"bag1\":{\"id\":14046,\"name\":\"Runecloth Bag\",\"quality\":1,\"icon\":\"inv_misc_bag_19\",\"tooltip\":\"<table><tr><td><!--nstart--><b class=\\\"q1\\\">Runecloth Bag</b><!--nend--><!--ndstart--><!--ndend--><span class=\\\"q\\\"><br>Item Level <!--ilvl-->52</span><br />14 Slot Bag<!--ebstats--><!--egstats--><!--eistats--><!--e--><!--ps--></td></tr></table><table><tr><td><div class=\\\"whtt-sellprice\\\">Sell Price: <span class=\\\"moneysilver\\\">50</span></div></td></tr></table>\"},\"bag2\":{\"id\":14046,\"name\":\"Runecloth Bag\",\"quality\":1,\"icon\":\"inv_misc_bag_19\",\"tooltip\":\"<table><tr><td><!--nstart--><b class=\\\"q1\\\">Runecloth Bag</b><!--nend--><!--ndstart--><!--ndend--><span class=\\\"q\\\"><br>Item Level <!--ilvl-->52</span><br />14 Slot Bag<!--ebstats--><!--egstats--><!--eistats--><!--e--><!--ps--></td></tr></table><table><tr><td><div class=\\\"whtt-sellprice\\\">Sell Price: <span class=\\\"moneysilver\\\">50</span></div></td></tr></table>\"},\"bag3\":{\"id\":14046,\"name\":\"Runecloth Bag\",\"quality\":1,\"icon\":\"inv_misc_bag_19\",\"tooltip\":\"<table><tr><td><!--nstart--><b class=\\\"q1\\\">Runecloth Bag</b><!--nend--><!--ndstart--><!--ndend--><span class=\\\"q\\\"><br>Item Level <!--ilvl-->52</span><br />14 Slot Bag<!--ebstats--><!--egstats--><!--eistats--><!--e--><!--ps--></td></tr></table><table><tr><td><div class=\\\"whtt-sellprice\\\">Sell Price: <span class=\\\"moneysilver\\\">50</span></div></td></tr></table>\"}}}",
+				"time": {
+					"$date": "2019-11-10T23:47:53.022Z"
+				},
+				"__v": 0
+			}
+		}
+	]
+}

@@ -5,7 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"start": "cd site && cat .netlify-dev.sh | bash",
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"test-old": "cat .env | bash && concurrently \"cd site && netlify dev\" \"jest\""
 	},
 	"repository": {
 		"type": "git",
@@ -17,5 +17,10 @@
 	"bugs": {
 		"url": "https://github.com/davidmwhynot/classic-armory/issues"
 	},
-	"homepage": "https://github.com/davidmwhynot/classic-armory#readme"
+	"homepage": "https://github.com/davidmwhynot/classic-armory#readme",
+	"dependencies": {
+		"concurrently": "^5.0.0",
+		"jest": "^24.9.0",
+		"jest-watch-directories": "^1.1.0"
+	}
 }
