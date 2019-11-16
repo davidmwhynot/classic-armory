@@ -5,11 +5,41 @@
 
 -- GLOBALS
 
-local CAITEM_SLOT_FRAMES = {
-	CharacterRangedSlot
-}
+-- local CAITEM_SLOT_FRAMES = {
+-- 	CharacterRangedSlot
+-- }
+
+-- async function generator
+local async = function ()
+	local M = {}
+	
+	function M.waterfall(tasks, cb)
+		local nextArg = {}
+		for i, v in pairs(tasks) do
+			local error = false
+			v(function(err, ...)
+				local arg = {...}
+				nextArg = arg;
+				if err then
+					error = true
+				end
+			end, unpack(nextArg))
+			if error then return cb("error") end
+		end
+		cb(nil, unpack(nextArg))
+	end
+	
+	function M.eachSeries(arr, iterator, callback)
+		
+	end
+	return M
+end
+
 
 local debug = false;
+local hasBiznicks = false;
+local hasBiznicksBeenChecked = false;
+
 local slotNames = {
 	"HeadSlot",
 	"NeckSlot",
@@ -36,21 +66,11 @@ local slotNames = {
 	"Bag2Slot",
 	"Bag3Slot"
 }
+
 local slotNamesLengthMinusOne = table.getn(slotNames) - 1;
 
 
--- MAIN
--- print("--------------------------------------");
--- print('ClassicArmory main')
--- print("--------------------------------------");
-
-
 function classicArmoryInit()
-	
-	-- print("--------------------------------------");
-	-- print('ClassicArmory init')
-	-- print("--------------------------------------");
-
 	-- export data frame
 		local exportDataFrame = CreateFrame("Frame", "exportDataFrame", UIParent);
 
@@ -90,15 +110,23 @@ function classicArmoryInit()
 			
 			exportDataTextFrame:SetScript("OnTextChanged",
 				function()
-					exportDataTextFrame:SetText(getJSON());
-					exportDataTextFrame:HighlightText();
+					getJSON(
+						function(json)
+							exportDataTextFrame:SetText(json);
+							exportDataTextFrame:HighlightText();
+						end
+					)
 				end
 			);
 
 			exportDataTextFrame:SetScript("OnEditFocusGained",
 			function()
-					exportDataTextFrame:SetText(getJSON());
-					exportDataTextFrame:HighlightText();
+					getJSON(
+						function(json)
+							exportDataTextFrame:SetText(json);
+							exportDataTextFrame:HighlightText();
+						end
+					)
 				end
 			);
 
@@ -131,59 +159,136 @@ function classicArmoryInit()
 
 		exportButtonFrame:SetScript("OnClick",
 			function()
-				exportDataFrame:Show();
-				exportDataTextFrame:SetText(getJSON());
-				exportDataTextFrame:SetFocus();
+				getJSON(
+					function(json)
+						exportDataFrame:Show();
+						exportDataTextFrame:SetText(json);
+						exportDataTextFrame:HighlightText();
+					end
+				)
 			end
 		);
 
 end
 
-function getJSON()
 
-	data = {
-		v = "1.0.0",
-		type = "player", -- this would be "target" for other players
-		name = UnitName("player"),
-		realm = GetRealmName(),
-		race = UnitRace("player"),
-		level = UnitLevel("player"),
-		xp = {
-			current = UnitXP('player'),
-			max = UnitXPMax('player')
-		},
-		sex = UnitSex('player'),
-		class = UnitClass("player"),
-		guild = GetGuildInfo("player"),
-		items = getItems(),
-		money = GetMoney(),
-		stats = getStats(),
-		skills = getSkills(),
-		reputation = getRep(),
-		buffs = getBuffs(),
-		debuffs = getDebuffs(),
-	};
+function getJSON(jsonCallback)
+	hasBiznicks = false;
+	hasBiznicksBeenChecked = false;
 	
-	return ttjson(data, false);
+	local nameFunction = function(callback, asyncVals)
+		asyncVals.name = UnitName("player");
+		callback(nil, asyncVals);
+	end
+	local realmFunction = function(callback, asyncVals)
+		asyncVals.realm = GetRealmName();
+		callback(nil, asyncVals);
+	end
+	local raceFunction = function(callback, asyncVals)
+		asyncVals.race = UnitRace("player");
+		callback(nil, asyncVals);
+	end
+	local levelFunction = function(callback, asyncVals)
+		asyncVals.level = UnitLevel("player");
+		callback(nil, asyncVals);
+	end
+	local sexFunction = function(callback, asyncVals)
+		asyncVals.sex = UnitSex('player');
+		callback(nil, asyncVals);
+	end
+	local classFunction = function(callback, asyncVals)
+		asyncVals.class = UnitClass("player");
+		callback(nil, asyncVals);
+	end
+	local guildFunction = function(callback, asyncVals)
+		asyncVals.guild = GetGuildInfo("player");
+		callback(nil, asyncVals);
+	end
+	local moneyFunction = function(callback, asyncVals)
+		asyncVals.money = GetMoney();
+		callback(nil, asyncVals);
+	end
+
+
+	local asyncFunctions = {
+		function(callback)
+			callback(null, {});
+		end,
+		nameFunction,
+		realmFunction,
+		raceFunction,
+		levelFunction,
+		sexFunction,
+		classFunction,
+		guildFunction,
+		moneyFunction,
+		getItems,
+		getStats,
+		getSkills,
+		getPvp,
+		getRep,
+		getBuffs,
+		getDebuffs
+	};
+
+	async().waterfall(asyncFunctions, function(err, result)
+		if err then
+			print(err)
+		else
+			local items, stats, skills, rep, buffs, debuffs = unpack(result);
+
+			result.v = '1.0.0';
+			result.type = 'player';
+			result.xp = {
+				current = UnitXP('player'),
+				max = UnitXPMax('player')
+			};
+
+			jsonCallback(ttjson(result, false));
+		end
+	end);
+
 end
 
-function getItems()
+
+function getItems(callback, asyncVals)
 	local items = {};
 
 	for i = 1, table.getn(slotNames) do
-		local slotId = GetInventorySlotInfo(slotNames[i])
-		local itemId = GetInventoryItemID("player", slotId)
+		local isRangedSlot = slotNames[i] == 'RangedSlot';
+		local slotId = GetInventorySlotInfo(slotNames[i]);
+		local itemId = GetInventoryItemID("player", slotId);
+		local itemLink = GetInventoryItemLink('player', itemId);
+		local itemEnchant = nil;
+
+		if isRangedSlot then hasBiznicksBeenChecked = true end
+		
+		if itemLink then
+			local itemName, itemStringLink = GetItemInfo(itemLink);
+
+			if itemStringLink then
+				local _, _, Color, Ltype, Id, Enchant, Gem1, Gem2, Gem3, Gem4, Suffix, Unique, LinkLvl, Name = string.find(itemStringLink,
+				"|?c?f?f?(%x*)|?H?([^:]*):?(%d+):?(%d*):?(%d*):?(%d*):?(%d*):?(%d*):?(%-?%d*):?(%-?%d*):?(%d*):?(%d*):?(%-?%d*)|?h?%[?([^%[%]]*)%]?|?h?|?r?")
+				if isRangedSlot and (Enchant == 2523) then
+					hasBiznicks = true;
+				end
+			end
+		end
 
 		items[i] = {
 			slot = slotNames[i],
-			item = itemId
+			item = itemId,
+			enchant = itemEnchant,
+			name = itemName
 		};
 	end
 
-	return items;
+	asyncVals.items = items;
+	callback(nil, asyncVals);
 end
 
-function getRep()
+
+function getRep(callback, asyncVals)
 	local numReps = GetNumFactions();
 
 	-- expand all rep headers
@@ -225,10 +330,12 @@ function getRep()
 		end
 	end
 	
-	return reps;
+	asyncVals.reps = reps;
+	callback(nil, asyncVals);
 end
 
-function getBuffs()
+
+function getBuffs(callback, asyncVals)
 	local buffs, i = { }, 1;
 	local _, _, _, _, _, _, _, _, _, buff = UnitBuff("player", i);
 	while buff do
@@ -237,10 +344,12 @@ function getBuffs()
 		_, _, _, _, _, _, _, _, _, buff = UnitBuff("player", i);
 	end
 
-	return buffs;
+	asyncVals.buffs = buffs;
+	callback(nil, asyncVals);
 end
 
-function getDebuffs()
+
+function getDebuffs(callback, asyncVals)
 	local debuffs, i = { }, 1;
 	local _, _, _, _, _, _, _, _, _, debuff = UnitDebuff("player", i);
 	while debuff do
@@ -249,10 +358,12 @@ function getDebuffs()
 		_, _, _, _, _, _, _, _, _, debuff = UnitDebuff("player", i);
 	end
 
-	return debuffs;
+	asyncVals.debuffs = debuffs;
+	callback(nil, asyncVals);
 end
 
-function getSkills()
+
+function getSkills(callback, asyncVals)
 	local numSkills = GetNumSkillLines();
 
 	-- expand all skill headers
@@ -293,17 +404,46 @@ function getSkills()
 			};
 		end
 	end
-	return skills;
+
+	asyncVals.skills = skills;
+	callback(nil, asyncVals);
 end
 
-function getStats()
-	local hasBiznicks = CA_Item_Enchant_GetText();
+
+function getPvp(callback, asyncVals)
+	-- GetPVPRankInfo(rank[, unit])   - Get information about a specific PvP rank.
+
+	local pvp =  {
+		rank = {
+			UnitPVPRank
+		},
+		stats = {
+			lastWeekStats = GetPVPLastWeekStats(),
+			lifetimeStats = GetPVPLifetimeStats(),
+			rankProgress = GetPVPRankProgress(),
+			sessionStats = GetPVPSessionStats(),
+			thisWeekStats = GetPVPThisWeekStats(),
+			yesterdayStats = GetPVPYesterdayStats()
+		}
+	};
+
+	asyncVals.pvp = pvp;
+	callback(nil, asyncVals)
+end
+
+
+function getStats(callback, asyncVals)
 	local hit = GetHitModifier();
 	local rangedHit = GetHitModifier();
 
 	if hit == nil then hit = 0 end
 
-	if hasBiznicks then 
+	if not hasBiznicksBeenChecked then
+		print('BIZNIKS WAS NOT CHECKED BEFORE getStats WAS CALLED...');
+		print('Ranged Hit % may not be correct');
+	end
+	
+	if hasBiznicks then
 		rangedHit = rangedHit + 3
 	end
 
@@ -495,8 +635,11 @@ function getStats()
 	stats.defense.bonus = bonusDefense;
 	stats.defense.total = baseDefense + bonusDefense;
 
-	return stats;
+	asyncVals.stats = stats;
+
+	callback(nil, asyncVals);
 end
+
 
 function ttjson(x, isInputTableArray)
 	local buffer = '';
@@ -572,6 +715,7 @@ function ttjson(x, isInputTableArray)
 	return buffer;
 end
 
+
 function jsonkv(key, value)
 	if (value == nil) then
 		return string.format('"%s":null', key);
@@ -580,16 +724,24 @@ function jsonkv(key, value)
 	end
 end
 
+
 function jsonkvq(key, value)
 	return string.format('"%s":"%s"', key, value);
 end
 
+
+function makeAsyncFunctionCall()
+
+end
+
+
 -- create hook
 local classicArmory = CreateFrame("FRAME", "classicArmoryFrame");
 
+
 -- REGISTER EVENTS
 classicArmory:RegisterEvent("PLAYER_ENTERING_WORLD");
--- classicArmory:RegisterEvent("CHAT_MSG_CHANNEL");
+
 
 -- EVENT HANDLER
 function classicArmoryEventHandler(self, event, ...)
@@ -598,18 +750,10 @@ function classicArmoryEventHandler(self, event, ...)
 	end
 end
 
+
 -- SET SCRIPT
 classicArmory:SetScript("OnEvent", classicArmoryEventHandler);
 
-
-
-
-
-function outterClassicArmoryDebug(s)
-	if debug then
-		print("oDEBUG: " .. s);
-	end
-end
 
 function dumpvar(data)
     -- cache of tables already printed, to avoid infinite recursive loops
@@ -644,34 +788,45 @@ function dumpvar(data)
     return buffer
 end
 
+-- function CA_Item_Enchant_GetText()
+-- 	local hasBiznicks = false;
+-- 	local MATCH_ENCHANT = ENCHANTED_TOOLTIP_LINE:gsub('%%s', '(.+)')
+-- 	local ENCHANT_PATTERN = ENCHANTED_TOOLTIP_LINE:gsub('%%s', '(.+)') --moving outside of the function might not be warranted but moving outside of for loop is
+-- 	local tooltip = CreateFrame("GameTooltip", "CAScanTooltip", nil, "GameTooltipTemplate") --TODO: use the same frame for both repairs and itemlevel
+-- 	tooltip:SetOwner(UIParent, "ANCHOR_NONE")
 
-function CA_Item_Enchant_GetText()
-	local hasBiznicks = false;
-	local MATCH_ENCHANT = ENCHANTED_TOOLTIP_LINE:gsub('%%s', '(.+)')
-	local ENCHANT_PATTERN = ENCHANTED_TOOLTIP_LINE:gsub('%%s', '(.+)') --moving outside of the function might not be warranted but moving outside of for loop is
-	local tooltip = CreateFrame("GameTooltip", "CAScanTooltip", nil, "GameTooltipTemplate") --TODO: use the same frame for both repairs and itemlevel
-	tooltip:SetOwner(UIParent, "ANCHOR_NONE")
-	for _, v in ipairs(CAITEM_SLOT_FRAMES) do
-		v.enchant:SetText("")
-		-- local slotId, textureName = GetInventorySlotInfo(v) --Call for string parsing instead of table lookup, bleh.
-		local item = Item:CreateFromEquipmentSlot(v:GetID())
-		local itemLink = GetInventoryItemLink("player", v:GetID())
-		if itemLink then
-			local itemName, itemStringLink = GetItemInfo(itemLink)
-			if itemStringLink then
-				local _, _, Color, Ltype, Id, Enchant, Gem1, Gem2, Gem3, Gem4, Suffix, Unique, LinkLvl, Name = string.find(itemStringLink,
-				"|?c?f?f?(%x*)|?H?([^:]*):?(%d+):?(%d*):?(%d*):?(%d*):?(%d*):?(%d*):?(%-?%d*):?(%-?%d*):?(%d*):?(%d*):?(%-?%d*)|?h?%[?([^%[%]]*)%]?|?h?|?r?")
-				
-				if (slot == CharacterRangedSlot) then
-					if (Enchant == 2523) then
-						hasBiznicks = true
-					end
-				end
-			end
-			tooltip:ClearLines()
-			tooltip:SetHyperlink(itemLink)
-		end
-	end
+-- 	-- for a, b in ipairs(CAITEM_SLOT_FRAMES) do
+-- 	-- 	print(a)
+-- 	-- 	print(dumpvar(a))
+-- 	-- 	print(b)
+-- 	-- 	print(dumpvar(b))
+-- 	-- end
 
-	return hasBiznicks;
-end
+-- 	-- for a in CAITEM_SLOT_FRAMES do
+-- 	-- 	print(dumpvar(CAITEM_SLOT_FRAMES[a]))
+-- 	-- end
+
+-- 	-- print(ttjson(ipairs(CAITEM_SLOT_FRAMES), false))
+
+-- 	for _, v in ipairs(CAITEM_SLOT_FRAMES) do
+-- 		-- local slotId, textureName = GetInventorySlotInfo(v) --Call for string parsing instead of table lookup, bleh.
+-- 		local item = Item:CreateFromEquipmentSlot(v:GetID())
+-- 		local itemLink = GetInventoryItemLink("player", v:GetID())
+-- 		if itemLink then
+-- 			local itemName, itemStringLink = GetItemInfo(itemLink)
+-- 			if itemStringLink then
+-- 				local _, _, Color, Ltype, Id, Enchant, Gem1, Gem2, Gem3, Gem4, Suffix, Unique, LinkLvl, Name = string.find(itemStringLink,
+-- 				"|?c?f?f?(%x*)|?H?([^:]*):?(%d+):?(%d*):?(%d*):?(%d*):?(%d*):?(%d*):?(%-?%d*):?(%-?%d*):?(%d*):?(%d*):?(%-?%d*)|?h?%[?([^%[%]]*)%]?|?h?|?r?")
+-- 				if (slot == CharacterRangedSlot) then
+-- 					if (Enchant == 2523) then
+-- 						hasBiznicks = true
+-- 					end
+-- 				end
+-- 			end
+-- 			tooltip:ClearLines()
+-- 			tooltip:SetHyperlink(itemLink)
+-- 		end
+-- 	end
+
+-- 	return hasBiznicks;
+-- end
