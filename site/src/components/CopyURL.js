@@ -30,7 +30,7 @@ class CopyURL extends Component {
 		return (
 			<div>
 				<div
-					className="input-group input-group-md input-group-url-copy mb-3"
+					className="input-group input-group-md input-group-url-copy"
 					onClick={this.handleClick}
 				>
 					<input

@@ -167,6 +167,12 @@ $color-q: #ffd100;
 	}
 }
 
+.character-share-social {
+	display: flex;
+	justify-content: space-between;
+	width: max-content;
+}
+
 .item-stats {
 	position: absolute;
 	z-index: 1000;
@@ -466,16 +472,18 @@ $color-q: #ffd100;
 .character-container {
 	display: grid;
 
-	.character-copy-url {
-		grid-area: url;
-
-		align-self: end;
+	.character-share {
+		grid-area: share;
 	}
 
 	.character-uploads {
 		grid-area: uploads;
 
 		margin-bottom: 5em;
+	}
+
+	.character-header {
+		grid-area: header;
 	}
 
 	.character {
@@ -486,7 +494,8 @@ $color-q: #ffd100;
 	@media (max-width: 575.98px) {
 		grid-gap: 2em;
 		grid-template-areas:
-			'url'
+			'header'
+			'share'
 			'character'
 			'uploads';
 
@@ -543,11 +552,12 @@ $color-q: #ffd100;
 
 	// Small devices (landscape phones, 576px and up)
 	@media (min-width: 576px) and (max-width: 767.98px) {
-		grid-gap: 2em;
+		grid-gap: 1rem;
 		grid-template-columns: 1fr;
-		grid-template-rows: auto auto 1fr;
+		grid-template-rows: auto auto auto 1fr;
 		grid-template-areas:
-			'url'
+			'header'
+			'share'
 			'character'
 			'uploads';
 
@@ -605,10 +615,11 @@ $color-q: #ffd100;
 	// Medium devices (tablets, 768px and up)
 	@media (min-width: 768px) and (max-width: 991.98px) {
 		grid-template-columns: 1fr;
-		grid-template-rows: auto auto 1fr;
-		grid-gap: 2em;
+		grid-template-rows: auto auto auto 1fr;
+		grid-gap: 1rem;
 		grid-template-areas:
-			'url'
+			'header'
+			'share'
 			'character'
 			'uploads';
 
@@ -665,11 +676,12 @@ $color-q: #ffd100;
 
 	// Large devices (desktops, 992px and up)
 	@media (min-width: 992px) and (max-width: 1199.98px) {
-		grid-gap: 2rem;
+		grid-gap: 1rem;
 		grid-template-columns: 3fr 1fr;
-		grid-template-rows: auto 1fr;
+		grid-template-rows: auto auto 1fr;
 		grid-template-areas:
-			'character url'
+			'header header'
+			'character share'
 			'character uploads';
 
 		.character {
@@ -721,11 +733,13 @@ $color-q: #ffd100;
 		margin: 0 auto;
 		max-width: 1400px;
 
-		grid-gap: 2rem;
+		grid-gap: 1rem;
 		grid-template-columns: 3fr 1fr;
-		grid-template-rows: auto 1fr;
+		grid-template-rows: auto auto 1fr;
+		align-items: start;
 		grid-template-areas:
-			'character url'
+			'header header'
+			'character share'
 			'character uploads';
 
 		.character {
