@@ -15,8 +15,6 @@ exports.handler = async function(event, context) {
 	try {
 		const appState = await AppState.findOne();
 
-		// console.log(appState);
-
 		return {
 			statusCode: 200,
 			body: JSON.stringify({

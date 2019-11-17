@@ -5,8 +5,6 @@ import { Link } from 'react-router-dom';
 import '../sass/CharacterUpload.scss';
 
 export default ({ _id, name, realm, time, border }) => {
-	console.log(window.location);
-	console.log(window.location === _id ? 'success' : border);
 	return (
 		<div className="character-upload" key={_id}>
 			<Link className="link-card" to={'/' + _id}>

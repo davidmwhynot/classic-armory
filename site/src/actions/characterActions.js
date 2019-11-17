@@ -15,9 +15,6 @@ export const loadCharacter = id => async dispatch => {
 
 		const characterPayload = await characterPayloadRaw.json();
 
-		console.log('characterPayload');
-		console.log(characterPayload);
-
 		if (!characterPayload.success) {
 			Sentry.captureMessage(characterPayload.stack);
 		}
@@ -40,9 +37,6 @@ export const loadCharacter = id => async dispatch => {
 		}
 
 		const uploadsPayload = await uploadsPayloadRaw.json();
-
-		console.log('uploadsPayload');
-		console.log(uploadsPayload);
 
 		if (uploadsPayload.success) {
 			dispatch({
