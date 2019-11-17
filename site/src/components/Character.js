@@ -125,7 +125,7 @@ class Character extends Component {
 												process.env.PUBLIC_URL +
 												'/icons/' +
 												icon +
-												'.png';
+												'.jpg';
 
 											return (
 												<Item
