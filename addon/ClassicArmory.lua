@@ -4,11 +4,6 @@
 
 
 -- GLOBALS
-
--- local CAITEM_SLOT_FRAMES = {
--- 	CharacterRangedSlot
--- }
-
 -- async function generator
 local async = function ()
 	local M = {}
@@ -193,32 +188,49 @@ function getJSON(jsonCallback)
 		asyncVals.name = UnitName("player");
 		callback(nil, asyncVals);
 	end
+
 	local realmFunction = function(callback, asyncVals)
 		asyncVals.realm = GetRealmName();
 		callback(nil, asyncVals);
 	end
+
 	local raceFunction = function(callback, asyncVals)
 		asyncVals.race = UnitRace("player");
 		callback(nil, asyncVals);
 	end
+
 	local levelFunction = function(callback, asyncVals)
 		asyncVals.level = UnitLevel("player");
 		callback(nil, asyncVals);
 	end
+
 	local sexFunction = function(callback, asyncVals)
 		asyncVals.sex = UnitSex('player');
 		callback(nil, asyncVals);
 	end
+
 	local classFunction = function(callback, asyncVals)
 		asyncVals.class = UnitClass("player");
 		callback(nil, asyncVals);
 	end
+
 	local guildFunction = function(callback, asyncVals)
 		asyncVals.guild = GetGuildInfo("player");
 		callback(nil, asyncVals);
 	end
+
 	local moneyFunction = function(callback, asyncVals)
 		asyncVals.money = GetMoney();
+		callback(nil, asyncVals);
+	end
+
+	local regionFunction = function(callback, asyncVals)
+		-- 1 - US (includes Brazil and Oceania)
+		-- 2 - Korea
+		-- 3 - Europe (includes Russia)
+		-- 4 - Taiwan
+		-- 5 - China
+		asyncVals.region = GetCurrentRegion();
 		callback(nil, asyncVals);
 	end
 
@@ -235,6 +247,7 @@ function getJSON(jsonCallback)
 		classFunction,
 		guildFunction,
 		moneyFunction,
+		regionFunction,
 		getItems,
 		getStats,
 		getSkills,
@@ -798,46 +811,3 @@ function dumpvar(data)
     _dumpvar(data, 0)
     return buffer
 end
-
--- function CA_Item_Enchant_GetText()
--- 	local hasBiznicks = false;
--- 	local MATCH_ENCHANT = ENCHANTED_TOOLTIP_LINE:gsub('%%s', '(.+)')
--- 	local ENCHANT_PATTERN = ENCHANTED_TOOLTIP_LINE:gsub('%%s', '(.+)') --moving outside of the function might not be warranted but moving outside of for loop is
--- 	local tooltip = CreateFrame("GameTooltip", "CAScanTooltip", nil, "GameTooltipTemplate") --TODO: use the same frame for both repairs and itemlevel
--- 	tooltip:SetOwner(UIParent, "ANCHOR_NONE")
-
--- 	-- for a, b in ipairs(CAITEM_SLOT_FRAMES) do
--- 	-- 	print(a)
--- 	-- 	print(dumpvar(a))
--- 	-- 	print(b)
--- 	-- 	print(dumpvar(b))
--- 	-- end
-
--- 	-- for a in CAITEM_SLOT_FRAMES do
--- 	-- 	print(dumpvar(CAITEM_SLOT_FRAMES[a]))
--- 	-- end
-
--- 	-- print(ttjson(ipairs(CAITEM_SLOT_FRAMES), false))
-
--- 	for _, v in ipairs(CAITEM_SLOT_FRAMES) do
--- 		-- local slotId, textureName = GetInventorySlotInfo(v) --Call for string parsing instead of table lookup, bleh.
--- 		local item = Item:CreateFromEquipmentSlot(v:GetID())
--- 		local itemLink = GetInventoryItemLink("player", v:GetID())
--- 		if itemLink then
--- 			local itemName, itemStringLink = GetItemInfo(itemLink)
--- 			if itemStringLink then
--- 				local _, _, Color, Ltype, Id, Enchant, Gem1, Gem2, Gem3, Gem4, Suffix, Unique, LinkLvl, Name = string.find(itemStringLink,
--- 				"|?c?f?f?(%x*)|?H?([^:]*):?(%d+):?(%d*):?(%d*):?(%d*):?(%d*):?(%d*):?(%-?%d*):?(%-?%d*):?(%d*):?(%d*):?(%-?%d*)|?h?%[?([^%[%]]*)%]?|?h?|?r?")
--- 				if (slot == CharacterRangedSlot) then
--- 					if (Enchant == 2523) then
--- 						hasBiznicks = true
--- 					end
--- 				end
--- 			end
--- 			tooltip:ClearLines()
--- 			tooltip:SetHyperlink(itemLink)
--- 		end
--- 	end
-
--- 	return hasBiznicks;
--- end
