@@ -127,13 +127,19 @@ function classicArmoryInit()
 			);
 
 			exportDataTextFrame:SetScript("OnEditFocusGained",
-			function()
+				function()
 					getJSON(
 						function(json)
 							exportDataTextFrame:SetText(json);
 							exportDataTextFrame:HighlightText();
 						end
 					)
+				end
+			);
+
+			exportDataTextFrame:SetScript("OnEscapePressed",
+				function()
+					exportDataFrame:Hide();
 				end
 			);
 
