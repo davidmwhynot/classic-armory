@@ -1,0 +1,32 @@
+@import '_variables';
+
+.twitter {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 0.8rem;
+
+	color: #fff;
+	background-color: #1da1f2;
+
+	width: 72px;
+	height: 28px;
+	min-width: 72px;
+	min-height: 28px;
+
+	img {
+		width: 15px;
+		height: 15px;
+		margin-right: 5px;
+	}
+
+	&:hover,
+	&:visited,
+	&:active {
+		text-decoration: none;
+		color: #fff;
+	}
+}
