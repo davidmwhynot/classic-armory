@@ -254,7 +254,8 @@ function getJSON(jsonCallback)
 		getPvp,
 		getRep,
 		getBuffs,
-		getDebuffs
+		getDebuffs,
+		getTalents
 	};
 
 	async().waterfall(asyncFunctions, function(err, result)
@@ -666,6 +667,65 @@ function getStats(callback, asyncVals)
 
 	asyncVals.stats = stats;
 
+	callback(nil, asyncVals);
+end
+
+
+function getTalents(callback, asyncVals)
+	local function talentpairs(inspect,pet)
+		local tab,tal=1,0
+		return function()
+			tal=tal+1
+			if tal>GetNumTalents(tab,inspect,pet) then
+				tal=1
+				tab=tab+1
+			end
+			if tab<=GetNumTalentTabs(inspect,pet) then
+				return tab,tal
+			end
+		end
+	end
+
+	local talents = {};
+
+
+	for tab, talent in talentpairs() do
+		if not talents[tab] then
+			talents[tab] = {};
+		end
+
+		talents[tab][talent] = {};
+	end
+
+
+	for tab,talent in talentpairs() do
+		local name, icon, tier, column, currRank, maxRank = GetTalentInfo(tab, talent);
+
+		GameTooltip:ClearLines();
+		GameTooltip:SetOwner(UIParent, "ANCHOR_NONE");
+		GameTooltip:SetTalent(tab, talent);
+
+		local talentTooltip = {};
+		for i = 1, GameTooltip:NumLines() do
+			talentTooltip[i] = _G["GameTooltipTextLeft" .. i]:GetText() or "";
+		end
+
+		talents[tab][talent] = {
+			name = name,
+			icon = icon,
+			tier = tier,
+			column = column,
+			rank = {
+				current = currRank,
+				max = maxRank
+			},
+			tooltip = talentTooltip
+		};
+	end
+
+	GameTooltip:Hide();
+
+	asyncVals.talents = talents;
 	callback(nil, asyncVals);
 end
 
