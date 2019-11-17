@@ -264,7 +264,7 @@ function getJSON(jsonCallback)
 		else
 			local items, stats, skills, rep, buffs, debuffs = unpack(result);
 
-			result.v = '1.0.0';
+			result.v = '1.0.1';
 			result.type = 'player';
 			result.xp = {
 				current = UnitXP('player'),
