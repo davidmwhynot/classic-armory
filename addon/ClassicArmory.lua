@@ -1,6 +1,6 @@
 -- ClassicArmory
 -- David Whynot
--- v0.1
+-- v1.0.1
 
 
 -- GLOBALS
@@ -12,26 +12,33 @@
 -- async function generator
 local async = function ()
 	local M = {}
-	
+
 	function M.waterfall(tasks, cb)
 		local nextArg = {}
+
 		for i, v in pairs(tasks) do
 			local error = false
+
 			v(function(err, ...)
 				local arg = {...}
+
 				nextArg = arg;
+
 				if err then
 					error = true
 				end
 			end, unpack(nextArg))
+
 			if error then return cb("error") end
 		end
+
 		cb(nil, unpack(nextArg))
 	end
-	
+
 	function M.eachSeries(arr, iterator, callback)
 		
 	end
+
 	return M
 end
 
@@ -258,7 +265,7 @@ function getItems(callback, asyncVals)
 		local isRangedSlot = slotNames[i] == 'RangedSlot';
 		local slotId = GetInventorySlotInfo(slotNames[i]);
 		local itemId = GetInventoryItemID("player", slotId);
-		local itemLink = GetInventoryItemLink('player', itemId);
+		local itemLink = GetInventoryItemLink('player', slotId);
 		local itemEnchant = nil;
 
 		if isRangedSlot then hasBiznicksBeenChecked = true end
@@ -268,8 +275,11 @@ function getItems(callback, asyncVals)
 
 			if itemStringLink then
 				local _, _, Color, Ltype, Id, Enchant, Gem1, Gem2, Gem3, Gem4, Suffix, Unique, LinkLvl, Name = string.find(itemStringLink,
-				"|?c?f?f?(%x*)|?H?([^:]*):?(%d+):?(%d*):?(%d*):?(%d*):?(%d*):?(%d*):?(%-?%d*):?(%-?%d*):?(%d*):?(%d*):?(%-?%d*)|?h?%[?([^%[%]]*)%]?|?h?|?r?")
-				if isRangedSlot and (Enchant == 2523) then
+				"|?c?f?f?(%x*)|?H?([^:]*):?(%d+):?(%d*):?(%d*):?(%d*):?(%d*):?(%d*):?(%-?%d*):?(%-?%d*):?(%d*):?(%d*):?(%-?%d*)|?h?%[?([^%[%]]*)%]?|?h?|?r?");
+
+				itemEnchant = tonumber(Enchant);
+
+				if isRangedSlot and (itemEnchant == 2523) then
 					hasBiznicks = true;
 				end
 			end
@@ -415,7 +425,7 @@ function getPvp(callback, asyncVals)
 
 	local pvp =  {
 		rank = {
-			UnitPVPRank
+			UnitPVPRank('player')
 		},
 		stats = {
 			lastWeekStats = GetPVPLastWeekStats(),
@@ -727,11 +737,6 @@ end
 
 function jsonkvq(key, value)
 	return string.format('"%s":"%s"', key, value);
-end
-
-
-function makeAsyncFunctionCall()
-
 end
 
 
