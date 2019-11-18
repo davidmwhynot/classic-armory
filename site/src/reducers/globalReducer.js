@@ -1,7 +1,11 @@
-import { GLOBAL_LOADED } from '../actions/types';
+import { GLOBAL_LOADED, CHARACTER_UPLOADED } from '../actions/types';
+import history from '../history';
 
 const initialState = {
-	loaded: false
+	loaded: false,
+	page: {
+		url: '/'
+	}
 };
 
 export default function(state = initialState, action) {
@@ -11,6 +15,12 @@ export default function(state = initialState, action) {
 				...state,
 				...action.payload.global,
 				loaded: true
+			};
+		case CHARACTER_UPLOADED:
+			history.push(action.payload);
+
+			return {
+				...state
 			};
 		default:
 			return state;

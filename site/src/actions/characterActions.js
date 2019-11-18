@@ -1,4 +1,4 @@
-import { CHARACTER_LOADED } from './types';
+import { CHARACTER_LOADED, CHARACTER_UPLOADED } from './types';
 import * as Sentry from '@sentry/browser';
 
 export const loadCharacter = id => async dispatch => {
@@ -53,5 +53,51 @@ export const loadCharacter = id => async dispatch => {
 		console.error(err);
 
 		Sentry.captureException(err);
+	}
+};
+
+export const createCharacter = data => async dispatch => {
+	console.log('here');
+	try {
+		const rawRes = await fetch('/.netlify/functions/new', {
+			method: 'POST',
+			body: JSON.stringify(data),
+			headers: { 'Content-Type': 'application/json' }
+		});
+
+		if (rawRes.ok) {
+			const res = await rawRes.json();
+
+			if (!res.error) {
+				// this.setState({ loading: false });
+
+				dispatch({
+					type: CHARACTER_UPLOADED,
+					payload: res.url
+				});
+
+				// this.props.history.push('/' + res.url);
+			} else {
+				console.error(res.stack);
+				Sentry.captureMessage(res.stack);
+
+				// console.log(res);
+
+				// this.setState({
+				// 	loading: false,
+				// 	error: 'Something went wrong. Please try again.'
+				// });
+			}
+		} else {
+			throw Error(rawRes.statusText);
+		}
+	} catch (err) {
+		console.error(err);
+		Sentry.captureException(err);
+
+		// this.setState({
+		// 	loading: false,
+		// 	error: 'Something went wrong. Please try again.'
+		// });
 	}
 };

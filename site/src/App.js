@@ -5,10 +5,11 @@ import { connect } from 'react-redux';
 import $ from 'jquery';
 
 import { loadPage } from './actions/pageActions';
+import { createCharacter } from './actions/characterActions';
 
 import Navbar from './components/Navbar';
 import Home from './components/Home';
-import Character from './components/Character';
+import CharacterSheet from './views/CharacterSheet';
 import Error from './components/Error';
 // import Admin from './components/Admin';
 import BugLink from './components/BugLink';
@@ -17,97 +18,77 @@ import Loading from './components/Loading';
 import './sass/index.scss';
 
 class App extends Component {
-    state = {
-        loading: false,
-        error: null
-    };
+	state = {
+		loading: false,
+		error: null
+	};
 
-    componentWillMount = () => {
-        this.props.loadPage(this.props.location.pathname);
-    };
+	componentWillMount = () => {
+		this.props.loadPage(this.props.location.pathname);
+	};
 
-    componentDidMount = async () => {
-        const ctrlKey = 17;
-        const vKey = 86;
+	componentDidMount = async () => {
+		const ctrlKey = 17;
+		const vKey = 86;
 
-        let ctrlDown = false;
+		let ctrlDown = false;
 
-        $(document)
-            .keydown(e => {
-                if (e.keyCode === ctrlKey) ctrlDown = true;
-            })
-            .keyup(e => {
-                if (e.keyCode === ctrlKey) ctrlDown = false;
-            });
+		$(document)
+			.keydown(e => {
+				if (e.keyCode === ctrlKey) ctrlDown = true;
+			})
+			.keyup(e => {
+				if (e.keyCode === ctrlKey) ctrlDown = false;
+			});
 
-        $('.capture-paste').keydown(e => {
-            if (ctrlDown && e.keyCode === vKey) {
-                $('#area').css('display', 'block');
-                $('#area').val('');
-                $('#area').focus();
-            }
-        });
+		$('.capture-paste').keydown(e => {
+			if (ctrlDown && e.keyCode === vKey) {
+				$('#area').css('display', 'block');
+				$('#area').val('');
+				$('#area').focus();
+			}
+		});
 
-        $('.capture-paste').keyup(async e => {
-            if (ctrlDown && e.keyCode === vKey) {
-                this.setState({ loading: true, error: null });
-                try {
-                    const rawRes = await fetch('/.netlify/functions/new', {
-                        method: 'POST',
-                        body: $('#area').val(),
-                        headers: { 'Content-Type': 'application/json' }
-                    });
+		$('.capture-paste').keyup(async e => {
+			if (ctrlDown && e.keyCode === vKey) {
+				this.setState({ loading: false, error: null });
+				console.log('here');
 
-                    if (rawRes.ok) {
-                        const res = await rawRes.json();
+				try {
+					const pastedData = JSON.parse($('#area').val());
 
-                        if (!res.error) {
-                            this.setState({ loading: false });
-                            this.props.history.push('/' + res.url);
-                        } else {
-                            Sentry.captureMessage(res.stack);
+					this.props.createCharacter(pastedData);
+				} catch (err) {
+					Sentry.captureException(err);
 
-                            console.log(res);
+					this.setState({
+						loading: false,
+						error: 'Something went wrong. Please try again.'
+					});
+				}
 
-                            this.setState({
-                                loading: false,
-                                error: 'Something went wrong. Please try again.'
-                            });
-                        }
-                    } else {
-                        throw Error(rawRes.statusText);
-                    }
-                } catch (err) {
-                    Sentry.captureException(err);
+				$('#area').val('');
+				$('#area').css('display', 'none');
+			}
+		});
+	};
 
-                    this.setState({
-                        loading: false,
-                        error: 'Something went wrong. Please try again.'
-                    });
-                }
+	render() {
+		let appBody = null;
 
-                $('#area').val('');
-                $('#area').css('display', 'none');
-            }
-        });
-    };
-
-    render() {
-        let appBody = null;
-
-        if (this.state.loading) {
-            appBody = (
-                <div className="container">
-                    <Loading />
-                </div>
-            );
-        } else {
-            appBody = (
-                <div className="container-fluid mt-3">
-                    <Route exact path="/" component={Home} />
-                    {/* <Route exact path="/admin/get" component={Admin} /> */}
-                    {/* <Route path="/:id" component={Character} /> */}
-                    <Route
+		if (this.state.loading) {
+			appBody = (
+				<div className="container">
+					<Loading />
+				</div>
+			);
+		} else {
+			appBody = (
+				<div className="container-fluid mt-3">
+					<Route exact path="/" component={Home} />
+					{/* <Route exact path="/admin/get" component={Admin} /> */}
+					<Route exact path="/:id" component={CharacterSheet} />
+					{/* <Route
                         exact
                         path="/:id"
                         render={props => (
@@ -122,33 +103,32 @@ class App extends Component {
                                 }
                             />
                         )}
-                    />
-                    <BugLink />
-                </div>
-            );
-        }
+                    /> */}
+					<BugLink />
+				</div>
+			);
+		}
 
-        return (
-            <div className="App">
-                <Navbar />
-                {this.state.error !== null ? (
-                    <Error error={this.state.error} />
-                ) : (
-                    ''
-                )}
-                {appBody}
-            </div>
-        );
-    }
+		return (
+			<div className="App">
+				<Navbar />
+				{this.state.error !== null ? (
+					<Error error={this.state.error} />
+				) : (
+					''
+				)}
+				{appBody}
+			</div>
+		);
+	}
 }
 
 const mapStateToProps = state => {
-    return {
-        ...state
-    };
+	return {
+		...state
+	};
 };
 
-export default connect(
-    mapStateToProps,
-    { loadPage }
-)(withRouter(App));
+export default connect(mapStateToProps, { loadPage, createCharacter })(
+	withRouter(App)
+);

@@ -7,6 +7,7 @@ import * as Sentry from '@sentry/browser';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 
+import history from './history';
 import store from './store';
 import App from './App';
 
@@ -17,7 +18,7 @@ Sentry.init({
 
 ReactDOM.render(
 	<Provider store={store}>
-		<Router>
+		<Router history={history}>
 			<App />
 		</Router>
 	</Provider>,
