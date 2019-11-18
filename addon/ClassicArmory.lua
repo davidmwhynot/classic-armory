@@ -1,9 +1,11 @@
 -- ClassicArmory
 -- David Whynot
--- v1.0.1
+-- v1.0.2
 
 
 -- GLOBALS
+local CLASSIC_AMORY_VERSION = '1.0.2';
+
 -- async function generator
 local async = function ()
 	local M = {}
@@ -42,7 +44,7 @@ local debug = false;
 local hasBiznicks = false;
 local hasBiznicksBeenChecked = false;
 
-local slotNames = {
+local equippedSlotNames = {
 	"HeadSlot",
 	"NeckSlot",
 	"ShoulderSlot",
@@ -62,14 +64,19 @@ local slotNames = {
 	"MainHandSlot",
 	"SecondaryHandSlot",
 	"RangedSlot",
-	"AmmoSlot",
+	"AmmoSlot"
+};
+
+local equippedSlotNamesLengthMinusOne = table.getn(equippedSlotNames) - 1;
+
+local bagSlotNames = {
 	"Bag0Slot",
 	"Bag1Slot",
 	"Bag2Slot",
 	"Bag3Slot"
-}
+};
 
-local slotNamesLengthMinusOne = table.getn(slotNames) - 1;
+local bagSlotNamesLengthMinusOne = table.getn(bagSlotNames) - 1;
 
 
 function classicArmoryInit()
@@ -264,7 +271,7 @@ function getJSON(jsonCallback)
 		else
 			local items, stats, skills, rep, buffs, debuffs = unpack(result);
 
-			result.v = '1.0.1';
+			result.v = CLASSIC_AMORY_VERSION;
 			result.type = 'player';
 			result.xp = {
 				current = UnitXP('player'),
@@ -279,11 +286,22 @@ end
 
 
 function getItems(callback, asyncVals)
-	local items = {};
+	local items = {
+		equipped = {},
+		bags = {},
+		bank = classicarmoryDB.bank
+	};
 
-	for i = 1, table.getn(slotNames) do
-		local isRangedSlot = slotNames[i] == 'RangedSlot';
-		local slotId = GetInventorySlotInfo(slotNames[i]);
+	items.bags[0] = {
+		slot = 'BackpackSlot',
+		id = 0,
+		items = {}
+	};
+
+	-- equipped items
+	for i = 1, table.getn(equippedSlotNames) do
+		local isRangedSlot = equippedSlotNames[i] == 'RangedSlot';
+		local slotId = GetInventorySlotInfo(equippedSlotNames[i]);
 		local itemId = GetInventoryItemID("player", slotId);
 		local itemLink = GetInventoryItemLink('player', slotId);
 		local itemEnchant = nil;
@@ -291,7 +309,7 @@ function getItems(callback, asyncVals)
 		if isRangedSlot then hasBiznicksBeenChecked = true end
 		
 		if itemLink then
-			local itemName, itemStringLink = GetItemInfo(itemLink);
+			local _, itemStringLink = GetItemInfo(itemLink);
 
 			if itemStringLink then
 				local _, _, Color, Ltype, Id, Enchant, Gem1, Gem2, Gem3, Gem4, Suffix, Unique, LinkLvl, Name = string.find(itemStringLink,
@@ -305,12 +323,57 @@ function getItems(callback, asyncVals)
 			end
 		end
 
-		items[i] = {
-			slot = slotNames[i],
+		items.equipped[i] = {
+			slot = equippedSlotNames[i],
 			item = itemId,
-			enchant = itemEnchant,
-			name = itemName
+			enchant = itemEnchant
 		};
+	end
+
+	-- bag items
+	for i = 1, table.getn(bagSlotNames) do
+		local slotId = GetInventorySlotInfo(bagSlotNames[i]);
+		local itemId = GetInventoryItemID("player", slotId);
+
+		items.bags[i] = {
+			slot = bagSlotNames[i],
+			item = itemId,
+			id = i,
+			items = {}
+		};
+	end
+
+	for i = 0, 4 do
+		local val = items.bags[i];
+
+		if val.id then
+			local numSlots = GetContainerNumSlots(val.id);
+
+			if numSlots > 0 then
+				for j = 1, numSlots do
+					local itemId = GetContainerItemID(val.id, j);
+					local _, itemCount, _, _, _, _, itemLink = GetContainerItemInfo(val.id, j);
+					local itemEnchant = nil;
+
+					if itemLink then
+						local _, itemStringLink = GetItemInfo(itemLink);
+
+						if itemStringLink then
+							local _, _, Color, Ltype, Id, Enchant, Gem1, Gem2, Gem3, Gem4, Suffix, Unique, LinkLvl, Name = string.find(itemStringLink,
+							"|?c?f?f?(%x*)|?H?([^:]*):?(%d+):?(%d*):?(%d*):?(%d*):?(%d*):?(%d*):?(%-?%d*):?(%-?%d*):?(%d*):?(%d*):?(%-?%d*)|?h?%[?([^%[%]]*)%]?|?h?|?r?");
+
+							itemEnchant = tonumber(Enchant);
+						end
+					end
+
+					items.bags[i]['items'][j] = {
+						item = itemId,
+						count = itemCount,
+						enchant = itemEnchant
+					};
+				end
+			end
+		end
 	end
 
 	asyncVals.items = items;
@@ -578,8 +641,8 @@ function getStats(callback, asyncVals)
 		equip = {}
 	};
 
-	for i = 1, table.getn(slotNames) do
-		local slotId = GetInventorySlotInfo(slotNames[i]);
+	for i = 1, table.getn(equippedSlotNames) do
+		local slotId = GetInventorySlotInfo(equippedSlotNames[i]);
 		local itemId = GetInventoryItemID("player", slotId);
 		
 		if itemId ~= nil and itemId ~= 0 then
@@ -819,18 +882,99 @@ function jsonkvq(key, value)
 end
 
 
+function updateBank()
+	local bank = {};
+
+	bank[0] = {
+		id = BANK_CONTAINER,
+		items = {}
+	};
+
+	-- bank bags
+	for i = 1, 6 do
+		local itemId = GetInventoryItemID("player", 67 + i);
+
+		bank[i] = {
+			slot = 'BankBagSlot' .. i,
+			item = itemId,
+			id = i + 4,
+			items = {}
+		};
+	end
+
+	print('bank\n' .. dumpvar(bank))
+
+	-- -- bank items
+	for i = 0, 4 do
+		local val = bank[i];
+
+		if val.id then
+			local numSlots = GetContainerNumSlots(val.id);
+
+			if numSlots > 0 then
+				for j = 1, numSlots do
+					local itemId = GetContainerItemID(val.id, j);
+					local _, itemCount, _, _, _, _, itemLink = GetContainerItemInfo(val.id, j);
+					local itemEnchant = nil;
+
+					if itemLink then
+						local _, itemStringLink = GetItemInfo(itemLink);
+
+						if itemStringLink then
+							local _, _, Color, Ltype, Id, Enchant, Gem1, Gem2, Gem3, Gem4, Suffix, Unique, LinkLvl, Name = string.find(itemStringLink,
+							"|?c?f?f?(%x*)|?H?([^:]*):?(%d+):?(%d*):?(%d*):?(%d*):?(%d*):?(%d*):?(%-?%d*):?(%-?%d*):?(%d*):?(%d*):?(%-?%d*)|?h?%[?([^%[%]]*)%]?|?h?|?r?");
+
+							itemEnchant = tonumber(Enchant);
+						end
+					end
+
+					bank[i]['items'][j] = {
+						item = itemId,
+						count = itemCount,
+						enchant = itemEnchant
+					};
+				end
+			end
+		end
+	end
+
+	classicarmoryDB.bank = bank;
+end
+
 -- create hook
 local classicArmory = CreateFrame("FRAME", "classicArmoryFrame");
 
 
 -- REGISTER EVENTS
 classicArmory:RegisterEvent("PLAYER_ENTERING_WORLD");
+classicArmory:RegisterEvent('VARIABLES_LOADED');
+classicArmory:RegisterEvent('BANKFRAME_OPENED');
 
 
 -- EVENT HANDLER
 function classicArmoryEventHandler(self, event, ...)
 	if ( event == "PLAYER_ENTERING_WORLD" ) then
 		classicArmoryInit();
+	end
+
+	if ( event == "BANKFRAME_OPENED" ) then
+		updateBank();
+	end
+
+	if ( event == "VARIABLES_LOADED" ) then
+		print('variables loaded');
+
+		if not classicarmoryDB then
+			classicarmoryDB = {};
+		end
+
+		if not classicarmoryDB.init then
+			classicarmoryDB = {
+				init = true,
+				version = CLASSIC_AMORY_VERSION,
+				bank = {}
+			};
+		end
 	end
 end
 
