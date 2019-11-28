@@ -1,0 +1,180 @@
+@import '../../../mixins';
+
+.character-equipped-item {
+	display: flex;
+	align-items: center;
+
+	width: max-content;
+
+	@include xl {
+		&:nth-child(n + 9):nth-child(-n + 16) {
+			margin-left: auto;
+
+			.character-equipped-item-icon {
+				order: 1;
+
+				margin-right: 0;
+				margin-left: 0.5rem;
+			}
+		}
+
+		&:nth-child(n + 17) {
+			margin-right: 1rem;
+
+			.character-tooltip {
+				bottom: 0;
+			}
+		}
+
+		&:nth-child(1),
+		&:nth-child(2),
+		&:nth-child(9),
+		&:nth-child(10) {
+			.character-tooltip {
+				transform: translateY(-20%);
+			}
+		}
+
+		&:nth-child(3),
+		&:nth-child(4),
+		&:nth-child(11),
+		&:nth-child(12) {
+			.character-tooltip {
+				transform: translateY(-40%);
+			}
+		}
+
+		&:nth-child(5),
+		&:nth-child(6),
+		&:nth-child(13),
+		&:nth-child(14) {
+			.character-tooltip {
+				transform: translateY(-60%);
+			}
+		}
+
+		&:nth-child(7),
+		&:nth-child(8),
+		&:nth-child(15),
+		&:nth-child(16) {
+			.character-tooltip {
+				transform: translateY(-80%);
+			}
+		}
+
+		&:nth-child(17) {
+			justify-self: end;
+		}
+
+		&:nth-child(n):nth-child(-n + 8),
+		&:nth-child(17),
+		&:nth-child(18) {
+			.character-tooltip {
+				left: calc(100% + 20px);
+			}
+		}
+
+		&:nth-child(n + 9):nth-child(-n + 16),
+		&:nth-child(19),
+		&:nth-child(20) {
+			.character-tooltip {
+				right: calc(100% + 20px);
+			}
+		}
+	}
+
+	a {
+		&:hover,
+		&:active,
+		&:focus,
+		&:visited {
+			text-decoration: none;
+		}
+	}
+
+	&-name {
+		font-size: 1.1rem;
+	}
+}
+
+.character-equipped-item {
+	&-head {
+		grid-area: head;
+	}
+
+	&-hands {
+		grid-area: hands;
+	}
+
+	&-neck {
+		grid-area: neck;
+	}
+
+	&-waist {
+		grid-area: waist;
+	}
+
+	&-shoulder {
+		grid-area: shoulder;
+	}
+
+	&-legs {
+		grid-area: legs;
+	}
+
+	&-back {
+		grid-area: back;
+	}
+
+	&-feet {
+		grid-area: feet;
+	}
+
+	&-chest {
+		grid-area: chest;
+	}
+
+	&-finger0 {
+		grid-area: finger0;
+	}
+
+	&-shirt {
+		grid-area: shirt;
+	}
+
+	&-finger1 {
+		grid-area: finger1;
+	}
+
+	&-tabard {
+		grid-area: tabard;
+	}
+
+	&-trinket0 {
+		grid-area: trinket0;
+	}
+
+	&-wrist {
+		grid-area: wrist;
+	}
+
+	&-trinket1 {
+		grid-area: trinket1;
+	}
+
+	&-mainhand {
+		grid-area: mainhand;
+	}
+
+	&-secondaryhand {
+		grid-area: secondaryhand;
+	}
+
+	&-ranged {
+		grid-area: ranged;
+	}
+
+	&-ammo {
+		grid-area: ammo;
+	}
+}

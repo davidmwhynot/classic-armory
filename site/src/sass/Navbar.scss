@@ -5,8 +5,9 @@
 .navbar {
 	// background-color: var(--dark) !important;
 	border-bottom: 1px solid var(--info);
-	.container-fluid {
-		max-width: 1400px;
+
+	width: 100%;
+	.container {
 		flex-wrap: wrap;
 	}
 }

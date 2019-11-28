@@ -2,38 +2,22 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 // import * as Sentry from '@sentry/browser';
-import { loadCharacter } from '../actions/characterActions';
+import { loadCharacter } from '../../actions/characterActions';
 
-import Item from './Item';
-import Error from './Error';
-import CopyURL from './CopyURL';
-import Loading from './Loading';
-import FacebookShare from './FacebookShare';
-import TwitterShare from './TwitterShare';
+import Item from '../../components/CharacterSheet/V0_1_0/Item';
+import Error from '../../components/Error';
+import CopyURL from '../../components/CopyURL';
+import Loading from '../../components/Loading';
+import FacebookShare from '../../components/FacebookShare';
+import TwitterShare from '../../components/TwitterShare';
+import RecentUploads from '../../components/RecentUploads';
 
-import '../sass/Character.scss';
-import RecentUploads from './RecentUploads';
+import '../../sass/Character.scss';
 
-class Character extends Component {
+class V0_1_0 extends Component {
 	state = {
 		loading: true,
 		error: null
-	};
-
-	componentWillMount = () => {
-		this.props.loadCharacter(this.props.match.params.id);
-	};
-
-	componentWillReceiveProps = async newProps => {
-		if (this.props.match.params.id) {
-			if (!newProps.match.params.id.match(this.props.match.params.id)) {
-				this.props.loadCharacter(newProps.match.params.id);
-			} else if (!this.props.loaded) {
-				this.props.loadCharacter(newProps.match.params.id);
-			}
-		} else {
-			this.props.loadCharacter(newProps.match.params.id);
-		}
 	};
 
 	render() {
@@ -49,14 +33,14 @@ class Character extends Component {
 			} = this.props.data;
 
 			return (
-				<div>
+				<div className="character-v0-1-0">
 					{this.state.error !== null ? (
 						<Error error={this.state.error} />
 					) : (
 						''
 					)}
-					<div className="container-fluid">
-						<div className="character-container">
+					<div className="container">
+						<div className="character-container-v0-1-0">
 							<div className="character-share">
 								<div className="character-copy-url">
 									<CopyURL url={window.location.href} />
@@ -175,4 +159,4 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = { loadCharacter };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Character);
+export default connect(mapStateToProps, mapDispatchToProps)(V0_1_0);

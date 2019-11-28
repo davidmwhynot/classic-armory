@@ -1,7 +1,10 @@
 import { GLOBAL_LOADED } from '../actions/types';
 
 const initialState = {
-	loaded: false
+	loaded: false,
+	page: {
+		url: '/'
+	}
 };
 
 export default function(state = initialState, action) {

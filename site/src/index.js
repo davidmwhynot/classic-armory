@@ -5,9 +5,10 @@ import ReactDOM from 'react-dom';
 import * as Sentry from '@sentry/browser';
 
 import { Provider } from 'react-redux';
-import { BrowserRouter as Router } from 'react-router-dom';
+// import { BrowserRouter as Router } from 'react-router-dom';
+import { ConnectedRouter } from 'connected-react-router';
 
-import store from './store';
+import store, { history } from './store';
 import App from './App';
 
 // config
@@ -17,9 +18,9 @@ Sentry.init({
 
 ReactDOM.render(
 	<Provider store={store}>
-		<Router>
+		<ConnectedRouter history={history}>
 			<App />
-		</Router>
+		</ConnectedRouter>
 	</Provider>,
 	document.getElementById('root')
 );

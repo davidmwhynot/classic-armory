@@ -18,10 +18,14 @@ exports.handler = async function(event, context) {
 
 		return {
 			statusCode: 200,
-			body: character.data
+			body: JSON.stringify({
+				version: character.version,
+				...JSON.parse(character.data)
+			})
 		};
 	} catch (err) {
-		console.error(err);
+		// console.error(err);
+		console.error('error');
 
 		sentry({ error: err });
 

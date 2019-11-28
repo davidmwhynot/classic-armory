@@ -1,21 +1,66 @@
-// colors from PSD and style guide
+/* colors */
+// basic
+$blue: #375a7f;
+$indigo: #6610f2;
+$purple: #6f42c1;
+$magenta: #ec008c;
+$pink: #e83e8c;
+$red: #e74c3c;
+$orange: #fd7e14;
+$light-orange: #faa21b;
+$yellow: #f39c12;
+$green: #00bc8c;
+$teal: #20c997;
+$cyan: #3498db;
+$white: #fff;
 $beige: #fef1e0;
 $map-beige: #fff8f0;
-$orange: #f47920;
-$black: #000000;
-$blue: #3763af;
-$cyan: #00aeef;
-$dark-gray: #575757;
-$gray: #939598;
 $light-gray: #c9c9c9;
-$green: #a6ce39;
-$light-orange: #faa21b;
-$magenta: #ec008c;
-$purple: #74489d;
-$red: #c91f1f;
-$teal: #00aaad;
-$white: #ffffff;
+$gray: #888;
+$gray-dark: #303030;
+$black: #000000;
 
+$primary: #375a7f;
+$secondary: #444;
+$success: #00bc8c;
+$info: #3498db;
+$warning: #f39c12;
+$danger: #e74c3c;
+$light: #999;
+$dark: #303030;
+
+$q: #ffd100;
+$buff: #008467;
+$debuff: #c41e3b;
+
+// rarity colors
+$poor: #9d9d9d;
+$common: #ffffff;
+$uncommon: #1eff00;
+$rare: #0070dd;
+$epic: #a335ee;
+$legendary: #ff8000;
+
+// class
+$druid: #ff7d0a;
+$hunter: #a9d271;
+$mage: #40c7eb;
+$paladin: #f58cba;
+$priest: #ffffff;
+$rogue: #fff569;
+$shaman: #0070de;
+$warlock: #8787ed;
+$warrior: #c79c6e;
+
+/* breakpoints */
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
+$xxxl: 1600px;
+
+/* box shadows */
 $box-shadow: 0 4px 28px rgba(0, 0, 0, 0.25), 0 0 10px rgba(0, 0, 0, 0.22);
 $share-btn-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
 	0 1px 2px rgba(0, 0, 0, 0.24);

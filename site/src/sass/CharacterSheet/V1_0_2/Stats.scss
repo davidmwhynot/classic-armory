@@ -1,0 +1,43 @@
+@import '../../variables';
+
+.character-stats {
+	table {
+		th,
+		td {
+			padding: 6px;
+		}
+
+		thead {
+			th {
+				font-size: 1.25rem;
+				color: $info !important;
+			}
+		}
+
+		th {
+			text-align: center;
+			color: $info !important;
+		}
+
+		td:first-child {
+			text-align: right;
+		}
+
+		td:nth-child(2) {
+			color: $success !important;
+		}
+	}
+
+	&-warning-auras {
+		margin-bottom: 0.25rem;
+	}
+
+	&-tables {
+		display: flex;
+
+		margin-top: 1rem;
+	}
+
+	&-general {
+	}
+}

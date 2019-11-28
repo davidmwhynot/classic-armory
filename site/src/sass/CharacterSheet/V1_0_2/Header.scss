@@ -1,0 +1,56 @@
+.character-header {
+	margin-bottom: 0.5rem;
+
+	h2,
+	// h3,
+	h4 {
+		margin: 0;
+		padding: 0;
+	}
+
+	&-top,
+	&-race-sex-container,
+	&-class-container {
+		display: flex;
+	}
+
+	&-top {
+		justify-content: space-between;
+
+		margin-bottom: 0.25rem;
+
+		img {
+			align-self: flex-end;
+
+			margin-left: 0.5rem;
+		}
+
+		.character-header-name-container {
+			height: 40px;
+		}
+
+		.character-header-class-container {
+			height: 40px;
+		}
+	}
+
+	&-class-container {
+		img {
+			width: 2rem;
+			height: 2rem;
+		}
+	}
+
+	&-race-sex-container {
+		margin-bottom: 0.5rem;
+
+		img {
+			align-self: center;
+
+			width: 1.40625rem;
+			height: 1.40625rem;
+
+			margin-right: 0.5rem;
+		}
+	}
+}

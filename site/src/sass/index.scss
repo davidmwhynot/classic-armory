@@ -1,16 +1,4 @@
-// body {
-// 	margin: 0;
-// 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-// 		'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-// 		'Helvetica Neue', sans-serif;
-// 	-webkit-font-smoothing: antialiased;
-// 	-moz-osx-font-smoothing: grayscale;
-// }
-
-// code {
-// 	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-// 		monospace;
-// }
+@import 'variables';
 
 kbd {
 	background-color: var(--secondary);
@@ -24,11 +12,205 @@ kbd {
 a {
 	color: var(--info);
 }
-a:visited,
-a:hover,
-a:focus,
-a:active {
-	// color: inherit;
+
+/* color classes */
+.color {
+	// class
+	&-druid {
+		color: $druid !important;
+	}
+	&-hunter {
+		color: $hunter !important;
+	}
+	&-mage {
+		color: $mage !important;
+	}
+	&-paladin {
+		color: $paladin !important;
+	}
+	&-priest {
+		color: $priest !important;
+	}
+	&-rogue {
+		color: $rogue !important;
+	}
+	&-shaman {
+		color: $shaman !important;
+	}
+	&-warlock {
+		color: $warlock !important;
+	}
+	&-warrior {
+		color: $warrior !important;
+	}
+
+	// quality
+	&-poor {
+		color: $poor !important;
+	}
+	&-common {
+		color: $common !important;
+	}
+	&-uncommon {
+		color: $uncommon !important;
+	}
+	&-rare {
+		color: $rare !important;
+	}
+	&-epic {
+		color: $epic !important;
+	}
+	&-legendary {
+		color: $legendary !important;
+	}
+}
+
+/* border classes */
+.border {
+	// general
+	&-blue {
+		border: 1px solid $blue;
+	}
+	&-indigo {
+		border: 1px solid $indigo;
+	}
+	&-purple {
+		border: 1px solid $purple;
+	}
+	&-magenta {
+		border: 1px solid $magenta;
+	}
+	&-pink {
+		border: 1px solid $pink;
+	}
+	&-red {
+		border: 1px solid $red;
+	}
+	&-orange {
+		border: 1px solid $orange;
+	}
+	&-light-orange {
+		border: 1px solid $light-orange;
+	}
+	&-yellow {
+		border: 1px solid $yellow;
+	}
+	&-green {
+		border: 1px solid $green;
+	}
+	&-teal {
+		border: 1px solid $teal;
+	}
+	&-cyan {
+		border: 1px solid $cyan;
+	}
+	&-white {
+		border: 1px solid $white;
+	}
+	&-beige {
+		border: 1px solid $beige;
+	}
+	&-map-beige {
+		border: 1px solid $map-beige;
+	}
+	&-light-gray {
+		border: 1px solid $light-gray;
+	}
+	&-gray {
+		border: 1px solid $gray;
+	}
+	&-gray-dark {
+		border: 1px solid $gray-dark;
+	}
+	&-black {
+		border: 1px solid $black;
+	}
+
+	&-primary {
+		border: 1px solid $primary;
+	}
+	&-secondary {
+		border: 1px solid $secondary;
+	}
+	&-success {
+		border: 1px solid $success;
+	}
+	&-info {
+		border: 1px solid $info;
+	}
+	&-warning {
+		border: 1px solid $warning;
+	}
+	&-danger {
+		border: 1px solid $danger;
+	}
+	&-light {
+		border: 1px solid $light;
+	}
+	&-dark {
+		border: 1px solid $dark;
+	}
+
+	&-buff {
+		border: 1px solid $buff;
+	}
+	&-debuff {
+		border: 1px solid $debuff;
+	}
+
+	// class
+	&-druid {
+		border: 1px solid $druid;
+	}
+	&-hunter {
+		border: 1px solid $hunter;
+	}
+	&-mage {
+		border: 1px solid $mage;
+	}
+	&-paladin {
+		border: 1px solid $paladin;
+	}
+	&-priest {
+		border: 1px solid $priest;
+	}
+	&-rogue {
+		border: 1px solid $rogue;
+	}
+	&-shaman {
+		border: 1px solid $shaman;
+	}
+	&-warlock {
+		border: 1px solid $warlock;
+	}
+	&-warrior {
+		border: 1px solid $warrior;
+	}
+
+	// quality
+	&-poor {
+		border: 1px solid $poor;
+	}
+
+	&-common {
+		border: 1px solid $common;
+	}
+
+	&-uncommon {
+		border: 1px solid $uncommon;
+	}
+
+	&-rare {
+		border: 1px solid $rare;
+	}
+
+	&-epic {
+		border: 1px solid $epic;
+	}
+
+	&-legendary {
+		border: 1px solid $legendary;
+	}
 }
 
 .switch-wrapper {
@@ -55,4 +237,37 @@ a:active {
 .page-leave.page-leave-active {
 	opacity: 0.01;
 	transition: opacity 1000ms linear;
+}
+
+.container {
+	max-width: $xxxl;
+	// overflow: hidden;
+}
+
+.transition {
+	opacity: 1;
+
+	transition: opacity 100ms linear;
+
+	&-fading {
+		opacity: 0.01;
+	}
+}
+
+.fade-enter {
+	opacity: 0.01;
+}
+
+.fade-enter.fade-enter-active {
+	opacity: 1;
+	transition: opacity 100ms linear;
+}
+
+.fade-leave {
+	opacity: 1;
+}
+
+.fade-leave.fade-leave-active {
+	opacity: 0.01;
+	transition: opacity 100ms linear;
 }

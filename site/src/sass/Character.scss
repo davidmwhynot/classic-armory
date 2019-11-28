@@ -1,654 +1,544 @@
-/* XXX variables XXX */
-// rarity colors
-$color-poor: #9d9d9d;
-$color-common: #ffffff;
-$color-uncommon: #1eff00;
-$color-rare: #0070dd;
-$color-epic: #a335ee;
-$color-legendary: #ff8000;
+.character-v0-1-0 {
+	/* XXX variables XXX */
+	// rarity colors
+	$color-poor: #9d9d9d;
+	$color-common: #ffffff;
+	$color-uncommon: #1eff00;
+	$color-rare: #0070dd;
+	$color-epic: #a335ee;
+	$color-legendary: #ff8000;
 
-// class colors
-$color-druid: #ff7d0a;
-$color-hunter: #a9d271;
-$color-mage: #40c7eb;
-$color-paladin: #f58cba;
-$color-priest: #ffffff;
-$color-rogue: #fff569;
-$color-shaman: #0070de;
-$color-warlock: #8787ed;
-$color-warrior: #c79c6e;
+	// class colors
+	$color-druid: #ff7d0a;
+	$color-hunter: #a9d271;
+	$color-mage: #40c7eb;
+	$color-paladin: #f58cba;
+	$color-priest: #ffffff;
+	$color-rogue: #fff569;
+	$color-shaman: #0070de;
+	$color-warlock: #8787ed;
+	$color-warrior: #c79c6e;
 
-$color-q: #ffd100;
+	$color-q: #ffd100;
 
-/* XXX styles XXX */
+	/* XXX styles XXX */
 
-.class-color {
-	&-druid {
-		color: $color-druid;
+	.class-color {
+		&-druid {
+			color: $color-druid;
+		}
+		&-hunter {
+			color: $color-hunter;
+		}
+		&-mage {
+			color: $color-mage;
+		}
+		&-paladin {
+			color: $color-paladin;
+		}
+		&-priest {
+			color: $color-priest;
+		}
+		&-rogue {
+			color: $color-rogue;
+		}
+		&-shaman {
+			color: $color-shaman;
+		}
+		&-warlock {
+			color: $color-warlock;
+		}
+		&-warrior {
+			color: $color-warrior;
+		}
 	}
-	&-hunter {
-		color: $color-hunter;
-	}
-	&-mage {
-		color: $color-mage;
-	}
-	&-paladin {
-		color: $color-paladin;
-	}
-	&-priest {
-		color: $color-priest;
-	}
-	&-rogue {
+
+	.c4 {
 		color: $color-rogue;
 	}
-	&-shaman {
-		color: $color-shaman;
-	}
-	&-warlock {
-		color: $color-warlock;
-	}
-	&-warrior {
-		color: $color-warrior;
-	}
-}
 
-.c4 {
-	color: $color-rogue;
-}
+	.color-rarity {
+		&-0 {
+			color: $color-poor;
+		}
+		&-1 {
+			color: $color-common;
+		}
+		&-2 {
+			color: $color-uncommon;
+		}
+		&-3 {
+			color: $color-rare;
+		}
+		&-4 {
+			color: $color-epic;
+		}
+		&-5 {
+			color: $color-legendary;
+		}
+	}
 
-.color-rarity {
-	&-0 {
+	.q0 {
 		color: $color-poor;
 	}
-	&-1 {
+
+	.q1 {
 		color: $color-common;
 	}
-	&-2 {
+
+	.q2 {
 		color: $color-uncommon;
 	}
-	&-3 {
+
+	.q3 {
 		color: $color-rare;
 	}
-	&-4 {
+
+	.q4 {
 		color: $color-epic;
 	}
-	&-5 {
+
+	.q5 {
 		color: $color-legendary;
 	}
-}
 
-.q0 {
-	color: $color-poor;
-}
-
-.q1 {
-	color: $color-common;
-}
-
-.q2 {
-	color: $color-uncommon;
-}
-
-.q3 {
-	color: $color-rare;
-}
-
-.q4 {
-	color: $color-epic;
-}
-
-.q5 {
-	color: $color-legendary;
-}
-
-.q {
-	color: $color-q;
-}
-
-.moneygold {
-	display: inline-block;
-	background: no-repeat right bottom;
-	padding-right: 15px;
-	background-image: url('/media/money-gold.gif');
-}
-.moneysilver {
-	display: inline-block;
-	background: no-repeat right bottom;
-	padding-right: 15px;
-	background-image: url('/media/money-silver.gif');
-}
-.moneycopper {
-	display: inline-block;
-	background: no-repeat right bottom;
-	padding-right: 15px;
-	background-image: url('/media/money-copper.gif');
-}
-
-.border-rarity {
-	&-0 {
-		border: 1px solid $color-poor;
-	}
-	&-1 {
-		border: 1px solid $color-common;
-	}
-	&-2 {
-		border: 1px solid $color-uncommon;
-	}
-	&-3 {
-		border: 1px solid $color-rare;
-	}
-	&-4 {
-		border: 1px solid $color-epic;
-	}
-	&-5 {
-		border: 1px solid $color-legendary;
-	}
-}
-
-.character-header {
-	display: flex;
-
-	justify-content: space-between;
-	align-items: flex-start;
-
-	.character-names {
-		h1 {
-			line-height: 1;
-			margin-bottom: 0;
-		}
-		h2 {
-			margin-bottom: 0;
-		}
-	}
-	.character-tagline {
-		h4 {
-			margin-bottom: 0;
-		}
-	}
-}
-
-.character-share-social {
-	display: flex;
-	justify-content: space-between;
-	width: max-content;
-}
-
-.item-stats {
-	position: absolute;
-	z-index: 1000;
-
-	width: max-content;
-
-	padding: 0.4em;
-
-	text-align: left !important;
-
-	background-color: rgba(0, 0, 0, 0.8);
-
-	// transition: opacity 100ms linear;
-
-	a {
-		color: inherit;
-	}
-	table {
-		max-width: 300px;
-	}
-}
-
-.shader {
-	display: block;
-	position: relative;
-	margin-left: auto;
-	&:hover::before {
-		box-shadow: inset 0 0 25px rgba(0, 0, 0, 1);
-	}
-}
-.shader:before {
-	box-shadow: inset 0 0 25px rgba(0, 0, 0, 0);
-
-	transition: box-shadow 100ms linear;
-	content: '';
-	height: 100%;
-	position: absolute;
-	width: 60px;
-}
-.character-doll {
-	display: grid;
-
-	align-items: center;
-
-	margin-bottom: 5em;
-
-	position: relative;
-
-	.item {
-		&:nth-child(n):nth-child(-n + 8) {
-			.item-body {
-				.shader {
-					margin-right: 20px;
-				}
-			}
-		}
-
-		&:nth-child(1),
-		&:nth-child(2),
-		&:nth-child(3),
-		&:nth-child(9),
-		&:nth-child(10),
-		&:nth-child(11) {
-			.item-stats {
-				transform: translateY(-10%);
-			}
-		}
-
-		&:nth-child(4),
-		&:nth-child(5),
-		&:nth-child(6),
-		&:nth-child(12),
-		&:nth-child(13),
-		&:nth-child(14) {
-			.item-stats {
-				transform: translateY(-30%);
-			}
-		}
-
-		&:nth-child(7),
-		&:nth-child(8),
-		&:nth-child(n + 14):nth-child(-n + 20) {
-			.item-stats {
-				transform: translateY(-50%);
-			}
-		}
-
-		&:nth-child(n + 9):nth-child(-n + 16) {
-			text-align: right;
-
-			.item-body {
-				justify-content: end;
-				a {
-					order: 2;
-				}
-
-				.item-no-item {
-					margin-left: auto;
-				}
-
-				.shader {
-					margin-left: 20px;
-				}
-
-				.item-description {
-					.item-stats {
-						right: 0;
-					}
-				}
-			}
-		}
-
-		&:nth-child(n + 17):nth-child(-n + 19) {
-			align-self: end;
-		}
-
-		&:nth-child(n + 21):nth-child(-n + 24) {
-			.item-description {
-				.item-stats {
-					left: 0;
-					bottom: 0;
-				}
-			}
-		}
-
-		&:nth-child(20) {
-			align-self: flex-start;
-		}
-
-		&:nth-child(n + 17):nth-child(-n + 24) {
-			.item-body {
-				align-items: center;
-
-				// .item-no-item {
-				// 	margin-left: auto;
-				// }
-
-				.shader {
-					margin: 0 10px;
-					// margin: 0;
-				}
-
-				.item-description {
-					width: calc(100% - 95px);
-				}
-			}
-		}
-
-		.item-body {
-			display: flex;
-
-			align-items: center;
-
-			.item-img {
-				width: 60px;
-				height: 60px;
-				// border-radius: 5px;
-			}
-
-			.item-description {
-				position: relative;
-
-				width: calc(100% - 80px);
-
-				line-height: 1.1;
-
-				.item-stat {
-					display: flex;
-
-					&-label {
-						margin-right: 5px;
-					}
-				}
-			}
-		}
-	}
-}
-
-.character-doll {
-	.item {
-		&-head {
-			grid-area: head;
-		}
-
-		&-hands {
-			grid-area: hands;
-		}
-
-		&-neck {
-			grid-area: neck;
-		}
-
-		&-waist {
-			grid-area: waist;
-		}
-
-		&-shoulder {
-			grid-area: shoulder;
-		}
-
-		&-legs {
-			grid-area: legs;
-		}
-
-		&-back {
-			grid-area: back;
-		}
-
-		&-feet {
-			grid-area: feet;
-		}
-
-		&-chest {
-			grid-area: chest;
-		}
-
-		&-finger0 {
-			grid-area: finger0;
-		}
-
-		&-shirt {
-			grid-area: shirt;
-		}
-
-		&-finger1 {
-			grid-area: finger1;
-		}
-
-		&-tabard {
-			grid-area: tabard;
-		}
-
-		&-trinket0 {
-			grid-area: trinket0;
-		}
-
-		&-wrist {
-			grid-area: wrist;
-		}
-
-		&-trinket1 {
-			grid-area: trinket1;
-		}
-
-		&-mainhand {
-			grid-area: mainhand;
-		}
-
-		&-secondaryhand {
-			grid-area: secondaryhand;
-		}
-
-		&-ranged {
-			grid-area: ranged;
-		}
-
-		&-ammo {
-			grid-area: ammo;
-		}
-
-		&-bag0 {
-			grid-area: bag0;
-		}
-
-		&-bag1 {
-			grid-area: bag1;
-		}
-
-		&-bag2 {
-			grid-area: bag2;
-		}
-
-		&-bag3 {
-			grid-area: bag3;
-		}
-	}
-}
-
-.stats-enter {
-	opacity: 0.01;
-}
-
-.stats-enter.stats-enter-active {
-	opacity: 1;
-	transition: opacity 100ms linear;
-}
-
-.stats-leave {
-	opacity: 1;
-}
-
-.stats-leave.stats-leave-active {
-	opacity: 0.01;
-	transition: opacity 100ms linear;
-}
-
-.character-container {
-	display: grid;
-
-	.character-share {
-		grid-area: share;
+	.q {
+		color: $color-q;
 	}
 
-	.character-uploads {
-		grid-area: uploads;
+	.moneygold {
+		display: inline-block;
+		background: no-repeat right bottom;
+		padding-right: 15px;
+		background-image: url('/media/money-gold.gif');
+	}
+	.moneysilver {
+		display: inline-block;
+		background: no-repeat right bottom;
+		padding-right: 15px;
+		background-image: url('/media/money-silver.gif');
+	}
+	.moneycopper {
+		display: inline-block;
+		background: no-repeat right bottom;
+		padding-right: 15px;
+		background-image: url('/media/money-copper.gif');
+	}
 
-		margin-bottom: 5em;
+	.border-rarity {
+		&-0 {
+			border: 1px solid $color-poor;
+		}
+		&-1 {
+			border: 1px solid $color-common;
+		}
+		&-2 {
+			border: 1px solid $color-uncommon;
+		}
+		&-3 {
+			border: 1px solid $color-rare;
+		}
+		&-4 {
+			border: 1px solid $color-epic;
+		}
+		&-5 {
+			border: 1px solid $color-legendary;
+		}
 	}
 
 	.character-header {
-		grid-area: header;
-	}
+		display: flex;
 
-	.character {
-		grid-area: character;
-	}
+		justify-content: space-between;
+		align-items: flex-start;
 
-	// Extra small devices (portrait phones, less than 576px)
-	@media (max-width: 575.98px) {
-		grid-gap: 2em;
-		grid-template-areas:
-			'header'
-			'share'
-			'character'
-			'uploads';
-
-		.item-stats {
-			table {
-				max-width: 150px;
+		.character-names {
+			h1 {
+				line-height: 1;
+				margin-bottom: 0;
+			}
+			h2 {
+				margin-bottom: 0;
 			}
 		}
-
-		.character {
-			.character-doll {
+		.character-tagline {
+			h4 {
 				margin-bottom: 0;
-				// grid-template-rows: repeat(8, 3fr) 5fr 6fr 3fr 1fr;
-				grid-template-columns: repeat(4, 1fr);
-				grid-gap: 0.5em;
-
-				grid-template-areas:
-					'head head hands hands'
-					'neck neck waist waist'
-					'shoulder shoulder legs legs'
-					'back back feet feet'
-					'chest chest finger0 finger0'
-					'shirt shirt finger1 finger1'
-					'tabard tabard trinket0 trinket0'
-					'wrist wrist trinket1 trinket1'
-					'. . . .'
-					'. . . .'
-					'. . . .'
-					'. . . .'
-					'mainhand mainhand secondaryhand secondaryhand'
-					'ranged ranged ammo ammo'
-					'. . . .'
-					'. . . .'
-					'. . . .'
-					'. . . .'
-					'bag0 bag0 bag1 bag1'
-					'bag2 bag2 bag3 bag3';
 			}
+		}
+	}
 
-			.item-ranged {
-				align-self: flex-start !important;
-			}
+	.character-share-social {
+		display: flex;
+		justify-content: space-between;
+		width: max-content;
+	}
 
-			.item {
-				&:nth-child(n + 17):nth-child(-n + 24) {
+	.item-stats {
+		position: absolute;
+		z-index: 1000;
+
+		width: max-content;
+
+		padding: 0.4em;
+
+		text-align: left !important;
+
+		background-color: rgba(0, 0, 0, 0.8);
+
+		// transition: opacity 100ms linear;
+
+		a {
+			color: inherit;
+		}
+		table {
+			max-width: 300px;
+		}
+	}
+
+	.shader {
+		display: block;
+		position: relative;
+		margin-left: auto;
+		&:hover::before {
+			box-shadow: inset 0 0 25px rgba(0, 0, 0, 1);
+		}
+	}
+	.shader:before {
+		box-shadow: inset 0 0 25px rgba(0, 0, 0, 0);
+
+		transition: box-shadow 100ms linear;
+		content: '';
+		height: 100%;
+		position: absolute;
+		width: 60px;
+	}
+	.character-doll {
+		display: grid;
+
+		align-items: center;
+
+		margin-bottom: 5em;
+
+		position: relative;
+
+		.item {
+			&:nth-child(n):nth-child(-n + 8) {
+				.item-body {
 					.shader {
-						margin: 0;
 						margin-right: 20px;
+					}
+				}
+			}
+
+			&:nth-child(1),
+			&:nth-child(2),
+			&:nth-child(3),
+			&:nth-child(9),
+			&:nth-child(10),
+			&:nth-child(11) {
+				.item-stats {
+					transform: translateY(-10%);
+				}
+			}
+
+			&:nth-child(4),
+			&:nth-child(5),
+			&:nth-child(6),
+			&:nth-child(12),
+			&:nth-child(13),
+			&:nth-child(14) {
+				.item-stats {
+					transform: translateY(-30%);
+				}
+			}
+
+			&:nth-child(7),
+			&:nth-child(8),
+			&:nth-child(n + 14):nth-child(-n + 20) {
+				.item-stats {
+					transform: translateY(-50%);
+				}
+			}
+
+			&:nth-child(n + 9):nth-child(-n + 16) {
+				text-align: right;
+
+				.item-body {
+					justify-content: end;
+					a {
+						order: 2;
+					}
+
+					.item-no-item {
+						margin-left: auto;
+					}
+
+					.shader {
+						margin-left: 20px;
+					}
+
+					.item-description {
+						.item-stats {
+							right: 0;
+						}
+					}
+				}
+			}
+
+			&:nth-child(n + 17):nth-child(-n + 19) {
+				align-self: end;
+			}
+
+			&:nth-child(n + 21):nth-child(-n + 24) {
+				.item-description {
+					.item-stats {
+						left: 0;
+						bottom: 0;
+					}
+				}
+			}
+
+			&:nth-child(20) {
+				align-self: flex-start;
+			}
+
+			&:nth-child(n + 17):nth-child(-n + 24) {
+				.item-body {
+					align-items: center;
+
+					// .item-no-item {
+					// 	margin-left: auto;
+					// }
+
+					.shader {
+						margin: 0 10px;
+						// margin: 0;
+					}
+
+					.item-description {
+						width: calc(100% - 95px);
+					}
+				}
+			}
+
+			.item-body {
+				display: flex;
+
+				align-items: center;
+
+				.item-img {
+					width: 60px;
+					height: 60px;
+					// border-radius: 5px;
+				}
+
+				.item-description {
+					position: relative;
+
+					width: calc(100% - 80px);
+
+					line-height: 1.1;
+
+					.item-stat {
+						display: flex;
+
+						&-label {
+							margin-right: 5px;
+						}
 					}
 				}
 			}
 		}
 	}
 
-	// Small devices (landscape phones, 576px and up)
-	@media (min-width: 576px) and (max-width: 767.98px) {
-		grid-gap: 1rem;
-		grid-template-columns: 1fr;
-		grid-template-rows: auto auto auto 1fr;
-		grid-template-areas:
-			'header'
-			'share'
-			'character'
-			'uploads';
-
-		.item-stats {
-			table {
-				max-width: 150px;
-			}
-		}
-
-		.character {
-			.character-doll {
-				margin-bottom: 0;
-				// grid-template-rows: repeat(8, 3fr) 5fr 6fr 3fr 1fr;
-				grid-template-columns: repeat(4, 1fr);
-				grid-gap: 0.5em;
-
-				grid-template-areas:
-					'head head hands hands'
-					'neck neck waist waist'
-					'shoulder shoulder legs legs'
-					'back back feet feet'
-					'chest chest finger0 finger0'
-					'shirt shirt finger1 finger1'
-					'tabard tabard trinket0 trinket0'
-					'wrist wrist trinket1 trinket1'
-					'. . . .'
-					'. . . .'
-					'. . . .'
-					'. . . .'
-					'mainhand mainhand secondaryhand secondaryhand'
-					'ranged ranged ammo ammo'
-					'. . . .'
-					'. . . .'
-					'. . . .'
-					'. . . .'
-					'bag0 bag0 bag1 bag1'
-					'bag2 bag2 bag3 bag3';
+	.character-doll {
+		.item {
+			&-head {
+				grid-area: head;
 			}
 
-			.item-ranged {
-				align-self: flex-start !important;
+			&-hands {
+				grid-area: hands;
 			}
 
-			.item {
-				&:nth-child(n + 17):nth-child(-n + 24) {
-					.shader {
-						margin: 0;
-						margin-right: 20px;
-					}
-				}
+			&-neck {
+				grid-area: neck;
+			}
+
+			&-waist {
+				grid-area: waist;
+			}
+
+			&-shoulder {
+				grid-area: shoulder;
+			}
+
+			&-legs {
+				grid-area: legs;
+			}
+
+			&-back {
+				grid-area: back;
+			}
+
+			&-feet {
+				grid-area: feet;
+			}
+
+			&-chest {
+				grid-area: chest;
+			}
+
+			&-finger0 {
+				grid-area: finger0;
+			}
+
+			&-shirt {
+				grid-area: shirt;
+			}
+
+			&-finger1 {
+				grid-area: finger1;
+			}
+
+			&-tabard {
+				grid-area: tabard;
+			}
+
+			&-trinket0 {
+				grid-area: trinket0;
+			}
+
+			&-wrist {
+				grid-area: wrist;
+			}
+
+			&-trinket1 {
+				grid-area: trinket1;
+			}
+
+			&-mainhand {
+				grid-area: mainhand;
+			}
+
+			&-secondaryhand {
+				grid-area: secondaryhand;
+			}
+
+			&-ranged {
+				grid-area: ranged;
+			}
+
+			&-ammo {
+				grid-area: ammo;
+			}
+
+			&-bag0 {
+				grid-area: bag0;
+			}
+
+			&-bag1 {
+				grid-area: bag1;
+			}
+
+			&-bag2 {
+				grid-area: bag2;
+			}
+
+			&-bag3 {
+				grid-area: bag3;
 			}
 		}
 	}
 
-	// Medium devices (tablets, 768px and up)
-	@media (min-width: 768px) and (max-width: 991.98px) {
-		grid-template-columns: 1fr;
-		grid-template-rows: auto auto auto 1fr;
-		grid-gap: 1rem;
-		grid-template-areas:
-			'header'
-			'share'
-			'character'
-			'uploads';
+	.stats-enter {
+		opacity: 0.01;
+	}
+
+	.stats-enter.stats-enter-active {
+		opacity: 1;
+		transition: opacity 100ms linear;
+	}
+
+	.stats-leave {
+		opacity: 1;
+	}
+
+	.stats-leave.stats-leave-active {
+		opacity: 0.01;
+		transition: opacity 100ms linear;
+	}
+
+	.character-container {
+		display: grid;
+
+		.character-share {
+			grid-area: share;
+		}
+
+		.character-uploads {
+			grid-area: uploads;
+
+			margin-bottom: 5em;
+		}
+
+		.character-header {
+			grid-area: header;
+		}
 
 		.character {
-			.character-doll {
-				margin-bottom: 0;
+			grid-area: character;
+		}
 
-				grid-template-columns: repeat(9, 1fr);
-				grid-gap: 0.5em;
+		// Extra small devices (portrait phones, less than 576px)
+		@media (max-width: 575.98px) {
+			grid-gap: 2em;
+			grid-template-areas:
+				'header'
+				'share'
+				'character'
+				'uploads';
 
-				grid-template-areas:
-					'head head head head . hands hands hands hands'
-					'neck neck neck neck . waist waist waist waist'
-					'shoulder shoulder shoulder shoulder . legs legs legs legs'
-					'back back back back . feet feet feet feet'
-					'chest chest chest chest . finger0 finger0 finger0 finger0'
-					'shirt shirt shirt shirt . finger1 finger1 finger1 finger1'
-					'tabard tabard tabard tabard . trinket0 trinket0 trinket0 trinket0'
-					'wrist wrist wrist wrist . trinket1 trinket1 trinket1 trinket1'
-					'. . . . . . . . .'
-					'. . . . . . . . .'
-					'. . . . . . . . .'
-					'mainhand mainhand mainhand secondaryhand secondaryhand secondaryhand ranged ranged ranged'
-					'. . . . . . ammo ammo ammo'
-					'. . . . . . . . .'
-					'. . . . . . . . .'
-					'. . . . . . . . .'
-					'bag0 bag0 bag0 bag0 . bag1 bag1 bag1 bag1'
-					'bag2 bag2 bag2 bag2 . bag3 bag3 bag3 bag3';
+			.item-stats {
+				table {
+					max-width: 150px;
+				}
+			}
+
+			.character {
+				.character-doll {
+					margin-bottom: 0;
+					// grid-template-rows: repeat(8, 3fr) 5fr 6fr 3fr 1fr;
+					grid-template-columns: repeat(4, 1fr);
+					grid-gap: 0.5em;
+
+					grid-template-areas:
+						'head head hands hands'
+						'neck neck waist waist'
+						'shoulder shoulder legs legs'
+						'back back feet feet'
+						'chest chest finger0 finger0'
+						'shirt shirt finger1 finger1'
+						'tabard tabard trinket0 trinket0'
+						'wrist wrist trinket1 trinket1'
+						'. . . .'
+						'. . . .'
+						'. . . .'
+						'. . . .'
+						'mainhand mainhand secondaryhand secondaryhand'
+						'ranged ranged ammo ammo'
+						'. . . .'
+						'. . . .'
+						'. . . .'
+						'. . . .'
+						'bag0 bag0 bag1 bag1'
+						'bag2 bag2 bag3 bag3';
+				}
+
+				.item-ranged {
+					align-self: flex-start !important;
+				}
 
 				.item {
 					&:nth-child(n + 17):nth-child(-n + 24) {
@@ -657,7 +547,222 @@ $color-q: #ffd100;
 							margin-right: 20px;
 						}
 					}
+				}
+			}
+		}
 
+		// Small devices (landscape phones, 576px and up)
+		@media (min-width: 576px) and (max-width: 767.98px) {
+			grid-gap: 1rem;
+			grid-template-columns: 1fr;
+			grid-template-rows: auto auto auto 1fr;
+			grid-template-areas:
+				'header'
+				'share'
+				'character'
+				'uploads';
+
+			.item-stats {
+				table {
+					max-width: 150px;
+				}
+			}
+
+			.character {
+				.character-doll {
+					margin-bottom: 0;
+					// grid-template-rows: repeat(8, 3fr) 5fr 6fr 3fr 1fr;
+					grid-template-columns: repeat(4, 1fr);
+					grid-gap: 0.5em;
+
+					grid-template-areas:
+						'head head hands hands'
+						'neck neck waist waist'
+						'shoulder shoulder legs legs'
+						'back back feet feet'
+						'chest chest finger0 finger0'
+						'shirt shirt finger1 finger1'
+						'tabard tabard trinket0 trinket0'
+						'wrist wrist trinket1 trinket1'
+						'. . . .'
+						'. . . .'
+						'. . . .'
+						'. . . .'
+						'mainhand mainhand secondaryhand secondaryhand'
+						'ranged ranged ammo ammo'
+						'. . . .'
+						'. . . .'
+						'. . . .'
+						'. . . .'
+						'bag0 bag0 bag1 bag1'
+						'bag2 bag2 bag3 bag3';
+				}
+
+				.item-ranged {
+					align-self: flex-start !important;
+				}
+
+				.item {
+					&:nth-child(n + 17):nth-child(-n + 24) {
+						.shader {
+							margin: 0;
+							margin-right: 20px;
+						}
+					}
+				}
+			}
+		}
+
+		// Medium devices (tablets, 768px and up)
+		@media (min-width: 768px) and (max-width: 991.98px) {
+			grid-template-columns: 1fr;
+			grid-template-rows: auto auto auto 1fr;
+			grid-gap: 1rem;
+			grid-template-areas:
+				'header'
+				'share'
+				'character'
+				'uploads';
+
+			.character {
+				.character-doll {
+					margin-bottom: 0;
+
+					grid-template-columns: repeat(9, 1fr);
+					grid-gap: 0.5em;
+
+					grid-template-areas:
+						'head head head head . hands hands hands hands'
+						'neck neck neck neck . waist waist waist waist'
+						'shoulder shoulder shoulder shoulder . legs legs legs legs'
+						'back back back back . feet feet feet feet'
+						'chest chest chest chest . finger0 finger0 finger0 finger0'
+						'shirt shirt shirt shirt . finger1 finger1 finger1 finger1'
+						'tabard tabard tabard tabard . trinket0 trinket0 trinket0 trinket0'
+						'wrist wrist wrist wrist . trinket1 trinket1 trinket1 trinket1'
+						'. . . . . . . . .'
+						'. . . . . . . . .'
+						'. . . . . . . . .'
+						'mainhand mainhand mainhand secondaryhand secondaryhand secondaryhand ranged ranged ranged'
+						'. . . . . . ammo ammo ammo'
+						'. . . . . . . . .'
+						'. . . . . . . . .'
+						'. . . . . . . . .'
+						'bag0 bag0 bag0 bag0 . bag1 bag1 bag1 bag1'
+						'bag2 bag2 bag2 bag2 . bag3 bag3 bag3 bag3';
+
+					.item {
+						&:nth-child(n + 17):nth-child(-n + 24) {
+							.shader {
+								margin: 0;
+								margin-right: 20px;
+							}
+						}
+
+						&:nth-child(n + 19):nth-child(-n + 20) {
+							.item-body {
+								position: relative;
+								.item-description {
+									position: unset;
+									.item-stats {
+										right: calc(100% + 20px);
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		// Large devices (desktops, 992px and up)
+		@media (min-width: 992px) and (max-width: 1199.98px) {
+			grid-gap: 1rem;
+			grid-template-columns: 3fr 1fr;
+			grid-template-rows: auto auto 1fr;
+			grid-template-areas:
+				'header header'
+				'character share'
+				'character uploads';
+
+			.character {
+				.character-doll {
+					// grid-template-rows: repeat(8, 3fr) 5fr 6fr 3fr 1fr;
+					grid-template-columns: repeat(4, 1fr);
+					grid-gap: 0.5em;
+
+					grid-template-areas:
+						'head head hands hands'
+						'neck neck waist waist'
+						'shoulder shoulder legs legs'
+						'back back feet feet'
+						'chest chest finger0 finger0'
+						'shirt shirt finger1 finger1'
+						'tabard tabard trinket0 trinket0'
+						'wrist wrist trinket1 trinket1'
+						'. . . .'
+						'. . . .'
+						'. . . .'
+						'. . . .'
+						'mainhand mainhand secondaryhand secondaryhand'
+						'ranged ranged ammo ammo'
+						'. . . .'
+						'. . . .'
+						'. . . .'
+						'. . . .'
+						'bag0 bag0 bag1 bag1'
+						'bag2 bag2 bag3 bag3';
+				}
+
+				.item-ranged {
+					align-self: flex-start !important;
+				}
+
+				.item {
+					&:nth-child(n + 17):nth-child(-n + 24) {
+						.shader {
+							margin: 0;
+							margin-right: 20px;
+						}
+					}
+				}
+			}
+		}
+
+		// Extra large devices (large desktops, 1200px and up)
+		@media (min-width: 1200px) {
+			margin: 0 auto;
+			// max-width: 1400px;
+
+			grid-gap: 1rem;
+			grid-template-columns: 3fr 1fr;
+			grid-template-rows: auto auto 1fr;
+			align-items: start;
+			grid-template-areas:
+				'header header'
+				'character share'
+				'character uploads';
+
+			.character {
+				.character-doll {
+					grid-template-rows: repeat(8, 3fr) 5fr 6fr 3fr;
+					grid-template-columns: repeat(8, 1fr);
+					grid-gap: 0.5em;
+
+					grid-template-areas:
+						'head head head . . hands hands hands'
+						'neck neck neck . . waist waist waist'
+						'shoulder shoulder shoulder . . legs legs legs'
+						'back back back . . feet feet feet'
+						'chest chest chest . . finger0 finger0 finger0'
+						'shirt shirt shirt . . finger1 finger1 finger1'
+						'tabard tabard tabard . . trinket0 trinket0 trinket0'
+						'wrist wrist wrist . . trinket1 trinket1 trinket1'
+						'. . mainhand mainhand secondaryhand secondaryhand ranged ranged'
+						'. . . . . . ammo ammo'
+						'bag0 bag0 bag1 bag1 bag2 bag2 bag3 bag3';
+				}
+				.item {
 					&:nth-child(n + 19):nth-child(-n + 20) {
 						.item-body {
 							position: relative;
@@ -666,109 +771,6 @@ $color-q: #ffd100;
 								.item-stats {
 									right: calc(100% + 20px);
 								}
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-
-	// Large devices (desktops, 992px and up)
-	@media (min-width: 992px) and (max-width: 1199.98px) {
-		grid-gap: 1rem;
-		grid-template-columns: 3fr 1fr;
-		grid-template-rows: auto auto 1fr;
-		grid-template-areas:
-			'header header'
-			'character share'
-			'character uploads';
-
-		.character {
-			.character-doll {
-				// grid-template-rows: repeat(8, 3fr) 5fr 6fr 3fr 1fr;
-				grid-template-columns: repeat(4, 1fr);
-				grid-gap: 0.5em;
-
-				grid-template-areas:
-					'head head hands hands'
-					'neck neck waist waist'
-					'shoulder shoulder legs legs'
-					'back back feet feet'
-					'chest chest finger0 finger0'
-					'shirt shirt finger1 finger1'
-					'tabard tabard trinket0 trinket0'
-					'wrist wrist trinket1 trinket1'
-					'. . . .'
-					'. . . .'
-					'. . . .'
-					'. . . .'
-					'mainhand mainhand secondaryhand secondaryhand'
-					'ranged ranged ammo ammo'
-					'. . . .'
-					'. . . .'
-					'. . . .'
-					'. . . .'
-					'bag0 bag0 bag1 bag1'
-					'bag2 bag2 bag3 bag3';
-			}
-
-			.item-ranged {
-				align-self: flex-start !important;
-			}
-
-			.item {
-				&:nth-child(n + 17):nth-child(-n + 24) {
-					.shader {
-						margin: 0;
-						margin-right: 20px;
-					}
-				}
-			}
-		}
-	}
-
-	// Extra large devices (large desktops, 1200px and up)
-	@media (min-width: 1200px) {
-		margin: 0 auto;
-		max-width: 1400px;
-
-		grid-gap: 1rem;
-		grid-template-columns: 3fr 1fr;
-		grid-template-rows: auto auto 1fr;
-		align-items: start;
-		grid-template-areas:
-			'header header'
-			'character share'
-			'character uploads';
-
-		.character {
-			.character-doll {
-				grid-template-rows: repeat(8, 3fr) 5fr 6fr 3fr;
-				grid-template-columns: repeat(8, 1fr);
-				grid-gap: 0.5em;
-
-				grid-template-areas:
-					'head head head . . hands hands hands'
-					'neck neck neck . . waist waist waist'
-					'shoulder shoulder shoulder . . legs legs legs'
-					'back back back . . feet feet feet'
-					'chest chest chest . . finger0 finger0 finger0'
-					'shirt shirt shirt . . finger1 finger1 finger1'
-					'tabard tabard tabard . . trinket0 trinket0 trinket0'
-					'wrist wrist wrist . . trinket1 trinket1 trinket1'
-					'. . mainhand mainhand secondaryhand secondaryhand ranged ranged'
-					'. . . . . . ammo ammo'
-					'bag0 bag0 bag1 bag1 bag2 bag2 bag3 bag3';
-			}
-			.item {
-				&:nth-child(n + 19):nth-child(-n + 20) {
-					.item-body {
-						position: relative;
-						.item-description {
-							position: unset;
-							.item-stats {
-								right: calc(100% + 20px);
 							}
 						}
 					}

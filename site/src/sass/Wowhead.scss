@@ -1,3 +1,56 @@
+// rarity colors
+$color-poor: #9d9d9d;
+$color-common: #ffffff;
+$color-uncommon: #1eff00;
+$color-rare: #0070dd;
+$color-epic: #a335ee;
+$color-legendary: #ff8000;
+
+// class colors
+$color-druid: #ff7d0a;
+$color-hunter: #a9d271;
+$color-mage: #40c7eb;
+$color-paladin: #f58cba;
+$color-priest: #ffffff;
+$color-rogue: #fff569;
+$color-shaman: #0070de;
+$color-warlock: #8787ed;
+$color-warrior: #c79c6e;
+
+$color-q: #ffd100;
+
+.q0 {
+	color: $color-poor;
+}
+
+.q1 {
+	color: $color-common;
+}
+
+.q2 {
+	color: $color-uncommon;
+}
+
+.q3 {
+	color: $color-rare;
+}
+
+.q4 {
+	color: $color-epic;
+}
+
+.q5 {
+	color: $color-legendary;
+}
+
+.q {
+	color: $color-q;
+}
+
+.c4 {
+	color: $color-rogue;
+}
+
 .c1,
 .c1 a {
 	color: #c69b6d !important;

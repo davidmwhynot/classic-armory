@@ -1,0 +1,15 @@
+.character-auras {
+	display: flex;
+	justify-content: space-between;
+
+	& > div {
+		width: 48%;
+	}
+
+	&-group {
+		display: flex;
+		flex-wrap: wrap;
+
+		margin-left: 0.25rem;
+	}
+}
