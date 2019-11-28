@@ -511,12 +511,12 @@ function getPvp(callback, asyncVals)
 			UnitPVPRank('player')
 		},
 		stats = {
-			lastWeekStats = GetPVPLastWeekStats(),
-			lifetimeStats = GetPVPLifetimeStats(),
-			rankProgress = GetPVPRankProgress(),
-			sessionStats = GetPVPSessionStats(),
-			thisWeekStats = GetPVPThisWeekStats(),
-			yesterdayStats = GetPVPYesterdayStats()
+			lastWeekStats = { GetPVPLastWeekStats() },
+			lifetimeStats = { GetPVPLifetimeStats() },
+			rankProgress = { GetPVPRankProgress() },
+			sessionStats = { GetPVPSessionStats() },
+			thisWeekStats = { GetPVPThisWeekStats() },
+			yesterdayStats = { GetPVPYesterdayStats() }
 		}
 	};
 
@@ -754,15 +754,28 @@ function getTalents(callback, asyncVals)
 
 	for tab, talent in talentpairs() do
 		if not talents[tab] then
-			talents[tab] = {};
+			local id, name, description, iconTexture, pointsSpent, background, previewPointsSpent, isUnlocked = GetTalentTabInfo(tab);
+
+			talents[tab] = {
+				id = id,
+				name = name,
+				description = description,
+				icon = iconTexture,
+				pointsSpent = pointsSpent,
+				background = background,
+				previewPointsSpent = previewPointsSpent,
+				isUnlocked = isUnlocked,
+				talents = {}
+			};
 		end
 
-		talents[tab][talent] = {};
+		talents[tab]["talents"][talent] = {};
 	end
 
 
 	for tab,talent in talentpairs() do
 		local name, icon, tier, column, currRank, maxRank = GetTalentInfo(tab, talent);
+		local tier, column, isLearnable = GetTalentPrereqs(tab, talent);
 
 		GameTooltip:ClearLines();
 		GameTooltip:SetOwner(UIParent, "ANCHOR_NONE");
@@ -773,16 +786,21 @@ function getTalents(callback, asyncVals)
 			talentTooltip[i] = _G["GameTooltipTextLeft" .. i]:GetText() or "";
 		end
 
-		talents[tab][talent] = {
+		talents[tab]["talents"][talent] = {
 			name = name,
 			icon = icon,
 			tier = tier,
 			column = column,
+			tooltip = talentTooltip,
 			rank = {
 				current = currRank,
 				max = maxRank
 			},
-			tooltip = talentTooltip
+			prereqs = {
+				tier = tier,
+				column = column,
+				isLearnable = isLearnable
+			}
 		};
 	end
 
@@ -892,7 +910,7 @@ function updateBank()
 
 	-- bank bags
 	for i = 1, 6 do
-		local itemId = GetInventoryItemID("player", 67 + i);
+		local itemId = GetInventoryItemID("player", 71 + i);
 
 		bank[i] = {
 			slot = 'BankBagSlot' .. i,
@@ -901,8 +919,6 @@ function updateBank()
 			items = {}
 		};
 	end
-
-	print('bank\n' .. dumpvar(bank))
 
 	-- -- bank items
 	for i = 0, 4 do
@@ -962,8 +978,6 @@ function classicArmoryEventHandler(self, event, ...)
 	end
 
 	if ( event == "VARIABLES_LOADED" ) then
-		print('variables loaded');
-
 		if not classicarmoryDB then
 			classicarmoryDB = {};
 		end
