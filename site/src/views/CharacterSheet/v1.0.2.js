@@ -1,178 +1,198 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-// import * as Sentry from '@sentry/browser';
-import { loadCharacter } from '../actions/characterActions';
+import { loadCharacter } from '../../actions/characterActions';
 
-import Item from './Item';
-import Error from './Error';
-import CopyURL from './CopyURL';
-import Loading from './Loading';
-import FacebookShare from './FacebookShare';
-import TwitterShare from './TwitterShare';
+// components
+import Fade from '../../components/Fade';
+import Loading from '../../components/Loading';
+import RecentUploads from '../../components/RecentUploads';
+import CharacterUploads from '../../components/CharacterSheet/V1_0_2/CharacterUploads';
+import Nav from '../../components/CharacterSheet/V1_0_2/Nav';
+import Inventory from '../../components/CharacterSheet/V1_0_2/Inventory';
+import Reputations from '../../components/CharacterSheet/V1_0_2/Reputations';
+import Skills from '../../components/CharacterSheet/V1_0_2/Skills';
+import Stats from '../../components/CharacterSheet/V1_0_2/Stats';
+import Talents from '../../components/CharacterSheet/V1_0_2/Talents';
+import Equipped from '../../components/CharacterSheet/V1_0_2/Equipped/index';
+import Header from '../../components/CharacterSheet/V1_0_2/Header';
+import Pvp from '../../components/CharacterSheet/V1_0_2/Pvp';
+import Share from '../../components/CharacterSheet/V1_0_2/Share';
+import Xp from '../../components/CharacterSheet/V1_0_2/Xp';
 
-import '../sass/Character.scss';
-import RecentUploads from './RecentUploads';
+import '../../sass/CharacterSheet/V1_0_2/index.scss';
 
-class Character extends Component {
+class V1_0_2 extends Component {
 	state = {
-		loading: true,
-		error: null
+		active: 'equipped',
+		transitionState: ''
 	};
 
-	componentWillMount = () => {
-		this.props.loadCharacter(this.props.match.params.id);
-	};
+	changeTab = tab => {
+		if (tab !== this.state.active) {
+			this.setState({ transitionState: 'fading' });
 
-	componentWillReceiveProps = async newProps => {
-		if (this.props.match.params.id) {
-			if (!newProps.match.params.id.match(this.props.match.params.id)) {
-				this.props.loadCharacter(newProps.match.params.id);
-			} else if (!this.props.loaded) {
-				this.props.loadCharacter(newProps.match.params.id);
-			}
-		} else {
-			this.props.loadCharacter(newProps.match.params.id);
+			setTimeout(() => {
+				this.setState({ active: tab, transitionState: '' });
+			}, 100);
 		}
 	};
 
 	render() {
-		if (this.props.loaded) {
-			const {
-				name,
-				realm,
-				guild,
-				race,
-				class: characterClass,
-				level,
-				items
-			} = this.props.data;
+		const {
+			name,
+			realm,
+			guild,
+			race,
+			sex,
+			level,
+			class: className,
+			money,
+			xp,
+			stats,
+			talents,
+			skills,
+			reps,
+			pvp,
+			buffs,
+			debuffs,
+			items: { bags, equipped, bank }
+		} = this.props.character;
 
-			return (
-				<div>
-					{this.state.error !== null ? (
-						<Error error={this.state.error} />
-					) : (
-						''
-					)}
-					<div className="container-fluid">
-						<div className="character-container">
-							<div className="character-share">
-								<div className="character-copy-url">
-									<CopyURL url={window.location.href} />
-								</div>
-								<div className="character-share-social">
-									<div className="character-share-twitter mt-3 mr-3">
-										<TwitterShare
-											url={window.location.href}
-											copy="Check out my character's armory page!"
-										/>
-									</div>
-									<div className="character-share-facebook mt-3">
-										<FacebookShare
-											url={window.location.href}
-										/>
-									</div>
-								</div>
-							</div>
-							<div className="character-uploads">
-								<RecentUploads
-									uploads={this.props.uploads}
-									border="light"
-								/>
-							</div>
-							<div className="character-header">
-								<div className="character-names">
-									<h2 className="character-name">
-										{name} - {realm}
-									</h2>
+		const { global, session, uploads } = this.props;
+		let sessionUploads, globalUploads;
 
-									<h3 className="character-guild">
-										Level {level} {race}{' '}
-										<span
-											className={
-												'character-class class-color-' +
-												characterClass.toLowerCase()
-											}
-										>
-											{characterClass}
-										</span>{' '}
-										- &lt;{guild}&gt;
-									</h3>
-								</div>
-							</div>
-							<div className="character">
-								<div className="character-doll">
-									{Object.keys(items).map(key => {
-										if (items[key] === null) {
-											return (
-												<Item
-													slot={key}
-													empty={true}
-													key={key}
-												/>
-											);
-										} else {
-											const {
-												id,
-												icon,
-												name: itemName,
-												tooltip,
-												quality
-											} = items[key];
-
-											const iconUrl =
-												process.env.PUBLIC_URL +
-												'/icons/' +
-												icon +
-												'.jpg';
-
-											return (
-												<Item
-													slot={key}
-													empty={false}
-													iconUrl={iconUrl}
-													itemName={itemName}
-													quality={quality}
-													stats={tooltip}
-													link={
-														'https://classic.wowhead.com/?item=' +
-														id
-													}
-													key={key}
-												/>
-											);
-										}
-									})}
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			);
-		} else if (this.state.error !== null) {
-			return (
-				<div className="container">
-					<Error error={this.state.error} />
-				</div>
+		if (global.loaded) {
+			globalUploads = (
+				<RecentUploads uploads={global.uploads} border="light" />
 			);
 		} else {
-			return (
-				<div className="character">
-					<div className="character-loading">
-						<Loading />
+			globalUploads = <Loading />;
+		}
+
+		if (this.props.session.loaded) {
+			if (this.props.session.uploads) {
+				if (this.props.session.uploads.length > 0) {
+					sessionUploads = (
+						<div className="character-session-uploads">
+							<h3>My Uploads</h3>
+							<RecentUploads
+								uploads={session.uploads}
+								border="info"
+							/>
+						</div>
+					);
+				} else {
+					sessionUploads = null;
+				}
+			} else {
+				sessionUploads = null;
+			}
+		} else {
+			sessionUploads = <Loading />;
+		}
+
+		let view;
+		switch (this.state.active) {
+			case 'equipped':
+				view = <Equipped equipped={equipped} key={'equipped'} />;
+				break;
+			case 'stats':
+				view = (
+					<Stats
+						stats={stats}
+						buffs={buffs}
+						debuffs={debuffs}
+						key={'debuffs'}
+					/>
+				);
+				break;
+			case 'talents':
+				view = <Talents talents={talents} key={'talents'} />;
+				break;
+			case 'inventory':
+				view = (
+					<Inventory
+						bags={bags}
+						bank={bank}
+						money={money}
+						key={'money'}
+					/>
+				);
+				break;
+			case 'pvp':
+				view = <Pvp pvp={pvp} key={'pvp'} />;
+				break;
+			case 'reputation':
+				view = <Reputations reputations={reps} key={'reps'} />;
+				break;
+			case 'skills':
+				view = <Skills skills={skills} key={'skills'} />;
+				break;
+			default:
+				view = <Equipped equipped={equipped} key={'equipped'} />;
+				break;
+		}
+
+		return (
+			<div className="character-v1-0-2 container">
+				<div className="character-container">
+					<div className="character-left">
+						{sessionUploads}
+
+						<div className="character-global-uploads">
+							<h3>Recent Uploads</h3>
+
+							{globalUploads}
+						</div>
+					</div>
+
+					<div className="character-center">
+						<Header
+							name={name}
+							realm={realm}
+							guild={guild}
+							level={level}
+							race={race}
+							sex={sex}
+							className={className}
+						/>
+
+						<Xp xp={xp} level={level} />
+
+						<Nav
+							name={name}
+							active={this.state.active}
+							changeTab={this.changeTab}
+						/>
+
+						<Fade transitionState={this.state.transitionState}>
+							{view}
+						</Fade>
+					</div>
+
+					<div className="character-right">
+						<Share />
+
+						<CharacterUploads uploads={uploads} />
 					</div>
 				</div>
-			);
-		}
+
+				{/* <h1>Props</h1>
+				<pre>{JSON.stringify(this.props, null, '\t')}</pre> */}
+			</div>
+		);
 	}
 }
 
 const mapStateToProps = (state, ownProps) => ({
 	...ownProps,
-	...state.character
+	session: state.session,
+	global: state.global,
+	character: state.character.data,
+	uploads: state.character.uploads
 });
 
 const mapDispatchToProps = { loadCharacter };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Character);
+export default connect(mapStateToProps, mapDispatchToProps)(V1_0_2);

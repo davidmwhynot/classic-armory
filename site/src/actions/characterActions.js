@@ -1,5 +1,7 @@
-import { CHARACTER_LOADED, CHARACTER_UPLOADED } from './types';
 import * as Sentry from '@sentry/browser';
+import { push } from 'connected-react-router';
+
+import { CHARACTER_LOADED } from './types';
 
 export const loadCharacter = id => async dispatch => {
 	try {
@@ -71,10 +73,7 @@ export const createCharacter = data => async dispatch => {
 			if (!res.error) {
 				// this.setState({ loading: false });
 
-				dispatch({
-					type: CHARACTER_UPLOADED,
-					payload: res.url
-				});
+				dispatch(push('/' + res.url));
 
 				// this.props.history.push('/' + res.url);
 			} else {

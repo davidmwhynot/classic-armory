@@ -1,0 +1,5898 @@
+[
+	{
+		"id": 1,
+		"enchant": "Rockbiter 3"
+	},
+	{
+		"id": 2,
+		"enchant": "Frostbrand 1"
+	},
+	{
+		"id": 3,
+		"enchant": "Flametongue 3"
+	},
+	{
+		"id": 4,
+		"enchant": "Flametongue 2"
+	},
+	{
+		"id": 5,
+		"enchant": "Flametongue 1"
+	},
+	{
+		"id": 6,
+		"enchant": "Rockbiter 2"
+	},
+	{
+		"id": 7,
+		"enchant": "Deadly Poison"
+	},
+	{
+		"id": 8,
+		"enchant": "Deadly Poison II"
+	},
+	{
+		"id": 9,
+		"enchant": "Poison (15 Dmg)"
+	},
+	{
+		"id": 10,
+		"enchant": "Poison (20 Dmg)"
+	},
+	{
+		"id": 11,
+		"enchant": "Poison (25 Dmg)"
+	},
+	{
+		"id": 12,
+		"enchant": "Frostbrand 2"
+	},
+	{
+		"id": 13,
+		"enchant": "Sharpened +3"
+	},
+	{
+		"id": 14,
+		"enchant": "Sharpened +4"
+	},
+	{
+		"id": 15,
+		"enchant": "Reinforced Armor +8"
+	},
+	{
+		"id": 16,
+		"enchant": "Reinforced Armor +16"
+	},
+	{
+		"id": 17,
+		"enchant": "Reinforced Armor +24"
+	},
+	{
+		"id": 18,
+		"enchant": "Reinforced Armor +32"
+	},
+	{
+		"id": 19,
+		"enchant": "Weighted +2"
+	},
+	{
+		"id": 20,
+		"enchant": "Weighted +3"
+	},
+	{
+		"id": 21,
+		"enchant": "Weighted +4"
+	},
+	{
+		"id": 22,
+		"enchant": "Crippling Poison"
+	},
+	{
+		"id": 23,
+		"enchant": "Mind-numbing Poison II"
+	},
+	{
+		"id": 24,
+		"enchant": "Mana +5"
+	},
+	{
+		"id": 25,
+		"enchant": "Shadow Oil"
+	},
+	{
+		"id": 26,
+		"enchant": "Frost Oil"
+	},
+	{
+		"id": 27,
+		"enchant": "Sundered"
+	},
+	{
+		"id": 28,
+		"enchant": "+4 All Resistances"
+	},
+	{
+		"id": 29,
+		"enchant": "Rockbiter 1"
+	},
+	{
+		"id": 30,
+		"enchant": "Scope (+1 Damage)"
+	},
+	{
+		"id": 31,
+		"enchant": "Beastslaying +4"
+	},
+	{
+		"id": 32,
+		"enchant": "Scope (+2 Damage)"
+	},
+	{
+		"id": 33,
+		"enchant": "Scope (+3 Damage)"
+	},
+	{
+		"id": 34,
+		"enchant": "Counterweight +3% Attack Speed"
+	},
+	{
+		"id": 35,
+		"enchant": "Mind Numbing Poison"
+	},
+	{
+		"id": 36,
+		"enchant": "Enchant: Fiery Blaze"
+	},
+	{
+		"id": 37,
+		"enchant": "Weapon Chain - Immune Disarm"
+	},
+	{
+		"id": 38,
+		"enchant": "Defense Skill +3"
+	},
+	{
+		"id": 39,
+		"enchant": "Sharpened +1"
+	},
+	{
+		"id": 40,
+		"enchant": "Sharpened +2"
+	},
+	{
+		"id": 41,
+		"enchant": "Health +5"
+	},
+	{
+		"id": 42,
+		"enchant": "Poison (Instant 20)"
+	},
+	{
+		"id": 43,
+		"enchant": "Iron Spike (8-12)"
+	},
+	{
+		"id": 44,
+		"enchant": "Absorption (10)"
+	},
+	{
+		"id": 63,
+		"enchant": "Absorption (25)"
+	},
+	{
+		"id": 64,
+		"enchant": "Spirit +3"
+	},
+	{
+		"id": 65,
+		"enchant": "+1 All Resistances"
+	},
+	{
+		"id": 66,
+		"enchant": "Stamina +1"
+	},
+	{
+		"id": 67,
+		"enchant": "+1 Damage"
+	},
+	{
+		"id": 68,
+		"enchant": "+1 Strength"
+	},
+	{
+		"id": 69,
+		"enchant": "+2 Strength"
+	},
+	{
+		"id": 70,
+		"enchant": "+3 Strength"
+	},
+	{
+		"id": 71,
+		"enchant": "+1 Stamina"
+	},
+	{
+		"id": 72,
+		"enchant": "+2 Stamina"
+	},
+	{
+		"id": 73,
+		"enchant": "+3 Stamina"
+	},
+	{
+		"id": 74,
+		"enchant": "+1 Agility"
+	},
+	{
+		"id": 75,
+		"enchant": "+2 Agility"
+	},
+	{
+		"id": 76,
+		"enchant": "+3 Agility"
+	},
+	{
+		"id": 77,
+		"enchant": "+2 Damage"
+	},
+	{
+		"id": 78,
+		"enchant": "+3 Damage"
+	},
+	{
+		"id": 79,
+		"enchant": "+1 Intellect"
+	},
+	{
+		"id": 80,
+		"enchant": "+2 Intellect"
+	},
+	{
+		"id": 81,
+		"enchant": "+3 Intellect"
+	},
+	{
+		"id": 82,
+		"enchant": "+1 Spirit"
+	},
+	{
+		"id": 83,
+		"enchant": "+2 Spirit"
+	},
+	{
+		"id": 84,
+		"enchant": "+3 Spirit"
+	},
+	{
+		"id": 85,
+		"enchant": "+3 Armor"
+	},
+	{
+		"id": 86,
+		"enchant": "+8 Armor"
+	},
+	{
+		"id": 87,
+		"enchant": "+12 Armor"
+	},
+	{
+		"id": 89,
+		"enchant": "+16 Armor"
+	},
+	{
+		"id": 90,
+		"enchant": "+4 Agility"
+	},
+	{
+		"id": 91,
+		"enchant": "+5 Agility"
+	},
+	{
+		"id": 92,
+		"enchant": "+6 Agility"
+	},
+	{
+		"id": 93,
+		"enchant": "+7 Agility"
+	},
+	{
+		"id": 94,
+		"enchant": "+4 Intellect"
+	},
+	{
+		"id": 95,
+		"enchant": "+5 Intellect"
+	},
+	{
+		"id": 96,
+		"enchant": "+6 Intellect"
+	},
+	{
+		"id": 97,
+		"enchant": "+7 Intellect"
+	},
+	{
+		"id": 98,
+		"enchant": "+4 Spirit"
+	},
+	{
+		"id": 99,
+		"enchant": "+5 Spirit"
+	},
+	{
+		"id": 100,
+		"enchant": "+6 Spirit"
+	},
+	{
+		"id": 101,
+		"enchant": "+7 Spirit"
+	},
+	{
+		"id": 102,
+		"enchant": "+4 Stamina"
+	},
+	{
+		"id": 103,
+		"enchant": "+5 Stamina"
+	},
+	{
+		"id": 104,
+		"enchant": "+6 Stamina"
+	},
+	{
+		"id": 105,
+		"enchant": "+7 Stamina"
+	},
+	{
+		"id": 106,
+		"enchant": "+4 Strength"
+	},
+	{
+		"id": 107,
+		"enchant": "+5 Strength"
+	},
+	{
+		"id": 108,
+		"enchant": "+6 Strength"
+	},
+	{
+		"id": 109,
+		"enchant": "+7 Strength"
+	},
+	{
+		"id": 110,
+		"enchant": "+1 Defense"
+	},
+	{
+		"id": 111,
+		"enchant": "+1 Defense"
+	},
+	{
+		"id": 112,
+		"enchant": "+2 Defense"
+	},
+	{
+		"id": 113,
+		"enchant": "+3 Defense"
+	},
+	{
+		"id": 114,
+		"enchant": "+3 Defense"
+	},
+	{
+		"id": 115,
+		"enchant": "+4 Defense"
+	},
+	{
+		"id": 116,
+		"enchant": "+5 Defense"
+	},
+	{
+		"id": 117,
+		"enchant": "+4 Damage"
+	},
+	{
+		"id": 118,
+		"enchant": "+5 Damage"
+	},
+	{
+		"id": 119,
+		"enchant": "+6 Damage"
+	},
+	{
+		"id": 120,
+		"enchant": "+7 Damage"
+	},
+	{
+		"id": 121,
+		"enchant": "+20 Armor"
+	},
+	{
+		"id": 122,
+		"enchant": "+24 Armor"
+	},
+	{
+		"id": 123,
+		"enchant": "+28 Armor"
+	},
+	{
+		"id": 124,
+		"enchant": "Flametongue Totem 1"
+	},
+	{
+		"id": 125,
+		"enchant": "Sword Skill +1"
+	},
+	{
+		"id": 126,
+		"enchant": "Sword Skill +2"
+	},
+	{
+		"id": 127,
+		"enchant": "Sword Skill +3"
+	},
+	{
+		"id": 128,
+		"enchant": "Sword Skill +4"
+	},
+	{
+		"id": 129,
+		"enchant": "Sword Skill +5"
+	},
+	{
+		"id": 130,
+		"enchant": "Sword Skill +6"
+	},
+	{
+		"id": 131,
+		"enchant": "Sword Skill +7"
+	},
+	{
+		"id": 132,
+		"enchant": "Two-Handed Sword Skill +1"
+	},
+	{
+		"id": 133,
+		"enchant": "Two-Handed Sword Skill +2"
+	},
+	{
+		"id": 134,
+		"enchant": "Two-Handed Sword Skill +3"
+	},
+	{
+		"id": 135,
+		"enchant": "Two-Handed Sword Skill +4"
+	},
+	{
+		"id": 136,
+		"enchant": "Two-Handed Sword Skill +5"
+	},
+	{
+		"id": 137,
+		"enchant": "Two-Handed Sword Skill +6"
+	},
+	{
+		"id": 138,
+		"enchant": "Two-Handed Sword Skill +7"
+	},
+	{
+		"id": 139,
+		"enchant": "Mace Skill +1"
+	},
+	{
+		"id": 140,
+		"enchant": "Mace Skill +2"
+	},
+	{
+		"id": 141,
+		"enchant": "Mace Skill +3"
+	},
+	{
+		"id": 142,
+		"enchant": "Mace Skill +4"
+	},
+	{
+		"id": 143,
+		"enchant": "Mace Skill +5"
+	},
+	{
+		"id": 144,
+		"enchant": "Mace Skill +6"
+	},
+	{
+		"id": 145,
+		"enchant": "Mace Skill +7"
+	},
+	{
+		"id": 146,
+		"enchant": "Two-Handed Mace Skill +1"
+	},
+	{
+		"id": 147,
+		"enchant": "Two-Handed Mace Skill +2"
+	},
+	{
+		"id": 148,
+		"enchant": "Two-Handed Mace Skill +3"
+	},
+	{
+		"id": 149,
+		"enchant": "Two-Handed Mace Skill +4"
+	},
+	{
+		"id": 150,
+		"enchant": "Two-Handed Mace Skill +5"
+	},
+	{
+		"id": 151,
+		"enchant": "Two-Handed Mace Skill +6"
+	},
+	{
+		"id": 152,
+		"enchant": "Two-Handed Mace Skill +7"
+	},
+	{
+		"id": 153,
+		"enchant": "Axe Skill +1"
+	},
+	{
+		"id": 154,
+		"enchant": "Axe Skill +2"
+	},
+	{
+		"id": 155,
+		"enchant": "Axe Skill +3"
+	},
+	{
+		"id": 156,
+		"enchant": "Axe Skill +4"
+	},
+	{
+		"id": 157,
+		"enchant": "Axe Skill +5"
+	},
+	{
+		"id": 158,
+		"enchant": "Ase Skill +6"
+	},
+	{
+		"id": 159,
+		"enchant": "Axe Skill +7"
+	},
+	{
+		"id": 160,
+		"enchant": "Two-Handed Axe Skill +1"
+	},
+	{
+		"id": 161,
+		"enchant": "Two-Handed Axe Skill +2"
+	},
+	{
+		"id": 162,
+		"enchant": "Two-Handed Axe Skill +3"
+	},
+	{
+		"id": 163,
+		"enchant": "Two-Handed Axe Skill +4"
+	},
+	{
+		"id": 164,
+		"enchant": "Two-Handed Axe Skill +5"
+	},
+	{
+		"id": 165,
+		"enchant": "Two-Handed Axe Skill +6"
+	},
+	{
+		"id": 166,
+		"enchant": "Two-Handed Axe Skill +7"
+	},
+	{
+		"id": 167,
+		"enchant": "Dagger Skill +1"
+	},
+	{
+		"id": 168,
+		"enchant": "Dagger Skill +2"
+	},
+	{
+		"id": 169,
+		"enchant": "Dagger Skill +3"
+	},
+	{
+		"id": 170,
+		"enchant": "Dagger Skill +4"
+	},
+	{
+		"id": 171,
+		"enchant": "Dagger Skill +5"
+	},
+	{
+		"id": 172,
+		"enchant": "Dagger Skill +6"
+	},
+	{
+		"id": 173,
+		"enchant": "Dagger Skill +7"
+	},
+	{
+		"id": 174,
+		"enchant": "Gun Skill +1"
+	},
+	{
+		"id": 175,
+		"enchant": "Gun Skill +2"
+	},
+	{
+		"id": 176,
+		"enchant": "Gun Skill +3"
+	},
+	{
+		"id": 177,
+		"enchant": "Gun Skill +4"
+	},
+	{
+		"id": 178,
+		"enchant": "Gun Skill +5"
+	},
+	{
+		"id": 179,
+		"enchant": "Gun Skill +6"
+	},
+	{
+		"id": 180,
+		"enchant": "Gun Skill +7"
+	},
+	{
+		"id": 181,
+		"enchant": "Bow Skill +1"
+	},
+	{
+		"id": 182,
+		"enchant": "Bow Skill +2"
+	},
+	{
+		"id": 183,
+		"enchant": "Bow Skill +3"
+	},
+	{
+		"id": 184,
+		"enchant": "Bow Skill +4"
+	},
+	{
+		"id": 185,
+		"enchant": "Bow Skill +5"
+	},
+	{
+		"id": 186,
+		"enchant": "Bow Skill +6"
+	},
+	{
+		"id": 187,
+		"enchant": "Bow Skill +7"
+	},
+	{
+		"id": 188,
+		"enchant": "+2 Beast Slaying"
+	},
+	{
+		"id": 189,
+		"enchant": "+4 Beast Slaying"
+	},
+	{
+		"id": 190,
+		"enchant": "+6 Beast Slaying"
+	},
+	{
+		"id": 191,
+		"enchant": "+8 Beast Slaying"
+	},
+	{
+		"id": 192,
+		"enchant": "+10 Beast Slaying"
+	},
+	{
+		"id": 193,
+		"enchant": "+12 Beast Slaying"
+	},
+	{
+		"id": 194,
+		"enchant": "+14 Beast Slaying"
+	},
+	{
+		"id": 195,
+		"enchant": "Critical Hit +1%"
+	},
+	{
+		"id": 196,
+		"enchant": "Critical Hit +2%"
+	},
+	{
+		"id": 197,
+		"enchant": "Critical Hit +3%"
+	},
+	{
+		"id": 198,
+		"enchant": "Critical Hit +4%"
+	},
+	{
+		"id": 199,
+		"enchant": "10% On Get Hit: Shadow Bolt (10 Damage)"
+	},
+	{
+		"id": 200,
+		"enchant": "10% On Get Hit: Shadow Bolt (20 Damage)"
+	},
+	{
+		"id": 201,
+		"enchant": "10% On Get Hit: Shadow Bolt (30 Damage)"
+	},
+	{
+		"id": 202,
+		"enchant": "10% On Get Hit: Shadow Bolt (40 Damage)"
+	},
+	{
+		"id": 203,
+		"enchant": "10% On Get Hit: Shadow Bolt (50 Damage)"
+	},
+	{
+		"id": 204,
+		"enchant": "10% On Get Hit: Shadow Bolt (60 Damage)"
+	},
+	{
+		"id": 205,
+		"enchant": "10% On Get Hit: Shadow Bolt (70 Damage)"
+	},
+	{
+		"id": 206,
+		"enchant": "Increases Healing +2"
+	},
+	{
+		"id": 207,
+		"enchant": "Increases Healing +4"
+	},
+	{
+		"id": 208,
+		"enchant": "Increases Healing +7"
+	},
+	{
+		"id": 209,
+		"enchant": "Increases Healing +9"
+	},
+	{
+		"id": 210,
+		"enchant": "Increases Healing +11"
+	},
+	{
+		"id": 211,
+		"enchant": "Increases Healing +13"
+	},
+	{
+		"id": 212,
+		"enchant": "Increases Healing +15"
+	},
+	{
+		"id": 213,
+		"enchant": "Increase Fire Effects +1"
+	},
+	{
+		"id": 214,
+		"enchant": "Increases Fire Effects +3"
+	},
+	{
+		"id": 215,
+		"enchant": "Increases Fire Effects +4"
+	},
+	{
+		"id": 216,
+		"enchant": "Increases Fire Effects +6"
+	},
+	{
+		"id": 217,
+		"enchant": "Increases Fire Effects +7"
+	},
+	{
+		"id": 218,
+		"enchant": "Increases Fire Damage +9"
+	},
+	{
+		"id": 219,
+		"enchant": "Increases Fire Damage +10"
+	},
+	{
+		"id": 220,
+		"enchant": "Increases Nature Effects +1"
+	},
+	{
+		"id": 221,
+		"enchant": "Increases Nature Effects +3"
+	},
+	{
+		"id": 222,
+		"enchant": "Increases Nature Effects +4"
+	},
+	{
+		"id": 223,
+		"enchant": "Increases Nature Effects +6"
+	},
+	{
+		"id": 224,
+		"enchant": "Increases Nature Effects +7"
+	},
+	{
+		"id": 225,
+		"enchant": "Increases Nature Effects +9"
+	},
+	{
+		"id": 226,
+		"enchant": "Increases Nature Effects +10"
+	},
+	{
+		"id": 227,
+		"enchant": "Increases Frost Effects +1"
+	},
+	{
+		"id": 228,
+		"enchant": "Increases Frost Effects +3"
+	},
+	{
+		"id": 229,
+		"enchant": "Increases Frost Effects +4"
+	},
+	{
+		"id": 230,
+		"enchant": "Increases Frost Effects +6"
+	},
+	{
+		"id": 231,
+		"enchant": "Increases Frost Effects +7"
+	},
+	{
+		"id": 232,
+		"enchant": "Increases Frost Effects +9"
+	},
+	{
+		"id": 233,
+		"enchant": "Increases Frost Effects +10"
+	},
+	{
+		"id": 234,
+		"enchant": "Increases Shadow Effects +1"
+	},
+	{
+		"id": 235,
+		"enchant": "Increases Shadow Effects +3"
+	},
+	{
+		"id": 236,
+		"enchant": "Increases Shadow Effects +4"
+	},
+	{
+		"id": 237,
+		"enchant": "Increases Shadow Effects +6"
+	},
+	{
+		"id": 238,
+		"enchant": "Increases Shadow Effects +7"
+	},
+	{
+		"id": 239,
+		"enchant": "Increases Shadow Effects +9"
+	},
+	{
+		"id": 240,
+		"enchant": "Increases Shadow Effects +10"
+	},
+	{
+		"id": 241,
+		"enchant": "Weapon Damage +2"
+	},
+	{
+		"id": 242,
+		"enchant": "Health +15"
+	},
+	{
+		"id": 243,
+		"enchant": "Spirit +1"
+	},
+	{
+		"id": 244,
+		"enchant": "Intellect +4"
+	},
+	{
+		"id": 245,
+		"enchant": "Armor +5"
+	},
+	{
+		"id": 246,
+		"enchant": "Mana +20"
+	},
+	{
+		"id": 247,
+		"enchant": "Agility +1"
+	},
+	{
+		"id": 248,
+		"enchant": "Strength +1"
+	},
+	{
+		"id": 249,
+		"enchant": "Beastslaying +2"
+	},
+	{
+		"id": 250,
+		"enchant": "Weapon Damage +1 "
+	},
+	{
+		"id": 251,
+		"enchant": "Intellect +1"
+	},
+	{
+		"id": 252,
+		"enchant": "Spirit +6"
+	},
+	{
+		"id": 253,
+		"enchant": "Absorption (50)"
+	},
+	{
+		"id": 254,
+		"enchant": "Health +25"
+	},
+	{
+		"id": 255,
+		"enchant": "Spirit +3"
+	},
+	{
+		"id": 256,
+		"enchant": "+5 Fire Resistance"
+	},
+	{
+		"id": 257,
+		"enchant": "Armor +10"
+	},
+	{
+		"id": 263,
+		"enchant": "Fishing Lure +25"
+	},
+	{
+		"id": 264,
+		"enchant": "Fishing Lure +50"
+	},
+	{
+		"id": 265,
+		"enchant": "Fishing Lure +75"
+	},
+	{
+		"id": 266,
+		"enchant": "Fishing Lure +100"
+	},
+	{
+		"id": 283,
+		"enchant": "Windfury 1"
+	},
+	{
+		"id": 284,
+		"enchant": "Windfury 2"
+	},
+	{
+		"id": 285,
+		"enchant": "Flametongue Totem 2"
+	},
+	{
+		"id": 286,
+		"enchant": "+2 Weapon Fire Damage"
+	},
+	{
+		"id": 287,
+		"enchant": "+4 Weapon Fire Damage"
+	},
+	{
+		"id": 288,
+		"enchant": "+6 Weapon Fire Damage"
+	},
+	{
+		"id": 289,
+		"enchant": "+8 Weapon Fire Damage"
+	},
+	{
+		"id": 290,
+		"enchant": "+10 Weapon Fire Damage"
+	},
+	{
+		"id": 291,
+		"enchant": "+12 Weapon Fire Damage"
+	},
+	{
+		"id": 292,
+		"enchant": "+14 Weapon Fire Damage"
+	},
+	{
+		"id": 303,
+		"enchant": "Orb of Fire"
+	},
+	{
+		"id": 323,
+		"enchant": "Instant Poison"
+	},
+	{
+		"id": 324,
+		"enchant": "Instant Poison II"
+	},
+	{
+		"id": 325,
+		"enchant": "Instant Poison III"
+	},
+	{
+		"id": 343,
+		"enchant": "+8 Agility"
+	},
+	{
+		"id": 344,
+		"enchant": "+32 Armor"
+	},
+	{
+		"id": 345,
+		"enchant": "+40 Armor"
+	},
+	{
+		"id": 346,
+		"enchant": "+36 Armor"
+	},
+	{
+		"id": 347,
+		"enchant": "+44 Armor"
+	},
+	{
+		"id": 348,
+		"enchant": "+48 Armor"
+	},
+	{
+		"id": 349,
+		"enchant": "+9 Agility"
+	},
+	{
+		"id": 350,
+		"enchant": "+8 Intellect"
+	},
+	{
+		"id": 351,
+		"enchant": "+8 Spirit"
+	},
+	{
+		"id": 352,
+		"enchant": "+8 Strength"
+	},
+	{
+		"id": 353,
+		"enchant": "+8 Stamina"
+	},
+	{
+		"id": 354,
+		"enchant": "+9 Intellect"
+	},
+	{
+		"id": 355,
+		"enchant": "+9 Spirit"
+	},
+	{
+		"id": 356,
+		"enchant": "+9 Stamina"
+	},
+	{
+		"id": 357,
+		"enchant": "+9 Strength"
+	},
+	{
+		"id": 358,
+		"enchant": "+10 Agility"
+	},
+	{
+		"id": 359,
+		"enchant": "+10 Intellect"
+	},
+	{
+		"id": 360,
+		"enchant": "+10 Spirit"
+	},
+	{
+		"id": 361,
+		"enchant": "+10 Stamina"
+	},
+	{
+		"id": 362,
+		"enchant": "+10 Strength"
+	},
+	{
+		"id": 363,
+		"enchant": "+11 Agility"
+	},
+	{
+		"id": 364,
+		"enchant": "+11 Intellect"
+	},
+	{
+		"id": 365,
+		"enchant": "+11 Spirit"
+	},
+	{
+		"id": 366,
+		"enchant": "+11 Stamina"
+	},
+	{
+		"id": 367,
+		"enchant": "+11 Strength"
+	},
+	{
+		"id": 368,
+		"enchant": "+12 Agility"
+	},
+	{
+		"id": 369,
+		"enchant": "+12 Intellect"
+	},
+	{
+		"id": 370,
+		"enchant": "+12 Spirit"
+	},
+	{
+		"id": 371,
+		"enchant": "+12 Stamina"
+	},
+	{
+		"id": 372,
+		"enchant": "+12 Strength"
+	},
+	{
+		"id": 383,
+		"enchant": "+52 Armor"
+	},
+	{
+		"id": 384,
+		"enchant": "+56 Armor"
+	},
+	{
+		"id": 385,
+		"enchant": "+60 Armor"
+	},
+	{
+		"id": 386,
+		"enchant": "+16 Armor"
+	},
+	{
+		"id": 387,
+		"enchant": "+17 Armor"
+	},
+	{
+		"id": 388,
+		"enchant": "+18 Armor"
+	},
+	{
+		"id": 389,
+		"enchant": "+19 Armor"
+	},
+	{
+		"id": 403,
+		"enchant": "+13 Agility"
+	},
+	{
+		"id": 404,
+		"enchant": "+14 Agility"
+	},
+	{
+		"id": 405,
+		"enchant": "+13 Intellect"
+	},
+	{
+		"id": 406,
+		"enchant": "+14 Intellect"
+	},
+	{
+		"id": 407,
+		"enchant": "+13 Spirit"
+	},
+	{
+		"id": 408,
+		"enchant": "+14 Spirit"
+	},
+	{
+		"id": 409,
+		"enchant": "+13 Stamina"
+	},
+	{
+		"id": 410,
+		"enchant": "+13 Strength"
+	},
+	{
+		"id": 411,
+		"enchant": "+14 Stamina"
+	},
+	{
+		"id": 412,
+		"enchant": "+14 Strength"
+	},
+	{
+		"id": 423,
+		"enchant": "Increase Spell Damage +1"
+	},
+	{
+		"id": 424,
+		"enchant": "Increase Spell Damage +2"
+	},
+	{
+		"id": 425,
+		"enchant": "Increase Spell Damage +4"
+	},
+	{
+		"id": 426,
+		"enchant": "Increase Spell Damage +5"
+	},
+	{
+		"id": 427,
+		"enchant": "Increase Spell Damage +6"
+	},
+	{
+		"id": 428,
+		"enchant": "Increase Spell Damage +7"
+	},
+	{
+		"id": 429,
+		"enchant": "Increase Spell Damage +8"
+	},
+	{
+		"id": 430,
+		"enchant": "Increase Spell Damage +9"
+	},
+	{
+		"id": 431,
+		"enchant": "Increase Spell Damage +11"
+	},
+	{
+		"id": 432,
+		"enchant": "Increase Spell Damage +12"
+	},
+	{
+		"id": 433,
+		"enchant": "Increase Fire Damage +11"
+	},
+	{
+		"id": 434,
+		"enchant": "Increase Fire Damage +13"
+	},
+	{
+		"id": 435,
+		"enchant": "Increases Fire Damage +14"
+	},
+	{
+		"id": 436,
+		"enchant": "Critical Hit +5%"
+	},
+	{
+		"id": 437,
+		"enchant": "Increases Frost Effects +11"
+	},
+	{
+		"id": 438,
+		"enchant": "Increases Frost Effects +13"
+	},
+	{
+		"id": 439,
+		"enchant": "Increases Frost Effects +14"
+	},
+	{
+		"id": 440,
+		"enchant": "Increases Healing +12"
+	},
+	{
+		"id": 441,
+		"enchant": "Increases Healing +20"
+	},
+	{
+		"id": 442,
+		"enchant": "Increases Healing +22"
+	},
+	{
+		"id": 443,
+		"enchant": "Increases Nature Effects +11"
+	},
+	{
+		"id": 444,
+		"enchant": "Increases Nature Effects +13"
+	},
+	{
+		"id": 445,
+		"enchant": "Increases Nature Effects +14"
+	},
+	{
+		"id": 446,
+		"enchant": "Increases Shadow Effects +11"
+	},
+	{
+		"id": 447,
+		"enchant": "Increases Shadow Effects +13"
+	},
+	{
+		"id": 448,
+		"enchant": "Increases Shadow Effects +14"
+	},
+	{
+		"id": 463,
+		"enchant": "Mithril Spike (16-20)"
+	},
+	{
+		"id": 464,
+		"enchant": "Mithril Spurs"
+	},
+	{
+		"id": 483,
+		"enchant": "Sharpened +6"
+	},
+	{
+		"id": 484,
+		"enchant": "Weighted +6"
+	},
+	{
+		"id": 503,
+		"enchant": "Rockbiter 4"
+	},
+	{
+		"id": 504,
+		"enchant": "Rockbiter +80"
+	},
+	{
+		"id": 523,
+		"enchant": "Flametongue 4"
+	},
+	{
+		"id": 524,
+		"enchant": "Frostbrand 3"
+	},
+	{
+		"id": 525,
+		"enchant": "Windfury 3"
+	},
+	{
+		"id": 543,
+		"enchant": "Flametongue Totem 3"
+	},
+	{
+		"id": 563,
+		"enchant": "Windfury Totem 2"
+	},
+	{
+		"id": 564,
+		"enchant": "Windfury Totem 3"
+	},
+	{
+		"id": 583,
+		"enchant": "+1 Agility / +1 Spirit"
+	},
+	{
+		"id": 584,
+		"enchant": "+1 Agility / +1 Intellect"
+	},
+	{
+		"id": 585,
+		"enchant": "+1 Agility / +1 Stamina"
+	},
+	{
+		"id": 586,
+		"enchant": "+1 Agility / +1 Strength"
+	},
+	{
+		"id": 587,
+		"enchant": "+1 Intellect / +1 Spirit"
+	},
+	{
+		"id": 588,
+		"enchant": "+1 Intellect / +1 Stamina"
+	},
+	{
+		"id": 589,
+		"enchant": "+1 Intellect / +1 Strength"
+	},
+	{
+		"id": 590,
+		"enchant": "+1 Spirit / +1 Stamina"
+	},
+	{
+		"id": 591,
+		"enchant": "+1 Spirit / +1 Strength"
+	},
+	{
+		"id": 592,
+		"enchant": "+1 Stamina / +1 Strength"
+	},
+	{
+		"id": 603,
+		"enchant": "Crippling Poison II"
+	},
+	{
+		"id": 623,
+		"enchant": "Instant Poison IV"
+	},
+	{
+		"id": 624,
+		"enchant": "Instant Poison V"
+	},
+	{
+		"id": 625,
+		"enchant": "Instant Poison VI"
+	},
+	{
+		"id": 626,
+		"enchant": "Deadly Poison III"
+	},
+	{
+		"id": 627,
+		"enchant": "Deadly Poison IV"
+	},
+	{
+		"id": 643,
+		"enchant": "Mind-Numbing Poison III"
+	},
+	{
+		"id": 663,
+		"enchant": "Scope (+5 Damage)"
+	},
+	{
+		"id": 664,
+		"enchant": "Scope (+7 Damage)"
+	},
+	{
+		"id": 683,
+		"enchant": "Rockbiter 6"
+	},
+	{
+		"id": 684,
+		"enchant": "+15 Strength"
+	},
+	{
+		"id": 703,
+		"enchant": "Wound Poison"
+	},
+	{
+		"id": 704,
+		"enchant": "Wound Poison II"
+	},
+	{
+		"id": 705,
+		"enchant": "Wound Poison III"
+	},
+	{
+		"id": 706,
+		"enchant": "Wound Poison IV"
+	},
+	{
+		"id": 723,
+		"enchant": "Intellect +3"
+	},
+	{
+		"id": 724,
+		"enchant": "Stamina +3"
+	},
+	{
+		"id": 743,
+		"enchant": "Stealth +2"
+	},
+	{
+		"id": 744,
+		"enchant": "Armor +20"
+	},
+	{
+		"id": 763,
+		"enchant": "Block +1%"
+	},
+	{
+		"id": 783,
+		"enchant": "Armor +10"
+	},
+	{
+		"id": 803,
+		"enchant": "Fiery Weapon"
+	},
+	{
+		"id": 804,
+		"enchant": "+10 Shadow Resistance"
+	},
+	{
+		"id": 805,
+		"enchant": "Weapon Damage +4"
+	},
+	{
+		"id": 823,
+		"enchant": "Strength +3"
+	},
+	{
+		"id": 843,
+		"enchant": "Mana +30"
+	},
+	{
+		"id": 844,
+		"enchant": "Mining +2"
+	},
+	{
+		"id": 845,
+		"enchant": "Herbalism +2"
+	},
+	{
+		"id": 846,
+		"enchant": "Fishing +2"
+	},
+	{
+		"id": 847,
+		"enchant": "All Stats +1"
+	},
+	{
+		"id": 848,
+		"enchant": "Armor +30"
+	},
+	{
+		"id": 849,
+		"enchant": "Agility +3"
+	},
+	{
+		"id": 850,
+		"enchant": "Health +35"
+	},
+	{
+		"id": 851,
+		"enchant": "Spirit +5"
+	},
+	{
+		"id": 852,
+		"enchant": "Stamina +5"
+	},
+	{
+		"id": 853,
+		"enchant": "Beastslaying +6"
+	},
+	{
+		"id": 854,
+		"enchant": "Elemental Slayer +6"
+	},
+	{
+		"id": 855,
+		"enchant": "+5 Fire Resistance"
+	},
+	{
+		"id": 856,
+		"enchant": "Strength +5"
+	},
+	{
+		"id": 857,
+		"enchant": "Mana +50"
+	},
+	{
+		"id": 863,
+		"enchant": "Blocking +2%"
+	},
+	{
+		"id": 864,
+		"enchant": "Weapon Damage +4"
+	},
+	{
+		"id": 865,
+		"enchant": "Skinning +5"
+	},
+	{
+		"id": 866,
+		"enchant": "All Stats +2"
+	},
+	{
+		"id": 883,
+		"enchant": "+15 Agility"
+	},
+	{
+		"id": 884,
+		"enchant": "Armor +50"
+	},
+	{
+		"id": 903,
+		"enchant": "+3 All Resistances"
+	},
+	{
+		"id": 904,
+		"enchant": "Agility +5"
+	},
+	{
+		"id": 905,
+		"enchant": "Intellect +5"
+	},
+	{
+		"id": 906,
+		"enchant": "Mining +5"
+	},
+	{
+		"id": 907,
+		"enchant": "Spirit +7"
+	},
+	{
+		"id": 908,
+		"enchant": "Health +50"
+	},
+	{
+		"id": 909,
+		"enchant": "Herbalism +5"
+	},
+	{
+		"id": 910,
+		"enchant": "Increased Stealth"
+	},
+	{
+		"id": 911,
+		"enchant": "Minor Speed Increase"
+	},
+	{
+		"id": 912,
+		"enchant": "Demonslaying"
+	},
+	{
+		"id": 913,
+		"enchant": "Mana +65"
+	},
+	{
+		"id": 923,
+		"enchant": "Defense +3"
+	},
+	{
+		"id": 924,
+		"enchant": "Defense +1"
+	},
+	{
+		"id": 925,
+		"enchant": "Defense +2"
+	},
+	{
+		"id": 926,
+		"enchant": "+8 Frost Resistance"
+	},
+	{
+		"id": 927,
+		"enchant": "Strength +7"
+	},
+	{
+		"id": 928,
+		"enchant": "All Stats +3"
+	},
+	{
+		"id": 929,
+		"enchant": "Stamina +7"
+	},
+	{
+		"id": 930,
+		"enchant": "Minor Mount Speed Increase"
+	},
+	{
+		"id": 931,
+		"enchant": "Attack Speed +1%"
+	},
+	{
+		"id": 943,
+		"enchant": "Weapon Damage +3"
+	},
+	{
+		"id": 963,
+		"enchant": "Weapon Damage +7"
+	},
+	{
+		"id": 983,
+		"enchant": "+16 Agility"
+	},
+	{
+		"id": 1003,
+		"enchant": "Venomhide Poison"
+	},
+	{
+		"id": 1023,
+		"enchant": "Feedback 1"
+	},
+	{
+		"id": 1043,
+		"enchant": "+16 Strength"
+	},
+	{
+		"id": 1044,
+		"enchant": "+17 Strength"
+	},
+	{
+		"id": 1045,
+		"enchant": "+18 Strength"
+	},
+	{
+		"id": 1046,
+		"enchant": "+19 Strength"
+	},
+	{
+		"id": 1047,
+		"enchant": "+20 Strength"
+	},
+	{
+		"id": 1048,
+		"enchant": "+21 Strength"
+	},
+	{
+		"id": 1049,
+		"enchant": "+22 Strength"
+	},
+	{
+		"id": 1050,
+		"enchant": "+23 Strength"
+	},
+	{
+		"id": 1051,
+		"enchant": "+24 Strength"
+	},
+	{
+		"id": 1052,
+		"enchant": "+25 Strength"
+	},
+	{
+		"id": 1053,
+		"enchant": "+26 Strength"
+	},
+	{
+		"id": 1054,
+		"enchant": "+27 Strength"
+	},
+	{
+		"id": 1055,
+		"enchant": "+28 Strength"
+	},
+	{
+		"id": 1056,
+		"enchant": "+29 Strength"
+	},
+	{
+		"id": 1057,
+		"enchant": "+30 Strength"
+	},
+	{
+		"id": 1058,
+		"enchant": "+31 Strength"
+	},
+	{
+		"id": 1059,
+		"enchant": "+32 Strength"
+	},
+	{
+		"id": 1060,
+		"enchant": "+33 Strength"
+	},
+	{
+		"id": 1061,
+		"enchant": "+34 Strength"
+	},
+	{
+		"id": 1062,
+		"enchant": "+35 Strength"
+	},
+	{
+		"id": 1063,
+		"enchant": "+36 Strength"
+	},
+	{
+		"id": 1064,
+		"enchant": "+37 Strength"
+	},
+	{
+		"id": 1065,
+		"enchant": "+38 Strength"
+	},
+	{
+		"id": 1066,
+		"enchant": "+39 Strength"
+	},
+	{
+		"id": 1067,
+		"enchant": "+40 Strength"
+	},
+	{
+		"id": 1068,
+		"enchant": "+15 Stamina"
+	},
+	{
+		"id": 1069,
+		"enchant": "+16 Stamina"
+	},
+	{
+		"id": 1070,
+		"enchant": "+17 Stamina"
+	},
+	{
+		"id": 1071,
+		"enchant": "+18 Stamina"
+	},
+	{
+		"id": 1072,
+		"enchant": "+19 Stamina"
+	},
+	{
+		"id": 1073,
+		"enchant": "+20 Stamina"
+	},
+	{
+		"id": 1074,
+		"enchant": "+21 Stamina"
+	},
+	{
+		"id": 1075,
+		"enchant": "+22 Stamina"
+	},
+	{
+		"id": 1076,
+		"enchant": "+23 Stamina"
+	},
+	{
+		"id": 1077,
+		"enchant": "+24 Stamina"
+	},
+	{
+		"id": 1078,
+		"enchant": "+25 Stamina"
+	},
+	{
+		"id": 1079,
+		"enchant": "+26 Stamina"
+	},
+	{
+		"id": 1080,
+		"enchant": "+27 Stamina"
+	},
+	{
+		"id": 1081,
+		"enchant": "+28 Stamina"
+	},
+	{
+		"id": 1082,
+		"enchant": "+29 Stamina"
+	},
+	{
+		"id": 1083,
+		"enchant": "+30 Stamina"
+	},
+	{
+		"id": 1084,
+		"enchant": "+31 Stamina"
+	},
+	{
+		"id": 1085,
+		"enchant": "+32 Stamina"
+	},
+	{
+		"id": 1086,
+		"enchant": "+33 Stamina"
+	},
+	{
+		"id": 1087,
+		"enchant": "+34 Stamina"
+	},
+	{
+		"id": 1088,
+		"enchant": "+35 Stamina"
+	},
+	{
+		"id": 1089,
+		"enchant": "+36 Stamina"
+	},
+	{
+		"id": 1090,
+		"enchant": "+37 Stamina"
+	},
+	{
+		"id": 1091,
+		"enchant": "+38 Stamina"
+	},
+	{
+		"id": 1092,
+		"enchant": "+39 Stamina"
+	},
+	{
+		"id": 1093,
+		"enchant": "+40 Stamina"
+	},
+	{
+		"id": 1094,
+		"enchant": "+17 Agility"
+	},
+	{
+		"id": 1095,
+		"enchant": "+18 Agility"
+	},
+	{
+		"id": 1096,
+		"enchant": "+19 Agility"
+	},
+	{
+		"id": 1097,
+		"enchant": "+20 Agility"
+	},
+	{
+		"id": 1098,
+		"enchant": "+21 Agility"
+	},
+	{
+		"id": 1099,
+		"enchant": "+22 Agility"
+	},
+	{
+		"id": 1100,
+		"enchant": "+23 Agility"
+	},
+	{
+		"id": 1101,
+		"enchant": "+24 Agility"
+	},
+	{
+		"id": 1102,
+		"enchant": "+25 Agility"
+	},
+	{
+		"id": 1103,
+		"enchant": "+26 Agility"
+	},
+	{
+		"id": 1104,
+		"enchant": "+27 Agility"
+	},
+	{
+		"id": 1105,
+		"enchant": "+28 Agility"
+	},
+	{
+		"id": 1106,
+		"enchant": "+29 Agility"
+	},
+	{
+		"id": 1107,
+		"enchant": "+30 Agility"
+	},
+	{
+		"id": 1108,
+		"enchant": "+31 Agility"
+	},
+	{
+		"id": 1109,
+		"enchant": "+32 Agility"
+	},
+	{
+		"id": 1110,
+		"enchant": "+33 Agility"
+	},
+	{
+		"id": 1111,
+		"enchant": "+34 Agility"
+	},
+	{
+		"id": 1112,
+		"enchant": "+35 Agility"
+	},
+	{
+		"id": 1113,
+		"enchant": "+36 Agility"
+	},
+	{
+		"id": 1114,
+		"enchant": "+37 Agility"
+	},
+	{
+		"id": 1115,
+		"enchant": "+38 Agility"
+	},
+	{
+		"id": 1116,
+		"enchant": "+39 Agility"
+	},
+	{
+		"id": 1117,
+		"enchant": "+40 Agility"
+	},
+	{
+		"id": 1118,
+		"enchant": "+15 Intellect"
+	},
+	{
+		"id": 1119,
+		"enchant": "+16 Intellect"
+	},
+	{
+		"id": 1120,
+		"enchant": "+17 Intellect"
+	},
+	{
+		"id": 1121,
+		"enchant": "+18 Intellect"
+	},
+	{
+		"id": 1122,
+		"enchant": "+19 Intellect"
+	},
+	{
+		"id": 1123,
+		"enchant": "+20 Intellect"
+	},
+	{
+		"id": 1124,
+		"enchant": "+21 Intellect"
+	},
+	{
+		"id": 1125,
+		"enchant": "+22 Intellect"
+	},
+	{
+		"id": 1126,
+		"enchant": "+23 Intellect"
+	},
+	{
+		"id": 1127,
+		"enchant": "+24 Intellect"
+	},
+	{
+		"id": 1128,
+		"enchant": "+25 Intellect"
+	},
+	{
+		"id": 1129,
+		"enchant": "+26 Intellect"
+	},
+	{
+		"id": 1130,
+		"enchant": "+27 Intellect"
+	},
+	{
+		"id": 1131,
+		"enchant": "+28 Intellect"
+	},
+	{
+		"id": 1132,
+		"enchant": "+29 Intellect"
+	},
+	{
+		"id": 1133,
+		"enchant": "+30 Intellect"
+	},
+	{
+		"id": 1134,
+		"enchant": "+31 Intellect"
+	},
+	{
+		"id": 1135,
+		"enchant": "+32 Intellect"
+	},
+	{
+		"id": 1136,
+		"enchant": "+33 Intellect"
+	},
+	{
+		"id": 1137,
+		"enchant": "+34 Intellect"
+	},
+	{
+		"id": 1138,
+		"enchant": "+35 Intellect"
+	},
+	{
+		"id": 1139,
+		"enchant": "+36 Intellect"
+	},
+	{
+		"id": 1140,
+		"enchant": "+37 Intellect"
+	},
+	{
+		"id": 1141,
+		"enchant": "+38 Intellect"
+	},
+	{
+		"id": 1142,
+		"enchant": "+39 Intellect"
+	},
+	{
+		"id": 1143,
+		"enchant": "+40 Intellect"
+	},
+	{
+		"id": 1144,
+		"enchant": "+15 Spirit"
+	},
+	{
+		"id": 1145,
+		"enchant": "+16 Spirit"
+	},
+	{
+		"id": 1146,
+		"enchant": "+17 Spirit"
+	},
+	{
+		"id": 1147,
+		"enchant": "+18 Spirit"
+	},
+	{
+		"id": 1148,
+		"enchant": "+19 Spirit"
+	},
+	{
+		"id": 1149,
+		"enchant": "+20 Spirit"
+	},
+	{
+		"id": 1150,
+		"enchant": "+21 Spirit"
+	},
+	{
+		"id": 1151,
+		"enchant": "+22 Spirit"
+	},
+	{
+		"id": 1152,
+		"enchant": "+23 Spirit"
+	},
+	{
+		"id": 1153,
+		"enchant": "+24 Spirit"
+	},
+	{
+		"id": 1154,
+		"enchant": "+25 Spirit"
+	},
+	{
+		"id": 1155,
+		"enchant": "+26 Spirit"
+	},
+	{
+		"id": 1156,
+		"enchant": "+27 Spirit"
+	},
+	{
+		"id": 1157,
+		"enchant": "+28 Spirit"
+	},
+	{
+		"id": 1158,
+		"enchant": "+29 Spirit"
+	},
+	{
+		"id": 1159,
+		"enchant": "+30 Spirit"
+	},
+	{
+		"id": 1160,
+		"enchant": "+31 Spirit"
+	},
+	{
+		"id": 1161,
+		"enchant": "+32 Spirit"
+	},
+	{
+		"id": 1162,
+		"enchant": "+33 Spirit"
+	},
+	{
+		"id": 1163,
+		"enchant": "+34 Spirit"
+	},
+	{
+		"id": 1164,
+		"enchant": "+36 Spirit"
+	},
+	{
+		"id": 1165,
+		"enchant": "+37 Spirit"
+	},
+	{
+		"id": 1166,
+		"enchant": "+38 Spirit"
+	},
+	{
+		"id": 1167,
+		"enchant": "+39 Spirit"
+	},
+	{
+		"id": 1168,
+		"enchant": "+40 Spirit"
+	},
+	{
+		"id": 1183,
+		"enchant": "+35 Spirit"
+	},
+	{
+		"id": 1203,
+		"enchant": "+41 Strength"
+	},
+	{
+		"id": 1204,
+		"enchant": "+42 Strength"
+	},
+	{
+		"id": 1205,
+		"enchant": "+43 Strength"
+	},
+	{
+		"id": 1206,
+		"enchant": "+44 Strength"
+	},
+	{
+		"id": 1207,
+		"enchant": "+45 Strength"
+	},
+	{
+		"id": 1208,
+		"enchant": "+46 Strength"
+	},
+	{
+		"id": 1209,
+		"enchant": "+41 Stamina"
+	},
+	{
+		"id": 1210,
+		"enchant": "+42 Stamina"
+	},
+	{
+		"id": 1211,
+		"enchant": "+43 Stamina"
+	},
+	{
+		"id": 1212,
+		"enchant": "+44 Stamina"
+	},
+	{
+		"id": 1213,
+		"enchant": "+45 Stamina"
+	},
+	{
+		"id": 1214,
+		"enchant": "+46 Stamina"
+	},
+	{
+		"id": 1215,
+		"enchant": "+41 Agility"
+	},
+	{
+		"id": 1216,
+		"enchant": "+42 Agility"
+	},
+	{
+		"id": 1217,
+		"enchant": "+43 Agility"
+	},
+	{
+		"id": 1218,
+		"enchant": "+44 Agility"
+	},
+	{
+		"id": 1219,
+		"enchant": "+45 Agility"
+	},
+	{
+		"id": 1220,
+		"enchant": "+46 Agility"
+	},
+	{
+		"id": 1221,
+		"enchant": "+41 Intellect"
+	},
+	{
+		"id": 1222,
+		"enchant": "+42 Intellect"
+	},
+	{
+		"id": 1223,
+		"enchant": "+43 Intellect"
+	},
+	{
+		"id": 1224,
+		"enchant": "+44 Intellect"
+	},
+	{
+		"id": 1225,
+		"enchant": "+45 Intellect"
+	},
+	{
+		"id": 1226,
+		"enchant": "+46 Intellect"
+	},
+	{
+		"id": 1227,
+		"enchant": "+41 Spirit"
+	},
+	{
+		"id": 1228,
+		"enchant": "+42 Spirit"
+	},
+	{
+		"id": 1229,
+		"enchant": "+43 Spirit"
+	},
+	{
+		"id": 1230,
+		"enchant": "+44 Spirit"
+	},
+	{
+		"id": 1231,
+		"enchant": "+45 Spirit"
+	},
+	{
+		"id": 1232,
+		"enchant": "+46 Spirit"
+	},
+	{
+		"id": 1243,
+		"enchant": "+1 Arcane Resistance"
+	},
+	{
+		"id": 1244,
+		"enchant": "+2 Arcane Resistance"
+	},
+	{
+		"id": 1245,
+		"enchant": "+3 Arcane Resistance"
+	},
+	{
+		"id": 1246,
+		"enchant": "+4 Arcane Resistance"
+	},
+	{
+		"id": 1247,
+		"enchant": "+5 Arcane Resistance"
+	},
+	{
+		"id": 1248,
+		"enchant": "+6 Arcane Resistance"
+	},
+	{
+		"id": 1249,
+		"enchant": "+7 Arcane Resistance"
+	},
+	{
+		"id": 1250,
+		"enchant": "+8 Arcane Resistance"
+	},
+	{
+		"id": 1251,
+		"enchant": "+9 Arcane Resistance"
+	},
+	{
+		"id": 1252,
+		"enchant": "+10 Arcane Resistance"
+	},
+	{
+		"id": 1253,
+		"enchant": "+11 Arcane Resistance"
+	},
+	{
+		"id": 1254,
+		"enchant": "+12 Arcane Resistance"
+	},
+	{
+		"id": 1255,
+		"enchant": "+13 Arcane Resistance"
+	},
+	{
+		"id": 1256,
+		"enchant": "+14 Arcane Resistance"
+	},
+	{
+		"id": 1257,
+		"enchant": "+15 Arcane Resistance"
+	},
+	{
+		"id": 1258,
+		"enchant": "+16 Arcane Resistance"
+	},
+	{
+		"id": 1259,
+		"enchant": "+17 Arcane Resistance"
+	},
+	{
+		"id": 1260,
+		"enchant": "+18 Arcane Resistance"
+	},
+	{
+		"id": 1261,
+		"enchant": "+19 Arcane Resistance"
+	},
+	{
+		"id": 1262,
+		"enchant": "+20 Arcane Resistance"
+	},
+	{
+		"id": 1263,
+		"enchant": "+21 Arcane Resistance"
+	},
+	{
+		"id": 1264,
+		"enchant": "+22 Arcane Resistance"
+	},
+	{
+		"id": 1265,
+		"enchant": "+23 Arcane Resistance"
+	},
+	{
+		"id": 1266,
+		"enchant": "+24 Arcane Resistance"
+	},
+	{
+		"id": 1267,
+		"enchant": "+25 Arcane Resistance"
+	},
+	{
+		"id": 1268,
+		"enchant": "+26 Arcane Resistance"
+	},
+	{
+		"id": 1269,
+		"enchant": "+27 Arcane Resistance"
+	},
+	{
+		"id": 1270,
+		"enchant": "+28 Arcane Resistance"
+	},
+	{
+		"id": 1271,
+		"enchant": "+29 Arcane Resistance"
+	},
+	{
+		"id": 1272,
+		"enchant": "+30 Arcane Resistance"
+	},
+	{
+		"id": 1273,
+		"enchant": "+31 Arcane Resistance"
+	},
+	{
+		"id": 1274,
+		"enchant": "+32 Arcane Resistance"
+	},
+	{
+		"id": 1275,
+		"enchant": "+33 Arcane Resistance"
+	},
+	{
+		"id": 1276,
+		"enchant": "+34 Arcane Resistance"
+	},
+	{
+		"id": 1277,
+		"enchant": "+35 Arcane Resistance"
+	},
+	{
+		"id": 1278,
+		"enchant": "+36 Arcane Resistance"
+	},
+	{
+		"id": 1279,
+		"enchant": "+37 Arcane Resistance"
+	},
+	{
+		"id": 1280,
+		"enchant": "+38 Arcane Resistance"
+	},
+	{
+		"id": 1281,
+		"enchant": "+39 Arcane Resistance"
+	},
+	{
+		"id": 1282,
+		"enchant": "+40 Arcane Resistance"
+	},
+	{
+		"id": 1283,
+		"enchant": "+41 Arcane Resistance"
+	},
+	{
+		"id": 1284,
+		"enchant": "+42 Arcane Resistance"
+	},
+	{
+		"id": 1285,
+		"enchant": "+43 Arcane Resistance"
+	},
+	{
+		"id": 1286,
+		"enchant": "+44 Arcane Resistance"
+	},
+	{
+		"id": 1287,
+		"enchant": "+45 Arcane Resistance"
+	},
+	{
+		"id": 1288,
+		"enchant": "+46 Arcane Resistance"
+	},
+	{
+		"id": 1289,
+		"enchant": "+1 Frost Resistance"
+	},
+	{
+		"id": 1290,
+		"enchant": "+2 Frost Resistance"
+	},
+	{
+		"id": 1291,
+		"enchant": "+3 Frost Resistance"
+	},
+	{
+		"id": 1292,
+		"enchant": "+4 Frost Resistance"
+	},
+	{
+		"id": 1293,
+		"enchant": "+5 Frost Resistance"
+	},
+	{
+		"id": 1294,
+		"enchant": "+6 Frost Resistance"
+	},
+	{
+		"id": 1295,
+		"enchant": "+7 Frost Resistance"
+	},
+	{
+		"id": 1296,
+		"enchant": "+8 Frost Resistance"
+	},
+	{
+		"id": 1297,
+		"enchant": "+9 Frost Resistance"
+	},
+	{
+		"id": 1298,
+		"enchant": "+10 Frost Resistance"
+	},
+	{
+		"id": 1299,
+		"enchant": "+11 Frost Resistance"
+	},
+	{
+		"id": 1300,
+		"enchant": "+12 Frost Resistance"
+	},
+	{
+		"id": 1301,
+		"enchant": "+13 Frost Resistance"
+	},
+	{
+		"id": 1302,
+		"enchant": "+14 Frost Resistance"
+	},
+	{
+		"id": 1303,
+		"enchant": "+15 Frost Resistance"
+	},
+	{
+		"id": 1304,
+		"enchant": "+16 Frost Resistance"
+	},
+	{
+		"id": 1305,
+		"enchant": "+17 Frost Resistance"
+	},
+	{
+		"id": 1306,
+		"enchant": "+18 Frost Resistance"
+	},
+	{
+		"id": 1307,
+		"enchant": "+19 Frost Resistance"
+	},
+	{
+		"id": 1308,
+		"enchant": "+20 Frost Resistance"
+	},
+	{
+		"id": 1309,
+		"enchant": "+21 Frost Resistance"
+	},
+	{
+		"id": 1310,
+		"enchant": "+22 Frost Resistance"
+	},
+	{
+		"id": 1311,
+		"enchant": "+23 Frost Resistance"
+	},
+	{
+		"id": 1312,
+		"enchant": "+24 Frost Resistance"
+	},
+	{
+		"id": 1313,
+		"enchant": "+25 Frost Resistance"
+	},
+	{
+		"id": 1314,
+		"enchant": "+26 Frost Resistance"
+	},
+	{
+		"id": 1315,
+		"enchant": "+27 Frost Resistance"
+	},
+	{
+		"id": 1316,
+		"enchant": "+28 Frost Resistance"
+	},
+	{
+		"id": 1317,
+		"enchant": "+29 Frost Resistance"
+	},
+	{
+		"id": 1318,
+		"enchant": "+30 Frost Resistance"
+	},
+	{
+		"id": 1319,
+		"enchant": "+31 Frost Resistance"
+	},
+	{
+		"id": 1320,
+		"enchant": "+32 Frost Resistance"
+	},
+	{
+		"id": 1321,
+		"enchant": "+33 Frost Resistance"
+	},
+	{
+		"id": 1322,
+		"enchant": "+34 Frost Resistance"
+	},
+	{
+		"id": 1323,
+		"enchant": "+35 Frost Resistance"
+	},
+	{
+		"id": 1324,
+		"enchant": "+36 Frost Resistance"
+	},
+	{
+		"id": 1325,
+		"enchant": "+37 Frost Resistance"
+	},
+	{
+		"id": 1326,
+		"enchant": "+38 Frost Resistance"
+	},
+	{
+		"id": 1327,
+		"enchant": "+39 Frost Resistance"
+	},
+	{
+		"id": 1328,
+		"enchant": "+40 Frost Resistance"
+	},
+	{
+		"id": 1329,
+		"enchant": "+41 Frost Resistance"
+	},
+	{
+		"id": 1330,
+		"enchant": "+42 Frost Resistance"
+	},
+	{
+		"id": 1331,
+		"enchant": "+43 Frost Resistance"
+	},
+	{
+		"id": 1332,
+		"enchant": "+44 Frost Resistance"
+	},
+	{
+		"id": 1333,
+		"enchant": "+45 Frost Resistance"
+	},
+	{
+		"id": 1334,
+		"enchant": "+46 Frost Resistance"
+	},
+	{
+		"id": 1335,
+		"enchant": "+1 Fire Resistance"
+	},
+	{
+		"id": 1336,
+		"enchant": "+2 Fire Resistance"
+	},
+	{
+		"id": 1337,
+		"enchant": "+3 Fire Resistance"
+	},
+	{
+		"id": 1338,
+		"enchant": "+4 Fire Resistance"
+	},
+	{
+		"id": 1339,
+		"enchant": "+5 Fire Resistance"
+	},
+	{
+		"id": 1340,
+		"enchant": "+6 Fire Resistance"
+	},
+	{
+		"id": 1341,
+		"enchant": "+7 Fire Resistance"
+	},
+	{
+		"id": 1342,
+		"enchant": "+8 Fire Resistance"
+	},
+	{
+		"id": 1343,
+		"enchant": "+9 Fire Resistance"
+	},
+	{
+		"id": 1344,
+		"enchant": "+10 Fire Resistance"
+	},
+	{
+		"id": 1345,
+		"enchant": "+11 Fire Resistance"
+	},
+	{
+		"id": 1346,
+		"enchant": "+12 Fire Resistance"
+	},
+	{
+		"id": 1347,
+		"enchant": "+13 Fire Resistance"
+	},
+	{
+		"id": 1348,
+		"enchant": "+14 Fire Resistance"
+	},
+	{
+		"id": 1349,
+		"enchant": "+15 Fire Resistance"
+	},
+	{
+		"id": 1350,
+		"enchant": "+16 Fire Resistance"
+	},
+	{
+		"id": 1351,
+		"enchant": "+17 Fire Resistance"
+	},
+	{
+		"id": 1352,
+		"enchant": "+18 Fire Resistance"
+	},
+	{
+		"id": 1353,
+		"enchant": "+19 Fire Resistance"
+	},
+	{
+		"id": 1354,
+		"enchant": "+20 Fire Resistance"
+	},
+	{
+		"id": 1355,
+		"enchant": "+21 Fire Resistance"
+	},
+	{
+		"id": 1356,
+		"enchant": "+22 Fire Resistance"
+	},
+	{
+		"id": 1357,
+		"enchant": "+23 Fire Resistance"
+	},
+	{
+		"id": 1358,
+		"enchant": "+24 Fire Resistance"
+	},
+	{
+		"id": 1359,
+		"enchant": "+25 Fire Resistance"
+	},
+	{
+		"id": 1360,
+		"enchant": "+26 Fire Resistance"
+	},
+	{
+		"id": 1361,
+		"enchant": "+27 Fire Resistance"
+	},
+	{
+		"id": 1362,
+		"enchant": "+28 Fire Resistance"
+	},
+	{
+		"id": 1363,
+		"enchant": "+29 Fire Resistance"
+	},
+	{
+		"id": 1364,
+		"enchant": "+30 Fire Resistance"
+	},
+	{
+		"id": 1365,
+		"enchant": "+31 Fire Resistance"
+	},
+	{
+		"id": 1366,
+		"enchant": "+32 Fire Resistance"
+	},
+	{
+		"id": 1367,
+		"enchant": "+33 Fire Resistance"
+	},
+	{
+		"id": 1368,
+		"enchant": "+34 Fire Resistance"
+	},
+	{
+		"id": 1369,
+		"enchant": "+35 Fire Resistance"
+	},
+	{
+		"id": 1370,
+		"enchant": "+36 Fire Resistance"
+	},
+	{
+		"id": 1371,
+		"enchant": "+37 Fire Resistance"
+	},
+	{
+		"id": 1372,
+		"enchant": "+38 Fire Resistance"
+	},
+	{
+		"id": 1373,
+		"enchant": "+39 Fire Resistance"
+	},
+	{
+		"id": 1374,
+		"enchant": "+40 Fire Resistance"
+	},
+	{
+		"id": 1375,
+		"enchant": "+41 Fire Resistance"
+	},
+	{
+		"id": 1376,
+		"enchant": "+42 Fire Resistance"
+	},
+	{
+		"id": 1377,
+		"enchant": "+43 Fire Resistance"
+	},
+	{
+		"id": 1378,
+		"enchant": "+44 Fire Resistance"
+	},
+	{
+		"id": 1379,
+		"enchant": "+45 Fire Resistance"
+	},
+	{
+		"id": 1380,
+		"enchant": "+46 Fire Resistance"
+	},
+	{
+		"id": 1381,
+		"enchant": "+1 Nature Resistance"
+	},
+	{
+		"id": 1382,
+		"enchant": "+2 Nature Resistance"
+	},
+	{
+		"id": 1383,
+		"enchant": "+3 Nature Resistance"
+	},
+	{
+		"id": 1384,
+		"enchant": "+4 Nature Resistance"
+	},
+	{
+		"id": 1385,
+		"enchant": "+5 Nature Resistance"
+	},
+	{
+		"id": 1386,
+		"enchant": "+6 Nature Resistance"
+	},
+	{
+		"id": 1387,
+		"enchant": "+7 Nature Resistance"
+	},
+	{
+		"id": 1388,
+		"enchant": "+8 Nature Resistance"
+	},
+	{
+		"id": 1389,
+		"enchant": "+9 Nature Resistance"
+	},
+	{
+		"id": 1390,
+		"enchant": "+10 Nature Resistance"
+	},
+	{
+		"id": 1391,
+		"enchant": "+11 Nature Resistance"
+	},
+	{
+		"id": 1392,
+		"enchant": "+12 Nature Resistance"
+	},
+	{
+		"id": 1393,
+		"enchant": "+13 Nature Resistance"
+	},
+	{
+		"id": 1394,
+		"enchant": "+14 Nature Resistance"
+	},
+	{
+		"id": 1395,
+		"enchant": "+15 Nature Resistance"
+	},
+	{
+		"id": 1396,
+		"enchant": "+16 Nature Resistance"
+	},
+	{
+		"id": 1397,
+		"enchant": "+17 Nature Resistance"
+	},
+	{
+		"id": 1398,
+		"enchant": "+18 Nature Resistance"
+	},
+	{
+		"id": 1399,
+		"enchant": "+19 Nature Resistance"
+	},
+	{
+		"id": 1400,
+		"enchant": "+20 Nature Resistance"
+	},
+	{
+		"id": 1401,
+		"enchant": "+21 Nature Resistance"
+	},
+	{
+		"id": 1402,
+		"enchant": "+22 Nature Resistance"
+	},
+	{
+		"id": 1403,
+		"enchant": "+23 Nature Resistance"
+	},
+	{
+		"id": 1404,
+		"enchant": "+24 Nature Resistance"
+	},
+	{
+		"id": 1405,
+		"enchant": "+25 Nature Resistance"
+	},
+	{
+		"id": 1406,
+		"enchant": "+26 Nature Resistance"
+	},
+	{
+		"id": 1407,
+		"enchant": "+27 Nature Resistance"
+	},
+	{
+		"id": 1408,
+		"enchant": "+28 Nature Resistance"
+	},
+	{
+		"id": 1409,
+		"enchant": "+29 Nature Resistance"
+	},
+	{
+		"id": 1410,
+		"enchant": "+30 Nature Resistance"
+	},
+	{
+		"id": 1411,
+		"enchant": "+31 Nature Resistance"
+	},
+	{
+		"id": 1412,
+		"enchant": "+32 Nature Resistance"
+	},
+	{
+		"id": 1413,
+		"enchant": "+33 Nature Resistance"
+	},
+	{
+		"id": 1414,
+		"enchant": "+34 Nature Resistance"
+	},
+	{
+		"id": 1415,
+		"enchant": "+35 Nature Resistance"
+	},
+	{
+		"id": 1416,
+		"enchant": "+36 Nature Resistance"
+	},
+	{
+		"id": 1417,
+		"enchant": "+37 Nature Resistance"
+	},
+	{
+		"id": 1418,
+		"enchant": "+38 Nature Resistance"
+	},
+	{
+		"id": 1419,
+		"enchant": "+39 Nature Resistance"
+	},
+	{
+		"id": 1420,
+		"enchant": "+40 Nature Resistance"
+	},
+	{
+		"id": 1421,
+		"enchant": "+41 Nature Resistance"
+	},
+	{
+		"id": 1422,
+		"enchant": "+42 Nature Resistance"
+	},
+	{
+		"id": 1423,
+		"enchant": "+43 Nature Resistance"
+	},
+	{
+		"id": 1424,
+		"enchant": "+44 Nature Resistance"
+	},
+	{
+		"id": 1425,
+		"enchant": "+45 Nature Resistance"
+	},
+	{
+		"id": 1426,
+		"enchant": "+46 Nature Resistance"
+	},
+	{
+		"id": 1427,
+		"enchant": "+1 Shadow Resistance"
+	},
+	{
+		"id": 1428,
+		"enchant": "+2 Shadow Resistance"
+	},
+	{
+		"id": 1429,
+		"enchant": "+3 Shadow Resistance"
+	},
+	{
+		"id": 1430,
+		"enchant": "+4 Shadow Resistance"
+	},
+	{
+		"id": 1431,
+		"enchant": "+5 Shadow Resistance"
+	},
+	{
+		"id": 1432,
+		"enchant": "+6 Shadow Resistance"
+	},
+	{
+		"id": 1433,
+		"enchant": "+7 Shadow Resistance"
+	},
+	{
+		"id": 1434,
+		"enchant": "+8 Shadow Resistance"
+	},
+	{
+		"id": 1435,
+		"enchant": "+9 Shadow Resistance"
+	},
+	{
+		"id": 1436,
+		"enchant": "+10 Shadow Resistance"
+	},
+	{
+		"id": 1437,
+		"enchant": "+11 Shadow Resistance"
+	},
+	{
+		"id": 1438,
+		"enchant": "+12 Shadow Resistance"
+	},
+	{
+		"id": 1439,
+		"enchant": "+13 Shadow Resistance"
+	},
+	{
+		"id": 1440,
+		"enchant": "+14 Shadow Resistance"
+	},
+	{
+		"id": 1441,
+		"enchant": "+15 Shadow Resistance"
+	},
+	{
+		"id": 1442,
+		"enchant": "+16 Shadow Resistance"
+	},
+	{
+		"id": 1443,
+		"enchant": "+17 Shadow Resistance"
+	},
+	{
+		"id": 1444,
+		"enchant": "+18 Shadow Resistance"
+	},
+	{
+		"id": 1445,
+		"enchant": "+19 Shadow Resistance"
+	},
+	{
+		"id": 1446,
+		"enchant": "+20 Shadow Resistance"
+	},
+	{
+		"id": 1447,
+		"enchant": "+21 Shadow Resistance"
+	},
+	{
+		"id": 1448,
+		"enchant": "+22 Shadow Resistance"
+	},
+	{
+		"id": 1449,
+		"enchant": "+23 Shadow Resistance"
+	},
+	{
+		"id": 1450,
+		"enchant": "+24 Shadow Resistance"
+	},
+	{
+		"id": 1451,
+		"enchant": "+25 Shadow Resistance"
+	},
+	{
+		"id": 1452,
+		"enchant": "+26 Resist Shadow"
+	},
+	{
+		"id": 1453,
+		"enchant": "+27 Shadow Resistance"
+	},
+	{
+		"id": 1454,
+		"enchant": "+28 Shadow Resistance"
+	},
+	{
+		"id": 1455,
+		"enchant": "+29 Shadow Resistance"
+	},
+	{
+		"id": 1456,
+		"enchant": "+30 Shadow Resistance"
+	},
+	{
+		"id": 1457,
+		"enchant": "+31 Shadow Resistance"
+	},
+	{
+		"id": 1458,
+		"enchant": "+32 Shadow Resistance"
+	},
+	{
+		"id": 1459,
+		"enchant": "+33 Shadow Resistance"
+	},
+	{
+		"id": 1460,
+		"enchant": "+34 Shadow Resistance"
+	},
+	{
+		"id": 1461,
+		"enchant": "+35 Shadow Resistance"
+	},
+	{
+		"id": 1462,
+		"enchant": "+36 Shadow Resistance"
+	},
+	{
+		"id": 1463,
+		"enchant": "+37 Shadow Resistance"
+	},
+	{
+		"id": 1464,
+		"enchant": "+38 Shadow Resistance"
+	},
+	{
+		"id": 1465,
+		"enchant": "+39 Shadow Resistance"
+	},
+	{
+		"id": 1466,
+		"enchant": "+40 Shadow Resistance"
+	},
+	{
+		"id": 1467,
+		"enchant": "+41 Shadow Resistance"
+	},
+	{
+		"id": 1468,
+		"enchant": "+42 Shadow Resistance"
+	},
+	{
+		"id": 1469,
+		"enchant": "+43 Shadow Resistance"
+	},
+	{
+		"id": 1470,
+		"enchant": "+44 Shadow Resistance"
+	},
+	{
+		"id": 1471,
+		"enchant": "+45 Shadow Resistance"
+	},
+	{
+		"id": 1472,
+		"enchant": "+46 Shadow Resistance"
+	},
+	{
+		"id": 1483,
+		"enchant": "Mana +150"
+	},
+	{
+		"id": 1503,
+		"enchant": "HP +100"
+	},
+	{
+		"id": 1504,
+		"enchant": "Armor +125"
+	},
+	{
+		"id": 1505,
+		"enchant": "+20 Fire Resistance"
+	},
+	{
+		"id": 1506,
+		"enchant": "Strength +8"
+	},
+	{
+		"id": 1507,
+		"enchant": "Stamina +8"
+	},
+	{
+		"id": 1508,
+		"enchant": "Agility +8"
+	},
+	{
+		"id": 1509,
+		"enchant": "Intellect +8"
+	},
+	{
+		"id": 1510,
+		"enchant": "Spirit +8"
+	},
+	{
+		"id": 1523,
+		"enchant": "MANA/FR +85/14"
+	},
+	{
+		"id": 1524,
+		"enchant": "HP/FR +75/14"
+	},
+	{
+		"id": 1525,
+		"enchant": "AC/FR +110/14"
+	},
+	{
+		"id": 1526,
+		"enchant": "STR/FR +10/14"
+	},
+	{
+		"id": 1527,
+		"enchant": "STA/FR +10/14"
+	},
+	{
+		"id": 1528,
+		"enchant": "AGI/FR +10/14"
+	},
+	{
+		"id": 1529,
+		"enchant": "INT/FR +10/14"
+	},
+	{
+		"id": 1530,
+		"enchant": "SPI/FR +10/14"
+	},
+	{
+		"id": 1531,
+		"enchant": "STR/STA +10/10"
+	},
+	{
+		"id": 1532,
+		"enchant": "STR/STA/AC/FR +10/10/110/15"
+	},
+	{
+		"id": 1543,
+		"enchant": "INT/SPI/MANA/FR +10/10/100/15"
+	},
+	{
+		"id": 1563,
+		"enchant": "+2 Attack Power"
+	},
+	{
+		"id": 1583,
+		"enchant": "+4 Attack Power"
+	},
+	{
+		"id": 1584,
+		"enchant": "+6 Attack Power"
+	},
+	{
+		"id": 1585,
+		"enchant": "+8 Attack Power"
+	},
+	{
+		"id": 1586,
+		"enchant": "+10 Attack Power"
+	},
+	{
+		"id": 1587,
+		"enchant": "+12 Attack Power"
+	},
+	{
+		"id": 1588,
+		"enchant": "+14 Attack Power"
+	},
+	{
+		"id": 1589,
+		"enchant": "+16 Attack Power"
+	},
+	{
+		"id": 1590,
+		"enchant": "+18 Attack Power"
+	},
+	{
+		"id": 1591,
+		"enchant": "+20 Attack Power"
+	},
+	{
+		"id": 1592,
+		"enchant": "+22 Attack Power"
+	},
+	{
+		"id": 1593,
+		"enchant": "+24 Attack Power"
+	},
+	{
+		"id": 1594,
+		"enchant": "+26 Attack Power"
+	},
+	{
+		"id": 1595,
+		"enchant": "+28 Attack Power"
+	},
+	{
+		"id": 1596,
+		"enchant": "+30 Attack Power"
+	},
+	{
+		"id": 1597,
+		"enchant": "+32 Attack Power"
+	},
+	{
+		"id": 1598,
+		"enchant": "+34 Attack Power"
+	},
+	{
+		"id": 1599,
+		"enchant": "+36 Attack Power"
+	},
+	{
+		"id": 1600,
+		"enchant": "+38 Attack Power"
+	},
+	{
+		"id": 1601,
+		"enchant": "+40 Attack Power"
+	},
+	{
+		"id": 1602,
+		"enchant": "+42 Attack Power"
+	},
+	{
+		"id": 1603,
+		"enchant": "+44 Attack Power"
+	},
+	{
+		"id": 1604,
+		"enchant": "+46 Attack Power"
+	},
+	{
+		"id": 1605,
+		"enchant": "+48 Attack Power"
+	},
+	{
+		"id": 1606,
+		"enchant": "+50 Attack Power"
+	},
+	{
+		"id": 1607,
+		"enchant": "+52 Attack Power"
+	},
+	{
+		"id": 1608,
+		"enchant": "+54 Attack Power"
+	},
+	{
+		"id": 1609,
+		"enchant": "+56 Attack Power"
+	},
+	{
+		"id": 1610,
+		"enchant": "+58 Attack Power"
+	},
+	{
+		"id": 1611,
+		"enchant": "+60 Attack Power"
+	},
+	{
+		"id": 1612,
+		"enchant": "+62 Attack Power"
+	},
+	{
+		"id": 1613,
+		"enchant": "+64 Attack Power"
+	},
+	{
+		"id": 1614,
+		"enchant": "+66 Attack Power"
+	},
+	{
+		"id": 1615,
+		"enchant": "+68 Attack Power"
+	},
+	{
+		"id": 1616,
+		"enchant": "+70 Attack Power"
+	},
+	{
+		"id": 1617,
+		"enchant": "+72 Attack Power"
+	},
+	{
+		"id": 1618,
+		"enchant": "+74 Attack Power"
+	},
+	{
+		"id": 1619,
+		"enchant": "+76 Attack Power"
+	},
+	{
+		"id": 1620,
+		"enchant": "+78 Attack Power"
+	},
+	{
+		"id": 1621,
+		"enchant": "+80 Attack Power"
+	},
+	{
+		"id": 1622,
+		"enchant": "+82 Attack Power"
+	},
+	{
+		"id": 1623,
+		"enchant": "+84 Attack Power"
+	},
+	{
+		"id": 1624,
+		"enchant": "+86 Attack Power"
+	},
+	{
+		"id": 1625,
+		"enchant": "+88 Attack Power"
+	},
+	{
+		"id": 1626,
+		"enchant": "+90 Attack Power"
+	},
+	{
+		"id": 1627,
+		"enchant": "+92 Attack Power"
+	},
+	{
+		"id": 1643,
+		"enchant": "Sharpened +8"
+	},
+	{
+		"id": 1663,
+		"enchant": "Rockbiter 5"
+	},
+	{
+		"id": 1664,
+		"enchant": "Rockbiter 7"
+	},
+	{
+		"id": 1665,
+		"enchant": "Flametongue 5"
+	},
+	{
+		"id": 1666,
+		"enchant": "Flametongue 6"
+	},
+	{
+		"id": 1667,
+		"enchant": "Frostbrand 4"
+	},
+	{
+		"id": 1668,
+		"enchant": "Frostbrand 5"
+	},
+	{
+		"id": 1669,
+		"enchant": "Windfury 4"
+	},
+	{
+		"id": 1683,
+		"enchant": "Flametongue Totem 4"
+	},
+	{
+		"id": 1703,
+		"enchant": "Weighted +8"
+	},
+	{
+		"id": 1704,
+		"enchant": "Thorium Spike (20-30)"
+	},
+	{
+		"id": 1723,
+		"enchant": "Omen of Clarity"
+	},
+	{
+		"id": 1743,
+		"enchant": "MHTest02"
+	},
+	{
+		"id": 1763,
+		"enchant": "Cold Blood"
+	},
+	{
+		"id": 1783,
+		"enchant": "Windfury Totem 1"
+	},
+	{
+		"id": 1803,
+		"enchant": "Firestone 1"
+	},
+	{
+		"id": 1823,
+		"enchant": "Firestone 2"
+	},
+	{
+		"id": 1824,
+		"enchant": "Firestone 3"
+	},
+	{
+		"id": 1825,
+		"enchant": "Firestone 4"
+	},
+	{
+		"id": 1843,
+		"enchant": "Reinforced Armor +40"
+	},
+	{
+		"id": 1863,
+		"enchant": "Feedback 2"
+	},
+	{
+		"id": 1864,
+		"enchant": "Feedback 3"
+	},
+	{
+		"id": 1865,
+		"enchant": "Feedback 4"
+	},
+	{
+		"id": 1866,
+		"enchant": "Feedback 5"
+	},
+	{
+		"id": 1883,
+		"enchant": "Intellect +7"
+	},
+	{
+		"id": 1884,
+		"enchant": "Spirit +9"
+	},
+	{
+		"id": 1885,
+		"enchant": "Strength +9"
+	},
+	{
+		"id": 1886,
+		"enchant": "Stamina +9"
+	},
+	{
+		"id": 1887,
+		"enchant": "Agility +7"
+	},
+	{
+		"id": 1888,
+		"enchant": "+5 All Resistances"
+	},
+	{
+		"id": 1889,
+		"enchant": "Armor +70"
+	},
+	{
+		"id": 1890,
+		"enchant": "Spirit +9"
+	},
+	{
+		"id": 1891,
+		"enchant": "All Stats +4"
+	},
+	{
+		"id": 1892,
+		"enchant": "Health +100"
+	},
+	{
+		"id": 1893,
+		"enchant": "Mana +100"
+	},
+	{
+		"id": 1894,
+		"enchant": "Icy Weapon"
+	},
+	{
+		"id": 1895,
+		"enchant": "Damage +9"
+	},
+	{
+		"id": 1896,
+		"enchant": "Weapon Damage +9"
+	},
+	{
+		"id": 1897,
+		"enchant": "Weapon Damage +5"
+	},
+	{
+		"id": 1898,
+		"enchant": "Lifestealing"
+	},
+	{
+		"id": 1899,
+		"enchant": "Unholy Weapon"
+	},
+	{
+		"id": 1900,
+		"enchant": "Crusader"
+	},
+	{
+		"id": 1901,
+		"enchant": "Intellect +9"
+	},
+	{
+		"id": 1903,
+		"enchant": "Spirit +9"
+	},
+	{
+		"id": 1904,
+		"enchant": "Intellect +9"
+	},
+	{
+		"id": 1923,
+		"enchant": "+3 Fire Resistance"
+	},
+	{
+		"id": 1943,
+		"enchant": "+8 Defense"
+	},
+	{
+		"id": 1944,
+		"enchant": "+5 Defense"
+	},
+	{
+		"id": 1945,
+		"enchant": "+6 Defense"
+	},
+	{
+		"id": 1946,
+		"enchant": "+7 Defense"
+	},
+	{
+		"id": 1947,
+		"enchant": "+7 Defense"
+	},
+	{
+		"id": 1948,
+		"enchant": "+9 Defense"
+	},
+	{
+		"id": 1949,
+		"enchant": "+9 Defense"
+	},
+	{
+		"id": 1950,
+		"enchant": "+10 Defense"
+	},
+	{
+		"id": 1951,
+		"enchant": "+11 Defense"
+	},
+	{
+		"id": 1952,
+		"enchant": "+13 Defense"
+	},
+	{
+		"id": 1953,
+		"enchant": "+15 Defense"
+	},
+	{
+		"id": 1954,
+		"enchant": "+17 Defense"
+	},
+	{
+		"id": 1955,
+		"enchant": "+21 Defense"
+	},
+	{
+		"id": 1956,
+		"enchant": "+11 Defense"
+	},
+	{
+		"id": 1957,
+		"enchant": "+12 Defense"
+	},
+	{
+		"id": 1958,
+		"enchant": "+13 Defense"
+	},
+	{
+		"id": 1959,
+		"enchant": "+14 Defense"
+	},
+	{
+		"id": 1960,
+		"enchant": "+15 Defense"
+	},
+	{
+		"id": 1961,
+		"enchant": "+16 Defense"
+	},
+	{
+		"id": 1962,
+		"enchant": "+17 Defense"
+	},
+	{
+		"id": 1963,
+		"enchant": "+18 Defense"
+	},
+	{
+		"id": 1964,
+		"enchant": "+19 Defense"
+	},
+	{
+		"id": 1965,
+		"enchant": "+19 Defense"
+	},
+	{
+		"id": 1966,
+		"enchant": "+20 Defense"
+	},
+	{
+		"id": 1967,
+		"enchant": "+21 Defense"
+	},
+	{
+		"id": 1968,
+		"enchant": "+22 Defense"
+	},
+	{
+		"id": 1969,
+		"enchant": "+23 Defense"
+	},
+	{
+		"id": 1970,
+		"enchant": "+23 Defense"
+	},
+	{
+		"id": 1971,
+		"enchant": "+24 Defense"
+	},
+	{
+		"id": 1972,
+		"enchant": "+25 Defense"
+	},
+	{
+		"id": 1973,
+		"enchant": "+25 Defense"
+	},
+	{
+		"id": 1983,
+		"enchant": "+1% Block"
+	},
+	{
+		"id": 1984,
+		"enchant": "+2% Block"
+	},
+	{
+		"id": 1985,
+		"enchant": "+3% Block"
+	},
+	{
+		"id": 1986,
+		"enchant": "+4% Block"
+	},
+	{
+		"id": 1987,
+		"enchant": "Block Level 14"
+	},
+	{
+		"id": 1988,
+		"enchant": "Block Level 15"
+	},
+	{
+		"id": 1989,
+		"enchant": "Block Level 16"
+	},
+	{
+		"id": 1990,
+		"enchant": "Block Level 17"
+	},
+	{
+		"id": 1991,
+		"enchant": "Block Level 18"
+	},
+	{
+		"id": 1992,
+		"enchant": "Block Level 19"
+	},
+	{
+		"id": 1993,
+		"enchant": "Block Level 20"
+	},
+	{
+		"id": 1994,
+		"enchant": "Block Level 21"
+	},
+	{
+		"id": 1995,
+		"enchant": "Block Level 22"
+	},
+	{
+		"id": 1996,
+		"enchant": "Block Level 23"
+	},
+	{
+		"id": 1997,
+		"enchant": "Block Level 24"
+	},
+	{
+		"id": 1998,
+		"enchant": "Block Level 25"
+	},
+	{
+		"id": 1999,
+		"enchant": "Block Level 26"
+	},
+	{
+		"id": 2000,
+		"enchant": "Block Level 27"
+	},
+	{
+		"id": 2001,
+		"enchant": "Block Level 28"
+	},
+	{
+		"id": 2002,
+		"enchant": "Block Level 29"
+	},
+	{
+		"id": 2003,
+		"enchant": "Block Level 30"
+	},
+	{
+		"id": 2004,
+		"enchant": "Block Level 31"
+	},
+	{
+		"id": 2005,
+		"enchant": "Block Level 32"
+	},
+	{
+		"id": 2006,
+		"enchant": "Block Level 33"
+	},
+	{
+		"id": 2007,
+		"enchant": "Block Level 34"
+	},
+	{
+		"id": 2008,
+		"enchant": "Block Level 35"
+	},
+	{
+		"id": 2009,
+		"enchant": "Block Level 36"
+	},
+	{
+		"id": 2010,
+		"enchant": "Block Level 37"
+	},
+	{
+		"id": 2011,
+		"enchant": "Block Level 38"
+	},
+	{
+		"id": 2012,
+		"enchant": "Block Level 39"
+	},
+	{
+		"id": 2013,
+		"enchant": "Block Level 40"
+	},
+	{
+		"id": 2014,
+		"enchant": "Block Level 41"
+	},
+	{
+		"id": 2015,
+		"enchant": "Block Level 42"
+	},
+	{
+		"id": 2016,
+		"enchant": "Block Level 43"
+	},
+	{
+		"id": 2017,
+		"enchant": "Block Level 44"
+	},
+	{
+		"id": 2018,
+		"enchant": "Block Level 45"
+	},
+	{
+		"id": 2019,
+		"enchant": "Block Level 46"
+	},
+	{
+		"id": 2020,
+		"enchant": "Block Level 47"
+	},
+	{
+		"id": 2021,
+		"enchant": "Block Level 48"
+	},
+	{
+		"id": 2022,
+		"enchant": "Block Level 49"
+	},
+	{
+		"id": 2023,
+		"enchant": "Block Level 50"
+	},
+	{
+		"id": 2024,
+		"enchant": "Block Level 51"
+	},
+	{
+		"id": 2025,
+		"enchant": "Block Level 52"
+	},
+	{
+		"id": 2026,
+		"enchant": "Block Level 53"
+	},
+	{
+		"id": 2027,
+		"enchant": "Block Level 54"
+	},
+	{
+		"id": 2028,
+		"enchant": "Block Level 55"
+	},
+	{
+		"id": 2029,
+		"enchant": "Block Level 56"
+	},
+	{
+		"id": 2030,
+		"enchant": "Block Level 57"
+	},
+	{
+		"id": 2031,
+		"enchant": "Block Level 58"
+	},
+	{
+		"id": 2032,
+		"enchant": "Block Level 59"
+	},
+	{
+		"id": 2033,
+		"enchant": "Block Level 60"
+	},
+	{
+		"id": 2034,
+		"enchant": "Block Level 61"
+	},
+	{
+		"id": 2035,
+		"enchant": "Block Level 62"
+	},
+	{
+		"id": 2036,
+		"enchant": "Block Level 63"
+	},
+	{
+		"id": 2037,
+		"enchant": "Block Level 64"
+	},
+	{
+		"id": 2038,
+		"enchant": "Block Level 65"
+	},
+	{
+		"id": 2039,
+		"enchant": "Block Level 66"
+	},
+	{
+		"id": 2040,
+		"enchant": "+2 Ranged Attack Power"
+	},
+	{
+		"id": 2041,
+		"enchant": "+5 Ranged Attack Power"
+	},
+	{
+		"id": 2042,
+		"enchant": "+7 Ranged Attack Power"
+	},
+	{
+		"id": 2043,
+		"enchant": "+10 Ranged Attack Power"
+	},
+	{
+		"id": 2044,
+		"enchant": "+12 Ranged Attack Power"
+	},
+	{
+		"id": 2045,
+		"enchant": "+14 Ranged Attack Power"
+	},
+	{
+		"id": 2046,
+		"enchant": "+17 Ranged Attack Power"
+	},
+	{
+		"id": 2047,
+		"enchant": "+19 Ranged Attack Power"
+	},
+	{
+		"id": 2048,
+		"enchant": "+22 Ranged Attack Power"
+	},
+	{
+		"id": 2049,
+		"enchant": "+24 Ranged Attack Power"
+	},
+	{
+		"id": 2050,
+		"enchant": "+26 Ranged Attack Power"
+	},
+	{
+		"id": 2051,
+		"enchant": "+29 Ranged Attack Power"
+	},
+	{
+		"id": 2052,
+		"enchant": "+31 Ranged Attack Power"
+	},
+	{
+		"id": 2053,
+		"enchant": "+34 Ranged Attack Power"
+	},
+	{
+		"id": 2054,
+		"enchant": "+36 Ranged Attack Power"
+	},
+	{
+		"id": 2055,
+		"enchant": "+38 Ranged Attack Power"
+	},
+	{
+		"id": 2056,
+		"enchant": "+41 Ranged Attack Power"
+	},
+	{
+		"id": 2057,
+		"enchant": "+43 Ranged Attack Power"
+	},
+	{
+		"id": 2058,
+		"enchant": "+46 Ranged Attack Power"
+	},
+	{
+		"id": 2059,
+		"enchant": "+48 Ranged Attack Power"
+	},
+	{
+		"id": 2060,
+		"enchant": "+50 Ranged Attack Power"
+	},
+	{
+		"id": 2061,
+		"enchant": "+53 Ranged Attack Power"
+	},
+	{
+		"id": 2062,
+		"enchant": "+55 Ranged Attack Power"
+	},
+	{
+		"id": 2063,
+		"enchant": "+58 Ranged Attack Power"
+	},
+	{
+		"id": 2064,
+		"enchant": "+60 Ranged Attack Power"
+	},
+	{
+		"id": 2065,
+		"enchant": "+62 Ranged Attack Power"
+	},
+	{
+		"id": 2066,
+		"enchant": "+65 Ranged Attack Power"
+	},
+	{
+		"id": 2067,
+		"enchant": "+67 Ranged Attack Power"
+	},
+	{
+		"id": 2068,
+		"enchant": "+70 Ranged Attack Power"
+	},
+	{
+		"id": 2069,
+		"enchant": "+72 Ranged Attack Power"
+	},
+	{
+		"id": 2070,
+		"enchant": "+74 Ranged Attack Power"
+	},
+	{
+		"id": 2071,
+		"enchant": "+77 Ranged Attack Power"
+	},
+	{
+		"id": 2072,
+		"enchant": "+79 Ranged Attack Power"
+	},
+	{
+		"id": 2073,
+		"enchant": "+82 Ranged Attack Power"
+	},
+	{
+		"id": 2074,
+		"enchant": "+84 Ranged Attack Power"
+	},
+	{
+		"id": 2075,
+		"enchant": "+86 Ranged Attack Power"
+	},
+	{
+		"id": 2076,
+		"enchant": "+89 Ranged Attack Power"
+	},
+	{
+		"id": 2077,
+		"enchant": "+91 Ranged Attack Power"
+	},
+	{
+		"id": 2078,
+		"enchant": "+1% Dodge"
+	},
+	{
+		"id": 2079,
+		"enchant": "+1 Arcane Spell Damage"
+	},
+	{
+		"id": 2080,
+		"enchant": "+3 Arcane Spell Damage"
+	},
+	{
+		"id": 2081,
+		"enchant": "+4 Arcane Spell Damage"
+	},
+	{
+		"id": 2082,
+		"enchant": "+6 Arcane Spell Damage"
+	},
+	{
+		"id": 2083,
+		"enchant": "+7 Arcane Spell Damage"
+	},
+	{
+		"id": 2084,
+		"enchant": "+9 Arcane Spell Damage"
+	},
+	{
+		"id": 2085,
+		"enchant": "+10 Arcane Spell Damage"
+	},
+	{
+		"id": 2086,
+		"enchant": "+11 Arcane Spell Damage"
+	},
+	{
+		"id": 2087,
+		"enchant": "+13 Arcane Spell Damage"
+	},
+	{
+		"id": 2088,
+		"enchant": "+14 Arcane Spell Damage"
+	},
+	{
+		"id": 2089,
+		"enchant": "+16 Arcane Spell Damage"
+	},
+	{
+		"id": 2090,
+		"enchant": "+17 Arcane Spell Damage"
+	},
+	{
+		"id": 2091,
+		"enchant": "+19 Arcane Spell Damage"
+	},
+	{
+		"id": 2092,
+		"enchant": "+20 Arcane Spell Damage"
+	},
+	{
+		"id": 2093,
+		"enchant": "+21 Arcane Spell Damage"
+	},
+	{
+		"id": 2094,
+		"enchant": "+23 Arcane Spell Damage"
+	},
+	{
+		"id": 2095,
+		"enchant": "+24 Arcane Spell Damage"
+	},
+	{
+		"id": 2096,
+		"enchant": "+26 Arcane Spell Damage"
+	},
+	{
+		"id": 2097,
+		"enchant": "+27 Arcane Spell Damage"
+	},
+	{
+		"id": 2098,
+		"enchant": "+29 Arcane Spell Damage"
+	},
+	{
+		"id": 2099,
+		"enchant": "+30 Arcane Spell Damage"
+	},
+	{
+		"id": 2100,
+		"enchant": "+31 Arcane Spell Damage"
+	},
+	{
+		"id": 2101,
+		"enchant": "+33 Arcane Spell Damage"
+	},
+	{
+		"id": 2102,
+		"enchant": "+34 Arcane Spell Damage"
+	},
+	{
+		"id": 2103,
+		"enchant": "+36 Arcane Spell Damage"
+	},
+	{
+		"id": 2104,
+		"enchant": "+37 Arcane Spell Damage"
+	},
+	{
+		"id": 2105,
+		"enchant": "+39 Arcane Spell Damage"
+	},
+	{
+		"id": 2106,
+		"enchant": "+40 Arcane Spell Damage"
+	},
+	{
+		"id": 2107,
+		"enchant": "+41 Arcane Spell Damage"
+	},
+	{
+		"id": 2108,
+		"enchant": "+43 Arcane Spell Damage"
+	},
+	{
+		"id": 2109,
+		"enchant": "+44 Arcane Spell Damage"
+	},
+	{
+		"id": 2110,
+		"enchant": "+46 Arcane Spell Damage"
+	},
+	{
+		"id": 2111,
+		"enchant": "+47 Arcane Spell Damage"
+	},
+	{
+		"id": 2112,
+		"enchant": "+49 Arcane Spell Damage"
+	},
+	{
+		"id": 2113,
+		"enchant": "+50 Arcane Spell Damage"
+	},
+	{
+		"id": 2114,
+		"enchant": "+51 Arcane Spell Damage"
+	},
+	{
+		"id": 2115,
+		"enchant": "+53 Arcane Spell Damage"
+	},
+	{
+		"id": 2116,
+		"enchant": "+54 Arcane Spell Damage"
+	},
+	{
+		"id": 2117,
+		"enchant": "+1 Shadow Spell Damage"
+	},
+	{
+		"id": 2118,
+		"enchant": "+3 Shadow Spell Damage"
+	},
+	{
+		"id": 2119,
+		"enchant": "+4 Shadow Spell Damage"
+	},
+	{
+		"id": 2120,
+		"enchant": "+6 Shadow Spell Damage"
+	},
+	{
+		"id": 2121,
+		"enchant": "+7 Shadow Spell Damage"
+	},
+	{
+		"id": 2122,
+		"enchant": "+9 Shadow Spell Damage"
+	},
+	{
+		"id": 2123,
+		"enchant": "+10 Shadow Spell Damage"
+	},
+	{
+		"id": 2124,
+		"enchant": "+11 Shadow Spell Damage"
+	},
+	{
+		"id": 2125,
+		"enchant": "+13 Shadow Spell Damage"
+	},
+	{
+		"id": 2126,
+		"enchant": "+14 Shadow Spell Damage"
+	},
+	{
+		"id": 2127,
+		"enchant": "+16 Shadow Spell Damage"
+	},
+	{
+		"id": 2128,
+		"enchant": "+17 Shadow Spell Damage"
+	},
+	{
+		"id": 2129,
+		"enchant": "+19 Shadow Spell Damage"
+	},
+	{
+		"id": 2130,
+		"enchant": "+20 Shadow Spell Damage"
+	},
+	{
+		"id": 2131,
+		"enchant": "+21 Shadow Spell Damage"
+	},
+	{
+		"id": 2132,
+		"enchant": "+23 Shadow Spell Damage"
+	},
+	{
+		"id": 2133,
+		"enchant": "+24 Shadow Spell Damage"
+	},
+	{
+		"id": 2134,
+		"enchant": "+26 Shadow Spell Damage"
+	},
+	{
+		"id": 2135,
+		"enchant": "+27 Shadow Spell Damage"
+	},
+	{
+		"id": 2136,
+		"enchant": "+29 Shadow Spell Damage"
+	},
+	{
+		"id": 2137,
+		"enchant": "+30 Shadow Spell Damage"
+	},
+	{
+		"id": 2138,
+		"enchant": "+31 Shadow Spell Damage"
+	},
+	{
+		"id": 2139,
+		"enchant": "+33 Shadow Spell Damage"
+	},
+	{
+		"id": 2140,
+		"enchant": "+34 Shadow Spell Damage"
+	},
+	{
+		"id": 2141,
+		"enchant": "+36 Shadow Spell Damage"
+	},
+	{
+		"id": 2142,
+		"enchant": "+37 Shadow Spell Damage"
+	},
+	{
+		"id": 2143,
+		"enchant": "+39 Shadow Spell Damage"
+	},
+	{
+		"id": 2144,
+		"enchant": "+40 Shadow Spell Damage"
+	},
+	{
+		"id": 2145,
+		"enchant": "+41 Shadow Spell Damage"
+	},
+	{
+		"id": 2146,
+		"enchant": "+43 Shadow Spell Damage"
+	},
+	{
+		"id": 2147,
+		"enchant": "+44 Shadow Spell Damage"
+	},
+	{
+		"id": 2148,
+		"enchant": "+46 Shadow Spell Damage"
+	},
+	{
+		"id": 2149,
+		"enchant": "+47 Shadow Spell Damage"
+	},
+	{
+		"id": 2150,
+		"enchant": "+49 Shadow Spell Damage"
+	},
+	{
+		"id": 2151,
+		"enchant": "+50 Shadow Spell Damage"
+	},
+	{
+		"id": 2152,
+		"enchant": "+51 Shadow Spell Damage"
+	},
+	{
+		"id": 2153,
+		"enchant": "+53 Shadow Spell Damage"
+	},
+	{
+		"id": 2154,
+		"enchant": "+54 Shadow Spell Damage"
+	},
+	{
+		"id": 2155,
+		"enchant": "+1 Fire Spell Damage"
+	},
+	{
+		"id": 2156,
+		"enchant": "+3 Fire Spell Damage"
+	},
+	{
+		"id": 2157,
+		"enchant": "+4 Fire Spell Damage"
+	},
+	{
+		"id": 2158,
+		"enchant": "+6 Fire Spell Damage"
+	},
+	{
+		"id": 2159,
+		"enchant": "+7 Fire Spell Damage"
+	},
+	{
+		"id": 2160,
+		"enchant": "+9 Fire Spell Damage"
+	},
+	{
+		"id": 2161,
+		"enchant": "+10 Fire Spell Damage"
+	},
+	{
+		"id": 2162,
+		"enchant": "+11 Fire Spell Damage"
+	},
+	{
+		"id": 2163,
+		"enchant": "+13 Fire Spell Damage"
+	},
+	{
+		"id": 2164,
+		"enchant": "+14 Fire Spell Damage"
+	},
+	{
+		"id": 2165,
+		"enchant": "+16 Fire Spell Damage"
+	},
+	{
+		"id": 2166,
+		"enchant": "+17 Fire Spell Damage"
+	},
+	{
+		"id": 2167,
+		"enchant": "+19 Fire Spell Damage"
+	},
+	{
+		"id": 2168,
+		"enchant": "+20 Fire Spell Damage"
+	},
+	{
+		"id": 2169,
+		"enchant": "+21 Fire Spell Damage"
+	},
+	{
+		"id": 2170,
+		"enchant": "+23 Fire Spell Damage"
+	},
+	{
+		"id": 2171,
+		"enchant": "+24 Fire Spell Damage"
+	},
+	{
+		"id": 2172,
+		"enchant": "+26 Fire Spell Damage"
+	},
+	{
+		"id": 2173,
+		"enchant": "+27 Fire Spell Damage"
+	},
+	{
+		"id": 2174,
+		"enchant": "+29 Fire Spell Damage"
+	},
+	{
+		"id": 2175,
+		"enchant": "+30 Fire Spell Damage"
+	},
+	{
+		"id": 2176,
+		"enchant": "+31 Fire Spell Damage"
+	},
+	{
+		"id": 2177,
+		"enchant": "+33 Fire Spell Damage"
+	},
+	{
+		"id": 2178,
+		"enchant": "+34 Fire Spell Damage"
+	},
+	{
+		"id": 2179,
+		"enchant": "+36 Fire Spell Damage"
+	},
+	{
+		"id": 2180,
+		"enchant": "+37 Fire Spell Damage"
+	},
+	{
+		"id": 2181,
+		"enchant": "+39 Fire Spell Damage"
+	},
+	{
+		"id": 2182,
+		"enchant": "+40 Fire Spell Damage"
+	},
+	{
+		"id": 2183,
+		"enchant": "+41 Fire Spell Damage"
+	},
+	{
+		"id": 2184,
+		"enchant": "+43 Fire Spell Damage"
+	},
+	{
+		"id": 2185,
+		"enchant": "+44 Fire Spell Damage"
+	},
+	{
+		"id": 2186,
+		"enchant": "+46 Fire Spell Damage"
+	},
+	{
+		"id": 2187,
+		"enchant": "+47 Fire Spell Damage"
+	},
+	{
+		"id": 2188,
+		"enchant": "+49 Fire Spell Damage"
+	},
+	{
+		"id": 2189,
+		"enchant": "+50 Fire Spell Damage"
+	},
+	{
+		"id": 2190,
+		"enchant": "+51 Fire Spell Damage"
+	},
+	{
+		"id": 2191,
+		"enchant": "+53 Fire Spell Damage"
+	},
+	{
+		"id": 2192,
+		"enchant": "+54 Fire Spell Damage"
+	},
+	{
+		"id": 2193,
+		"enchant": "+1 Holy Spell Damage"
+	},
+	{
+		"id": 2194,
+		"enchant": "+3 Holy Spell Damage"
+	},
+	{
+		"id": 2195,
+		"enchant": "+4 Holy Spell Damage"
+	},
+	{
+		"id": 2196,
+		"enchant": "+6 Holy Spell Damage"
+	},
+	{
+		"id": 2197,
+		"enchant": "+7 Holy Spell Damage"
+	},
+	{
+		"id": 2198,
+		"enchant": "+9 Holy Spell Damage"
+	},
+	{
+		"id": 2199,
+		"enchant": "+10 Holy Spell Damage"
+	},
+	{
+		"id": 2200,
+		"enchant": "+11 Holy Spell Damage"
+	},
+	{
+		"id": 2201,
+		"enchant": "+13 Holy Spell Damage"
+	},
+	{
+		"id": 2202,
+		"enchant": "+14 Holy Spell Damage"
+	},
+	{
+		"id": 2203,
+		"enchant": "+16 Holy Spell Damage"
+	},
+	{
+		"id": 2204,
+		"enchant": "+17 Holy Spell Damage"
+	},
+	{
+		"id": 2205,
+		"enchant": "+19 Holy Spell Damage"
+	},
+	{
+		"id": 2206,
+		"enchant": "+20 Holy Spell Damage"
+	},
+	{
+		"id": 2207,
+		"enchant": "+21 Holy Spell Damage"
+	},
+	{
+		"id": 2208,
+		"enchant": "+23 Holy Spell Damage"
+	},
+	{
+		"id": 2209,
+		"enchant": "+24 Holy Spell Damage"
+	},
+	{
+		"id": 2210,
+		"enchant": "+26 Holy Spell Damage"
+	},
+	{
+		"id": 2211,
+		"enchant": "+27 Holy Spell Damage"
+	},
+	{
+		"id": 2212,
+		"enchant": "+29 Holy Spell Damage"
+	},
+	{
+		"id": 2213,
+		"enchant": "+30 Holy Spell Damage"
+	},
+	{
+		"id": 2214,
+		"enchant": "+31 Holy Spell Damage"
+	},
+	{
+		"id": 2215,
+		"enchant": "+33 Holy Spell Damage"
+	},
+	{
+		"id": 2216,
+		"enchant": "+34 Holy Spell Damage"
+	},
+	{
+		"id": 2217,
+		"enchant": "+36 Holy Spell Damage"
+	},
+	{
+		"id": 2218,
+		"enchant": "+37 Holy Spell Damage"
+	},
+	{
+		"id": 2219,
+		"enchant": "+39 Holy Spell Damage"
+	},
+	{
+		"id": 2220,
+		"enchant": "+40 Holy Spell Damage"
+	},
+	{
+		"id": 2221,
+		"enchant": "+41 Holy Spell Damage"
+	},
+	{
+		"id": 2222,
+		"enchant": "+43 Holy Spell Damage"
+	},
+	{
+		"id": 2223,
+		"enchant": "+44 Holy Spell Damage"
+	},
+	{
+		"id": 2224,
+		"enchant": "+46 Holy Spell Damage"
+	},
+	{
+		"id": 2225,
+		"enchant": "+47 Holy Spell Damage"
+	},
+	{
+		"id": 2226,
+		"enchant": "+49 Holy Spell Damage"
+	},
+	{
+		"id": 2227,
+		"enchant": "+50 Holy Spell Damage"
+	},
+	{
+		"id": 2228,
+		"enchant": "+51 Holy Spell Damage"
+	},
+	{
+		"id": 2229,
+		"enchant": "+53 Holy Spell Damage"
+	},
+	{
+		"id": 2230,
+		"enchant": "+54 Holy Spell Damage"
+	},
+	{
+		"id": 2231,
+		"enchant": "+1 Frost Spell Damage"
+	},
+	{
+		"id": 2232,
+		"enchant": "+3 Frost Spell Damage"
+	},
+	{
+		"id": 2233,
+		"enchant": "+4 Frost Spell Damage"
+	},
+	{
+		"id": 2234,
+		"enchant": "+6 Frost Spell Damage"
+	},
+	{
+		"id": 2235,
+		"enchant": "+7 Frost Spell Damage"
+	},
+	{
+		"id": 2236,
+		"enchant": "+9 Frost Spell Damage"
+	},
+	{
+		"id": 2237,
+		"enchant": "+10 Frost Spell Damage"
+	},
+	{
+		"id": 2238,
+		"enchant": "+11 Frost Spell Damage"
+	},
+	{
+		"id": 2239,
+		"enchant": "+13 Frost Spell Damage"
+	},
+	{
+		"id": 2240,
+		"enchant": "+14 Frost Spell Damage"
+	},
+	{
+		"id": 2241,
+		"enchant": "+16 Frost Spell Damage"
+	},
+	{
+		"id": 2242,
+		"enchant": "+17 Frost Spell Damage"
+	},
+	{
+		"id": 2243,
+		"enchant": "+19 Frost Spell Damage"
+	},
+	{
+		"id": 2244,
+		"enchant": "+20 Frost Spell Damage"
+	},
+	{
+		"id": 2245,
+		"enchant": "+21 Frost Spell Damage"
+	},
+	{
+		"id": 2246,
+		"enchant": "+23 Frost Spell Damage"
+	},
+	{
+		"id": 2247,
+		"enchant": "+24 Frost Spell Damage"
+	},
+	{
+		"id": 2248,
+		"enchant": "+26 Frost Spell Damage"
+	},
+	{
+		"id": 2249,
+		"enchant": "+27 Frost Spell Damage"
+	},
+	{
+		"id": 2250,
+		"enchant": "+29 Frost Spell Damage"
+	},
+	{
+		"id": 2251,
+		"enchant": "+30 Frost Spell Damage"
+	},
+	{
+		"id": 2252,
+		"enchant": "+31 Frost Spell Damage"
+	},
+	{
+		"id": 2253,
+		"enchant": "+33 Frost Spell Damage"
+	},
+	{
+		"id": 2254,
+		"enchant": "+34 Frost Spell Damage"
+	},
+	{
+		"id": 2255,
+		"enchant": "+36 Frost Spell Damage"
+	},
+	{
+		"id": 2256,
+		"enchant": "+37 Frost Spell Damage"
+	},
+	{
+		"id": 2257,
+		"enchant": "+39 Frost Spell Damage"
+	},
+	{
+		"id": 2258,
+		"enchant": "+40 Frost Spell Damage"
+	},
+	{
+		"id": 2259,
+		"enchant": "+41 Frost Spell Damage"
+	},
+	{
+		"id": 2260,
+		"enchant": "+43 Frost Spell Damage"
+	},
+	{
+		"id": 2261,
+		"enchant": "+44 Frost Spell Damage"
+	},
+	{
+		"id": 2262,
+		"enchant": "+46 Frost Spell Damage"
+	},
+	{
+		"id": 2263,
+		"enchant": "+47 Frost Spell Damage"
+	},
+	{
+		"id": 2264,
+		"enchant": "+49 Frost Spell Damage"
+	},
+	{
+		"id": 2265,
+		"enchant": "+50 Frost Spell Damage"
+	},
+	{
+		"id": 2266,
+		"enchant": "+51 Frost Spell Damage"
+	},
+	{
+		"id": 2267,
+		"enchant": "+53 Frost Spell Damage"
+	},
+	{
+		"id": 2268,
+		"enchant": "+54 Frost Spell Damage"
+	},
+	{
+		"id": 2269,
+		"enchant": "+1 Nature Spell Damage"
+	},
+	{
+		"id": 2270,
+		"enchant": "+3 Nature Spell Damage"
+	},
+	{
+		"id": 2271,
+		"enchant": "+4 Nature Spell Damage"
+	},
+	{
+		"id": 2272,
+		"enchant": "+6 Nature Spell Damage"
+	},
+	{
+		"id": 2273,
+		"enchant": "+7 Nature Spell Damage"
+	},
+	{
+		"id": 2274,
+		"enchant": "+9 Nature Spell Damage"
+	},
+	{
+		"id": 2275,
+		"enchant": "+10 Nature Spell Damage"
+	},
+	{
+		"id": 2276,
+		"enchant": "+11 Nature Spell Damage"
+	},
+	{
+		"id": 2277,
+		"enchant": "+13 Nature Spell Damage"
+	},
+	{
+		"id": 2278,
+		"enchant": "+14 Nature Spell Damage"
+	},
+	{
+		"id": 2279,
+		"enchant": "+16 Nature Spell Damage"
+	},
+	{
+		"id": 2280,
+		"enchant": "+17 Nature Spell Damage"
+	},
+	{
+		"id": 2281,
+		"enchant": "+19 Nature Spell Damage"
+	},
+	{
+		"id": 2282,
+		"enchant": "+20 Nature Spell Damage"
+	},
+	{
+		"id": 2283,
+		"enchant": "+21 Nature Spell Damage"
+	},
+	{
+		"id": 2284,
+		"enchant": "+23 Nature Spell Damage"
+	},
+	{
+		"id": 2285,
+		"enchant": "+24 Nature Spell Damage"
+	},
+	{
+		"id": 2286,
+		"enchant": "+26 Nature Spell Damage"
+	},
+	{
+		"id": 2287,
+		"enchant": "+27 Nature Spell Damage"
+	},
+	{
+		"id": 2288,
+		"enchant": "+29 Nature Spell Damage"
+	},
+	{
+		"id": 2289,
+		"enchant": "+30 Nature Spell Damage"
+	},
+	{
+		"id": 2290,
+		"enchant": "+31 Nature Spell Damage"
+	},
+	{
+		"id": 2291,
+		"enchant": "+33 Nature Spell Damage"
+	},
+	{
+		"id": 2292,
+		"enchant": "+34 Nature Spell Damage"
+	},
+	{
+		"id": 2293,
+		"enchant": "+36 Nature Spell Damage"
+	},
+	{
+		"id": 2294,
+		"enchant": "+37 Nature Spell Damage"
+	},
+	{
+		"id": 2295,
+		"enchant": "+39 Nature Spell Damage"
+	},
+	{
+		"id": 2296,
+		"enchant": "+40 Nature Spell Damage"
+	},
+	{
+		"id": 2297,
+		"enchant": "+41 Nature Spell Damage"
+	},
+	{
+		"id": 2298,
+		"enchant": "+43 Nature Spell Damage"
+	},
+	{
+		"id": 2299,
+		"enchant": "+44 Nature Spell Damage"
+	},
+	{
+		"id": 2300,
+		"enchant": "+46 Nature Spell Damage"
+	},
+	{
+		"id": 2301,
+		"enchant": "+47 Nature Spell Damage"
+	},
+	{
+		"id": 2302,
+		"enchant": "+49 Nature Spell Damage"
+	},
+	{
+		"id": 2303,
+		"enchant": "+50 Nature Spell Damage"
+	},
+	{
+		"id": 2304,
+		"enchant": "+51 Nature Spell Damage"
+	},
+	{
+		"id": 2305,
+		"enchant": "+53 Nature Spell Damage"
+	},
+	{
+		"id": 2306,
+		"enchant": "+54 Nature Spell Damage"
+	},
+	{
+		"id": 2307,
+		"enchant": "+2 Healing Spells"
+	},
+	{
+		"id": 2308,
+		"enchant": "+4 Healing Spells"
+	},
+	{
+		"id": 2309,
+		"enchant": "+7 Healing Spells"
+	},
+	{
+		"id": 2310,
+		"enchant": "+9 Healing Spells"
+	},
+	{
+		"id": 2311,
+		"enchant": "+11 Healing Spells"
+	},
+	{
+		"id": 2312,
+		"enchant": "+13 Healing Spells"
+	},
+	{
+		"id": 2313,
+		"enchant": "+15 Healing Spells"
+	},
+	{
+		"id": 2314,
+		"enchant": "+18 Healing Spells"
+	},
+	{
+		"id": 2315,
+		"enchant": "+20 Healing Spells"
+	},
+	{
+		"id": 2316,
+		"enchant": "+22 Healing Spells"
+	},
+	{
+		"id": 2317,
+		"enchant": "+24 Healing Spells"
+	},
+	{
+		"id": 2318,
+		"enchant": "+26 Healing Spells"
+	},
+	{
+		"id": 2319,
+		"enchant": "+29 Healing Spells"
+	},
+	{
+		"id": 2320,
+		"enchant": "+31 Healing Spells"
+	},
+	{
+		"id": 2321,
+		"enchant": "+33 Healing Spells"
+	},
+	{
+		"id": 2322,
+		"enchant": "+35 Healing Spells"
+	},
+	{
+		"id": 2323,
+		"enchant": "+37 Healing Spells"
+	},
+	{
+		"id": 2324,
+		"enchant": "+40 Healing Spells"
+	},
+	{
+		"id": 2325,
+		"enchant": "+42 Healing Spells"
+	},
+	{
+		"id": 2326,
+		"enchant": "+44 Healing Spells"
+	},
+	{
+		"id": 2327,
+		"enchant": "+46 Healing Spells"
+	},
+	{
+		"id": 2328,
+		"enchant": "+48 Healing Spells"
+	},
+	{
+		"id": 2329,
+		"enchant": "+51 Healing Spells"
+	},
+	{
+		"id": 2330,
+		"enchant": "+53 Healing Spells"
+	},
+	{
+		"id": 2331,
+		"enchant": "+55 Healing Spells"
+	},
+	{
+		"id": 2332,
+		"enchant": "+57 Healing Spells"
+	},
+	{
+		"id": 2333,
+		"enchant": "+59 Healing Spells"
+	},
+	{
+		"id": 2334,
+		"enchant": "+62 Healing Spells"
+	},
+	{
+		"id": 2335,
+		"enchant": "+64 Healing Spells"
+	},
+	{
+		"id": 2336,
+		"enchant": "+66 Healing Spells"
+	},
+	{
+		"id": 2337,
+		"enchant": "+68 Healing Spells"
+	},
+	{
+		"id": 2338,
+		"enchant": "+70 Healing Spells"
+	},
+	{
+		"id": 2339,
+		"enchant": "+73 Healing Spells"
+	},
+	{
+		"id": 2340,
+		"enchant": "+75 Healing Spells"
+	},
+	{
+		"id": 2341,
+		"enchant": "+77 Healing Spells"
+	},
+	{
+		"id": 2342,
+		"enchant": "+79 Healing Spells"
+	},
+	{
+		"id": 2343,
+		"enchant": "+81 Healing Spells"
+	},
+	{
+		"id": 2344,
+		"enchant": "+84 Healing Spells"
+	},
+	{
+		"id": 2363,
+		"enchant": "+1 mana every 5 sec."
+	},
+	{
+		"id": 2364,
+		"enchant": "+1 mana every 5 sec."
+	},
+	{
+		"id": 2365,
+		"enchant": "+1 mana every 5 sec."
+	},
+	{
+		"id": 2366,
+		"enchant": "+2 mana every 5 sec."
+	},
+	{
+		"id": 2367,
+		"enchant": "+2 mana every 5 sec."
+	},
+	{
+		"id": 2368,
+		"enchant": "+2 mana every 5 sec."
+	},
+	{
+		"id": 2369,
+		"enchant": "+3 mana every 5 sec."
+	},
+	{
+		"id": 2370,
+		"enchant": "+3 mana every 5 sec."
+	},
+	{
+		"id": 2371,
+		"enchant": "+4 mana every 5 sec."
+	},
+	{
+		"id": 2372,
+		"enchant": "+4 mana every 5 sec."
+	},
+	{
+		"id": 2373,
+		"enchant": "+4 mana every 5 sec."
+	},
+	{
+		"id": 2374,
+		"enchant": "+5 mana every 5 sec."
+	},
+	{
+		"id": 2375,
+		"enchant": "+5 mana every 5 sec."
+	},
+	{
+		"id": 2376,
+		"enchant": "+6 mana every 5 sec."
+	},
+	{
+		"id": 2377,
+		"enchant": "+6 mana every 5 sec."
+	},
+	{
+		"id": 2378,
+		"enchant": "+6 mana every 5 sec."
+	},
+	{
+		"id": 2379,
+		"enchant": "+7 mana every 5 sec."
+	},
+	{
+		"id": 2380,
+		"enchant": "+7 mana every 5 sec."
+	},
+	{
+		"id": 2381,
+		"enchant": "+8 mana every 5 sec."
+	},
+	{
+		"id": 2382,
+		"enchant": "+8 mana every 5 sec."
+	},
+	{
+		"id": 2383,
+		"enchant": "+8 mana every 5 sec."
+	},
+	{
+		"id": 2384,
+		"enchant": "+9 mana every 5 sec."
+	},
+	{
+		"id": 2385,
+		"enchant": "+9 mana every 5 sec."
+	},
+	{
+		"id": 2386,
+		"enchant": "+10 mana every 5 sec."
+	},
+	{
+		"id": 2387,
+		"enchant": "+10 mana every 5 sec."
+	},
+	{
+		"id": 2388,
+		"enchant": "+10 mana every 5 sec."
+	},
+	{
+		"id": 2389,
+		"enchant": "+11 mana every 5 sec."
+	},
+	{
+		"id": 2390,
+		"enchant": "+11 mana every 5 sec."
+	},
+	{
+		"id": 2391,
+		"enchant": "+12 mana every 5 sec."
+	},
+	{
+		"id": 2392,
+		"enchant": "+12 mana every 5 sec."
+	},
+	{
+		"id": 2393,
+		"enchant": "+12 mana every 5 sec."
+	},
+	{
+		"id": 2394,
+		"enchant": "+13 mana every 5 sec."
+	},
+	{
+		"id": 2395,
+		"enchant": "+13 mana every 5 sec."
+	},
+	{
+		"id": 2396,
+		"enchant": "+14 mana every 5 sec."
+	},
+	{
+		"id": 2397,
+		"enchant": "+14 mana every 5 sec."
+	},
+	{
+		"id": 2398,
+		"enchant": "+14 mana every 5 sec."
+	},
+	{
+		"id": 2399,
+		"enchant": "+15 mana every 5 sec."
+	},
+	{
+		"id": 2400,
+		"enchant": "+15 mana every 5 sec."
+	},
+	{
+		"id": 2401,
+		"enchant": "+1 health every 5 sec."
+	},
+	{
+		"id": 2402,
+		"enchant": "+1 health every 5 sec."
+	},
+	{
+		"id": 2403,
+		"enchant": "+1 health every 5 sec."
+	},
+	{
+		"id": 2404,
+		"enchant": "+1 health every 5 sec."
+	},
+	{
+		"id": 2405,
+		"enchant": "+1 health every 5 sec."
+	},
+	{
+		"id": 2406,
+		"enchant": "+2 health every 5 sec."
+	},
+	{
+		"id": 2407,
+		"enchant": "+2 health every 5 sec."
+	},
+	{
+		"id": 2408,
+		"enchant": "+2 health every 5 sec."
+	},
+	{
+		"id": 2409,
+		"enchant": "+2 health every 5 sec."
+	},
+	{
+		"id": 2410,
+		"enchant": "+3 health every 5 sec."
+	},
+	{
+		"id": 2411,
+		"enchant": "+3 health every 5 sec."
+	},
+	{
+		"id": 2412,
+		"enchant": "+3 health every 5 sec."
+	},
+	{
+		"id": 2413,
+		"enchant": "+3 health every 5 sec."
+	},
+	{
+		"id": 2414,
+		"enchant": "+4 health every 5 sec."
+	},
+	{
+		"id": 2415,
+		"enchant": "+4 health every 5 sec."
+	},
+	{
+		"id": 2416,
+		"enchant": "+4 health every 5 sec."
+	},
+	{
+		"id": 2417,
+		"enchant": "+4 health every 5 sec."
+	},
+	{
+		"id": 2418,
+		"enchant": "+5 health every 5 sec."
+	},
+	{
+		"id": 2419,
+		"enchant": "+5 health every 5 sec."
+	},
+	{
+		"id": 2420,
+		"enchant": "+5 health every 5 sec."
+	},
+	{
+		"id": 2421,
+		"enchant": "+5 health every 5 sec."
+	},
+	{
+		"id": 2422,
+		"enchant": "+6 health every 5 sec."
+	},
+	{
+		"id": 2423,
+		"enchant": "+6 health every 5 sec."
+	},
+	{
+		"id": 2424,
+		"enchant": "+6 health every 5 sec."
+	},
+	{
+		"id": 2425,
+		"enchant": "+6 health every 5 sec."
+	},
+	{
+		"id": 2426,
+		"enchant": "+7 health every 5 sec."
+	},
+	{
+		"id": 2427,
+		"enchant": "+7 health every 5 sec."
+	},
+	{
+		"id": 2428,
+		"enchant": "+7 health every 5 sec."
+	},
+	{
+		"id": 2429,
+		"enchant": "+7 health every 5 sec."
+	},
+	{
+		"id": 2430,
+		"enchant": "+8 health every 5 sec."
+	},
+	{
+		"id": 2431,
+		"enchant": "+8 health every 5 sec."
+	},
+	{
+		"id": 2432,
+		"enchant": "+8 health every 5 sec."
+	},
+	{
+		"id": 2433,
+		"enchant": "+8 health every 5 sec."
+	},
+	{
+		"id": 2434,
+		"enchant": "+9 health every 5 sec."
+	},
+	{
+		"id": 2435,
+		"enchant": "+9 health every 5 sec."
+	},
+	{
+		"id": 2436,
+		"enchant": "+9 health every 5 sec."
+	},
+	{
+		"id": 2437,
+		"enchant": "+9 health every 5 sec."
+	},
+	{
+		"id": 2438,
+		"enchant": "+10 health every 5 sec."
+	},
+	{
+		"id": 2443,
+		"enchant": "Frost Spell Damage +7"
+	},
+	{
+		"id": 2463,
+		"enchant": "+7 Fire Resistance"
+	},
+	{
+		"id": 2483,
+		"enchant": "+5 Fire Resistance"
+	},
+	{
+		"id": 2484,
+		"enchant": "+5 Frost Resistance"
+	},
+	{
+		"id": 2485,
+		"enchant": "+5 Arcane Resistance"
+	},
+	{
+		"id": 2486,
+		"enchant": "+5 Nature Resistance"
+	},
+	{
+		"id": 2487,
+		"enchant": "+5 Shadow Resistance"
+	},
+	{
+		"id": 2488,
+		"enchant": "+5 All Resistances"
+	},
+	{
+		"id": 2503,
+		"enchant": "Defense +3"
+	},
+	{
+		"id": 2504,
+		"enchant": "Spell Damage +30"
+	},
+	{
+		"id": 2505,
+		"enchant": "Healing Spells +55"
+	},
+	{
+		"id": 2506,
+		"enchant": "Critical +2%"
+	},
+	{
+		"id": 2523,
+		"enchant": "+3% Hit"
+	},
+	{
+		"id": 2543,
+		"enchant": "Attack Speed +1%"
+	},
+	{
+		"id": 2544,
+		"enchant": "Healing and Spell Damage +8"
+	},
+	{
+		"id": 2545,
+		"enchant": "Dodge +1%"
+	},
+	{
+		"id": 2563,
+		"enchant": "Strength +15"
+	},
+	{
+		"id": 2564,
+		"enchant": "Agility +15"
+	},
+	{
+		"id": 2565,
+		"enchant": "Mana Regen 4 per 5 sec."
+	},
+	{
+		"id": 2566,
+		"enchant": "Healing Spells +24"
+	},
+	{
+		"id": 2567,
+		"enchant": "Spirit +20"
+	},
+	{
+		"id": 2568,
+		"enchant": "Intellect +22"
+	},
+	{
+		"id": 2583,
+		"enchant": "Defense +7/Stamina +10/Block Value +15"
+	},
+	{
+		"id": 2584,
+		"enchant": "Defense +7/Stamina +10/Healing Spells +24"
+	},
+	{
+		"id": 2585,
+		"enchant": "Attack Power +28/Dodge +1%"
+	},
+	{
+		"id": 2586,
+		"enchant": "Ranged Attack Power +24/Stamina +10/Hit +1%"
+	},
+	{
+		"id": 2587,
+		"enchant": "Healing and Spell Damage +13/Intellect +15"
+	},
+	{
+		"id": 2588,
+		"enchant": "Healing and Spell Damage +18/Spell Hit +1%"
+	},
+	{
+		"id": 2589,
+		"enchant": "Healing and Spell Damage +18/Stamina +10"
+	},
+	{
+		"id": 2590,
+		"enchant": "Mana Regen +4/Stamina +10/Healing Spells +24"
+	},
+	{
+		"id": 2591,
+		"enchant": "Intellect +10/Stamina +10/Healing Spells +24"
+	},
+	{
+		"id": 2603,
+		"enchant": "Eternium Line"
+	},
+	{
+		"id": 2604,
+		"enchant": "+33 Healing Spells"
+	},
+	{
+		"id": 2605,
+		"enchant": "+18 Spell Damage and Healing"
+	},
+	{
+		"id": 2606,
+		"enchant": "+30 Attack Power"
+	},
+	{
+		"id": 2607,
+		"enchant": "+12 Damage and Healing Spells"
+	},
+	{
+		"id": 2608,
+		"enchant": "+13 Damage and Healing Spells"
+	},
+	{
+		"id": 2609,
+		"enchant": "+15 Damage and Healing Spells"
+	},
+	{
+		"id": 2610,
+		"enchant": "+14 Damage and Healing Spells"
+	},
+	{
+		"id": 2611,
+		"enchant": "REUSE Random - 15 Spells All"
+	},
+	{
+		"id": 2612,
+		"enchant": "+18 Damage and Healing Spells"
+	},
+	{
+		"id": 2613,
+		"enchant": "Threat +2%"
+	},
+	{
+		"id": 2614,
+		"enchant": "Shadow Damage +20"
+	},
+	{
+		"id": 2615,
+		"enchant": "Frost Damage +20"
+	},
+	{
+		"id": 2616,
+		"enchant": "Fire Damage +20"
+	},
+	{
+		"id": 2617,
+		"enchant": "Healing Spells +30"
+	},
+	{
+		"id": 2618,
+		"enchant": "Agility +15"
+	},
+	{
+		"id": 2619,
+		"enchant": "+15 Fire Resistance"
+	},
+	{
+		"id": 2620,
+		"enchant": "+15 Nature Resistance"
+	},
+	{
+		"id": 2621,
+		"enchant": "Subtlety"
+	},
+	{
+		"id": 2622,
+		"enchant": "Dodge +1%"
+	},
+	{
+		"id": 2623,
+		"enchant": "Minor Wizard Oil"
+	},
+	{
+		"id": 2624,
+		"enchant": "Minor Mana Oil"
+	},
+	{
+		"id": 2625,
+		"enchant": "Lesser Mana Oil"
+	},
+	{
+		"id": 2626,
+		"enchant": "Lesser Wizard Oil"
+	},
+	{
+		"id": 2627,
+		"enchant": "Wizard Oil"
+	},
+	{
+		"id": 2628,
+		"enchant": "Brilliant Wizard Oil"
+	},
+	{
+		"id": 2629,
+		"enchant": "Brilliant Mana Oil"
+	},
+	{
+		"id": 2630,
+		"enchant": "Deadly Poison V"
+	},
+	{
+		"id": 2646,
+		"enchant": "Agility +25"
+	},
+	{
+		"id": 2681,
+		"enchant": "+10 Nature Resistance"
+	},
+	{
+		"id": 2682,
+		"enchant": "+10 Frost Resistance"
+	},
+	{
+		"id": 2683,
+		"enchant": "+10 Shadow Resistance"
+	},
+	{
+		"id": 2684,
+		"enchant": "+100 Attack Power vs Undead"
+	},
+	{
+		"id": 2685,
+		"enchant": "+60 Spell Damage vs Undead"
+	},
+	{
+		"id": 2715,
+		"enchant": "Healing +31 and 5 mana per 5 sec."
+	},
+	{
+		"id": 2716,
+		"enchant": "Stamina +16 and Armor +100"
+	},
+	{
+		"id": 2717,
+		"enchant": "Attack Power +26 and +1% Critical Strike"
+	},
+	{
+		"id": 2721,
+		"enchant": "Spell Damage +15 and +1% Spell Critical Strike"
+	},
+	{
+		"id": 2802,
+		"enchant": "+$i Agility"
+	},
+	{
+		"id": 2803,
+		"enchant": "+$i Stamina"
+	},
+	{
+		"id": 2804,
+		"enchant": "+$i Intellect"
+	},
+	{
+		"id": 2805,
+		"enchant": "+$i Strength"
+	},
+	{
+		"id": 2806,
+		"enchant": "+$i Spirit"
+	},
+	{
+		"id": 2815,
+		"enchant": "+$i Dodge"
+	},
+	{
+		"id": 2817,
+		"enchant": "+$i Arcane Resistance"
+	},
+	{
+		"id": 2818,
+		"enchant": "+$i Fire Resistance"
+	},
+	{
+		"id": 2819,
+		"enchant": "+$i Frost Resistance"
+	},
+	{
+		"id": 2820,
+		"enchant": "+$i Nature Resistance"
+	},
+	{
+		"id": 2821,
+		"enchant": "+$i Shadow Resistance"
+	},
+	{
+		"id": 2823,
+		"enchant": "+$i Critical Strike"
+	},
+	{
+		"id": 2825,
+		"enchant": "+$i Attack Power"
+	},
+	{
+		"id": 2826,
+		"enchant": "+$i Block"
+	},
+	{
+		"id": 3726,
+		"enchant": "+$i Haste"
+	}
+]

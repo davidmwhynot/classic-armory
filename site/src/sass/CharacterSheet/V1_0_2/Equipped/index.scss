@@ -1,0 +1,28 @@
+@import '../../../mixins';
+
+.character-equipped {
+	display: grid;
+
+	width: 100%;
+	height: 100%;
+
+	@include xl {
+		justify-content: space-between;
+
+		grid-gap: 0.5rem;
+		grid-template-columns: 1fr auto 1fr;
+		grid-template-areas:
+			'head . hands'
+			'neck . waist'
+			'shoulder . legs'
+			'back . feet'
+			'chest . finger0'
+			'shirt . finger1'
+			'tabard . trinket0'
+			'wrist . trinket1'
+			'. . .'
+			'. . .'
+			'mainhand secondaryhand ranged'
+			'. . ammo';
+	}
+}

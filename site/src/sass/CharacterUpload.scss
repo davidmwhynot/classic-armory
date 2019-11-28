@@ -1,5 +1,7 @@
+@import 'variables';
+
 .link-card {
-	color: var(--white) !important;
+	color: $white !important;
 
 	&:hover {
 		color: inherit;
@@ -10,7 +12,7 @@
 		transition: background-color 100ms linear;
 
 		&:hover {
-			background-color: lighten(#4e5d6c, 10%);
+			background-color: darken($gray-dark, 5%);
 		}
 	}
 }

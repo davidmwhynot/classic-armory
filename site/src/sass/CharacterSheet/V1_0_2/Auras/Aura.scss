@@ -1,0 +1,9 @@
+.character-auras-aura {
+	position: relative;
+
+	margin-right: 0.5rem;
+
+	.character-tooltip {
+		top: calc(100% + 0.5rem);
+	}
+}

@@ -23,9 +23,14 @@ class App extends Component {
 		error: null
 	};
 
-	componentWillMount = () => {
-		this.props.loadPage(this.props.location.pathname);
-	};
+	constructor(props) {
+		super(props);
+		props.loadPage(props.location.pathname);
+	}
+
+	// componentWillMount = () => {
+	// 	this.props.loadPage(this.props.location.pathname);
+	// };
 
 	componentDidMount = async () => {
 		const ctrlKey = 17;
@@ -84,7 +89,7 @@ class App extends Component {
 			);
 		} else {
 			appBody = (
-				<div className="container-fluid mt-3">
+				<div className="container mt-3">
 					<Route exact path="/" component={Home} />
 					{/* <Route exact path="/admin/get" component={Admin} /> */}
 					<Route exact path="/:id" component={CharacterSheet} />

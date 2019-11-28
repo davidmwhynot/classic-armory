@@ -1,0 +1,51 @@
+@import '../../mixins';
+
+.character-tooltip {
+	position: absolute;
+	z-index: 1000;
+
+	width: max-content;
+
+	// text-align: left !important;
+
+	padding: 0.5rem;
+
+	background-color: rgba(0, 0, 0, 0.95);
+
+	a {
+		color: inherit;
+	}
+
+	table {
+		@include xl {
+			max-width: 400px;
+		}
+	}
+
+	& td th {
+		position: absolute;
+		right: 0.5rem;
+	}
+
+	.moneygold {
+		display: inline-block;
+		background: no-repeat right center;
+		margin-right: 2.5px;
+		padding-right: 15px;
+		background-image: url('/media/money-gold.gif');
+	}
+	.moneysilver {
+		display: inline-block;
+		background: no-repeat right center;
+		margin-right: 2.5px;
+		padding-right: 15px;
+		background-image: url('/media/money-silver.gif');
+	}
+	.moneycopper {
+		display: inline-block;
+		background: no-repeat right center;
+		margin-right: 2.5px;
+		padding-right: 15px;
+		background-image: url('/media/money-copper.gif');
+	}
+}

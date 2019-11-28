@@ -26,7 +26,7 @@ export default class Example extends React.Component {
 		return (
 			<div>
 				<Navbar color="dark" dark expand={true} style={{ padding: 8 }}>
-					<div className="container-fluid">
+					<div className="container">
 						<div className="logo">
 							<Logo />
 						</div>

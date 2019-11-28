@@ -1,0 +1,54 @@
+// $phone-width: 480px;
+// $tablet-width: 768px;
+// $tablet-landscape: 1024px;
+// $desktop-width: 1024px;
+// $large-desktop-width: 1300px;
+@import 'variables';
+
+@mixin lhCrop($line-height) {
+	&::before {
+		content: '';
+		display: block;
+		height: 0;
+		width: 0;
+		margin-top: calc((1 - #{$line-height}) * 0.5em);
+	}
+
+	&::after {
+		content: '';
+		display: block;
+		height: 0;
+		width: 0;
+		margin-top: calc((1 - #{$line-height}) * 0.5em);
+	}
+}
+
+@mixin xs {
+	@media (max-width: #{$sm - 0.02px}) {
+		@content;
+	}
+}
+
+@mixin sm {
+	@media (min-width: #{$sm}) and (max-width: #{$md - 0.02px}) {
+		@content;
+	}
+}
+
+@mixin md {
+	@media (min-width: #{$md}) and (max-width: #{$lg - 0.02px}) {
+		@content;
+	}
+}
+
+@mixin lg {
+	@media (min-width: #{$lg}) and (max-width: #{$xl - 0.02px}) {
+		@content;
+	}
+}
+
+@mixin xl {
+	@media (min-width: #{$xl}) {
+		@content;
+	}
+}

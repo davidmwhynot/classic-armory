@@ -1,57 +1,70 @@
+/* eslint react/jsx-pascal-case: "off", no-unreachable: "off" */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import * as Sentry from '@sentry/browser';
 
 import { loadCharacter } from '../../actions/characterActions';
 
 import Error from '../../components/Error';
 import Loading from '../../components/Loading';
 
-// import v0_1_0 from './v0.1.0';
-// import v1_0_2 from './v1.0.2';
+import V0_1_0 from './v0.1.0';
+import V1_0_2 from './v1.0.2';
 
 class CharacterSheet extends Component {
 	state = {
-		loading: true,
 		error: null
 	};
 
-	componentWillMount = () => {
-		this.props.loadCharacter(this.props.match.params.id);
+	componentDidMount = () => {
+		this.props.loadCharacter(this.props.router.location.pathname.slice(1));
 	};
 
-	componentWillReceiveProps = async newProps => {
-		if (this.props.match.params.id) {
-			if (!newProps.match.params.id.match(this.props.match.params.id)) {
-				this.props.loadCharacter(newProps.match.params.id);
-			} else if (!this.props.loaded) {
-				this.props.loadCharacter(newProps.match.params.id);
+	componentDidUpdate = async prevProps => {
+		if (prevProps.router.location.pathname) {
+			if (
+				!this.props.router.location.pathname
+					.slice(1)
+					.match(prevProps.router.location.pathname.slice(1))
+			) {
+				prevProps.loadCharacter(
+					this.props.router.location.pathname.slice(1)
+				);
+			} else if (!prevProps.loaded) {
+				prevProps.loadCharacter(
+					this.props.router.location.pathname.slice(1)
+				);
 			}
 		} else {
-			this.props.loadCharacter(newProps.match.params.id);
+			prevProps.loadCharacter(
+				this.props.router.location.pathname.slice(1)
+			);
 		}
 	};
 
 	render() {
 		if (this.props.loaded) {
-			console.log('props', this.props.data);
 			const { version } = this.props.data;
 
 			switch (version) {
 				case undefined:
-					// return <v0_1_0 />;
-					return <h1>v0_1_0</h1>;
+				case 'v0.0.1':
 				case 'v0.1.0':
-					// return <v0_1_0 />;
-					return <h1>v0_1_0</h1>;
+					return <V0_1_0 />;
+					break;
 				case 'v1.0.2':
-					// return <v1_0_2 />;
-					return <h1>v1_0_2</h1>;
+					return <V1_0_2 />;
+					break;
 				default:
+					Sentry.captureMessage(
+						'Invalid character sheet version. ' + version
+					);
 					return (
 						<div className="container">
 							<Error
 								error={
-									'Invalid character sheet version.' + version
+									'Invalid character sheet version. ' +
+									version
 								}
 							/>
 						</div>
@@ -77,7 +90,9 @@ class CharacterSheet extends Component {
 
 const mapStateToProps = (state, ownProps) => ({
 	...ownProps,
-	...state.character
+	loaded: state.character.loaded,
+	data: state.character.data,
+	router: state.router
 });
 
 const mapDispatchToProps = { loadCharacter };

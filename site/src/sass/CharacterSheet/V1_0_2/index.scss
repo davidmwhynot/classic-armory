@@ -1,0 +1,38 @@
+@import '../../mixins';
+
+.character-v1-0-2 {
+	margin-bottom: 5rem;
+
+	pre {
+		background-color: var(--dark);
+
+		max-width: 800px;
+		max-height: 400px;
+
+		padding: 1rem;
+	}
+
+	.character-container {
+		display: grid;
+
+		@include xl {
+			grid-gap: 2rem;
+
+			grid-template-columns: 20% calc(60% - 4rem) 20%;
+
+			grid-template-areas: 'left center right';
+		}
+	}
+
+	.character-left {
+		grid-area: left;
+	}
+
+	.character-center {
+		grid-area: center;
+	}
+
+	.character-right {
+		grid-area: right;
+	}
+}

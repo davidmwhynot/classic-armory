@@ -1,0 +1,43 @@
+@import '../../variables';
+
+.character-nav {
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+
+	.nav {
+		flex-wrap: nowrap;
+		justify-content: center;
+
+		border-bottom: 1px solid $primary;
+
+		&-item {
+			width: 100%;
+
+			text-align: center;
+		}
+
+		&-link {
+			width: 100%;
+
+			padding: 0.5rem 1rem;
+
+			background-color: unset;
+			border: 0;
+
+			transition: background-color 0.15s ease-in-out;
+
+			outline: none !important;
+
+			&:hover {
+				cursor: pointer;
+
+				background-color: $primary;
+			}
+
+			&:active,
+			&.active:hover {
+				background-color: darken($primary, 5%);
+			}
+		}
+	}
+}
