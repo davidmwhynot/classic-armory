@@ -1,0 +1,3 @@
+"prereqs"(.|\n)+?("name": ".+?",\n)(.|\n)+?\t\t\t\}
+
+$2\t\t\t\t"tier": 0,\n\t\t\t\t"column": 0
