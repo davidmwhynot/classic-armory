@@ -20,7 +20,7 @@ export default ({ stats, buffs, debuffs }) => {
 				<>
 					<p className="character-stats-warning-auras text-muted font-italic">
 						Character stats may be skewed from their base amounts
-						due to the following buffs and debuffs.
+						due to the following buffs and/or debuffs.
 					</p>
 					<Auras buffs={buffs} debuffs={debuffs} />
 				</>

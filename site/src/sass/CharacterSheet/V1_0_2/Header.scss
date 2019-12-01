@@ -1,4 +1,6 @@
 .character-header {
+	position: relative;
+
 	margin-bottom: 0.5rem;
 
 	h2,
@@ -26,11 +28,11 @@
 		}
 
 		.character-header-name-container {
-			height: 40px;
+			height: 35px;
 		}
 
 		.character-header-class-container {
-			height: 40px;
+			height: 35px;
 		}
 	}
 
@@ -51,6 +53,24 @@
 			height: 1.40625rem;
 
 			margin-right: 0.5rem;
+		}
+	}
+
+	&-bottom-right {
+		position: absolute;
+
+		text-align: right;
+
+		right: 0;
+		bottom: 0;
+	}
+
+	&-wcl {
+		img {
+			width: 15px;
+			height: 15px;
+
+			margin-bottom: 2.75px;
 		}
 	}
 }

@@ -1,0 +1,72 @@
+@import '../../../variables';
+
+.character-talents-talent {
+    position: relative;
+
+    &-icon {
+        width: 45px;
+        height: 45px;
+
+        border: 1px solid $light;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &-inactive {
+            filter: grayscale(100%);
+        }
+    }
+
+    &-prereq {
+        position: absolute;
+
+        bottom: 100%;
+        left: 50%;
+
+        transform: translateX(-50%);
+
+        width: 10px;
+        border-left: 1px solid $dark;
+        border-right: 1px solid $dark;
+
+        background-color: $light;
+    }
+
+    &-points {
+        position: absolute;
+
+        left: 0;
+        bottom: 0;
+
+        font-size: 0.75rem;
+
+        background-color: rgba(0, 0, 0, 0.9);
+
+        border: 1px solid $light;
+    }
+
+    &-tooltip {
+        position: absolute;
+
+        z-index: 1000;
+        bottom: calc(100% + 5px);
+        left: 50%;
+
+        transform: translateX(-50%);
+
+        border: 1px solid white;
+        padding: 0.5rem;
+        background-color: rgba(0, 0, 0, 0.9);
+
+        min-width: 250px;
+
+        &-line {
+            white-space: nowrap;
+
+            &:last-child {
+                white-space: normal;
+            }
+        }
+    }
+}

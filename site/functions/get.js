@@ -20,6 +20,7 @@ exports.handler = async function(event, context) {
 			statusCode: 200,
 			body: JSON.stringify({
 				version: character.version,
+				time: character.time,
 				...JSON.parse(character.data)
 			})
 		};

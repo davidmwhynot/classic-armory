@@ -1,6 +1,15 @@
+@import '../../../variables';
+
 .character-reputations-group {
-	.group {
-		display: flex;
-		flex-wrap: wrap;
-	}
+    h3 {
+        margin-top: 1rem;
+        margin-bottom: 0;
+        margin-left: 30%;
+
+        padding: 0 0.5rem;
+
+        border-bottom: 1px solid $primary;
+
+        width: max-content;
+    }
 }

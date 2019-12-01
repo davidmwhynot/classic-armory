@@ -40,7 +40,9 @@ class V1_0_2 extends Component {
 
 	render() {
 		const {
+			time,
 			name,
+			region,
 			realm,
 			guild,
 			race,
@@ -149,7 +151,10 @@ class V1_0_2 extends Component {
 
 					<div className="character-center">
 						<Header
+							time={time}
 							name={name}
+							rank={pvp.rank[0]}
+							region={region}
 							realm={realm}
 							guild={guild}
 							level={level}

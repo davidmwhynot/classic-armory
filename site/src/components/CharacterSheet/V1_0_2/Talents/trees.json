@@ -1,0 +1,370 @@
+{
+    "warrior": [
+        {
+            "id": 0,
+            "name": "arms",
+            "talents": [
+                {
+                    "name": "Improved Heroic Strike",
+                    "tier": 0,
+                    "column": 0,
+                    "icon": "ability_rogue_ambush"
+                },
+                {
+                    "name": "Deflection",
+                    "tier": 0,
+                    "column": 1,
+                    "icon": "ability_parry"
+                },
+                {
+                    "name": "Improved Rend",
+                    "tier": 0,
+                    "column": 2,
+                    "icon": "ability_gouge"
+                },
+                {
+                    "name": "Improved Charge",
+                    "tier": 1,
+                    "column": 0,
+                    "icon": "ability_warrior_charge"
+                },
+                {
+                    "name": "Tactical Mastery",
+                    "tier": 1,
+                    "column": 1,
+                    "icon": "spell_nature_enchantarmor"
+                },
+                {
+                    "name": "Improved Thunder Clap",
+                    "tier": 1,
+                    "column": 3,
+                    "icon": "ability_thunderclap"
+                },
+                {
+                    "name": "Improved Overpower",
+                    "tier": 2,
+                    "column": 0,
+                    "icon": "inv_sword_05"
+                },
+                {
+                    "prereqs": {
+                        "tier": 1,
+                        "column": 1
+                    },
+                    "name": "Anger Management",
+                    "tier": 2,
+                    "column": 1,
+                    "icon": "spell_holy_blessingofstamina"
+                },
+                {
+                    "prereqs": {
+                        "tier": 0,
+                        "column": 2
+                    },
+                    "name": "Deep Wounds",
+                    "tier": 2,
+                    "column": 2,
+                    "icon": "ability_backstab"
+                },
+                {
+                    "name": "Two-Handed Weapon Specialization",
+                    "tier": 3,
+                    "column": 1,
+                    "icon": "inv_axe_09"
+                },
+                {
+                    "prereqs": {
+                        "tier": 3,
+                        "column": 2
+                    },
+                    "name": "Impale",
+                    "tier": 3,
+                    "column": 2,
+                    "icon": "ability_searingarrow"
+                },
+                {
+                    "name": "Axe Specialization",
+                    "tier": 4,
+                    "column": 0,
+                    "icon": "inv_axe_06"
+                },
+                {
+                    "name": "Sweeping Strikes",
+                    "tier": 4,
+                    "column": 1,
+                    "icon": "ability_rogue_slicedice"
+                },
+                {
+                    "name": "Mace Specialization",
+                    "tier": 4,
+                    "column": 2,
+                    "icon": "inv_mace_01"
+                },
+                {
+                    "name": "Sword Specialization",
+                    "tier": 4,
+                    "column": 3,
+                    "icon": "inv_sword_27"
+                },
+                {
+                    "name": "Polearm Specialization",
+                    "tier": 5,
+                    "column": 0,
+                    "icon": "inv_weapon_halbard_01"
+                },
+                {
+                    "name": "Improved Hamstring",
+                    "tier": 5,
+                    "column": 2,
+                    "icon": "ability_shockwave"
+                },
+                {
+                    "prereqs": {
+                        "tier": 4,
+                        "column": 1
+                    },
+                    "name": "Mortal Strike",
+                    "tier": 6,
+                    "column": 1,
+                    "icon": "ability_warrior_savageblow"
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "name": "fury",
+            "talents": [
+                {
+                    "name": "Booming Voice",
+                    "tier": 0,
+                    "column": 1,
+                    "icon": "spell_nature_purge"
+                },
+                {
+                    "name": "Cruelty",
+                    "tier": 0,
+                    "column": 2,
+                    "icon": "ability_rogue_eviscerate"
+                },
+                {
+                    "name": "Improved Demoralizing Shout",
+                    "tier": 1,
+                    "column": 1,
+                    "icon": "ability_warrior_warcry"
+                },
+                {
+                    "name": "Unbridled Wrath",
+                    "tier": 1,
+                    "column": 2,
+                    "icon": "spell_nature_stoneclawtotem"
+                },
+                {
+                    "name": "Improved Cleave",
+                    "tier": 2,
+                    "column": 0,
+                    "icon": "ability_warrior_cleave"
+                },
+                {
+                    "name": "Piercing Howl",
+                    "tier": 2,
+                    "column": 1,
+                    "icon": "spell_shadow_deathscream"
+                },
+                {
+                    "name": "Blood Craze",
+                    "tier": 2,
+                    "column": 2,
+                    "icon": "spell_shadow_summonimp"
+                },
+                {
+                    "name": "Improved Battle Shout",
+                    "tier": 2,
+                    "column": 3,
+                    "icon": "ability_warrior_battleshout"
+                },
+                {
+                    "name": "Dual Wield Specialization",
+                    "tier": 3,
+                    "column": 0,
+                    "icon": "ability_dualwield"
+                },
+                {
+                    "name": "Improved Execute",
+                    "tier": 3,
+                    "column": 1,
+                    "icon": "inv_sword_48"
+                },
+                {
+                    "name": "Enrage",
+                    "tier": 3,
+                    "column": 2,
+                    "icon": "spell_shadow_unholyfrenzy"
+                },
+                {
+                    "name": "Improved Slam",
+                    "tier": 4,
+                    "column": 0,
+                    "icon": "ability_warrior_decisivestrike"
+                },
+                {
+                    "name": "Death Wish",
+                    "tier": 4,
+                    "column": 1,
+                    "icon": "spell_shadow_deathpact"
+                },
+                {
+                    "name": "Improved Intercept",
+                    "tier": 4,
+                    "column": 3,
+                    "icon": "ability_rogue_sprint"
+                },
+                {
+                    "name": "Improved Berserker Rage",
+                    "tier": 5,
+                    "column": 0,
+                    "icon": "spell_nature_ancestralguardian"
+                },
+                {
+                    "prereqs": {
+                        "tier": 3,
+                        "column": 2
+                    },
+                    "name": "Flurry",
+                    "tier": 5,
+                    "column": 2,
+                    "icon": "ability_ghoulfrenzy"
+                },
+                {
+                    "prereqs": {
+                        "tier": 4,
+                        "column": 1
+                    },
+                    "name": "Bloodthirst",
+                    "tier": 6,
+                    "column": 1,
+                    "icon": "spell_nature_bloodlust"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "protection",
+            "talents": [
+                {
+                    "name": "Shield Specialization",
+                    "tier": 0,
+                    "column": 1,
+                    "icon": "inv_shield_06"
+                },
+                {
+                    "name": "Anticipation",
+                    "tier": 0,
+                    "column": 2,
+                    "icon": "spell_nature_mirrorimage"
+                },
+                {
+                    "name": "Improved Bloodrage",
+                    "tier": 1,
+                    "column": 0,
+                    "icon": "ability_racial_bloodrage"
+                },
+                {
+                    "name": "Toughness",
+                    "tier": 1,
+                    "column": 2,
+                    "icon": "spell_holy_devotion"
+                },
+                {
+                    "name": "Iron Will",
+                    "tier": 1,
+                    "column": 3,
+                    "icon": "spell_magic_magearmor"
+                },
+                {
+                    "prereqs": {
+                        "tier": 1,
+                        "column": 0
+                    },
+                    "name": "Last Stand",
+                    "tier": 2,
+                    "column": 0,
+                    "icon": "spell_holy_ashestoashes"
+                },
+                {
+                    "prereqs": {
+                        "tier": 0,
+                        "column": 1
+                    },
+                    "name": "Improved Shield Block",
+                    "tier": 2,
+                    "column": 1,
+                    "icon": "ability_defend"
+                },
+                {
+                    "name": "Improved Revenge",
+                    "tier": 2,
+                    "column": 2,
+                    "icon": "ability_warrior_revenge"
+                },
+                {
+                    "name": "Defiance",
+                    "tier": 2,
+                    "column": 3,
+                    "icon": "ability_warrior_innerrage"
+                },
+                {
+                    "name": "Improved Sunder Armor",
+                    "tier": 3,
+                    "column": 0,
+                    "icon": "ability_warrior_sunder"
+                },
+                {
+                    "name": "Improved Disarm",
+                    "tier": 3,
+                    "column": 1,
+                    "icon": "ability_warrior_disarm"
+                },
+                {
+                    "name": "Improved Taunt",
+                    "tier": 3,
+                    "column": 2,
+                    "icon": "spell_nature_reincarnation"
+                },
+                {
+                    "name": "Improved Shield Wall",
+                    "tier": 4,
+                    "column": 0,
+                    "icon": "ability_warrior_shieldwall"
+                },
+                {
+                    "name": "Concussion Blow",
+                    "tier": 4,
+                    "column": 1,
+                    "icon": "ability_thunderbolt"
+                },
+                {
+                    "name": "Improved Shield Bash",
+                    "tier": 4,
+                    "column": 2,
+                    "icon": "ability_warrior_shieldbash"
+                },
+                {
+                    "name": "One-Handed Weapon Specialization",
+                    "tier": 5,
+                    "column": 2,
+                    "icon": "inv_sword_20"
+                },
+                {
+                    "prereqs": {
+                        "tier": 4,
+                        "column": 1
+                    },
+                    "name": "Shield Slam",
+                    "tier": 6,
+                    "column": 1,
+                    "icon": "inv_shield_05"
+                }
+            ]
+        }
+    ]
+}

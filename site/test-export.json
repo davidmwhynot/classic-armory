@@ -1,207 +1,314 @@
-[
-	// prettier-ignore
-
-	{
-		"stats": {
-			"intellect": {
-				"equipped": 0,
-				"unit": [30, 30, 0, 0]
-			},
-			"spellDamage": {
-				"physical": 0,
-				"shadow": 0,
-				"arcane": 0,
-				"frost": 0,
-				"fire": 0,
-				"holy": 0,
-				"nature": 0
-			},
-			"mana": {
-				"value": 100,
-				"type": [1, "RAGE"]
-			},
-			"agility": {
-				"equipped": 67,
-				"unit": [152, 152, 67, 0]
-			},
-			"dodge": 8.6000003814697,
-			"armor": {
-				"equipped": 1734,
-				"unit": [2038, 2038, 2038, 0, 0]
-			},
-			"block": {
-				"chance": 5,
-				"value": 9
-			},
-			"spirit": {
-				"equipped": 0,
-				"unit": [45, 45, 0, 0]
-			},
-			"damage": {
-				"melee": [
-					242.01429748535,
-					341.01428222656,
-					85.285720825195,
-					104.0357208252,
-					0,
-					0,
-					1
-				],
-				"ranged": [
-					2.7000000476837,
-					177.05715942383,
-					222.75715637207,
-					0,
-					0,
-					1
+{
+	"stats": {
+		"intellect": {
+			"equipped": 0,
+			"unit": [
+				30,
+				30,
+				0,
+				0
+			]
+		},
+		"spellDamage": {
+			"physical": 0,
+			"shadow": 0,
+			"arcane": 0,
+			"frost": 0,
+			"fire": 0,
+			"holy": 0,
+			"nature": 0
+		},
+		"mana": {
+			"value": 100,
+			"type": [
+				1,
+				"RAGE"
+			]
+		},
+		"agility": {
+			"equipped": 49,
+			"unit": [
+				134,
+				134,
+				49,
+				0
+			]
+		},
+		"dodge": 11.380000114441,
+		"armor": {
+			"equipped": 3152,
+			"unit": [
+				3420,
+				3420,
+				3420,
+				0,
+				0
+			]
+		},
+		"block": {
+			"chance": 7.6800003051758,
+			"value": 10
+		},
+		"spirit": {
+			"equipped": 0,
+			"unit": [
+				45,
+				45,
+				0,
+				0
+			]
+		},
+		"damage": {
+			"melee": [
+				254.02857971191,
+				353.02856445313,
+				89.946434020996,
+				108.696434021,
+				0,
+				0,
+				1
+			],
+			"ranged": [
+				2.7000000476837,
+				170.11428833008,
+				215.81428527832,
+				0,
+				0,
+				1
+			]
+		},
+		"attackPower": {
+			"melee": [
+				636,
+				40,
+				0
+			],
+			"ranged": [
+				308,
+				40,
+				0
+			]
+		},
+		"defense": {
+			"unit": [
+				300,
+				0
+			],
+			"total": 317,
+			"base": 300,
+			"bonus": 17
+		},
+		"equip": [
+			{
+				"id": 16866,
+				"bonuses": [
+					"Equip: Increased Defense +7.",
+					"Equip: Increases your chance to dodge an attack by 1%."
 				]
 			},
-			"attackPower": {
-				"melee": [578, 40, 0],
-				"ranged": [344, 40, 0]
+			{
+				"id": 18404,
+				"bonuses": [
+					"Equip: Improves your chance to get a critical strike by 1%.",
+					"Equip: Improves your chance to hit by 1%."
+				]
 			},
-			"defense": {
-				"unit": [300, 0],
-				"total": 300,
-				"base": 300,
-				"bonus": 0
+			{
+				"id": 16868,
+				"bonuses": [
+					"Equip: Increased Defense +5.",
+					"Equip: Increases your chance to block attacks with a shield by 2%."
+				]
 			},
-			"equip": [
-				{
-					"id": 12587,
-					"bonuses": [
-						"Equip: Improves your chance to get a critical strike by 2%."
-					]
-				},
-				{
-					"id": 18404,
-					"bonuses": [
-						"Equip: Improves your chance to get a critical strike by 1%.",
-						"Equip: Improves your chance to hit by 1%."
-					]
-				},
-				{
-					"id": 12082,
-					"bonuses": ["Equip: Improves your chance to hit by 2%."]
-				},
-				{
-					"id": 13944,
-					"bonuses": [
-						"Equip: Improves your chance to get a critical strike by 2%."
-					]
-				},
-				{
-					"id": 12966,
-					"bonuses": ["Equip: Improves your chance to hit by 1%."]
-				},
-				{
-					"id": 14551,
-					"bonuses": [
-						"Equip: Increased Swords +7.",
-						"Equip: Increased Daggers +7.",
-						"Equip: Increased Axes +7."
-					]
-				},
-				{
-					"id": 13142,
-					"bonuses": ["Equip: Improves your chance to hit by 1%."]
-				},
-				{
-					"id": 13967,
-					"bonuses": ["Equip: Improves your chance to hit by 1%."]
-				},
-				{
-					"id": 12548,
-					"bonuses": [
-						"Equip: Improves your chance to get a critical strike by 1%."
-					]
-				},
-				{
-					"id": 17713,
-					"bonuses": [
-						"Equip: Improves your chance to hit by 1%.",
-						"Equip: +20 Attack Power."
-					]
-				},
-				{
-					"id": 13965,
-					"bonuses": [
-						"Equip: Improves your chance to get a critical strike by 2%."
-					]
-				},
-				{
-					"id": 11815,
-					"bonuses": [
-						"Equip: +20 Attack Power.",
-						"Equip: 2% chance on melee hit to gain 1 extra attack."
-					]
-				}
+			{
+				"id": 13944,
+				"bonuses": [
+					"Equip: Improves your chance to get a critical strike by 2%."
+				]
+			},
+			{
+				"id": 12966,
+				"bonuses": [
+					"Equip: Improves your chance to hit by 1%."
+				]
+			},
+			{
+				"id": 14551,
+				"bonuses": [
+					"Equip: Increased Swords +7.",
+					"Equip: Increased Daggers +7.",
+					"Equip: Increased Axes +7."
+				]
+			},
+			{
+				"id": 16864,
+				"bonuses": [
+					"Equip: Increased Defense +5.",
+					"Equip: Increases your chance to dodge an attack by 1%."
+				]
+			},
+			{
+				"id": 18861,
+				"bonuses": [
+					"Equip: Increases your chance to dodge an attack by 1%."
+				]
+			},
+			{
+				"id": 13967,
+				"bonuses": [
+					"Equip: Improves your chance to hit by 1%."
+				]
+			},
+			{
+				"id": 17713,
+				"bonuses": [
+					"Equip: Improves your chance to hit by 1%.",
+					"Equip: +20 Attack Power."
+				]
+			},
+			{
+				"id": 12548,
+				"bonuses": [
+					"Equip: Improves your chance to get a critical strike by 1%."
+				]
+			},
+			{
+				"id": 13965,
+				"bonuses": [
+					"Equip: Improves your chance to get a critical strike by 2%."
+				]
+			},
+			{
+				"id": 11815,
+				"bonuses": [
+					"Equip: +20 Attack Power.",
+					"Equip: 2% chance on melee hit to gain 1 extra attack."
+				]
+			}
+		],
+		"healing": 0,
+		"strength": {
+			"equipped": 114,
+			"unit": [
+				238,
+				238,
+				121,
+				0
+			]
+		},
+		"parry": 5.6799998283386,
+		"resist": {
+			"holy": [
+				0,
+				0,
+				0,
+				0
 			],
-			"healing": 0,
-			"strength": {
-				"equipped": 85,
-				"unit": [209, 209, 92, 0]
+			"shadow": [
+				0,
+				28,
+				28,
+				0
+			],
+			"arcane": [
+				0,
+				0,
+				0,
+				0
+			],
+			"armor": [
+				3420,
+				3420,
+				0,
+				0
+			],
+			"fire": [
+				0,
+				38,
+				38,
+				0
+			],
+			"frost": [
+				0,
+				0,
+				0,
+				0
+			],
+			"nature": [
+				10,
+				10,
+				0,
+				0
+			]
+		},
+		"speed": {
+			"melee": [
+				2.9000000953674,
+				1.8000000715256
+			],
+			"ranged": 2.7000000476837
+		},
+		"health": 4099,
+		"hit": {
+			"ranged": {
+				"chance": 4,
+				"skill": [
+					266,
+					0
+				]
 			},
-			"parry": 5,
-			"resist": {
-				"holy": [0, 0, 0, 0],
-				"shadow": [0, 10, 10, 0],
-				"arcane": [0, 0, 0, 0],
-				"armor": [2038, 2038, 0, 0],
-				"fire": [0, 10, 10, 0],
-				"frost": [0, 0, 0, 0],
-				"nature": [10, 10, 0, 0]
-			},
-			"speed": {
-				"melee": [2.9000000953674, 1.8000000715256],
-				"ranged": 2.7000000476837
-			},
-			"health": 3579,
-			"hit": {
-				"ranged": {
-					"chance": 7,
-					"skill": [257, 0]
-				},
-				"spell": 0,
-				"melee": {
-					"chance": 7,
-					"skill": [300, 7, 300, 7]
-				}
-			},
-			"stamina": {
-				"equipped": 98,
-				"unit": [207, 207, 98, 0]
-			},
-			"mpTick": {
-				"notCasting": 0,
-				"casting": 0
-			},
-			"crit": {
-				"ranged": 16.879999160767,
-				"spell": 0,
-				"melee": 23.880001068115
-			},
-			"mp5": {
-				"notCasting": 0,
-				"casting": 0,
-				"equipped": 0,
-				"unit": [0, 0]
+			"spell": 0,
+			"melee": {
+				"chance": 4,
+				"skill": [
+					300,
+					7,
+					300,
+					7
+				]
 			}
 		},
-		"guild": "Emphasis",
-		"class": "Warrior",
-		"race": "Night Elf",
-		"level": 60,
-		"realm": "Herod",
-		"type": "player",
-		"region": 1,
-		"money": 173466,
-		"talents": [
-			[
+		"stamina": {
+			"equipped": 150,
+			"unit": [
+				259,
+				259,
+				150,
+				0
+			]
+		},
+		"mpTick": {
+			"notCasting": 0,
+			"casting": 0
+		},
+		"crit": {
+			"ranged": 14.340000152588,
+			"spell": 0,
+			"melee": 20.979999542236
+		},
+		"mp5": {
+			"notCasting": 0,
+			"casting": 0,
+			"equipped": 0,
+			"unit": [
+				0,
+				0
+			]
+		}
+	},
+	"guild": "Emphasis",
+	"class": "Warrior",
+	"race": "Night Elf",
+	"level": 60,
+	"realm": "Herod",
+	"type": "player",
+	"region": 1,
+	"money": 589529,
+	"talents": [
+		{
+			"talents": [
 				{
 					"name": "Improved Heroic Strike",
-					"tier": 1,
-					"column": 1,
 					"tooltip": [
 						"Improved Heroic Strike",
 						"Rank 3/3",
@@ -215,8 +322,6 @@
 				},
 				{
 					"name": "Deflection",
-					"tier": 1,
-					"column": 2,
 					"tooltip": [
 						"Deflection",
 						"Rank 0/5",
@@ -230,8 +335,6 @@
 				},
 				{
 					"name": "Improved Rend",
-					"tier": 1,
-					"column": 3,
 					"tooltip": [
 						"Improved Rend",
 						"Rank 3/3",
@@ -245,8 +348,6 @@
 				},
 				{
 					"name": "Improved Charge",
-					"tier": 2,
-					"column": 1,
 					"tooltip": [
 						"Improved Charge",
 						"Rank 0/2",
@@ -260,8 +361,6 @@
 				},
 				{
 					"name": "Tactical Mastery",
-					"tier": 2,
-					"column": 2,
 					"tooltip": [
 						"Tactical Mastery",
 						"Rank 5/5",
@@ -275,8 +374,6 @@
 				},
 				{
 					"name": "Improved Thunder Clap",
-					"tier": 2,
-					"column": 4,
 					"tooltip": [
 						"Improved Thunder Clap",
 						"Rank 0/3",
@@ -290,8 +387,6 @@
 				},
 				{
 					"name": "Improved Overpower",
-					"tier": 3,
-					"column": 1,
 					"tooltip": [
 						"Improved Overpower",
 						"Rank 0/2",
@@ -305,15 +400,13 @@
 				},
 				{
 					"name": "Anger Management",
-					"tier": 3,
+					"tier": 2,
 					"column": 2,
 					"tooltip": [
-						" Anger Management",
+						"Anger Management",
 						"Rank 1/1",
 						"Passive",
-						"Increases the time required for your rage to decay while out of combat by 30%.",
-						" ",
-						"Spell: 12296"
+						"Increases the time required for your rage to decay while out of combat by 30%."
 					],
 					"icon": 135881,
 					"rank": {
@@ -323,7 +416,7 @@
 				},
 				{
 					"name": "Deep Wounds",
-					"tier": 3,
+					"tier": 1,
 					"column": 3,
 					"tooltip": [
 						"Deep Wounds",
@@ -338,8 +431,6 @@
 				},
 				{
 					"name": "Two-Handed Weapon Specialization",
-					"tier": 4,
-					"column": 2,
 					"tooltip": [
 						"Two-Handed Weapon Specialization",
 						"Rank 0/5",
@@ -353,7 +444,7 @@
 				},
 				{
 					"name": "Impale",
-					"tier": 4,
+					"tier": 3,
 					"column": 3,
 					"tooltip": [
 						"Impale",
@@ -368,8 +459,6 @@
 				},
 				{
 					"name": "Axe Specialization",
-					"tier": 5,
-					"column": 1,
 					"tooltip": [
 						"Axe Specialization",
 						"Rank 0/5",
@@ -384,18 +473,14 @@
 				},
 				{
 					"name": "Sweeping Strikes",
-					"tier": 5,
-					"column": 2,
 					"tooltip": [
-						" Sweeping Strikes",
+						"Sweeping Strikes",
 						"Rank 0/1",
 						"Requires 20 points in Arms Talents",
 						"30 Rage",
 						"Instant",
 						"Requires Battle Stance",
-						"Your next 5 melee attacks strike an additional nearby opponent.",
-						" ",
-						"Spell: 12292"
+						"Your next 5 melee attacks strike an additional nearby opponent."
 					],
 					"icon": 132306,
 					"rank": {
@@ -405,8 +490,6 @@
 				},
 				{
 					"name": "Mace Specialization",
-					"tier": 5,
-					"column": 3,
 					"tooltip": [
 						"Mace Specialization",
 						"Rank 0/5",
@@ -421,8 +504,6 @@
 				},
 				{
 					"name": "Sword Specialization",
-					"tier": 5,
-					"column": 4,
 					"tooltip": [
 						"Sword Specialization",
 						"Rank 0/5",
@@ -437,8 +518,6 @@
 				},
 				{
 					"name": "Polearm Specialization",
-					"tier": 6,
-					"column": 1,
 					"tooltip": [
 						"Polearm Specialization",
 						"Rank 0/5",
@@ -453,8 +532,6 @@
 				},
 				{
 					"name": "Improved Hamstring",
-					"tier": 6,
-					"column": 3,
 					"tooltip": [
 						"Improved Hamstring",
 						"Rank 0/3",
@@ -469,18 +546,16 @@
 				},
 				{
 					"name": "Mortal Strike",
-					"tier": 7,
+					"tier": 5,
 					"column": 2,
 					"tooltip": [
-						" Mortal Strike",
+						"Mortal Strike",
 						"Rank 0/1",
 						"Requires 1 point in Sweeping Strikes",
 						"Requires 30 points in Arms Talents",
 						"30 Rage",
 						"Instant",
-						"A vicious strike that deals weapon damage plus 85 and wounds the target, reducing the effectiveness of any healing by 50% for 10 sec.",
-						" ",
-						"Spell: 12294"
+						"A vicious strike that deals weapon damage plus 85 and wounds the target, reducing the effectiveness of any healing by 50% for 10 sec."
 					],
 					"icon": 132355,
 					"rank": {
@@ -489,11 +564,14 @@
 					}
 				}
 			],
-			[
+			"background": "WarriorArms",
+			"name": "Arms",
+			"pointsSpent": 17
+		},
+		{
+			"talents": [
 				{
 					"name": "Booming Voice",
-					"tier": 1,
-					"column": 2,
 					"tooltip": [
 						"Booming Voice",
 						"Rank 0/5",
@@ -507,8 +585,6 @@
 				},
 				{
 					"name": "Cruelty",
-					"tier": 1,
-					"column": 3,
 					"tooltip": [
 						"Cruelty",
 						"Rank 5/5",
@@ -522,8 +598,6 @@
 				},
 				{
 					"name": "Improved Demoralizing Shout",
-					"tier": 2,
-					"column": 2,
 					"tooltip": [
 						"Improved Demoralizing Shout",
 						"Rank 0/5",
@@ -537,8 +611,6 @@
 				},
 				{
 					"name": "Unbridled Wrath",
-					"tier": 2,
-					"column": 3,
 					"tooltip": [
 						"Unbridled Wrath",
 						"Rank 5/5",
@@ -552,8 +624,6 @@
 				},
 				{
 					"name": "Improved Cleave",
-					"tier": 3,
-					"column": 1,
 					"tooltip": [
 						"Improved Cleave",
 						"Rank 0/3",
@@ -567,16 +637,12 @@
 				},
 				{
 					"name": "Piercing Howl",
-					"tier": 3,
-					"column": 2,
 					"tooltip": [
-						" Piercing Howl",
+						"Piercing Howl",
 						"Rank 0/1",
 						"10 Rage",
 						"Instant",
-						"Causes all enemies near the warrior to be dazed, reducing movement speed by 50% for 6 sec.",
-						" ",
-						"Spell: 12323"
+						"Causes all enemies near the warrior to be dazed, reducing movement speed by 50% for 6 sec."
 					],
 					"icon": 136147,
 					"rank": {
@@ -586,8 +652,6 @@
 				},
 				{
 					"name": "Blood Craze",
-					"tier": 3,
-					"column": 3,
 					"tooltip": [
 						"Blood Craze",
 						"Rank 0/3",
@@ -601,8 +665,6 @@
 				},
 				{
 					"name": "Improved Battle Shout",
-					"tier": 3,
-					"column": 4,
 					"tooltip": [
 						"Improved Battle Shout",
 						"Rank 5/5",
@@ -616,8 +678,6 @@
 				},
 				{
 					"name": "Dual Wield Specialization",
-					"tier": 4,
-					"column": 1,
 					"tooltip": [
 						"Dual Wield Specialization",
 						"Rank 5/5",
@@ -631,8 +691,6 @@
 				},
 				{
 					"name": "Improved Execute",
-					"tier": 4,
-					"column": 2,
 					"tooltip": [
 						"Improved Execute",
 						"Rank 2/2",
@@ -646,8 +704,6 @@
 				},
 				{
 					"name": "Enrage",
-					"tier": 4,
-					"column": 3,
 					"tooltip": [
 						"Enrage",
 						"Rank 5/5",
@@ -661,8 +717,6 @@
 				},
 				{
 					"name": "Improved Slam",
-					"tier": 5,
-					"column": 1,
 					"tooltip": [
 						"Improved Slam",
 						"Rank 0/5",
@@ -676,16 +730,12 @@
 				},
 				{
 					"name": "Death Wish",
-					"tier": 5,
-					"column": 2,
 					"tooltip": [
-						" Death Wish",
+						"Death Wish",
 						"Rank 1/1",
 						"10 Rage",
 						"Instant",
-						"When activated, increases your physical damage by 20% and makes you immune to Fear effects, but lowers your armor and all resistances by 20%.  Lasts 30 sec.",
-						" ",
-						"Spell: 12328"
+						"When activated, increases your physical damage by 20% and makes you immune to Fear effects, but lowers your armor and all resistances by 20%.  Lasts 30 sec."
 					],
 					"icon": 136146,
 					"rank": {
@@ -695,8 +745,6 @@
 				},
 				{
 					"name": "Improved Intercept",
-					"tier": 5,
-					"column": 4,
 					"tooltip": [
 						"Improved Intercept",
 						"Rank 0/2",
@@ -710,8 +758,6 @@
 				},
 				{
 					"name": "Improved Berserker Rage",
-					"tier": 6,
-					"column": 1,
 					"tooltip": [
 						"Improved Berserker Rage",
 						"Rank 0/2",
@@ -725,7 +771,7 @@
 				},
 				{
 					"name": "Flurry",
-					"tier": 6,
+					"tier": 4,
 					"column": 3,
 					"tooltip": [
 						"Flurry",
@@ -740,16 +786,14 @@
 				},
 				{
 					"name": "Bloodthirst",
-					"tier": 7,
+					"tier": 5,
 					"column": 2,
 					"tooltip": [
-						" Bloodthirst",
+						"Bloodthirst",
 						"Rank 1/1",
 						"30 Rage",
 						"Instant",
-						"Instantly attack the target causing damage equal to 45% of your attack power.  In addition, the next 5 successful melee attacks will restore 10 health.  This effect lasts 8 sec.",
-						" ",
-						"Spell: 23881"
+						"Instantly attack the target causing damage equal to 45% of your attack power.  In addition, the next 5 successful melee attacks will restore 10 health.  This effect lasts 8 sec."
 					],
 					"icon": 136012,
 					"rank": {
@@ -758,11 +802,14 @@
 					}
 				}
 			],
-			[
+			"background": "WarriorFury",
+			"name": "Fury",
+			"pointsSpent": 34
+		},
+		{
+			"talents": [
 				{
 					"name": "Shield Specialization",
-					"tier": 1,
-					"column": 2,
 					"tooltip": [
 						"Shield Specialization",
 						"Rank 0/5",
@@ -776,8 +823,6 @@
 				},
 				{
 					"name": "Anticipation",
-					"tier": 1,
-					"column": 3,
 					"tooltip": [
 						"Anticipation",
 						"Rank 0/5",
@@ -791,8 +836,6 @@
 				},
 				{
 					"name": "Improved Bloodrage",
-					"tier": 2,
-					"column": 1,
 					"tooltip": [
 						"Improved Bloodrage",
 						"Rank 0/2",
@@ -807,8 +850,6 @@
 				},
 				{
 					"name": "Toughness",
-					"tier": 2,
-					"column": 3,
 					"tooltip": [
 						"Toughness",
 						"Rank 0/5",
@@ -823,8 +864,6 @@
 				},
 				{
 					"name": "Iron Will",
-					"tier": 2,
-					"column": 4,
 					"tooltip": [
 						"Iron Will",
 						"Rank 0/5",
@@ -839,17 +878,15 @@
 				},
 				{
 					"name": "Last Stand",
-					"tier": 3,
+					"tier": 2,
 					"column": 1,
 					"tooltip": [
-						" Last Stand",
+						"Last Stand",
 						"Rank 0/1",
 						"Requires 2 points in Improved Bloodrage",
 						"Requires 10 points in Protection Talents",
 						"Instant",
-						"When activated, this ability temporarily grants you 30% of your maximum hit points for 20 seconds.  After the effect expires, the hit points are lost.",
-						" ",
-						"Spell: 12975"
+						"When activated, this ability temporarily grants you 30% of your maximum hit points for 20 seconds.  After the effect expires, the hit points are lost."
 					],
 					"icon": 135871,
 					"rank": {
@@ -859,7 +896,7 @@
 				},
 				{
 					"name": "Improved Shield Block",
-					"tier": 3,
+					"tier": 1,
 					"column": 2,
 					"tooltip": [
 						"Improved Shield Block",
@@ -876,8 +913,6 @@
 				},
 				{
 					"name": "Improved Revenge",
-					"tier": 3,
-					"column": 3,
 					"tooltip": [
 						"Improved Revenge",
 						"Rank 0/3",
@@ -892,8 +927,6 @@
 				},
 				{
 					"name": "Defiance",
-					"tier": 3,
-					"column": 4,
 					"tooltip": [
 						"Defiance",
 						"Rank 0/5",
@@ -908,8 +941,6 @@
 				},
 				{
 					"name": "Improved Sunder Armor",
-					"tier": 4,
-					"column": 1,
 					"tooltip": [
 						"Improved Sunder Armor",
 						"Rank 0/3",
@@ -924,8 +955,6 @@
 				},
 				{
 					"name": "Improved Disarm",
-					"tier": 4,
-					"column": 2,
 					"tooltip": [
 						"Improved Disarm",
 						"Rank 0/3",
@@ -940,8 +969,6 @@
 				},
 				{
 					"name": "Improved Taunt",
-					"tier": 4,
-					"column": 3,
 					"tooltip": [
 						"Improved Taunt",
 						"Rank 0/2",
@@ -956,8 +983,6 @@
 				},
 				{
 					"name": "Improved Shield Wall",
-					"tier": 5,
-					"column": 1,
 					"tooltip": [
 						"Improved Shield Wall",
 						"Rank 0/2",
@@ -972,17 +997,13 @@
 				},
 				{
 					"name": "Concussion Blow",
-					"tier": 5,
-					"column": 2,
 					"tooltip": [
-						" Concussion Blow",
+						"Concussion Blow",
 						"Rank 0/1",
 						"Requires 20 points in Protection Talents",
 						"15 Rage",
 						"Instant",
-						"Stuns the opponent for 5 sec.",
-						" ",
-						"Spell: 12809"
+						"Stuns the opponent for 5 sec."
 					],
 					"icon": 132325,
 					"rank": {
@@ -992,8 +1013,6 @@
 				},
 				{
 					"name": "Improved Shield Bash",
-					"tier": 5,
-					"column": 3,
 					"tooltip": [
 						"Improved Shield Bash",
 						"Rank 0/2",
@@ -1008,8 +1027,6 @@
 				},
 				{
 					"name": "One-Handed Weapon Specialization",
-					"tier": 6,
-					"column": 3,
 					"tooltip": [
 						"One-Handed Weapon Specialization",
 						"Rank 0/5",
@@ -1024,19 +1041,17 @@
 				},
 				{
 					"name": "Shield Slam",
-					"tier": 7,
+					"tier": 5,
 					"column": 2,
 					"tooltip": [
-						" Shield Slam",
+						"Shield Slam",
 						"Rank 0/1",
 						"Requires 1 point in Concussion Blow",
 						"Requires 30 points in Protection Talents",
 						"20 Rage",
 						"Instant",
 						"Requires Shields",
-						"Slam the target with your shield, causing 225 to 235 damage, modified by your shield block value, and has a 50% chance of dispelling 1 magic effect on the target.  Also causes a high amount of threat.",
-						" ",
-						"Spell: 23922"
+						"Slam the target with your shield, causing 225 to 235 damage, modified by your shield block value, and has a 50% chance of dispelling 1 magic effect on the target.  Also causes a high amount of threat."
 					],
 					"icon": 134951,
 					"rank": {
@@ -1044,801 +1059,1005 @@
 						"current": 0
 					}
 				}
-			]
-		],
-		"xp": {
-			"max": 217400,
-			"current": 0
-		},
-		"v": "1.0.2",
-		"items": {
-			"bags": [
-				{
-					"id": 1,
-					"items": [],
-					"slot": "Bag0Slot"
-				},
-				{
-					"id": 2,
-					"items": [
-						{
-							"item": 11000,
-							"count": 1
-						},
-						{
-							"item": 11078,
-							"count": 16
-						},
-						{
-							"item": 12404,
-							"count": 2
-						},
-						{
-							"item": 18255,
-							"count": 6
-						},
-						{
-							"item": 14529,
-							"count": 4
-						},
-						{
-							"item": 10307,
-							"count": 1
-						},
-						{
-							"item": 8952,
-							"count": 16
-						},
-						{
-							"item": 8932,
-							"count": 19
-						},
-						{
-							"item": 6532,
-							"count": 5
-						},
-						{
-							"item": 6361,
-							"count": 18
-						},
-						{
-							"item": 6361,
-							"count": 20
-						},
-						{
-							"item": 6361,
-							"count": 20
-						},
-						{
-							"item": 6368,
-							"count": 1
-						},
-						{
-							"item": 8492,
-							"count": 1
-						},
-						{
-							"item": 11140,
-							"count": 1
-						},
-						{
-							"item": 12382,
-							"count": 1
-						}
-					],
-					"item": 11742,
-					"slot": "Bag1Slot"
-				},
-				{
-					"id": 3,
-					"items": [
-						{
-							"item": 13180,
-							"count": 2
-						},
-						{
-							"item": 12841,
-							"count": 1
-						},
-						{
-							"item": 12840,
-							"count": 3
-						},
-						{
-							"item": 12843,
-							"count": 2
-						},
-						{
-							"item": 13377,
-							"count": 172
-						},
-						{
-							"item": 16735,
-							"count": 1
-						},
-						{
-							"item": 16864,
-							"count": 1
-						},
-						{
-							"item": 12846,
-							"count": 1
-						},
-						{
-							"item": 11122,
-							"count": 1
-						},
-						{
-							"item": 16733,
-							"count": 1
-						},
-						{
-							"item": 12602,
-							"count": 1
-						},
-						{
-							"item": 18861,
-							"count": 1
-						},
-						{
-							"item": 12963,
-							"count": 1
-						},
-						{
-							"item": 16866,
-							"count": 1
-						}
-					],
-					"item": 14046,
-					"slot": "Bag2Slot"
-				},
-				{
-					"id": 4,
-					"items": [
-						{
-							"item": 13404,
-							"count": 1
-						},
-						{
-							"item": 14622,
-							"count": 1
-						},
-						{
-							"item": 11669,
-							"count": 1
-						},
-						{
-							"item": 10795,
-							"count": 1
-						},
-						{
-							"item": 14624,
-							"count": 1
-						},
-						{
-							"enchant": 1900,
-							"item": 17705,
-							"count": 1
-						},
-						{
-							"item": 20516,
-							"count": 2
-						},
-						{
-							"item": 18297,
-							"count": 1
-						},
-						{
-							"item": 2901,
-							"count": 1
-						},
-						{
-							"item": 7005,
-							"count": 1
-						},
-						{
-							"item": 6365,
-							"count": 1
-						},
-						{
-							"item": 16309,
-							"count": 1
-						},
-						{
-							"item": 18902,
-							"count": 1
-						},
-						{
-							"item": 6948,
-							"count": 1
-						}
-					],
-					"item": 14046,
-					"slot": "Bag3Slot"
-				},
-				{
-					"id": 0,
-					"items": [
-						{
-							"item": 12033,
-							"count": 1
-						},
-						{
-							"item": 8171,
-							"count": 2
-						},
-						{
-							"item": 15416,
-							"count": 2
-						},
-						{
-							"item": 4500,
-							"count": 1
-						},
-						[],
-						[],
-						[],
-						[],
-						[],
-						[],
-						[],
-						[],
-						[],
-						[],
-						[],
-						[]
-					],
-					"slot": "BackpackSlot"
-				}
 			],
-			"equipped": [
-				{
-					"item": 12587,
-					"slot": "HeadSlot"
-				},
-				{
-					"item": 18404,
-					"slot": "NeckSlot"
-				},
-				{
-					"item": 12082,
-					"slot": "ShoulderSlot"
-				},
-				{
-					"item": 18689,
-					"slot": "BackSlot"
-				},
-				{
-					"item": 13944,
-					"slot": "ChestSlot"
-				},
-				{
-					"slot": "ShirtSlot"
-				},
-				{
-					"item": 23192,
-					"slot": "TabardSlot"
-				},
-				{
-					"enchant": 927,
-					"item": 12966,
-					"slot": "WristSlot"
-				},
-				{
-					"item": 14551,
-					"slot": "HandsSlot"
-				},
-				{
-					"item": 13142,
-					"slot": "WaistSlot"
-				},
-				{
-					"item": 11728,
-					"slot": "LegsSlot"
-				},
-				{
-					"item": 13967,
-					"slot": "FeetSlot"
-				},
-				{
-					"item": 12548,
-					"slot": "Finger0Slot"
-				},
-				{
-					"item": 17713,
-					"slot": "Finger1Slot"
-				},
-				{
-					"item": 13965,
-					"slot": "Trinket0Slot"
-				},
-				{
-					"item": 11815,
-					"slot": "Trinket1Slot"
-				},
-				{
-					"enchant": 1900,
-					"item": 17068,
-					"slot": "MainHandSlot"
-				},
-				{
-					"enchant": 1900,
-					"item": 15806,
-					"slot": "SecondaryHandSlot"
-				},
-				{
-					"item": 13139,
-					"slot": "RangedSlot"
-				},
-				{
-					"item": 13377,
-					"slot": "AmmoSlot"
-				}
-			],
-			"bank": [
-				{
-					"id": 5,
-					"items": [
-						[],
-						[],
-						[],
-						{
-							"item": 12219,
-							"count": 1
-						},
-						{
-							"item": 11018,
-							"count": 41
-						},
-						{
-							"item": 4240,
-							"count": 1
-						},
-						{
-							"item": 14046,
-							"count": 1
-						},
-						{
-							"item": 1725,
-							"count": 1
-						},
-						{
-							"item": 1725,
-							"count": 1
-						},
-						{
-							"item": 17310,
-							"count": 1
-						},
-						{
-							"item": 17309,
-							"count": 1
-						},
-						{
-							"item": 14644,
-							"count": 1
-						},
-						{
-							"item": 12957,
-							"count": 1
-						},
-						{
-							"item": 12710,
-							"count": 1
-						}
-					],
-					"item": 14046,
-					"slot": "BankBagSlot1"
-				},
-				{
-					"id": 6,
-					"items": [
-						{
-							"item": 18782,
-							"count": 1
-						},
-						{
-							"item": 16202,
-							"count": 3
-						},
-						{
-							"item": 11972,
-							"count": 1
-						},
-						{
-							"item": 6342,
-							"count": 1
-						},
-						{
-							"item": 7146,
-							"count": 1
-						},
-						{
-							"item": 12841,
-							"count": 21
-						},
-						{
-							"item": 12840,
-							"count": 21
-						},
-						{
-							"item": 12730,
-							"count": 1
-						},
-						{
-							"item": 12534,
-							"count": 1
-						},
-						{
-							"item": 11020,
-							"count": 1
-						},
-						{
-							"item": 12843,
-							"count": 1
-						},
-						{
-							"item": 12735,
-							"count": 2
-						}
-					],
-					"item": 1725,
-					"slot": "BankBagSlot2"
-				},
-				{
-					"id": 7,
-					"items": [
-						{
-							"item": 12335,
-							"count": 1
-						},
-						{
-							"item": 12065,
-							"count": 1
-						},
-						{
-							"item": 5079,
-							"count": 1
-						},
-						[],
-						{
-							"item": 12062,
-							"count": 1
-						},
-						{
-							"item": 7717,
-							"count": 1
-						},
-						{
-							"enchant": 1897,
-							"item": 6975,
-							"count": 1
-						},
-						{
-							"item": 12650,
-							"count": 1
-						},
-						{
-							"item": 12650,
-							"count": 1
-						},
-						{
-							"item": 17191,
-							"count": 1
-						},
-						{
-							"item": 13544,
-							"count": 1
-						},
-						{
-							"item": 13289,
-							"count": 1
-						}
-					],
-					"item": 1725,
-					"slot": "BankBagSlot3"
-				},
-				{
-					"id": 8,
-					"items": [],
-					"slot": "BankBagSlot4"
-				},
-				{
-					"id": 9,
-					"items": [],
-					"slot": "BankBagSlot5"
-				},
-				{
-					"id": 10,
-					"items": [],
-					"slot": "BankBagSlot6"
-				},
-				{
-					"id": -1,
-					"items": [
-						{
-							"item": 8629,
-							"count": 1
-						},
-						[],
-						[],
-						[],
-						[],
-						[],
-						[],
-						[],
-						[],
-						[],
-						[],
-						[],
-						[],
-						[],
-						[],
-						[],
-						[],
-						[],
-						[],
-						[],
-						[],
-						[],
-						[],
-						[]
-					]
-				}
-			]
-		},
-		"debuffs": [],
-		"name": "Boostedidiot",
-		"sex": 3,
-		"buffs": [],
-		"skills": [
-			{
-				"name": "Class Skills",
-				"skills": [
-					{
-						"name": "Arms",
-						"rank": 300
-					},
-					{
-						"name": "Fury",
-						"rank": 300
-					},
-					{
-						"name": "Protection",
-						"rank": 300
-					}
-				]
-			},
-			{
-				"name": "Professions",
-				"skills": [
-					{
-						"name": "Enchanting",
-						"rank": 41
-					},
-					{
-						"name": "Skinning",
-						"rank": 300
-					}
-				]
-			},
-			{
-				"name": "Secondary Skills",
-				"skills": [
-					{
-						"name": "Cooking",
-						"rank": 7
-					},
-					{
-						"name": "First Aid",
-						"rank": 300
-					},
-					{
-						"name": "Fishing",
-						"rank": 170
-					},
-					{
-						"name": "Tiger Riding",
-						"rank": 300
-					}
-				]
-			},
-			{
-				"name": "Weapon Skills",
-				"skills": [
-					{
-						"name": "Axes",
-						"rank": 300
-					},
-					{
-						"name": "Bows",
-						"rank": 120
-					},
-					{
-						"name": "Daggers",
-						"rank": 1
-					},
-					{
-						"name": "Defense",
-						"rank": 300
-					},
-					{
-						"name": "Guns",
-						"rank": 257
-					},
-					{
-						"name": "Maces",
-						"rank": 168
-					},
-					{
-						"name": "Swords",
-						"rank": 300
-					},
-					{
-						"name": "Thrown",
-						"rank": 196
-					},
-					{
-						"name": "Two-Handed Axes",
-						"rank": 294
-					},
-					{
-						"name": "Two-Handed Maces",
-						"rank": 234
-					},
-					{
-						"name": "Two-Handed Swords",
-						"rank": 264
-					},
-					{
-						"name": "Unarmed",
-						"rank": 259
-					}
-				]
-			},
-			{
-				"name": "Armor Proficiencies",
-				"skills": [
-					{
-						"name": "Cloth",
-						"rank": 1
-					},
-					{
-						"name": "Leather",
-						"rank": 1
-					},
-					{
-						"name": "Mail",
-						"rank": 1
-					},
-					{
-						"name": "Plate Mail",
-						"rank": 1
-					},
-					{
-						"name": "Shield",
-						"rank": 1
-					}
-				]
-			},
-			{
-				"name": "Languages",
-				"skills": [
-					{
-						"name": "Language: Common",
-						"rank": 300
-					},
-					{
-						"name": "Language: Darnassian",
-						"rank": 300
-					}
-				]
-			}
-		],
-		"reps": [
-			{
-				"name": "Alliance",
-				"reps": [
-					{
-						"name": "Darnassus",
-						"value": 15776
-					},
-					{
-						"name": "Gnomeregan Exiles",
-						"value": 9155
-					},
-					{
-						"name": "Ironforge",
-						"value": 12277
-					},
-					{
-						"name": "Stormwind",
-						"value": 16845
-					}
-				]
-			},
-			{
-				"name": "Alliance Forces",
-				"reps": [
-					{
-						"name": "Silverwing Sentinels",
-						"value": 0
-					},
-					{
-						"name": "Stormpike Guard",
-						"value": 0
-					},
-					{
-						"name": "The League of Arathor",
-						"value": 0
-					}
-				]
-			},
-			{
-				"name": "Steamwheedle Cartel",
-				"reps": [
-					{
-						"name": "Booty Bay",
-						"value": 5632
-					},
-					{
-						"name": "Everlook",
-						"value": 3855
-					},
-					{
-						"name": "Gadgetzan",
-						"value": 5027
-					},
-					{
-						"name": "Ratchet",
-						"value": 3835
-					}
-				]
-			},
-			{
-				"name": "Other",
-				"reps": [
-					{
-						"name": "Argent Dawn",
-						"value": 11515
-					},
-					{
-						"name": "Bloodsail Buccaneers",
-						"value": -25400
-					},
-					{
-						"name": "Cenarion Circle",
-						"value": 450
-					},
-					{
-						"name": "Hydraxian Waterlords",
-						"value": 15220
-					},
-					{
-						"name": "Thorium Brotherhood",
-						"value": 600
-					},
-					{
-						"name": "Timbermaw Hold",
-						"value": -2911
-					},
-					{
-						"name": "Wildhammer Clan",
-						"value": 690
-					}
-				]
-			}
-		],
-		"pvp": {
-			"stats": {
-				"lifetimeStats": [944, 0, 0],
-				"sessionStats": [0, 0],
-				"rankProgress": [0],
-				"lastWeekStats": [0, 0, 0, 0],
-				"yesterdayStats": [0, 0, 0],
-				"thisWeekStats": [944, 4091]
-			},
-			"rank": [0]
+			"background": "WarriorProtection",
+			"name": "Protection",
+			"pointsSpent": 0
 		}
+	],
+	"xp": {
+		"max": 217400,
+		"current": 0
+	},
+	"v": "1.0.2",
+	"items": {
+		"bags": [
+			{
+				"id": 1,
+				"items": [
+					{
+						"item": 14344,
+						"count": 1
+					},
+					{
+						"item": 13377,
+						"count": 107
+					},
+					{
+						"item": 7077,
+						"count": 4
+					},
+					{
+						"item": 7068,
+						"count": 10
+					},
+					{
+						"item": 7068,
+						"count": 1
+					},
+					{
+						"item": 12602,
+						"count": 1
+					},
+					{
+						"item": 16735,
+						"count": 1
+					},
+					{
+						"item": 13142,
+						"count": 1
+					},
+					{
+						"item": 14622,
+						"count": 1
+					},
+					{
+						"item": 14624,
+						"count": 1
+					},
+					{
+						"item": 11728,
+						"count": 1
+					},
+					{
+						"item": 12082,
+						"count": 1
+					},
+					{
+						"item": 12963,
+						"count": 1
+					},
+					{
+						"item": 13404,
+						"count": 1
+					},
+					{
+						"item": 12587,
+						"count": 1
+					},
+					{
+						"item": 11122,
+						"count": 1
+					},
+					{
+						"item": 12846,
+						"count": 1
+					},
+					{
+						"item": 16309,
+						"count": 1
+					}
+				],
+				"item": 17966,
+				"slot": "Bag0Slot"
+			},
+			{
+				"id": 2,
+				"items": [
+					{
+						"item": 11669,
+						"count": 1
+					},
+					{
+						"item": 10795,
+						"count": 1
+					},
+					{
+						"item": 11972,
+						"count": 1
+					},
+					{
+						"item": 6365,
+						"count": 1
+					},
+					{
+						"item": 2901,
+						"count": 1
+					},
+					{
+						"item": 7005,
+						"count": 1
+					},
+					{
+						"enchant": 1900,
+						"item": 17705,
+						"count": 1
+					},
+					{
+						"item": 18664,
+						"count": 1
+					},
+					{
+						"item": 10306,
+						"count": 1
+					},
+					{
+						"item": 13452,
+						"count": 3
+					},
+					{
+						"item": 6532,
+						"count": 5
+					},
+					{
+						"item": 18255,
+						"count": 6
+					},
+					{
+						"item": 8932,
+						"count": 17
+					},
+					{
+						"item": 20516,
+						"count": 2
+					},
+					{
+						"item": 8952,
+						"count": 5
+					},
+					{
+						"item": 6361,
+						"count": 4
+					}
+				],
+				"item": 11742,
+				"slot": "Bag1Slot"
+			},
+			{
+				"id": 3,
+				"items": [
+					{
+						"item": 14530,
+						"count": 4
+					},
+					{
+						"item": 14529,
+						"count": 2
+					},
+					{
+						"item": 18297,
+						"count": 1
+					},
+					{
+						"item": 18854,
+						"count": 1
+					},
+					[],
+					[],
+					[],
+					[],
+					[],
+					[],
+					[],
+					[],
+					[],
+					[],
+					[],
+					[]
+				],
+				"item": 4500,
+				"slot": "Bag2Slot"
+			},
+			{
+				"id": 4,
+				"items": [
+					[],
+					[],
+					[],
+					[],
+					[],
+					[],
+					[],
+					[],
+					[],
+					[],
+					[],
+					[],
+					[],
+					[]
+				],
+				"item": 14046,
+				"slot": "Bag3Slot"
+			},
+			{
+				"id": 0,
+				"items": [
+					{
+						"item": 18902,
+						"count": 1
+					},
+					{
+						"item": 8492,
+						"count": 1
+					},
+					{
+						"item": 6948,
+						"count": 1
+					},
+					{
+						"item": 15416,
+						"count": 2
+					},
+					{
+						"item": 4787,
+						"count": 5
+					},
+					{
+						"item": 12382,
+						"count": 1
+					},
+					{
+						"item": 7146,
+						"count": 1
+					},
+					{
+						"item": 11140,
+						"count": 1
+					},
+					{
+						"item": 11078,
+						"count": 16
+					},
+					{
+						"item": 12843,
+						"count": 2
+					},
+					{
+						"item": 13180,
+						"count": 2
+					},
+					{
+						"item": 13523,
+						"count": 1
+					},
+					{
+						"item": 11000,
+						"count": 1
+					},
+					{
+						"item": 12840,
+						"count": 24
+					},
+					{
+						"item": 12841,
+						"count": 1
+					},
+					{
+						"item": 6533,
+						"count": 1
+					}
+				],
+				"slot": "BackpackSlot"
+			}
+		],
+		"equipped": [
+			{
+				"item": 16866,
+				"slot": "HeadSlot"
+			},
+			{
+				"item": 18404,
+				"slot": "NeckSlot"
+			},
+			{
+				"item": 16868,
+				"slot": "ShoulderSlot"
+			},
+			{
+				"item": 18689,
+				"slot": "BackSlot"
+			},
+			{
+				"item": 13944,
+				"slot": "ChestSlot"
+			},
+			{
+				"slot": "ShirtSlot"
+			},
+			{
+				"item": 23192,
+				"slot": "TabardSlot"
+			},
+			{
+				"enchant": 927,
+				"item": 12966,
+				"slot": "WristSlot"
+			},
+			{
+				"item": 14551,
+				"slot": "HandsSlot"
+			},
+			{
+				"item": 16864,
+				"slot": "WaistSlot"
+			},
+			{
+				"item": 18861,
+				"slot": "LegsSlot"
+			},
+			{
+				"item": 13967,
+				"slot": "FeetSlot"
+			},
+			{
+				"item": 17713,
+				"slot": "Finger0Slot"
+			},
+			{
+				"item": 12548,
+				"slot": "Finger1Slot"
+			},
+			{
+				"item": 13965,
+				"slot": "Trinket0Slot"
+			},
+			{
+				"item": 11815,
+				"slot": "Trinket1Slot"
+			},
+			{
+				"enchant": 1900,
+				"item": 17068,
+				"slot": "MainHandSlot"
+			},
+			{
+				"enchant": 1900,
+				"item": 15806,
+				"slot": "SecondaryHandSlot"
+			},
+			{
+				"item": 13139,
+				"slot": "RangedSlot"
+			},
+			{
+				"item": 13377,
+				"slot": "AmmoSlot"
+			}
+		],
+		"bank": [
+			{
+				"id": 5,
+				"items": [
+					[],
+					[],
+					[],
+					{
+						"item": 12219,
+						"count": 1
+					},
+					{
+						"item": 11018,
+						"count": 41
+					},
+					{
+						"item": 4240,
+						"count": 1
+					},
+					{
+						"item": 1725,
+						"count": 1
+					},
+					{
+						"item": 1725,
+						"count": 1
+					},
+					[],
+					{
+						"item": 17310,
+						"count": 1
+					},
+					{
+						"item": 17309,
+						"count": 1
+					},
+					{
+						"item": 14644,
+						"count": 1
+					},
+					{
+						"item": 12957,
+						"count": 1
+					},
+					{
+						"item": 12710,
+						"count": 1
+					}
+				],
+				"item": 14046,
+				"slot": "BankBagSlot1"
+			},
+			{
+				"id": 6,
+				"items": [
+					{
+						"item": 18782,
+						"count": 1
+					},
+					{
+						"item": 12841,
+						"count": 21
+					},
+					{
+						"item": 12730,
+						"count": 1
+					},
+					{
+						"item": 12534,
+						"count": 1
+					},
+					{
+						"item": 11020,
+						"count": 1
+					},
+					{
+						"item": 12843,
+						"count": 1
+					},
+					{
+						"item": 12735,
+						"count": 2
+					},
+					[],
+					[],
+					[],
+					[],
+					[],
+					[],
+					[]
+				],
+				"item": 14046,
+				"slot": "BankBagSlot2"
+			},
+			{
+				"id": 7,
+				"items": [
+					{
+						"item": 12335,
+						"count": 1
+					},
+					{
+						"item": 5079,
+						"count": 1
+					},
+					{
+						"item": 12062,
+						"count": 1
+					},
+					{
+						"item": 7717,
+						"count": 1
+					},
+					{
+						"enchant": 1897,
+						"item": 6975,
+						"count": 1
+					},
+					{
+						"item": 12650,
+						"count": 1
+					},
+					{
+						"item": 12650,
+						"count": 1
+					},
+					{
+						"item": 17191,
+						"count": 1
+					},
+					{
+						"item": 13544,
+						"count": 1
+					},
+					{
+						"item": 13289,
+						"count": 1
+					},
+					[],
+					[],
+					[],
+					[]
+				],
+				"item": 14046,
+				"slot": "BankBagSlot3"
+			},
+			{
+				"id": 8,
+				"items": [],
+				"slot": "BankBagSlot4"
+			},
+			{
+				"id": 9,
+				"items": [],
+				"slot": "BankBagSlot5"
+			},
+			{
+				"id": 10,
+				"items": [],
+				"slot": "BankBagSlot6"
+			},
+			{
+				"id": -1,
+				"items": [
+					{
+						"item": 8629,
+						"count": 1
+					},
+					{
+						"item": 12065,
+						"count": 1
+					},
+					{
+						"item": 6368,
+						"count": 1
+					},
+					{
+						"item": 6361,
+						"count": 20
+					},
+					{
+						"item": 6361,
+						"count": 20
+					},
+					{
+						"item": 6361,
+						"count": 20
+					},
+					[],
+					[],
+					[],
+					[],
+					[],
+					[],
+					[],
+					[],
+					[],
+					[],
+					[],
+					[],
+					[],
+					[],
+					[],
+					[],
+					[],
+					[]
+				]
+			}
+		]
+	},
+	"debuffs": [],
+	"name": "Boostedidiot",
+	"sex": 3,
+	"buffs": [
+		23338
+	],
+	"skills": [
+		{
+			"name": "Class Skills",
+			"skills": [
+				{
+					"name": "Arms",
+					"modifier": 0,
+					"description": "",
+					"maxRank": 300,
+					"rank": 300
+				},
+				{
+					"name": "Fury",
+					"modifier": 0,
+					"description": "",
+					"maxRank": 300,
+					"rank": 300
+				},
+				{
+					"name": "Protection",
+					"modifier": 0,
+					"description": "",
+					"maxRank": 300,
+					"rank": 300
+				}
+			]
+		},
+		{
+			"name": "Professions",
+			"skills": [
+				{
+					"name": "Enchanting",
+					"modifier": 0,
+					"description": "Higher enchanting skill allows you to learn more powerful formulae.  Formulae can be found on trainers around the world as well as from quests and monsters.",
+					"maxRank": 75,
+					"rank": 42
+				},
+				{
+					"name": "Skinning",
+					"modifier": 0,
+					"description": "Higher skinning skill allows you to skin hides from higher level monsters around the world.    Once your skill is above 100, you can divide your skill by 5 to determine the highest level of monster you can skin.",
+					"maxRank": 300,
+					"rank": 300
+				}
+			]
+		},
+		{
+			"name": "Secondary Skills",
+			"skills": [
+				{
+					"name": "Cooking",
+					"modifier": 0,
+					"description": "Higher cooking skill allows you to learn higher level cooking recipes.  Recipes can be found on trainers around the world as well as from quests and as drops from monsters.",
+					"maxRank": 75,
+					"rank": 7
+				},
+				{
+					"name": "First Aid",
+					"modifier": 0,
+					"description": "Higher first aid skill allows you to learn higher level first aid abilities.  First aid abilities can be found on trainers around the world as well as from quests and as drops from monsters.",
+					"maxRank": 300,
+					"rank": 300
+				},
+				{
+					"name": "Fishing",
+					"modifier": 0,
+					"description": "Higher fishing skill increases your chance of catching fish in bodies of water around the world.  If you are having trouble catching fish in a given area, move to a lower level area or purchase a fishing lure and try again.",
+					"maxRank": 225,
+					"rank": 172
+				},
+				{
+					"name": "Tiger Riding",
+					"modifier": 0,
+					"description": "",
+					"maxRank": 300,
+					"rank": 300
+				}
+			]
+		},
+		{
+			"name": "Weapon Skills",
+			"skills": [
+				{
+					"name": "Axes",
+					"modifier": 7,
+					"description": "Higher weapon skill increases your chance to hit.",
+					"maxRank": 300,
+					"rank": 300
+				},
+				{
+					"name": "Bows",
+					"modifier": 0,
+					"description": "Higher weapon skill increases your chance to hit.",
+					"maxRank": 300,
+					"rank": 120
+				},
+				{
+					"name": "Daggers",
+					"modifier": 7,
+					"description": "Higher weapon skill increases your chance to hit.",
+					"maxRank": 300,
+					"rank": 1
+				},
+				{
+					"name": "Defense",
+					"modifier": 17,
+					"description": "Higher defense makes you harder to hit and makes monsters less likely to land a crushing blow.",
+					"maxRank": 300,
+					"rank": 300
+				},
+				{
+					"name": "Guns",
+					"modifier": 0,
+					"description": "Higher weapon skill increases your chance to hit.",
+					"maxRank": 300,
+					"rank": 266
+				},
+				{
+					"name": "Maces",
+					"modifier": 0,
+					"description": "Higher weapon skill increases your chance to hit.",
+					"maxRank": 300,
+					"rank": 168
+				},
+				{
+					"name": "Swords",
+					"modifier": 7,
+					"description": "Higher weapon skill increases your chance to hit.",
+					"maxRank": 300,
+					"rank": 300
+				},
+				{
+					"name": "Thrown",
+					"modifier": 0,
+					"description": "Higher weapon skill increases your chance to hit.",
+					"maxRank": 300,
+					"rank": 196
+				},
+				{
+					"name": "Two-Handed Axes",
+					"modifier": 0,
+					"description": "Higher weapon skill increases your chance to hit.",
+					"maxRank": 300,
+					"rank": 294
+				},
+				{
+					"name": "Two-Handed Maces",
+					"modifier": 0,
+					"description": "Higher weapon skill increases your chance to hit.",
+					"maxRank": 300,
+					"rank": 234
+				},
+				{
+					"name": "Two-Handed Swords",
+					"modifier": 0,
+					"description": "Higher weapon skill increases your chance to hit.",
+					"maxRank": 300,
+					"rank": 264
+				},
+				{
+					"name": "Unarmed",
+					"modifier": 0,
+					"description": "Higher skill increases your chance to hit.",
+					"maxRank": 300,
+					"rank": 260
+				}
+			]
+		},
+		{
+			"name": "Armor Proficiencies",
+			"skills": [
+				{
+					"name": "Cloth",
+					"modifier": 0,
+					"description": "Allows the wearing of cloth armor.",
+					"maxRank": 1,
+					"rank": 1
+				},
+				{
+					"name": "Leather",
+					"modifier": 0,
+					"description": "Allows the wearing of leather armor.",
+					"maxRank": 1,
+					"rank": 1
+				},
+				{
+					"name": "Mail",
+					"modifier": 0,
+					"description": "Allows the wearing of mail armor.",
+					"maxRank": 1,
+					"rank": 1
+				},
+				{
+					"name": "Plate Mail",
+					"modifier": 0,
+					"description": "Allows the wearing of plate armor.",
+					"maxRank": 1,
+					"rank": 1
+				},
+				{
+					"name": "Shield",
+					"modifier": 0,
+					"description": "Allows the use of shields.",
+					"maxRank": 1,
+					"rank": 1
+				}
+			]
+		},
+		{
+			"name": "Languages",
+			"skills": [
+				{
+					"name": "Language: Common",
+					"modifier": 0,
+					"description": "",
+					"maxRank": 300,
+					"rank": 300
+				},
+				{
+					"name": "Language: Darnassian",
+					"modifier": 0,
+					"description": "",
+					"maxRank": 300,
+					"rank": 300
+				}
+			]
+		}
+	],
+	"reps": [
+		{
+			"name": "Alliance",
+			"reps": [
+				{
+					"barMin": 9000,
+					"name": "Darnassus",
+					"standing": 6,
+					"value": 15776,
+					"barMax": 21000
+				},
+				{
+					"barMin": 9000,
+					"name": "Gnomeregan Exiles",
+					"standing": 6,
+					"value": 9155,
+					"barMax": 21000
+				},
+				{
+					"barMin": 9000,
+					"name": "Ironforge",
+					"standing": 6,
+					"value": 12277,
+					"barMax": 21000
+				},
+				{
+					"barMin": 9000,
+					"name": "Stormwind",
+					"standing": 6,
+					"value": 16845,
+					"barMax": 21000
+				}
+			]
+		},
+		{
+			"name": "Alliance Forces",
+			"reps": [
+				{
+					"barMin": 0,
+					"name": "Silverwing Sentinels",
+					"standing": 4,
+					"value": 0,
+					"barMax": 3000
+				},
+				{
+					"barMin": 0,
+					"name": "Stormpike Guard",
+					"standing": 4,
+					"value": 0,
+					"barMax": 3000
+				},
+				{
+					"barMin": 0,
+					"name": "The League of Arathor",
+					"standing": 4,
+					"value": 0,
+					"barMax": 3000
+				}
+			]
+		},
+		{
+			"name": "Steamwheedle Cartel",
+			"reps": [
+				{
+					"barMin": 3000,
+					"name": "Booty Bay",
+					"standing": 5,
+					"value": 5632,
+					"barMax": 9000
+				},
+				{
+					"barMin": 3000,
+					"name": "Everlook",
+					"standing": 5,
+					"value": 3855,
+					"barMax": 9000
+				},
+				{
+					"barMin": 3000,
+					"name": "Gadgetzan",
+					"standing": 5,
+					"value": 5027,
+					"barMax": 9000
+				},
+				{
+					"barMin": 3000,
+					"name": "Ratchet",
+					"standing": 5,
+					"value": 3835,
+					"barMax": 9000
+				}
+			]
+		},
+		{
+			"name": "Other",
+			"reps": [
+				{
+					"barMin": 9000,
+					"name": "Argent Dawn",
+					"standing": 6,
+					"value": 12700,
+					"barMax": 21000
+				},
+				{
+					"barMin": -42000,
+					"name": "Bloodsail Buccaneers",
+					"standing": 1,
+					"value": -25400,
+					"barMax": -6000
+				},
+				{
+					"barMin": 0,
+					"name": "Cenarion Circle",
+					"standing": 4,
+					"value": 450,
+					"barMax": 3000
+				},
+				{
+					"barMin": 9000,
+					"name": "Hydraxian Waterlords",
+					"standing": 6,
+					"value": 19110,
+					"barMax": 21000
+				},
+				{
+					"barMin": 0,
+					"name": "Thorium Brotherhood",
+					"standing": 4,
+					"value": 600,
+					"barMax": 3000
+				},
+				{
+					"barMin": -3000,
+					"name": "Timbermaw Hold",
+					"standing": 3,
+					"value": -2911,
+					"barMax": 0
+				},
+				{
+					"barMin": 0,
+					"name": "Wildhammer Clan",
+					"standing": 4,
+					"value": 690,
+					"barMax": 3000
+				}
+			]
+		}
+	],
+	"pvp": {
+		"stats": {
+			"lifetimeStats": [
+				1026,
+				0,
+				6
+			],
+			"sessionStats": [
+				0,
+				0
+			],
+			"rankProgress": [
+				0.36078432202339
+			],
+			"lastWeekStats": [
+				34,
+				0,
+				861,
+				3343
+			],
+			"yesterdayStats": [
+				2,
+				0,
+				162
+			],
+			"thisWeekStats": [
+				15,
+				267
+			]
+		},
+		"rank": [
+			6
+		]
 	}
-]
+}
