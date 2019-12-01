@@ -401,7 +401,7 @@ function getRep(callback, asyncVals)
 
 	-- generate reference table
 	for i = 1, numReps do
-		local repName, _, _, _, _, repValue, _, _, isHeader = GetFactionInfo(i);
+		local repName, repDescription, standing, barMin, barMax, repValue, _, _, isHeader = GetFactionInfo(i);
 
 		if isHeader then
 			-- update indexes
@@ -418,6 +418,10 @@ function getRep(callback, asyncVals)
 			repsIndex = repsIndex + 1;
 			reps[repHeadersIndex]['reps'][repsIndex] = {
 				name = repName,
+				description = description,
+				standing = standing,
+				barMin = barMin,
+				barMax = barMax,
 				value = repValue
 			};
 		end
@@ -476,7 +480,7 @@ function getSkills(callback, asyncVals)
 
 	-- generate reference table
 	for i = 1, numSkills do
-		local skillName, isHeader, _, skillRank = GetSkillLineInfo(i);
+		local skillName, isHeader, _, skillRank, _, skillModifier, skillMaxRank, _, _, _, _, _, skillDescription = GetSkillLineInfo(i);
 
 		if isHeader then
 			-- update indexes
@@ -493,7 +497,10 @@ function getSkills(callback, asyncVals)
 			skillsIndex = skillsIndex + 1;
 			skills[skillHeadersIndex]['skills'][skillsIndex] = {
 				name = skillName,
-				rank = skillRank
+				rank = skillRank,
+				maxRank = skillMaxRank,
+				modifier = skillModifier,
+				description = skillDescription
 			};
 		end
 	end
@@ -754,17 +761,14 @@ function getTalents(callback, asyncVals)
 
 	for tab, talent in talentpairs() do
 		if not talents[tab] then
-			local id, name, description, iconTexture, pointsSpent, background, previewPointsSpent, isUnlocked = GetTalentTabInfo(tab);
+			local name, _, pointsSpent, background = GetTalentTabInfo(tab);
+
+			-- print(dumpvar({GetTalentTabInfo(tab)}));
 
 			talents[tab] = {
-				id = id,
 				name = name,
-				description = description,
-				icon = iconTexture,
 				pointsSpent = pointsSpent,
 				background = background,
-				previewPointsSpent = previewPointsSpent,
-				isUnlocked = isUnlocked,
 				talents = {}
 			};
 		end
@@ -796,11 +800,11 @@ function getTalents(callback, asyncVals)
 				current = currRank,
 				max = maxRank
 			},
-			prereqs = {
-				tier = tier,
-				column = column,
-				isLearnable = isLearnable
-			}
+			-- prereqs = {
+			-- 	tier = tier,
+			-- 	column = column,
+			-- 	isLearnable = isLearnable
+			-- }
 		};
 	end
 
