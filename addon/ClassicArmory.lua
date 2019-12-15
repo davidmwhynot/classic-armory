@@ -8,35 +8,35 @@ local CLASSIC_AMORY_VERSION = '1.0.2';
 
 -- async function generator
 local async = function ()
-	local M = {}
+	local M = {};
 
 	function M.waterfall(tasks, cb)
-		local nextArg = {}
+		local nextArg = {};
 
 		for i, v in pairs(tasks) do
-			local error = false
+			local error = false;
 
 			v(function(err, ...)
-				local arg = {...}
+				local arg = {...};
 
 				nextArg = arg;
 
 				if err then
-					error = true
+					error = true;
 				end
-			end, unpack(nextArg))
+			end, unpack(nextArg));
 
 			if error then return cb("error") end
 		end
 
-		cb(nil, unpack(nextArg))
+		cb(nil, unpack(nextArg));
 	end
 
 	function M.eachSeries(arr, iterator, callback)
 		
 	end
 
-	return M
+	return M;
 end
 
 
@@ -202,7 +202,7 @@ function getJSON(jsonCallback)
 	end
 
 	local raceFunction = function(callback, asyncVals)
-		asyncVals.race = UnitRace("player");
+		_, asyncVals.race = UnitRace("player");
 		callback(nil, asyncVals);
 	end
 
@@ -217,7 +217,7 @@ function getJSON(jsonCallback)
 	end
 
 	local classFunction = function(callback, asyncVals)
-		asyncVals.class = UnitClass("player");
+		_, asyncVals.class = UnitClass("player");
 		callback(nil, asyncVals);
 	end
 
@@ -241,6 +241,11 @@ function getJSON(jsonCallback)
 		callback(nil, asyncVals);
 	end
 
+	local localeFunction = function(callback, asyncVals)
+		asyncVals.locale = GetLocale();
+		callback(nil, asyncVals);
+	end
+
 
 	local asyncFunctions = {
 		function(callback)
@@ -255,6 +260,7 @@ function getJSON(jsonCallback)
 		guildFunction,
 		moneyFunction,
 		regionFunction,
+		localeFunction,
 		getItems,
 		getStats,
 		getSkills,
@@ -286,10 +292,11 @@ end
 
 
 function getItems(callback, asyncVals)
+	local characterName = UnitName('player');
 	local items = {
 		equipped = {},
 		bags = {},
-		bank = classicarmoryDB.bank
+		bank = classicarmoryDB.bank[characterName];
 	};
 
 	items.bags[0] = {
@@ -776,10 +783,10 @@ function getTalents(callback, asyncVals)
 		talents[tab]["talents"][talent] = {};
 	end
 
-
+	local index = 0;
 	for tab,talent in talentpairs() do
 		local name, icon, tier, column, currRank, maxRank = GetTalentInfo(tab, talent);
-		local tier, column, isLearnable = GetTalentPrereqs(tab, talent);
+		-- local preReqTier, column, isLearnable = GetTalentPrereqs(tab, talent);
 
 		GameTooltip:ClearLines();
 		GameTooltip:SetOwner(UIParent, "ANCHOR_NONE");
@@ -791,21 +798,20 @@ function getTalents(callback, asyncVals)
 		end
 
 		talents[tab]["talents"][talent] = {
+			index = index,
 			name = name,
-			icon = icon,
-			tier = tier,
-			column = column,
-			tooltip = talentTooltip,
+			-- icon = icon,
+			-- tier = tier,
+			-- column = column,
+			-- tooltip = talentTooltip,
 			rank = {
 				current = currRank,
 				max = maxRank
 			},
-			-- prereqs = {
-			-- 	tier = tier,
-			-- 	column = column,
-			-- 	isLearnable = isLearnable
-			-- }
+			-- prereqs = { GetTalentPrereqs(tab, talent) }
 		};
+
+		index = index + 1;
 	end
 
 	GameTooltip:Hide();
@@ -958,7 +964,9 @@ function updateBank()
 		end
 	end
 
-	classicarmoryDB.bank = bank;
+	-- set the bank items per-character
+	local characterName = UnitName("player");
+	classicarmoryDB.bank[characterName] = bank;
 end
 
 -- create hook
@@ -992,6 +1000,12 @@ function classicArmoryEventHandler(self, event, ...)
 				version = CLASSIC_AMORY_VERSION,
 				bank = {}
 			};
+		end
+
+		-- check if there is a bank var for this character
+		local characterName = UnitName('player');
+		if not classicarmoryDB.bank[characterName] then
+			classicarmoryDB.bank[characterName] = {};
 		end
 	end
 end
