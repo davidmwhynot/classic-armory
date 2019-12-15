@@ -105,12 +105,18 @@ class V1_0_2 extends Component {
 						stats={stats}
 						buffs={buffs}
 						debuffs={debuffs}
-						key={'debuffs'}
+						key={'stats'}
 					/>
 				);
 				break;
 			case 'talents':
-				view = <Talents talents={talents} key={'talents'} />;
+				view = (
+					<Talents
+						talents={talents}
+						className={className}
+						key={'talents'}
+					/>
+				);
 				break;
 			case 'inventory':
 				view = (
@@ -118,7 +124,7 @@ class V1_0_2 extends Component {
 						bags={bags}
 						bank={bank}
 						money={money}
-						key={'money'}
+						key={'inventory'}
 					/>
 				);
 				break;
@@ -183,8 +189,8 @@ class V1_0_2 extends Component {
 					</div>
 				</div>
 
-				{/* <h1>Props</h1>
-				<pre>{JSON.stringify(this.props, null, '\t')}</pre> */}
+				<h1>Props</h1>
+				<pre>{JSON.stringify(this.props, null, '\t')}</pre>
 			</div>
 		);
 	}

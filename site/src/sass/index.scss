@@ -213,6 +213,37 @@ a {
 	}
 }
 
+.moneygold {
+	display: inline-block;
+
+	background: no-repeat right center;
+
+	margin-right: 2.5px;
+	padding-right: 15px;
+
+	background-image: url('/media/money-gold.gif');
+}
+.moneysilver {
+	display: inline-block;
+
+	background: no-repeat right center;
+
+	margin-right: 2.5px;
+	padding-right: 15px;
+
+	background-image: url('/media/money-silver.gif');
+}
+.moneycopper {
+	display: inline-block;
+
+	background: no-repeat right center;
+
+	margin-right: 2.5px;
+	padding-right: 15px;
+
+	background-image: url('/media/money-copper.gif');
+}
+
 .switch-wrapper {
 	position: relative;
 }

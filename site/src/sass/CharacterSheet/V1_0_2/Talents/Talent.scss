@@ -1,72 +1,65 @@
 @import '../../../variables';
 
 .character-talents-talent {
-    position: relative;
+	position: relative;
 
-    &-icon {
-        width: 45px;
-        height: 45px;
+	&-icon {
+		width: 45px;
+		height: 45px;
 
-        border: 1px solid $light;
+		border: 1px solid $light;
 
-        &:hover {
-            cursor: pointer;
-        }
+		&-inactive {
+			filter: grayscale(100%);
+		}
+	}
 
-        &-inactive {
-            filter: grayscale(100%);
-        }
-    }
+	&-prereq {
+		position: absolute;
 
-    &-prereq {
-        position: absolute;
+		border-color: $dark;
+		border-style: solid;
+		border-width: 0;
 
-        bottom: 100%;
-        left: 50%;
+		background-color: $light;
+	}
 
-        transform: translateX(-50%);
+	&-points {
+		position: absolute;
 
-        width: 10px;
-        border-left: 1px solid $dark;
-        border-right: 1px solid $dark;
+		left: 0;
+		bottom: 0;
 
-        background-color: $light;
-    }
+		padding: 0 0.2rem;
 
-    &-points {
-        position: absolute;
+		font-size: 0.55rem;
 
-        left: 0;
-        bottom: 0;
+		background-color: rgba(0, 0, 0, 0.9);
 
-        font-size: 0.75rem;
+		border: 1px solid $light;
+	}
 
-        background-color: rgba(0, 0, 0, 0.9);
+	&-tooltip {
+		position: absolute;
 
-        border: 1px solid $light;
-    }
+		z-index: 1000;
+		bottom: calc(100% + 5px);
+		left: 50%;
 
-    &-tooltip {
-        position: absolute;
+		transform: translateX(-50%);
 
-        z-index: 1000;
-        bottom: calc(100% + 5px);
-        left: 50%;
+		border: 1px solid white;
+		padding: 0.5rem;
+		background-color: rgba(0, 0, 0, 0.9);
 
-        transform: translateX(-50%);
+		min-width: 250px;
 
-        border: 1px solid white;
-        padding: 0.5rem;
-        background-color: rgba(0, 0, 0, 0.9);
+		&-line {
+			white-space: nowrap;
 
-        min-width: 250px;
-
-        &-line {
-            white-space: nowrap;
-
-            &:last-child {
-                white-space: normal;
-            }
-        }
-    }
+			&:last-child {
+				white-space: normal;
+			}
+		}
+	}
 }

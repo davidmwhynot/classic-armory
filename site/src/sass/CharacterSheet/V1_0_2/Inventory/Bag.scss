@@ -1,0 +1,29 @@
+.character-bag {
+	margin-bottom: 1rem;
+
+	.character-tooltip {
+		bottom: calc(100% + 5px);
+		left: 50%;
+
+		transform: translateX(-50%);
+	}
+
+	&-items {
+		display: flex;
+		flex-wrap: wrap;
+
+		.character-icon {
+			margin-bottom: 0.5rem;
+		}
+	}
+
+	&-bag {
+		display: flex;
+
+		align-items: center;
+
+		width: max-content;
+
+		margin-bottom: 0.5rem;
+	}
+}

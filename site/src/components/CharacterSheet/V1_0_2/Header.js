@@ -35,46 +35,43 @@ export default ({
 			title = 'Private';
 			break;
 		case 6:
-			title = 'Private';
+			title = 'Corporal';
 			break;
 		case 7:
-			title = 'Private';
+			title = 'Sergeant';
 			break;
 		case 8:
-			title = 'Private';
+			title = 'Master Sergeant';
 			break;
 		case 9:
-			title = 'Private';
+			title = 'Sergeant Major';
 			break;
 		case 10:
-			title = 'Private';
+			title = 'Knight';
 			break;
 		case 11:
-			title = 'Private';
+			title = 'Knight-Lieutenant';
 			break;
 		case 12:
-			title = 'Private';
+			title = 'Knight-Captain';
 			break;
 		case 13:
-			title = 'Private';
+			title = 'Knight-Champion';
 			break;
 		case 14:
-			title = 'Private';
+			title = 'Lieutenant Commander';
 			break;
 		case 15:
-			title = 'Private';
+			title = 'Commander';
 			break;
 		case 16:
-			title = 'Private';
+			title = 'Marshal';
 			break;
 		case 17:
-			title = 'Private';
+			title = 'Field Marshal';
 			break;
 		case 18:
-			title = 'Private';
-			break;
-		case 19:
-			title = 'Private';
+			title = 'Grand Marshal';
 			break;
 		default:
 			title = '';
@@ -121,7 +118,7 @@ export default ({
 					<h3
 						className={`character-header-class-name color-${className.toLowerCase()}`}
 					>
-						{className}
+						{className.toLowerCase()}
 					</h3>
 
 					<img
@@ -133,22 +130,26 @@ export default ({
 				</div>
 			</div>
 
-			<h3 className="character-header-guild color-uncommon">
-				&lt;{guild}&gt;
-			</h3>
+			{guild ? (
+				<h3 className="character-header-guild color-uncommon">
+					&lt;{guild}&gt;
+				</h3>
+			) : (
+				''
+			)}
 
 			<div className="character-header-race-sex-container">
 				<img
 					src={`${
 						process.env.PUBLIC_URL
-					}/icons/achievement_character_${race
-						.toLowerCase()
-						.replace(' ', '')}_${sexLabel.toLowerCase()}.jpg`}
+					}/icons/achievement_character_${race.toLowerCase()}_${sexLabel.toLowerCase()}.jpg`}
 					alt="Character race icon."
 				/>
 
 				<h4 className="character-header-race-sex-label">
-					<span className="character-header-race">{race}</span>{' '}
+					<span className="character-header-race">
+						{race === 'NightElf' ? 'Night Elf' : race}
+					</span>{' '}
 					<span className="character-header-sex">{sexLabel}</span>
 				</h4>
 			</div>

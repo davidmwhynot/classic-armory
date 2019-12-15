@@ -11,6 +11,7 @@ let getSession,
 	AppState,
 	wowheadGetEquippedItem,
 	wowheadGetBagItem,
+	sortContainers,
 	setupError = false;
 try {
 	// local import
@@ -83,6 +84,16 @@ try {
 			resolve(itemData);
 		});
 	};
+
+	sortContainers = containers => {
+		return new Promise(resolve => {
+			const sortedContainers = containers.sort(
+				(a, b) => a.sortId - b.sortId
+			);
+
+			resolve(sortedContainers);
+		});
+	};
 } catch (err) {
 	console.error(err);
 
@@ -120,6 +131,7 @@ exports.handler = async function(event, context) {
 			case undefined:
 			case '0.0.1':
 			case '0.1.0':
+				//? XXX 0.1.0 XXX ?
 				charData = {
 					name: req.name,
 					realm: req.realm,
@@ -164,6 +176,7 @@ exports.handler = async function(event, context) {
 
 				break;
 			case '1.0.2':
+				//? XXX 1.0.2 XXX ?
 				charData = {
 					type: req.type,
 					region: req.region,
@@ -220,13 +233,11 @@ exports.handler = async function(event, context) {
 
 				const equippedItemData = (
 					await Promise.all(equippedItemPromises)
-				).sort((a, b) => a.index > b.index);
+				).sort((a, b) => a.index - b.index);
 
 				for (const item of equippedItemData) {
 					charData.items.equipped.push(item);
 				}
-
-				// charData.items.equipped = charData.items.equipped;
 
 				// bag items
 				for (const bag of req.items.bags) {
@@ -237,6 +248,7 @@ exports.handler = async function(event, context) {
 						);
 
 						const bagData = {
+							sortId: bag.id,
 							id: bag.item,
 							slot: bag.slot,
 							data: res.data,
@@ -260,6 +272,8 @@ exports.handler = async function(event, context) {
 						charData.items.bags.push(bagData);
 					} else if (bag.slot === 'BackpackSlot') {
 						const bagData = {
+							sortId: 0,
+							id: -1,
 							slot: bag.slot,
 							items: []
 						};
@@ -285,10 +299,15 @@ exports.handler = async function(event, context) {
 						charData.items.bags.push(bagData);
 					} else {
 						charData.items.bags.push({
+							sortId: bag.id,
 							slot: bag.slot
 						});
 					}
 				}
+
+				// charData.items.bags.sort((a, b) => a.sortId > b.sortId);
+				charData.items.bags = await sortContainers(charData.items.bags);
+				logo('charData.items.bags', charData.items.bags);
 
 				// bank items
 				for (const bag of req.items.bank) {
@@ -299,6 +318,7 @@ exports.handler = async function(event, context) {
 						);
 
 						const bagData = {
+							sortId: bag.id,
 							id: bag.item,
 							slot: bag.slot,
 							data: res.data,
@@ -324,6 +344,7 @@ exports.handler = async function(event, context) {
 						charData.items.bank.push(bagData);
 					} else if (bag.id === -1) {
 						const bagData = {
+							sortId: 0,
 							slot: -1,
 							items: []
 						};
@@ -347,10 +368,16 @@ exports.handler = async function(event, context) {
 						charData.items.bank.push(bagData);
 					} else {
 						charData.items.bank.push({
+							sortId: bag.id,
 							slot: bag.slot
 						});
 					}
 				}
+
+				// charData.items.bank.sort((a, b) => a.sortId > b.sortId);
+				charData.items.bank = await sortContainers(charData.items.bank);
+
+				logo('charData.items.bank', charData.items.bank);
 
 				newCharacter = new Character({
 					session: session._id,

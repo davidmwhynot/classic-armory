@@ -1,0 +1,19 @@
+.character-inventory {
+	position: relative;
+
+	&-money {
+		position: absolute;
+
+		right: 0;
+		top: 0;
+
+		font-size: 1.5rem;
+
+		img {
+			width: 1.5rem;
+			height: 1.5rem;
+
+			margin: 0 0.5rem 0.25rem 0.25rem;
+		}
+	}
+}

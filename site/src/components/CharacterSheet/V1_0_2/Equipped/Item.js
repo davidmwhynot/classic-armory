@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Icon from './Icon';
+import Icon from '../Icon';
 
 import '../../../../sass/CharacterSheet/V1_0_2/Equipped/Item.scss';
 
@@ -52,6 +52,7 @@ export default ({ item }) => {
 					id={id}
 					tooltip={tooltip}
 				/>
+
 				<div className="character-equipped-item-description">
 					<a
 						href={`https://classic.wowhead.com/?item=${id}`}
