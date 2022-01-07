@@ -33,7 +33,7 @@ try {
 }
 
 // request handler
-exports.handler = async function(event, context) {
+exports.handler = async function (event, context) {
 	if (setupError) {
 		return {
 			statusCode: 200,
@@ -148,7 +148,8 @@ exports.handler = async function(event, context) {
 			body: JSON.stringify({
 				success: false,
 				error: err.message,
-				stack: err.stack
+				stack: err.stack,
+				body: event.body
 			})
 		};
 	}
