@@ -36,7 +36,7 @@
 		"shortid": "^2.2.15",
 		"xml2js": "^0.4.22"
 	},
-	"proxy": "http://localhost:34567",
+	"proxy": "http://localhost:8888",
 	"scripts": {
 		"start": "react-scripts start",
 		"build": "react-scripts build",

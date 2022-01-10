@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { withRouter, Route } from 'react-router-dom';
 import * as Sentry from '@sentry/browser';
 import { connect } from 'react-redux';
-import $ from 'jquery';
+// import $ from 'jquery';
 
 import { loadPage } from './actions/pageActions';
 
@@ -26,71 +26,91 @@ class App extends Component {
         this.props.loadPage(this.props.location.pathname);
     };
 
-    componentDidMount = async () => {
-        const ctrlKey = 17;
-        const vKey = 86;
+    //  componentDidMount = async () => {
+    //      const ctrlKey = 17;
+    //      const vKey = 86;
 
-        let ctrlDown = false;
+    //      let ctrlDown = false;
 
-        $(document)
-            .keydown(e => {
-                if (e.keyCode === ctrlKey) ctrlDown = true;
-            })
-            .keyup(e => {
-                if (e.keyCode === ctrlKey) ctrlDown = false;
-            });
+    //      $(document)
+    //          .keydown(e => {
+    //              if (e.keyCode === ctrlKey || e.key === 'Meta') {
+    //                  ctrlDown = true;
+    //              }
+    //          })
+    //          .keyup(e => {
+    //              if (e.keyCode === ctrlKey || e.key === 'Meta') {
+    //                  ctrlDown = false;
+    //              }
+    //          });
 
-        $('.capture-paste').keydown(e => {
-            if (ctrlDown && e.keyCode === vKey) {
-                $('#area').css('display', 'block');
-                $('#area').val('');
-                $('#area').focus();
-            }
-        });
+    //      //   $('.capture-paste').keydown(e => {
+    //      //       // if ((ctrlDown || e.metaKey) && e.keyCode === vKey) {
+    //      //       if (ctrlDown && e.keyCode === vKey) {
+    //      //           $('#area').css('display', 'block');
+    //      //           $('#area').val('');
+    //      //           $('#area').focus();
+    //      //       }
+    //      //   });
 
-        $('.capture-paste').keyup(async e => {
-            if (ctrlDown && e.keyCode === vKey) {
-                this.setState({ loading: true, error: null });
-                try {
-                    const rawRes = await fetch('/.netlify/functions/new', {
-                        method: 'POST',
-                        body: $('#area').val(),
-                        headers: { 'Content-Type': 'application/json' }
-                    });
+    //      $('.capture-paste').keyup(async e => {
+    //          // console.log('e', e);
 
-                    if (rawRes.ok) {
-                        const res = await rawRes.json();
+    //          // console.log('ctrlDown', ctrlDown);
+    //          // // console.log('e.metaKey', e.metaKey);
+    //          // // console.log('ctrlDown || e.metaKey', ctrlDown || e.metaKey);
 
-                        if (!res.error) {
-                            this.setState({ loading: false });
-                            this.props.history.push('/' + res.url);
-                        } else {
-                            Sentry.captureMessage(res.stack);
+    //          // console.log('e.keyCode', e.keyCode);
+    //          // console.log('e.keyCode === vKey', e.keyCode === vKey);
 
-                            console.log(res);
+    //          // console.log(
+    //          //     '(ctrlDown || e.metaKey) && e.keyCode === vKey',
+    //          //     (ctrlDown || e.metaKey) && e.keyCode === vKey
+    //          // );
 
-                            this.setState({
-                                loading: false,
-                                error: 'Something went wrong. Please try again.'
-                            });
-                        }
-                    } else {
-                        throw Error(rawRes.statusText);
-                    }
-                } catch (err) {
-                    Sentry.captureException(err);
+    //          // if ((ctrlDown || e.metaKey) && e.keyCode === vKey) {
+    //          if (ctrlDown && e.keyCode === vKey) {
+    //              this.setState({ loading: true, error: null });
+    //              try {
+    //                  const rawRes = await fetch('/.netlify/functions/new', {
+    //                      method: 'POST',
+    //                      body: $('#area').val(),
+    //                      headers: { 'Content-Type': 'application/json' }
+    //                  });
 
-                    this.setState({
-                        loading: false,
-                        error: 'Something went wrong. Please try again.'
-                    });
-                }
+    //                  if (rawRes.ok) {
+    //                      const res = await rawRes.json();
 
-                $('#area').val('');
-                $('#area').css('display', 'none');
-            }
-        });
-    };
+    //                      if (!res.error) {
+    //                          this.setState({ loading: false });
+    //                          this.props.history.push('/' + res.url);
+    //                      } else {
+    //                          Sentry.captureMessage(res.stack);
+
+    //                          console.log(res);
+
+    //                          this.setState({
+    //                              loading: false,
+    //                              error: 'Something went wrong. Please try again.'
+    //                          });
+    //                      }
+    //                  } else {
+    //                      throw Error(rawRes.statusText);
+    //                  }
+    //              } catch (err) {
+    //                  Sentry.captureException(err);
+
+    //                  this.setState({
+    //                      loading: false,
+    //                      error: 'Something went wrong. Please try again.'
+    //                  });
+    //              }
+
+    //              $('#area').val('');
+    //              $('#area').css('display', 'none');
+    //          }
+    //      });
+    //  };
 
     render() {
         let appBody = null;
@@ -129,7 +149,50 @@ class App extends Component {
         }
 
         return (
-            <div className="App">
+            <div
+                className="App"
+                onPaste={async e => {
+                    const pastedData = e.clipboardData.getData('text');
+
+                    this.setState({ loading: true, error: null });
+                    try {
+                        const rawRes = await fetch('/.netlify/functions/new', {
+                            method: 'POST',
+                            body: pastedData,
+                            headers: {
+                                'Content-Type': 'application/json'
+                            }
+                        });
+
+                        if (rawRes.ok) {
+                            const res = await rawRes.json();
+
+                            if (!res.error) {
+                                this.setState({ loading: false });
+                                this.props.history.push('/' + res.url);
+                            } else {
+                                Sentry.captureMessage(res.stack);
+
+                                console.log(res);
+
+                                this.setState({
+                                    loading: false,
+                                    error: 'Something went wrong. Please try again.'
+                                });
+                            }
+                        } else {
+                            throw Error(rawRes.statusText);
+                        }
+                    } catch (err) {
+                        Sentry.captureException(err);
+
+                        this.setState({
+                            loading: false,
+                            error: 'Something went wrong. Please try again.'
+                        });
+                    }
+                }}
+            >
                 <Navbar />
                 {this.state.error !== null ? (
                     <Error error={this.state.error} />
@@ -148,7 +211,4 @@ const mapStateToProps = state => {
     };
 };
 
-export default connect(
-    mapStateToProps,
-    { loadPage }
-)(withRouter(App));
+export default connect(mapStateToProps, { loadPage })(withRouter(App));
