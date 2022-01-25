@@ -1,6 +1,6 @@
 -- ClassicArmory
 -- David Whynot
--- v0.1
+-- v0.3
 
 
 -- GLOBALS
@@ -50,7 +50,7 @@ function classicArmoryInit()
 	-- print("--------------------------------------");
 
 	-- export data frame
-		local exportDataFrame = CreateFrame("Frame", "exportDataFrame", UIParent);
+		local exportDataFrame = CreateFrame("Frame", "exportDataFrame", UIParent, "BackdropTemplate");
 
 		exportDataFrame:SetFrameStrata("BACKGROUND");
 		exportDataFrame:SetWidth(310);

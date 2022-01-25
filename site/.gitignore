@@ -9,6 +9,8 @@ node_modules
 coverage
 src/components/Admin.js
 functions/admin
+functions/admin.js
+functions.old
 
 # production
 build
