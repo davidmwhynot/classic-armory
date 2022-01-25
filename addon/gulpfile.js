@@ -1,14 +1,14 @@
 const gulp = require('gulp');
 
-gulp.task('copy', () => {
-	return gulp
+gulp.task('copy', () =>
+	gulp
 		.src('./ClassicArmory.*')
 		.pipe(
 			gulp.dest(
-				'D:\\Program Files\\World of Warcraft\\_classic_\\Interface\\AddOns\\ClassicArmory\\'
+				'B:\\World of Warcraft\\_classic_era_\\Interface\\AddOns\\ClassicArmory\\'
 			)
-		);
-});
+		)
+);
 
 gulp.task(
 	'default',

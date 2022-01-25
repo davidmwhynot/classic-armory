@@ -1,9 +1,11 @@
-## Interface: 11302
+## Interface: 11401
 ## Title: Classic Armory
 ## Notes: Upload your classic character to an armory page to share.
 ## Author: davidmwhynot
-## Version: 1.0.2
+## Version: 1.0.3
 ## X-Website: https://wowclassicarmory.com
 ## SavedVariables: classicarmoryDB
+
+## X-BugGrabber-Display: ClassicArmory
 
 ClassicArmory.lua

@@ -33,7 +33,7 @@ local async = function ()
 	end
 
 	function M.eachSeries(arr, iterator, callback)
-		
+
 	end
 
 	return M
@@ -79,20 +79,53 @@ local bagSlotNames = {
 local bagSlotNamesLengthMinusOne = table.getn(bagSlotNames) - 1;
 
 
+-- local exportDataFrameBackdropInfo = {
+-- 	bgFile = "Interface/Tooltips/UI-Tooltip-Background",
+-- 	edgeFile = "Interface/Tooltips/UI-Tooltip-Border",
+-- 	tile = true, tileSize = 16, edgeSize = 16,
+-- 	insets = { left = 4, right = 4, top = 4, bottom = 4 }
+-- };
+
+
+-- function classicArmoryInit()
+-- 	-- export data frame
+-- 		local exportDataFrame = CreateFrame("Frame", "exportDataFrame", UIParent, "BackdropTemplate");
+
+-- 		exportDataFrame:SetFrameStrata("BACKGROUND");
+-- 		exportDataFrame:SetWidth(310);
+-- 		exportDataFrame:SetHeight(85);
+
+-- 		-- apply the backdrop to the frame using the info constant defined above
+-- 		exportDataFrame.backdropInfo = exportDataFrameBackdropInfo;
+-- 		exportDataFrame:ApplyBackdrop();
+
+-- 		exportDataFrame:SetBackdropColor(0,0,0,1);
+
+-- 		exportDataFrame:SetPoint("CENTER", 0, 0);
+
+-- 		exportDataFrame:Hide();
+
+
+local exportDataFrameBackdropInfo = {
+	bgFile = "Interface/Tooltips/UI-Tooltip-Background",
+	edgeFile = "Interface/Tooltips/UI-Tooltip-Border",
+	tile = true, tileSize = 16, edgeSize = 16,
+	insets = { left = 4, right = 4, top = 4, bottom = 4 }
+};
+
+
 function classicArmoryInit()
 	-- export data frame
-		local exportDataFrame = CreateFrame("Frame", "exportDataFrame", UIParent);
+		local exportDataFrame = CreateFrame("Frame", "exportDataFrame", UIParent, "BackdropTemplate");
 
 		exportDataFrame:SetFrameStrata("BACKGROUND");
 		exportDataFrame:SetWidth(310);
 		exportDataFrame:SetHeight(85);
 
-		exportDataFrame:SetBackdrop({
-			bgFile = "Interface/Tooltips/UI-Tooltip-Background", 
-			edgeFile = "Interface/Tooltips/UI-Tooltip-Border", 
-			tile = true, tileSize = 16, edgeSize = 16, 
-			insets = { left = 4, right = 4, top = 4, bottom = 4 }
-		});
+		-- apply the backdrop to the frame using the info constant defined above
+		exportDataFrame.backdropInfo = exportDataFrameBackdropInfo;
+		exportDataFrame:ApplyBackdrop();
+
 		exportDataFrame:SetBackdropColor(0,0,0,1);
 
 		exportDataFrame:SetPoint("CENTER", 0, 0);
@@ -106,7 +139,7 @@ function classicArmoryInit()
 
 		-- textbox
 			local exportDataTextFrame = CreateFrame("EditBox", "exportDataTextFrame", exportDataFrame, "InputBoxTemplate");
-			
+
 			exportDataTextFrame:SetPoint("BOTTOMLEFT", exportDataFrame, "BOTTOMLEFT", 20, 10);
 			exportDataTextFrame:SetWidth(165);
 			exportDataTextFrame:SetHeight(25);
@@ -116,7 +149,7 @@ function classicArmoryInit()
 					exportDataTextFrame:HighlightText();
 				end
 			);
-			
+
 			exportDataTextFrame:SetScript("OnTextChanged",
 				function()
 					getJSON(
@@ -190,7 +223,7 @@ end
 function getJSON(jsonCallback)
 	hasBiznicks = false;
 	hasBiznicksBeenChecked = false;
-	
+
 	local nameFunction = function(callback, asyncVals)
 		asyncVals.name = UnitName("player");
 		callback(nil, asyncVals);
@@ -307,7 +340,7 @@ function getItems(callback, asyncVals)
 		local itemEnchant = nil;
 
 		if isRangedSlot then hasBiznicksBeenChecked = true end
-		
+
 		if itemLink then
 			local _, itemStringLink = GetItemInfo(itemLink);
 
@@ -393,7 +426,7 @@ function getRep(callback, asyncVals)
 	end
 
 	numReps = GetNumFactions();
-	
+
 	local reps = {};
 
 	local repHeadersIndex = 0;
@@ -407,7 +440,7 @@ function getRep(callback, asyncVals)
 			-- update indexes
 			repsIndex = 0;
 			repHeadersIndex = repHeadersIndex + 1;
-			
+
 			-- add rep header to reps
 			reps[repHeadersIndex] = {
 				name = repName,
@@ -422,7 +455,7 @@ function getRep(callback, asyncVals)
 			};
 		end
 	end
-	
+
 	asyncVals.reps = reps;
 	callback(nil, asyncVals);
 end
@@ -468,7 +501,7 @@ function getSkills(callback, asyncVals)
 	end
 
 	numSkills = GetNumSkillLines();
-	
+
 	local skills = {};
 
 	local skillHeadersIndex = 0;
@@ -482,7 +515,7 @@ function getSkills(callback, asyncVals)
 			-- update indexes
 			skillsIndex = 0;
 			skillHeadersIndex = skillHeadersIndex + 1;
-			
+
 			-- add skill header to skills
 			skills[skillHeadersIndex] = {
 				name = skillName,
@@ -535,7 +568,7 @@ function getStats(callback, asyncVals)
 		print('BIZNIKS WAS NOT CHECKED BEFORE getStats WAS CALLED...');
 		print('Ranged Hit % may not be correct');
 	end
-	
+
 	if hasBiznicks then
 		rangedHit = rangedHit + 3
 	end
@@ -571,7 +604,15 @@ function getStats(callback, asyncVals)
 			unit = { UnitStat('player', 1) }
 		},
 		crit = {
-			spell = GetSpellCritChance(),
+			spell = {
+				physical = GetSpellCritChance(1),
+				holy = GetSpellCritChance(2),
+				fire = GetSpellCritChance(3),
+				nature = GetSpellCritChance(4),
+				frost = GetSpellCritChance(5),
+				shadow = GetSpellCritChance(6),
+				arcane = GetSpellCritChance(7)
+			},
 			melee = GetCritChance(),
 			ranged = GetRangedCritChance()
 		},
@@ -644,15 +685,15 @@ function getStats(callback, asyncVals)
 	for i = 1, table.getn(equippedSlotNames) do
 		local slotId = GetInventorySlotInfo(equippedSlotNames[i]);
 		local itemId = GetInventoryItemID("player", slotId);
-		
+
 		if itemId ~= nil and itemId ~= 0 then
 			local _, itemLink = GetItemInfo(itemId);
-			
+
 			-- compute equip
 			GameTooltip:ClearLines();
 			GameTooltip:SetOwner(UIParent, "ANCHOR_NONE");
 			GameTooltip:SetHyperlink(itemLink);
-			
+
 			local itemEquip = {};
 			for k = GameTooltip:NumLines(), 2, -1 do
 				local toolTipLine = _G["GameTooltipTextLeft" .. k]:GetText() or "";
@@ -695,8 +736,8 @@ function getStats(callback, asyncVals)
 
 	-- compute mana regen values
 	local mp5Base, mp5Casting = GetManaRegen();
-	-- local mp5Base, mp5Casting = 
-	
+	-- local mp5Base, mp5Casting =
+
 	stats.mp5.casting = stats.mp5.equipped; -- Mana points regenerated every five seconds while casting and inside the five second rule
 	stats.mpTick.casting = stats.mp5.equipped * 0.4; -- Mana points regenerated every tick while casting and inside the five second rule -- Ticks are every 2 seconds, or 2/5 of MP5 stat per tick.
 	stats.mp5.notCasting = (mp5Base * 2) + stats.mpTick.casting; -- Total Mana points regenerated per tick while not casting and outside the five second rule
@@ -704,19 +745,19 @@ function getStats(callback, asyncVals)
 	-- compute defense values
 	local baseDefense, bonusDefense = 0,0;
 	local skillIndex = 0;
-	
+
 	local numSkills = GetNumSkillLines();
-	
+
 	for i = 1, numSkills do
 		local skillName = select(1, GetSkillLineInfo(i));
-	
+
 		if (skillName == DEFENSE) then
 			skillIndex = i;
-	
+
 			break;
 		end
 	end
-	
+
 	if (skillIndex > 0) then
 		baseDefense = select(4, GetSkillLineInfo(skillIndex));
 		bonusDefense = select(6, GetSkillLineInfo(skillIndex));
@@ -803,7 +844,7 @@ function ttjson(x, isInputTableArray)
 	end
 
 	local xType = type(x)
-	
+
 	if (xType == 'table') then
 		local index = 0;
 		local xLen = 0;
