@@ -15,7 +15,7 @@
 		"json-colorizer": "^2.2.1",
 		"moment": "^2.24.0",
 		"mongoose": "^5.5.7",
-		"node-sass": "^4.12.0",
+		"node-sass": "^7.0.0",
 		"passport": "^0.4.0",
 		"passport-google-oauth": "^2.0.0",
 		"react": "^16.8.6",
