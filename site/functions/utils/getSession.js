@@ -9,6 +9,12 @@ const { CLASSICARMORY_SESSION_SECRET } = process.env;
 // config
 const { decrypt } = new Cryptr(CLASSICARMORY_SESSION_SECRET);
 
+const createSession = data => {
+	const newSession = new Session({ data });
+
+	return newSession.save();
+}
+
 module.exports = (headers, data = {}) => {
 	return new Promise(async resolve => {
 		const parsedCookie = headers.cookie
@@ -17,28 +23,26 @@ module.exports = (headers, data = {}) => {
 
 		const cookie = parsedCookie ? parsedCookie[1] : false;
 
-		let session;
-
-		if (cookie) {
-			const oldSession = await Session.findOne({
-				_id: decrypt(cookie)
-			});
-
-			// logo(oldSession, 'oldSession');
-
-			oldSession.updated = Date.now();
-			oldSession.data = {
-				...oldSession.data,
-				...data
-			};
-
-			session = await oldSession.save();
-		} else {
-			const newSession = new Session({ data });
-
-			session = await newSession.save();
+		if (!cookie) {
+			return resolve(await createSession(data));
 		}
 
-		resolve(session);
+		const oldSession = await Session.findOne({
+			_id: decrypt(cookie)
+		});
+
+		// logo(oldSession, 'oldSession');
+
+		if(!oldSession) {
+			return resolve(await createSession(data));
+		}
+
+		oldSession.updated = Date.now();
+		oldSession.data = {
+			...oldSession.data,
+			...data
+		};
+
+		return resolve(await oldSession.save());
 	});
 };
